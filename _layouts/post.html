@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+        {% include postNavigation.html %}
+        <div>
+            {% include toc.html html=content class="atypora-menu" id="menu"%}
+            <div id="menuContainer">
+                {% include toc.html html=content class="typora-menu-hidden" id="menuFixed"%}
+                <div class="top-hidden" id="topFixed">
+                    <a class="toogle expanded pull-left js-toolbar-action" aria-label="" href="#"><i class="fas fa-align-justify"></i></a>
+                </div>
+            </div>
+        </div>
+        <div id='content'>
+        {{ content | replace: '<img src="/img/', '<img src="/assets/img/'}}
+        {% include disqus.html %}
+        </div>
+        {% include postNavigation.html %}
+

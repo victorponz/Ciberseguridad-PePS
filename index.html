@@ -1,0 +1,15 @@
+---
+layout: default
+title: Apuntes Puesta en producción segura.
+---
+        <img src='/assets/img/DevOps.png' alt='Puesta en producción segura'>
+        <h1>Puesta en producción segura</h1>
+        <ul>
+            {% for post in site.posts %}
+              <li>
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <p>{{ post.excerpt }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+
