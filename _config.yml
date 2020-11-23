@@ -39,7 +39,7 @@ defaults:
       path: "assets/img"
     values:
       image: true
-      
+baseurl: /Ciberseguridad-PEPS2
 # Build settings
 #theme: minima
 #plugins:
