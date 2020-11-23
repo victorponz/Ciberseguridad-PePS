@@ -361,3 +361,22 @@ video {
     text-align: left;
   }
 }
+
+h1.task + blockquote, 
+h2.task + blockquote, 
+h3.task + blockquote, 
+h4.task + blockquote, 
+h5.task + blockquote,
+h6.task + blockquote{
+  background-color: darkgray;
+  color:white;
+}
+
+h1.task + blockquote code.highlighter-rouge,
+h2.task + blockquote code.highlighter-rouge,
+h3.task + blockquote code.highlighter-rouge,
+h4.task + blockquote code.highlighter-rouge,
+h5.task + blockquote code.highlighter-rouge,
+h6.task + blockquote code.highlighter-rouge{
+  background-color: black;
+}

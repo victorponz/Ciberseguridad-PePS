@@ -3,6 +3,7 @@ layout: default
 ---
 <h1>{{ page.title }}</h1>
         {% include postNavigation.html %}
+        {% assign content = content | replace: '<img src="/img/', '<img src="/Ciberseguridad-PEPS2/assets/img/' | replace: '>-tarea-', ' class="task"><i class="fa fa-check"></i> ' %}
         <div>
             {% include toc.html html=content class="atypora-menu" id="menu"%}
             <div id="menuContainer">
@@ -13,8 +14,6 @@ layout: default
             </div>
         </div>
         <div id='content'>
-        {{ content | replace: '<img src="/img/', '<img src="/Ciberseguridad-PEPS2/assets/img/'}}
-        {% include disqus.html %}
+        {{ content }}
         </div>
         {% include postNavigation.html %}
-
