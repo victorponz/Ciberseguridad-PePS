@@ -1,0 +1,872 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Jekyll</title>
+    <link href="/assets/css/syntax.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css' integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp' crossorigin='anonymous'>
+    <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+  </head>
+  <body class='preview-zenburn'>
+   <a id="top"></a>
+    <a class="github-fork-ribbon" href="https://github.com/victorponz/Ciberseguridad-PEPS" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    <div id='write-wrapper'>
+      <nav class="topnav" id="myTopnav">
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+  <a href="javascript:void(0);" class="icon" onclick="showMenu()">
+    <i class="fa fa-bars"></i>
+  </a>
+</nav>
+
+
+      <div id='write'>
+        <h1>Jekyll</h1>
+        <div class="PageNavigation" id="pageNavigation">
+    
+    
+        <a class="next" href="/jekyll/update/2020/11/11/welcome-to-jekyll.html">Welcome to Jekyll! &raquo;</a>
+    
+</div>
+
+        <div>
+            <ul id="menu" class="atypora-menu">
+  <li><a href="#jekyll">Jekyll</a>
+    <ul>
+      <li><a href="#uno">uno</a>
+        <ul>
+          <li><a href="#dos">dos</a>
+            <ul>
+              <li><a href="#tres">tres</a>
+                <ul>
+                  <li><a href="#cuatro">cuatro</a>
+                    <ul>
+                      <li><a href="#cinco">cinco</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#instalación">Instalación</a></li>
+      <li><a href="#primera-aplicación">Primera aplicación</a></li>
+      <li><a href="#build">Build</a></li>
+      <li><a href="#liquid">Liquid</a></li>
+      <li><a href="#front-matter">Front Matter</a></li>
+      <li><a href="#layouts">Layouts</a></li>
+      <li><a href="#includes">Includes</a>
+        <ul>
+          <li><a href="#resaltar-la-página-actual">Resaltar la página actual</a></li>
+        </ul>
+      </li>
+      <li><a href="#data-files">Data Files</a></li>
+      <li><a href="#assetsjekyll">/assets/jekyll</a>
+        <ul>
+          <li><a href="#sass">SASS</a></li>
+        </ul>
+      </li>
+      <li><a href="#blogging">Blogging</a>
+        <ul>
+          <li><a href="#posts">Posts</a></li>
+          <li><a href="#layout">Layout</a></li>
+          <li><a href="#listas-de-posts">Listas de Posts</a></li>
+          <li><a href="#más-posts">Más posts</a></li>
+        </ul>
+      </li>
+      <li><a href="#actualizar-nuestro-repo">Actualizar nuestro repo</a></li>
+      <li><a href="#uso-de-github-pages-sin-jekyll">Uso de GitHub Pages sin Jekyll</a></li>
+      <li><a href="#ejemplos">Ejemplos</a></li>
+    </ul>
+  </li>
+  <li><a href="#disqus">Disqus</a></li>
+</ul>
+            <div id="menuContainer">
+                <ul id="menuFixed" class="typora-menu-hidden">
+  <li><a href="#jekyll">Jekyll</a>
+    <ul>
+      <li><a href="#uno">uno</a>
+        <ul>
+          <li><a href="#dos">dos</a>
+            <ul>
+              <li><a href="#tres">tres</a>
+                <ul>
+                  <li><a href="#cuatro">cuatro</a>
+                    <ul>
+                      <li><a href="#cinco">cinco</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#instalación">Instalación</a></li>
+      <li><a href="#primera-aplicación">Primera aplicación</a></li>
+      <li><a href="#build">Build</a></li>
+      <li><a href="#liquid">Liquid</a></li>
+      <li><a href="#front-matter">Front Matter</a></li>
+      <li><a href="#layouts">Layouts</a></li>
+      <li><a href="#includes">Includes</a>
+        <ul>
+          <li><a href="#resaltar-la-página-actual">Resaltar la página actual</a></li>
+        </ul>
+      </li>
+      <li><a href="#data-files">Data Files</a></li>
+      <li><a href="#assetsjekyll">/assets/jekyll</a>
+        <ul>
+          <li><a href="#sass">SASS</a></li>
+        </ul>
+      </li>
+      <li><a href="#blogging">Blogging</a>
+        <ul>
+          <li><a href="#posts">Posts</a></li>
+          <li><a href="#layout">Layout</a></li>
+          <li><a href="#listas-de-posts">Listas de Posts</a></li>
+          <li><a href="#más-posts">Más posts</a></li>
+        </ul>
+      </li>
+      <li><a href="#actualizar-nuestro-repo">Actualizar nuestro repo</a></li>
+      <li><a href="#uso-de-github-pages-sin-jekyll">Uso de GitHub Pages sin Jekyll</a></li>
+      <li><a href="#ejemplos">Ejemplos</a></li>
+    </ul>
+  </li>
+  <li><a href="#disqus">Disqus</a></li>
+</ul>
+                <div class="top-hidden" id="topFixed">
+                    <a class="toogle expanded pull-left js-toolbar-action" aria-label="" href="#"><i class="fas fa-align-justify"></i></a>
+                </div>
+            </div>
+        </div>
+        <div id='content'>
+        <h1 id="jekyll">Jekyll</h1>
+<h2 id="uno">uno</h2>
+<h3 id="dos">dos</h3>
+<h4 id="tres">tres</h4>
+<h5 id="cuatro">cuatro</h5>
+<h6 id="cinco">cinco</h6>
+
+<p>Jekyll es un tipo de CMS especial. Pertenece a la categoría de <a href="https://medium.com/tech-tajawal/why-headless-cms-is-becoming-so-popular-57d262b1e096">Headless CMS</a> también llamados <strong>Static Site Generator</strong>.</p>
+
+<p>En este tipo de CMS no necesitamos un lenguaje de programación en la parte del servidor, porque todo el contenido es estático. Ahora bien, si el contenido es estático, ¿dónde está la ventaja?</p>
+
+<p>Pues la ventaja viene porque estos CMS generan contenido estático a partir de ficheros fuente, sin necesidad de tener ni tan siquiera una base de datos.</p>
+
+<p>Este contenido estático, pero generado dinámicamente, es el que compone nuestra aplicación.</p>
+
+<p>Cuáles son las <a href="https://learn.cloudcannon.com/jekyll/why-use-a-static-site-generator/">ventajas</a></p>
+
+<ul>
+  <li>Menos complejos</li>
+  <li>Mayor velocidad</li>
+  <li>Mayor seguridad</li>
+  <li>Mayor escalabilidad</li>
+  <li>Control de versiones</li>
+</ul>
+
+<p><strong>Top ten</strong></p>
+
+<ul>
+  <li>https://www.creativebloq.com/features/10-best-static-site-generators</li>
+  <li>https://www.netlify.com/blog/2017/05/25/top-ten-static-site-generators-of-2017/</li>
+</ul>
+
+<p>Más información acerca de Headless CMS</p>
+
+<ul>
+  <li>
+    <p>https://jamstack.org/</p>
+  </li>
+  <li>
+    <p>https://www.staticgen.com/</p>
+  </li>
+</ul>
+
+<p>Para nuestra página personal de Github vamos a usar <a href="https://jekyllrb.com">Jekyll</a>, pues es mantenido por el propio Github y es soportado nativamente.</p>
+
+<h2 id="instalación">Instalación</h2>
+
+<p>Jekyll está basado en <a href="http://www.ruby-lang.org/en/">Ruby</a>, por lo que el primer paso es instalar Ruby</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>ruby-full build-essential zlib1g-dev
+</code></pre></div></div>
+
+<p>Después hay que configurar nuestras variables de entorno para no tener que usar <code class="language-plaintext highlighter-rouge">sudo</code> al instalar <strong>gemas</strong> (las gemas son como los paquetes de <strong>composer</strong>)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'# Install Ruby Gems to ~/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'export GEM_HOME="$HOME/gems"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'export PATH="$HOME/gems/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
+</code></pre></div></div>
+
+<p>Y finalmente instalar, <strong>Jekyll</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll bundler
+</code></pre></div></div>
+
+<p>Más información en:</p>
+
+<p>https://jekyllrb.com/docs/installation/ubuntu/</p>
+
+<h2 id="primera-aplicación">Primera aplicación</h2>
+
+<p>Primero vamos a clonar nuestro repositorio personal de <strong>GitHub</strong> en un directorio local.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>tu-usuario.github.io.git 
+<span class="nb">cd </span>tu-usuario.github.io.git 
+git clone https://github.com/tu-usuario/tu-usuario.github.io.git <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>Y creamos nuestra primera página:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Home<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Hello World!<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="build">Build</h2>
+
+<p>Jekyll es un generador de sitios estáticos, por lo que necesitamos que Jekyll construya el sitio antes de poder verlo. Hay dos comandos que puedes ejecutar en la raíz de tu sitio para construirlo:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">jekyll build</code>: crea el sitio y genera un sitio estático en un directorio llamado <code class="language-plaintext highlighter-rouge">_site</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">jekyll serve</code>: hace lo mismo, excepto que se reconstruye cada vez que se realiza un cambio y ejecuta un servidor web local en http://localhost:4000.</li>
+</ul>
+
+<p><img src="/assets/jekyll/1547636039260.png" alt="1547636039260" /></p>
+
+<p>Parece que no hace mucho, ya que sólo ha copiado los archivos al directorio <code class="language-plaintext highlighter-rouge">_site</code>, pero ya veremos que puede hacer muchas más cosas.</p>
+
+<p><img src="/assets/jekyll/1547636528231.png" alt="localhost" /></p>
+
+<p>Como queremos actualizar nuestra página personal, vamos a hacerlo directamente con <code class="language-plaintext highlighter-rouge">git</code>. En el caso de subir la web a <strong>GitHub</strong>, hemos de ignorar el directorio <code class="language-plaintext highlighter-rouge">_site</code>, mediante <code class="language-plaintext highlighter-rouge">.gitignore</code> ya que es el propio <strong>GitHub</strong> quien generará automáticamente nuestra web.</p>
+
+<p>Y desplegamos nuestra primera versión haciendo un <code class="language-plaintext highlighter-rouge">push</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .gitignore
+git add index.html
+git commit -m "jekyll"
+git push
+</code></pre></div></div>
+
+<p><img src="/assets/jekyll/1547636457711.png" alt="Github Web Pages" /></p>
+
+<p>Y ahora vistamos https://victorponz.github.io/</p>
+
+<p><img src="/assets/jekyll/1547636567403.png" alt="1547636567403" /></p>
+
+<p><strong>GitHub</strong> se ha encargado de todo y ha generado la página personal.</p>
+
+<h2 id="liquid">Liquid</h2>
+
+<p><a href="https://shopify.github.io/liquid/">Liquid</a> es donde <strong>Jekyll</strong> comienza a ponerse más interesante. <strong>Liquid</strong> es un lenguaje de plantillas que tiene tres partes principales: objetos, etiquetas y filtros.</p>
+
+<p>En esta página tenéis información de cómo usar <a href="https://jekyllrb.com/docs/step-by-step/02-liquid/">Liquid</a> en Jekyll.</p>
+
+<p>Ahora cambia <code class="language-plaintext highlighter-rouge">index.html</code></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+---
+<span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Home<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>hello world!<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+</code></pre></div></div>
+
+<p><img src="/assets/jekyll/1547636874493.png" alt="Liquid" /></p>
+
+<p>Hemos usado el primer objeto, la parte que va entre `` de Liquid y el primer filtro: <code class="language-plaintext highlighter-rouge">downcase</code></p>
+
+<h2 id="front-matter">Front Matter</h2>
+
+<p><em>Front Matter</em> es un fragmento de <a href="https://yaml.org/">YAML</a> que se encuentra entre dos líneas de tres puntos en la parte superior de un archivo. Front Matter se utiliza para establecer variables para la página, por ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+my_number: 5
+---
+</code></pre></div></div>
+
+<p>Estas variables son accesibles en <strong>Liquid</strong> mediante la variable <code class="language-plaintext highlighter-rouge">page</code></p>
+
+<p>Por ejemplo, para imprimir esta variable en una plantilla:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% this %}
+</code></pre></div></div>
+
+<p>Vamos a usar una variable <code class="language-plaintext highlighter-rouge">title</code>en nuestro Front matter</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">---</span>
+<span class="n">title</span><span class="o">:</span> <span class="nc">Home</span>
+<span class="o">---</span>
+<span class="o">&lt;!</span><span class="n">doctype</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="nc">Jekyll</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">hello</span> <span class="n">world</span><span class="o">!&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>De momento, tampoco ha cambiado nada. Luego le daremos más funcionalidad.</p>
+
+<h2 id="layouts">Layouts</h2>
+
+<p>Si queremos hacer una nueva página, por ejemplo <code class="language-plaintext highlighter-rouge">about.html</code> podríamos copiar <code class="language-plaintext highlighter-rouge">index.html</code> y modificarlo.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: About
+---
+<span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Jekyll<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>About page<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This page tells you a little bit about me.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Pero claro, ¿dónde está la ventaja de usar <strong>Jekyll</strong> si todo lo hacemos de esta forma?</p>
+
+<p>La respuesta está en los <strong>Layouts</strong>.</p>
+
+<p>Primero, creamos un directorio llamado <code class="language-plaintext highlighter-rouge">_layouts</code> y creamos un nuevo archivo llamado <code class="language-plaintext highlighter-rouge">default.html</code> con el siguiente código:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Jekyll<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Es parecido al código a anterior, pero no tiene Front matter y el contenido de la página está reemplazado con la variable Liquid <code class="language-plaintext highlighter-rouge">content</code></p>
+
+<p>Para que <code class="language-plaintext highlighter-rouge">index.html</code> use este layout, reemplaza todo el contenido por</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Home</span>
+<span class="nn">---</span>
+<span class="nt">&lt;h1&gt;</span>hello world!<span class="nt">&lt;/h1&gt;</span>
+</code></pre></div></div>
+
+<p>Y reemplaza el código de <code class="language-plaintext highlighter-rouge">about.html</code>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">About</span>
+<span class="nn">---</span>
+<span class="nt">&lt;h1&gt;</span>About page<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>This page tells you a little bit about me.<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<h2 id="includes">Includes</h2>
+
+<p>Ahora tenemos dos páginas pero no hay forma de navegar entre ellas.</p>
+
+<p>Para ello usamos el tag <code class="language-plaintext highlighter-rouge">include</code> y colocamos el código en un archivo dentro del directorio <code class="language-plaintext highlighter-rouge">_includes</code></p>
+
+<p>Creamos nuestro primer include en <code class="language-plaintext highlighter-rouge">_includes/navigation.html</code></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/about.html"</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+
+<p>Y ahora lo usamos en <code class="language-plaintext highlighter-rouge">default.html</code></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Jekyll<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"topnav"</span> <span class="na">id=</span><span class="s">"myTopnav"</span><span class="nt">&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/about.html"</span> <span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/blog.html"</span> <span class="nt">&gt;</span>Blog<span class="nt">&lt;/a&gt;</span>
+  
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript:void(0);"</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">onclick=</span><span class="s">"showMenu()"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-bars"</span><span class="nt">&gt;&lt;/i&gt;</span>
+  <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+
+
+    
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><img src="/assets/jekyll/1547641761185.png" alt="navigation" /></p>
+
+<h3 id="resaltar-la-página-actual">Resaltar la página actual</h3>
+
+<p>Usamos una de las variables que proporciona Jekyll automáticamente: <code class="language-plaintext highlighter-rouge">page.url</code></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="nt">&gt;</span>
+    Home
+  <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/about.html"</span> <span class="nt">&gt;</span>
+    About
+  <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+
+<p><img src="/assets/jekyll/1547642695047.png" alt="page.url" /></p>
+
+<p>Todavía hay mucha repetición aquí si desea agregar un nuevo elemento a la navegación o cambiar el color de resaltado. En el siguiente paso abordaremos esto.</p>
+
+<h2 id="data-files">Data Files</h2>
+
+<p>Jekyll admite la carga de datos desde archivos YAML, JSON y CSV ubicados en un directorio <code class="language-plaintext highlighter-rouge">_data</code>. Los archivos de datos son una excelente manera de separar el contenido del código fuente para hacer que el sitio sea más fácil de mantener.</p>
+
+<p>En este paso, almacenaremos el contenido de la navegación en un archivo de datos y luego iteraremos sobre él en el include de navegación.</p>
+
+<p>YAML es el formato que más común en el ecosistema de Ruby. Lo usaremos para almacenar una serie de elementos de navegación, cada uno con un nombre y un enlace.</p>
+
+<p>Crea un archivo de datos para la navegación en <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code> con lo siguiente:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Home</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">About</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/about.html</span>
+</code></pre></div></div>
+
+<p>Jekyll pone este archivo de datos a tu disposición en la variable <code class="language-plaintext highlighter-rouge">site.data.navigation</code>. En lugar de mostrar cada enlace en <code class="language-plaintext highlighter-rouge">_includes/navigation.html</code>, ahora podemos iterar sobre el archivo de datos:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="nt">&gt;</span>
+      Home
+    <span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/about.html"</span> <span class="nt">&gt;</span>
+      About
+    <span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/blog.html"</span> <span class="nt">&gt;</span>
+      Blog
+    <span class="nt">&lt;/a&gt;</span>
+  
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+
+<p>Si ahora añadimos una nueva entrada en navigation.yml, automáticamente creará el nuevo enlace:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Home</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">About</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/about.html</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Nueva</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/nueva.html</span>
+</code></pre></div></div>
+
+<p><img src="/assets/jekyll/1547743023998.png" alt="Menú con YAML" /></p>
+
+<h2 id="assetsjekyll">/assets/jekyll</h2>
+
+<p>El uso de CSS, JS, imágenes y otros recursos es sencillo con Jekyll. Colócalos en la carpeta de tu sitio y se copiarán al sitio creado.</p>
+
+<p>Los sitios de Jekyll a menudo usan esta estructura para mantener los activos organizados</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+├── /assets/jekyll
+|   ├── css
+|   ├── images
+|   └── js
+...
+</code></pre></div></div>
+
+<h3 id="sass">SASS</h3>
+
+<p>Los estilos en línea utilizados en <code class="language-plaintext highlighter-rouge">_includes/navigation.html</code> no son las mejores prácticas, vamos a diseñar la página actual con una clase css.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/about.html"</span> <span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/blog.html"</span> <span class="nt">&gt;</span>Blog<span class="nt">&lt;/a&gt;</span>
+  
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+
+<p>Puedes usar un archivo CSS estándar para el estilo, vamos a ir un paso más allá usando <a href="https://sass-lang.com/">Sass</a>. Sass es una fantástica extensión de CSS incluida directamente en Jekyll.</p>
+
+<p>Primero crea un archivo Sass en <code class="language-plaintext highlighter-rouge">//assets/jekyll/css/styles.scss</code> con el siguiente contenido:</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">---</span>
+<span class="nt">---</span>
+<span class="o">@</span><span class="nt">import</span> <span class="s2">"main"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>El front matter vacío en la parte superior le dice a Jekyll que necesita procesar el archivo.</p>
+
+<p><code class="language-plaintext highlighter-rouge">@import "main"</code> le dice a Sass que busque un archivo llamado <code class="language-plaintext highlighter-rouge">main.scss</code> en el directorio sass (<code class="language-plaintext highlighter-rouge">_sass/</code> por defecto).</p>
+
+<p>Así que creamos el archivo <code class="language-plaintext highlighter-rouge">_sass/main.scss</code> con el siguiente contenido:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.current</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Deberemos hacer referencia a la hoja de estilo en el diseño.</p>
+
+<p>Abre <code class="language-plaintext highlighter-rouge">_layouts/default.html</code> y agrega la hoja de estilo al  <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Jekyll<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"//assets/jekyll/css/styles.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"topnav"</span> <span class="na">id=</span><span class="s">"myTopnav"</span><span class="nt">&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/about.html"</span> <span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/blog.html"</span> <span class="nt">&gt;</span>Blog<span class="nt">&lt;/a&gt;</span>
+  
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript:void(0);"</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">onclick=</span><span class="s">"showMenu()"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-bars"</span><span class="nt">&gt;&lt;/i&gt;</span>
+  <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+
+
+    
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><img src="/assets/jekyll/1547743756709.png" alt="scss" /></p>
+
+<h2 id="blogging">Blogging</h2>
+
+<p>Quizás te preguntes cómo puedes tenes un blog sin una base de datos. En el verdadero estilo Jekyll, los blogs solo funcionan con archivos de texto.</p>
+
+<h3 id="posts">Posts</h3>
+
+<p>Las publicaciones de blog se almacenan en una carpeta llamada _posts. El nombre de archivo de las publicaciones tiene un formato especial: la fecha de publicación (yyyy-mm-dd), luego un título, seguido de una extensión.</p>
+
+<p>Crea tu primera publicación en <code class="language-plaintext highlighter-rouge">_posts/2019-01-17-primera-entrada.md</code> con el siguiente contenido:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">victor</span>
+<span class="nn">---</span>
+<span class="gh"># Esta es mi primera entrada de blog</span>
+Está en formato markdown, por lo se puede usar cualquier editor de markdown como typora o instalar una extensión para Visual Studio Code.
+</code></pre></div></div>
+
+<p>http://jmcglone.com/guides/github-pages/</p>
+
+<p>https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site-with-the-jekyll-theme-chooser/</p>
+
+<h3 id="layout">Layout</h3>
+
+<p>El layout <code class="language-plaintext highlighter-rouge">post</code> no existe, así que vamos a crearlo con el siguiente contenido:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+---
+<span class="nt">&lt;h1&gt;</span>Jekyll<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>23 Jan 2019 - <span class="nt">&lt;/p&gt;</span>
+
+
+</code></pre></div></div>
+
+<p>Este es un ejemplo de herencia de diseño. El layout <code class="language-plaintext highlighter-rouge">post</code> genera el título, la fecha, el autor y el cuerpo del contenido, que está incluido en el diseño predeterminado (hereda de <code class="language-plaintext highlighter-rouge">default</code>)</p>
+
+<p>También aplica el filtro <code class="language-plaintext highlighter-rouge">date_to_string</code>, que da formato a una fecha en un forma más agradable.</p>
+
+<h3 id="listas-de-posts">Listas de Posts</h3>
+
+<p>Actualmente no hay manera de navegar a la publicación del blog. Normalmente, un blog tiene una página que enumera todas las publicaciones, hagámoslo a continuación.</p>
+
+<p>Jekyll pone las publicaciones disponibles en la variable <code class="language-plaintext highlighter-rouge">site.posts</code>.</p>
+
+<p>Crea <code class="language-plaintext highlighter-rouge">blog.html</code> en tu raíz (<code class="language-plaintext highlighter-rouge">/blog.html</code>) con el siguiente contenido:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">---</span>
+<span class="n">layout</span><span class="o">:</span> <span class="k">default</span>
+<span class="n">title</span><span class="o">:</span> <span class="nc">Blog</span>
+<span class="o">---</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nc">Latest</span> <span class="nc">Posts</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+  
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"/dwes/2020/11/16/Arquitectura-web-Conceptos-generales.html"</span><span class="o">&gt;</span><span class="nc">Arquitectura</span> <span class="nc">Web</span> <span class="nc">Conceptos</span> <span class="nc">Generales</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">"/img/AWCG/2187.jpg"</span> <span class="n">alt</span><span class="o">=</span><span class="s2">"18824957"</span> <span class="o">/&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"/jekyll/update/2020/11/11/welcome-to-jekyll.html"</span><span class="o">&gt;</span><span class="nc">Welcome</span> <span class="n">to</span> <span class="nc">Jekyll</span><span class="o">!&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nc">You</span><span class="err">’</span><span class="n">ll</span> <span class="n">find</span> <span class="n">this</span> <span class="n">post</span> <span class="n">in</span> <span class="n">your</span> <span class="o">&lt;</span><span class="n">code</span> <span class="n">class</span><span class="o">=</span><span class="s2">"language-plaintext highlighter-rouge"</span><span class="o">&gt;</span><span class="n">_posts</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span> <span class="n">directory</span><span class="mf">.</span> <span class="nc">Go</span> <span class="n">ahead</span> <span class="k">and</span> <span class="n">edit</span> <span class="n">it</span> <span class="k">and</span> <span class="n">re</span><span class="o">-</span><span class="n">build</span> <span class="n">the</span> <span class="n">site</span> <span class="n">to</span> <span class="n">see</span> <span class="n">your</span> <span class="n">changes</span><span class="mf">.</span> <span class="nc">You</span> <span class="n">can</span> <span class="n">rebuild</span> <span class="n">the</span> <span class="n">site</span> <span class="n">in</span> <span class="n">many</span> <span class="n">different</span> <span class="n">ways</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">most</span> <span class="n">common</span> <span class="n">way</span> <span class="n">is</span> <span class="n">to</span> <span class="n">run</span> <span class="o">&lt;</span><span class="n">code</span> <span class="n">class</span><span class="o">=</span><span class="s2">"language-plaintext highlighter-rouge"</span><span class="o">&gt;</span><span class="n">jekyll</span> <span class="n">serve</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">which</span> <span class="n">launches</span> <span class="n">a</span> <span class="n">web</span> <span class="n">server</span> <span class="k">and</span> <span class="n">auto</span><span class="o">-</span><span class="n">regenerates</span> <span class="n">your</span> <span class="n">site</span> <span class="n">when</span> <span class="n">a</span> <span class="n">file</span> <span class="n">is</span> <span class="n">updated</span><span class="mf">.</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"/dwes/2019/01/23/jekyll.html"</span><span class="o">&gt;</span><span class="nc">Jekyll</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">h1</span> <span class="n">id</span><span class="o">=</span><span class="s2">"jekyll"</span><span class="o">&gt;</span><span class="nc">Jekyll</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h2</span> <span class="n">id</span><span class="o">=</span><span class="s2">"uno"</span><span class="o">&gt;</span><span class="n">uno</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h3</span> <span class="n">id</span><span class="o">=</span><span class="s2">"dos"</span><span class="o">&gt;</span><span class="n">dos</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h4</span> <span class="n">id</span><span class="o">=</span><span class="s2">"tres"</span><span class="o">&gt;</span><span class="n">tres</span><span class="o">&lt;/</span><span class="n">h4</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h5</span> <span class="n">id</span><span class="o">=</span><span class="s2">"cuatro"</span><span class="o">&gt;</span><span class="n">cuatro</span><span class="o">&lt;/</span><span class="n">h5</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h6</span> <span class="n">id</span><span class="o">=</span><span class="s2">"cinco"</span><span class="o">&gt;</span><span class="n">cinco</span><span class="o">&lt;/</span><span class="n">h6</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Hay algunas cosas a tener en cuenta con este código:</p>
+
+<ul>
+  <li>Jekyll establece automáticamente <code class="language-plaintext highlighter-rouge">post.url</code> en la ruta de salida de la publicación.</li>
+  <li><code class="language-plaintext highlighter-rouge">post.title</code> se extrae del nombre de archivo de la publicación y se puede anular configurando el título en el front matter.</li>
+  <li><code class="language-plaintext highlighter-rouge">post.excerpt</code> es el primer párrafo de contenido por defecto</li>
+</ul>
+
+<p>También necesitamos una forma de navegar a esta página a través de la navegación principal. Abre <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code> y agrega una entrada para la página del blog:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Home</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">About</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/about.html</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Blog</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/blog.html</span>
+</code></pre></div></div>
+
+<p>Y este es el resultado:</p>
+
+<p><img src="/assets/jekyll/1547745125732.png" alt="Lista de blogs" /></p>
+
+<p><img src="/assets/jekyll/1547745202892.png" alt="Entrada de blog" /></p>
+
+<h3 id="más-posts">Más posts</h3>
+
+<p>Crear una nueva entrada es tan sencillo como crear otro archivo en <code class="language-plaintext highlighter-rouge">_posts</code></p>
+
+<p>Por ejemplo, <code class="language-plaintext highlighter-rouge">_posts/2019-01-17-headless-cms.md</code></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">victor</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">¿Qué es un Headless CMS?</span>
+<span class="na">excerpt</span><span class="pi">:</span> <span class="s">En esta entrada se explica qué es un Headless CMS</span>
+<span class="nn">---</span>
+<span class="gh"># Headless CMS</span>
+A headless content management system, or headless CMS, is a back-end only content management system (CMS) built from the ground up as a content repository that makes content accessible via a RESTful API for display on any device.
+
+The term “headless” comes from the concept of chopping the “head” (the front end, i.e. the website) off the “body” (the back end, i.e. the content repository). 
+
+</code></pre></div></div>
+
+<p><img src="/assets/jekyll/1547745581454.png" alt="1547745581454" /></p>
+
+<p><img src="/assets/jekyll/1547745619372.png" alt="1547745619372" /></p>
+
+<h2 id="actualizar-nuestro-repo">Actualizar nuestro repo</h2>
+
+<p>Ya sólo nos queda subir los cambios a <strong>GitHub</strong> y ya tenemos nuestra página personal.</p>
+
+<p><img src="/assets/jekyll/1547746402189.png" alt="1547746402189" /></p>
+
+<p>Una vez subimos los archivos, GitHub tiene que construir el sitio mediante Jekyll. Así que a veces no es automático.</p>
+
+<p>Para ver el estado de vuestro sitio, id a <code class="language-plaintext highlighter-rouge">Settings</code></p>
+
+<p><img src="/assets/jekyll/1547746473642.png" alt="1547746473642" /></p>
+
+<p>En este caso dice:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Your GitHub Pages site is currently being built from the master branch
+</code></pre></div></div>
+
+<p>A veces tarda bastante en actualizar, pero está en ello!</p>
+
+<p><img src="/assets/jekyll/1547803981952.png" alt="1547803981952" /></p>
+
+<h2 id="uso-de-github-pages-sin-jekyll">Uso de GitHub Pages sin Jekyll</h2>
+
+<p>No es necesario realizar nuestro sitio con <strong>Jekyll</strong>. Lo podemos realizar con cualquier <strong>Headless CMS</strong> e incluso hacerlo a la antigua usanza.</p>
+
+<p>Otra opción posible es hacerlo con <strong>Jekyll</strong> pero que nuestro repositorio apunte al directorio <code class="language-plaintext highlighter-rouge">_site</code> en vez de a raíz. De esta forma al hacer un <code class="language-plaintext highlighter-rouge">git push</code> no nos hemos de esperar a que <strong>GitHub</strong> procese nuestro sitio.</p>
+
+<p>Por ejemplo, supongamos que hemos hecho ya un <code class="language-plaintext highlighter-rouge">commit</code> de <code class="language-plaintext highlighter-rouge">_site</code> al repositorio:</p>
+
+<p><img src="/assets/jekyll/1547803168281.png" alt="1547803168281" /></p>
+
+<p>Ahora modificamos <code class="language-plaintext highlighter-rouge">_layouts/post.hml</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">---</span>
+<span class="n">layout</span><span class="o">:</span> <span class="k">default</span>
+<span class="o">---</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nc">Víctor</span> <span class="nc">Ponz</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nc">Jekyll</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="mi">23</span> <span class="nc">Jan</span> <span class="mi">2019</span> <span class="o">-</span> <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Y ahora el estado del repositorio es:
+<img src="/assets/jekyll/1547803310328.png" alt="1547803310328" /></p>
+
+<p>Por lo que ya podría subir nuestros cambios a <strong>GitHub Pages</strong></p>
+
+<h2 id="ejemplos">Ejemplos</h2>
+
+<p>En la siguiente dirección encontraréis más ejemplos de páginas personales.</p>
+
+<p>https://github.com/topics/personal-website</p>
+
+<h1 id="disqus">Disqus</h1>
+
+<p>Vamos a integrar <strong>Disqus</strong> en nuestra página personal.</p>
+
+<blockquote>
+  <p>Disqus is a networked community platform used by hundreds of  thousands of sites all over the web. With Disqus, your website gains a  feature-rich comment system complete with social network integration,  advanced administration and moderation options, and other extensive  community functions. Most importantly, by utilizing Disqus, you are  instantly plugging into our web-wide community network, connecting  millions of global users to your small blog or large media hub.</p>
+
+  <p>Disqus works on just about any type of website or blog and can be  installed either with a drop-in code snippet or by using one of the  plugins available on our <a href="https://disqus.com/admin/install/">Install page</a>.  You can also customize and tweak Disqus for your website with extensive  APIs and JavaScript hooks. Check out the Quick Start Guide or visit <a href="https://www.disqus.com/">our homepage</a> for more information and a <a href="https://disqus.com/features/">demo of Disqus</a>.</p>
+</blockquote>
+
+<p>El primer paso es registrarse en <strong>Disqus</strong>.</p>
+
+<p>Una vez os habéis registrado, seleccionad <code class="language-plaintext highlighter-rouge">I Want to install Disqus on my site</code></p>
+
+<p><img src="/assets/jekyll/1547747539220.png" alt="1547747539220" /></p>
+
+<p>Y completad el formulario con la url de vuestra página personal de <strong>GitHub</strong></p>
+
+<p><img src="/assets/jekyll/1547747606148.png" alt="1547747606148" /></p>
+
+<p>Seleccionad la opción <strong>Free</strong>!!</p>
+
+<p><img src="/assets/jekyll/1547747685245.png" alt="1547747685245" /></p>
+
+<p>Finalmente, elegid Jekyll</p>
+
+<p><img src="/assets/jekyll/1547747717160.png" alt="1547747717160" /></p>
+
+<p>Ahora lo único que hay que hacer es modificar <code class="language-plaintext highlighter-rouge">post.html</code> con el código que provee <strong>Disqus</strong></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+layout: default
+---
+<span class="nt">&lt;h1&gt;</span>{{ page.title }}<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>{{ page.date | date_to_string }} - {{ page.author }}<span class="nt">&lt;/p&gt;</span>
+
+{{ content }}
+<span class="nt">&lt;hr&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"disqus_thread"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">disqus_config</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://username.github.io/{{page.url}}</span><span class="dl">'</span><span class="p">;</span>  <span class="c1">// Replace PAGE_URL with your page's canonical URL variable</span>
+<span class="p">};</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// DON'T EDIT BELOW THIS LINE</span>
+<span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nb">document</span><span class="p">,</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://https-username-github-io.disqus.com/embed.js</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">data-timestamp</span><span class="dl">'</span><span class="p">,</span> <span class="o">+</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+<span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">head</span> <span class="o">||</span> <span class="nx">d</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<span class="p">})();</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;noscript&gt;</span>Please enable JavaScript to view the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://disqus.com/?ref_noscript"</span><span class="nt">&gt;</span>comments powered by Disqus.<span class="nt">&lt;/a&gt;&lt;/noscript&gt;</span>
+</code></pre></div></div>
+
+<p>Reemplazando <code class="language-plaintext highlighter-rouge">username</code>por tu página personal de <strong>GitHub</strong> y con el código la url que te ha generado <strong>Disqus</strong></p>
+
+<p>Aquí os dejo el enlace para instalarlo en <a href="https://disqus.com/admin/install/platforms/jekyll/">Jekyll</a>, por si tenéis algún problema.</p>
+
+<p>Y este es el resultado:</p>
+
+<p><img src="/assets/jekyll/1547804249547.png" alt="Disqus" /></p>
+
+<hr />
+
+<p><strong>Credits.</strong></p>
+
+<p>Víctor Ponz victorponz@gmail.com</p>
+
+<p>Este material está licenciado bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons, Attribution-NonCommercial-ShareAlike</a></p>
+
+<p><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="" /></p>
+
+        <hr>
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+    this.page.url = 'https://victorponz.github.io//dwes/2019/01/23/jekyll.html';  // Replace PAGE_URL with your page's canonical URL variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-victorponz-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+        <div class="PageNavigation" id="pageNavigation">
+    
+    
+        <a class="next" href="/jekyll/update/2020/11/11/welcome-to-jekyll.html">Welcome to Jekyll! &raquo;</a>
+    
+</div>
+
+
+
+        <a href="#top" id='back-to-top-link'><i class='fa fa-angle-up'></i></a>
+      </div>
+    </div>    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

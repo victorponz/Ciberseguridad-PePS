@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-18T18:58:35+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Arquitectura Web Conceptos Generales</title><link href="http://localhost:4000/dwes/2020/11/16/Arquitectura-web-Conceptos-generales.html" rel="alternate" type="text/html" title="Arquitectura Web Conceptos Generales" /><published>2020-11-16T00:00:00+01:00</published><updated>2020-11-16T00:00:00+01:00</updated><id>http://localhost:4000/dwes/2020/11/16/Arquitectura-web-Conceptos-generales</id><content type="html" xml:base="http://localhost:4000/dwes/2020/11/16/Arquitectura-web-Conceptos-generales.html">&lt;p&gt;&lt;img src=&quot;/img/AWCG/2187.jpg&quot; alt=&quot;18824957&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-introducción&quot;&gt;1 Introducción&lt;/h2&gt;
+
+&lt;p&gt;En este tema trataremos los conceptos generales de una aplicación web, así como las tendencias actuales relativas a las tecnologías más usadas en el desarrollo de aplicaciones web dinámicas.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-conceptos-generales-de-arquitectura-web&quot;&gt;2 Conceptos generales de arquitectura web&lt;/h2&gt;
+
+&lt;p&gt;En esta unidad aprenderemos los siguientes conceptos.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Qué es una aplicación web&lt;/li&gt;
+  &lt;li&gt;Qué tecnologías se pueden utilizar para crear una aplicación web&lt;/li&gt;
+  &lt;li&gt;Qué es un servidor web&lt;/li&gt;
+  &lt;li&gt;Y, finalmente, en qué consiste el despliegue de una aplicación Web&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-aplicaciones-web&quot;&gt;3 Aplicaciones Web&lt;/h2&gt;
+
+&lt;h3 id=&quot;31-qué-es-la-web&quot;&gt;3.1 ¿Qué es la web?&lt;/h3&gt;
+
+&lt;p&gt;Según &lt;a href=&quot;https://es.wikipedia.org/wiki/World_Wide_Web&quot;&gt;Wikipedia&lt;/a&gt;,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;En informática, la World Wide Web (WWW) o red informática mundial es un sistema de distribución de documentos de hipertexto o hipermedios interconectados y accesibles vía Internet. Con un navegador web, un usuario visualiza sitios web compuestos de páginas web que pueden contener textos, imágenes, vídeos u otros contenidos multimedia, y navega a través de esas páginas usando hiperenlaces.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;32-página-web&quot;&gt;3.2 Página web&lt;/h3&gt;
+
+&lt;p&gt;Una página web es un documento electrónico escrito en &lt;strong&gt;HTML&lt;/strong&gt; (HyperText Markup Language). Las páginas web están enlazadas a través de hiperenlaces (links). Mediante un navegador un usuario puede navegar a través de la web siguiendo los hiperenlaces&lt;/p&gt;
+
+&lt;p&gt;Las páginas web enlazan contenidos de naturaleza heterogénea:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Imágenes: JPG, GIF, PNG, …&lt;/li&gt;
+  &lt;li&gt;Documentos: PDF, TXT, …&lt;/li&gt;
+  &lt;li&gt;Audio: MP3, WAV, …&lt;/li&gt;
+  &lt;li&gt;Vídeo: AVI, MPEG, …&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;33-sitio-web&quot;&gt;3.3 Sitio web&lt;/h3&gt;
+
+&lt;p&gt;Un sitio web (o portal) es una colección de páginas web relacionadas entre sí que suelen compartir la primera parte de la dirección web (el dominio). Ejemplos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ieselcaminas.org&quot;&gt;https://www.ieselcaminas.org&lt;/a&gt;: Sitio web del Instituto&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://es.wikipedia.org&quot;&gt;https://es.wikipedia.org&lt;/a&gt;: Sitio web de la Wikipedia en español&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;34-aplicación-web&quot;&gt;3.4 Aplicación web&lt;/h3&gt;
+
+&lt;p&gt;Según la &lt;a href=&quot;https://es.wikipedia.org/wiki/Aplicación_web&quot;&gt;Wikipedia&lt;/a&gt;,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;En la ingeniería de software se denomina &lt;strong&gt;aplicación web&lt;/strong&gt; a aquellas herramientas que los usuarios pueden utilizar accediendo a un servidor web a través de Internet o de una intranet mediante un navegador. En otras palabras, es una aplicación software que se codifica en un lenguaje soportado por los navegadores web en la que se confía la ejecución al navegador.&lt;/p&gt;
+
+  &lt;p&gt;Las aplicaciones web son populares debido a lo práctico del navegador web como cliente ligero, a la independencia del sistema operativo, así como a la facilidad para actualizar y mantener aplicaciones web sin distribuir e instalar software a miles de usuarios potenciales. Existen aplicaciones como los webmails, wikis, weblogs, tiendas en línea y la propia Wikipedia que son ejemplos bastante conocidos de aplicaciones web.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;341-beneficios-de-las-aplicaciones-web&quot;&gt;3.4.1 Beneficios de las aplicaciones web&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Las aplicaciones Web &lt;strong&gt;se ejecutan en múltiples plataformas, independientemente del sistema operativo o dispositivo&lt;/strong&gt;, siempre y cuando el navegador sea compatible&lt;/li&gt;
+  &lt;li&gt;Todos los usuarios acceden a la &lt;strong&gt;misma versión&lt;/strong&gt;, eliminando cualquier problema de compatibilidad&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Reducen los costes&lt;/strong&gt; tanto para el negocio como para el usuario final, ya que hay menos soporte y mantenimiento requeridos por el negocio y menores requerimientos para el equipo del usuario final&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;No requiere instalar software especial&lt;/strong&gt; (en los clientes ) En esencia, para acceder a un software web solo necesitamos disponer de un navegador de páginas web (Internet Explorer, Firefox, Opera, Chrome, etc.). No es necesario tener nada más. Debido a la arquitectura de las aplicaciones web, el navegador suele quedar relegado a mostrar la interfaz de usuario (menús, opciones,formularios, etc.), mientras que toda la compleja lógica de negocio se lleva en el lado del servidor.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Información centralizada&lt;/strong&gt;. En una aplicación web, no solamente la lógica de negocio está centralizada en el servidor, sino también los datos que se ubican en una base de datos centralizada (en ese servidor u otro destinado a tal fin). La centralización tiene la ventaja de facilitar el acceso a la misma.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Seguridad y copias de seguridad&lt;/strong&gt; . Este es un corolario del punto anterior, es decir, una consecuencia. Como disponemos de los datos centralizados es más fácil establecer y llevar el control de una política de copias de seguridad centralizada.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;342-procesamiento-de-páginas-en-el-lado-del-servidor&quot;&gt;3.4.2 Procesamiento de páginas en el lado del servidor&lt;/h4&gt;
+
+&lt;p&gt;Desde el punto de vista del &lt;strong&gt;servidor web&lt;/strong&gt;, una aplicación Web es un conjunto de páginas Web estáticas y dinámicas. Una página Web estática es aquélla que no cambia cuando un usuario la solicita: el servidor Web envía la página al navegador Web solicitante sin modificarla. Por el contrario, el servidor modifica las páginas Web dinámicas antes de enviarlas al navegador solicitante. La naturaleza cambiante de este tipo de página es la que le da el nombre de dinámica.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, podría diseñar una página para que mostrara los resultados de las notas de un alumno  y dejara cierta información fuera (como el nombre del alumno y sus notas) para calcularla cuando la página la solicite un alumno en particular.&lt;/p&gt;
+
+&lt;h4 id=&quot;343-páginas-web-estáticas-en-el-servidor&quot;&gt;3.4.3 Páginas web estáticas en el servidor&lt;/h4&gt;
+
+&lt;p&gt;Un sitio Web estático consta de un conjunto de páginas y de archivos HTML relacionados alojados en un equipo que ejecuta un servidor Web.&lt;/p&gt;
+
+&lt;p&gt;Un servidor Web es un software que suministra páginas Web en respuesta a las peticiones de los navegadores Web. La petición de una página se genera cuando el usuario hace clic en un vínculo de una página Web, elige un marcador en un navegador o introduce una URL en el cuadro de texto Dirección del navegador.&lt;/p&gt;
+
+&lt;p&gt;El contenido final de una página Web estática lo determina el diseñador de la página y no cambia cuando se solicita la página. A continuación se incluye un ejemplo:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Implantación de arquitecturas Web&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Acerca del módulo&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Puesta en producción segura ...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El diseñador escribe todas y cada una de las líneas de código HTML de la página antes de colocarla en el servidor. El código HTML no cambia una vez colocado en el servidor y por ello, este tipo de páginas se denomina página estática.&lt;/p&gt;
+
+&lt;p&gt;Cuando el servidor Web recibe una petición de una página estática, el servidor lee la solicitud, localiza la página y la envía al navegador solicitante, como se muestra en el siguiente ejemplo:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://helpx.adobe.com/es/dreamweaver/using/web-applications/_jcr_content/main-pars/image_0.img.png/ds_process_static.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; El navegador web solicita la página estática &lt;strong&gt;2.&lt;/strong&gt; El servidor localiza la página &lt;strong&gt;3.&lt;/strong&gt; El servidor Web envía la página al navegador solicitante. Finalmente, el navegador renderiza la página mostrando el siguiente resultado.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/pagina estatica.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Actualmente esta arquitectura se usa principalmente para:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Páginas personales&lt;/li&gt;
+  &lt;li&gt;Páginas de proyectos software&lt;/li&gt;
+  &lt;li&gt;Documentación técnica (&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/&quot;&gt;JavaDoc&lt;/a&gt; en Java, Maven site, etc…)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;344-páginas-dinámicas-en-el-servidor&quot;&gt;3.4.4 Páginas dinámicas en el servidor&lt;/h4&gt;
+
+&lt;p&gt;Cuando un servidor Web recibe una petición para mostrar una página Web estática, el servidor la envía directamente al navegador que la solicita. Cuando el servidor Web recibe una petición para mostrar una página dinámica, sin embargo, reacciona de distinta forma: transfiere la página a un software especial encargado de finalizar la página. Este software especial se denomina servidor de aplicaciones.&lt;/p&gt;
+
+&lt;p&gt;El servidor de aplicaciones lee el código de la página, finaliza la página en función de las instrucciones del código y elimina el código de la página. El resultado es una página estática que el servidor de aplicaciones devuelve al servidor Web, que a su vez la envía al navegador solicitante. Lo único que el navegador recibe cuando llega la página es código HTML puro. A continuación se incluye una vista de este proceso:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://helpx.adobe.com/es/dreamweaver/using/web-applications/_jcr_content/main-pars/image_1.img.png/ds_process_dynamic.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; El navegador web solicita la página dinámica. &lt;strong&gt;2.&lt;/strong&gt; El servidor web localiza la página y la envía al servidor de aplicaciones. &lt;strong&gt;3.&lt;/strong&gt; El servidor de aplicaciones busca instrucciones en la página y la termina. &lt;strong&gt;4.&lt;/strong&gt; El servidor de aplicaciones pasa la página terminada al servidor web. &lt;strong&gt;5.&lt;/strong&gt; El servidor web envía la página finalizada al navegador solicitante que la renderiza.&lt;/p&gt;
+
+&lt;p&gt;Un ejemplo sería el siguiente código PHP.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$txt1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Learn PHP&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$txt2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;W3Schools.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;h2&amp;gt;&quot;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$txt1&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;/h2&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Study PHP at &quot;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$txt2&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;br&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y este sería el resultado mostrado en el navegador, donde el servidor de aplicaciones ha interpretado las órdenes PHP&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/dinamica.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;345-páginas-dinámicas-con-acceso-a-una-base-de-datos&quot;&gt;3.4.5 Páginas dinámicas con acceso a una base de datos.&lt;/h4&gt;
+
+&lt;p&gt;Un servidor de aplicaciones nos permite trabajar con recursos del lado del servidor, como las bases de datos. Por ejemplo, una página dinámica puede indicar al servidor de aplicaciones que extraiga datos de una base de datos y los inserte en el código HTML de la página.&lt;/p&gt;
+
+&lt;p&gt;El uso de una base de datos para almacenar contenido permite separar el diseño del sitio Web del contenido que se desea mostrar a los usuarios del sitio. En lugar de escribir archivos HTML individuales para cada página, sólo se necesita escribir una página —o plantilla— para los distintos tipos de información que se desea presentar. Posteriormente, podremos cargar contenido en una base de datos y, seguidamente, hacer que el sitio Web recupere el contenido en respuesta a una solicitud del usuario.&lt;/p&gt;
+
+&lt;p&gt;La instrucción para extraer datos de una base de datos recibe el nombre de &lt;strong&gt;consulta de base de datos&lt;/strong&gt;. Una consulta consta de criterios de búsqueda expresados en un lenguaje de base de datos denominado &lt;strong&gt;SQL&lt;/strong&gt; (&lt;em&gt;Structured Query Language&lt;/em&gt;, lenguaje de consulta estructurado). La consulta SQL se escribe en los scripts o etiquetas del lado del servidor de la página.&lt;/p&gt;
+
+&lt;p&gt;Un servidor de aplicaciones no se puede comunicar directamente con una base de datos porque el formato de esta última impide que se descifren los datos, de una forma bastante similar a cuando un documento de Microsoft Word no puede descifrarse al abrirlo con el Bloc de Notas. El servidor de aplicaciones sólo se puede comunicar con la base de datos a través de un &lt;strong&gt;controlador&lt;/strong&gt; que actúe de intermediario con la base de datos: el software actúa entonces como un intérprete entre el servidor de aplicaciones y la base de datos.&lt;/p&gt;
+
+&lt;p&gt;Una vez que el controlador establece la comunicación, la consulta se ejecuta en la base de datos y se crea un juego de registros. Un &lt;strong&gt;juego de registros&lt;/strong&gt; es un conjunto de datos extraídos de una o varias tablas de una base de datos. El juego de registros se devuelve al servidor de aplicaciones, que emplea los datos para completar la página.&lt;/p&gt;
+
+&lt;p&gt;A continuación se ofrece una consulta de base de datos sencilla escrita en SQL:&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NOMBRE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;APELLIDOS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ASIGNATURA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NOTA&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NOTAS_ALUMNOS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Esta instrucción crea un juego de registros de cuatro columnas y lo completa con filas que contienen el nombre, los apellidos, la asignatura y la nota de todos los alumnos de la base de datos.&lt;/p&gt;
+
+&lt;p&gt;En el siguiente ejemplo se muestra el proceso de consulta de base de datos y de devolución de los datos al navegador:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://helpx.adobe.com/es/dreamweaver/using/web-applications/_jcr_content/main-pars/image_2.img.png/ds_process_complete.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; El navegador web solicita la página dinámica. &lt;strong&gt;2.&lt;/strong&gt; El servidor web localiza la página y la envía al servidor de aplicaciones. &lt;strong&gt;3.&lt;/strong&gt; El servidor de aplicaciones busca instrucciones en la página. &lt;strong&gt;4.&lt;/strong&gt; El servidor de aplicaciones envía la consulta al controlador de la base de datos. &lt;strong&gt;5.&lt;/strong&gt; El controlador ejecuta la consulta en la base de datos. &lt;strong&gt;6.&lt;/strong&gt; El juego de registros se devuelve al controlador. &lt;strong&gt;7.&lt;/strong&gt; El controlador pasa el juego de registros al servidor de aplicaciones. &lt;strong&gt;8.&lt;/strong&gt; El servidor de aplicaciones inserta los datos en una página y luego pasa la página al servidor web. &lt;strong&gt;9.&lt;/strong&gt; El servidor Web envía la página finalizada al navegador solicitante.&lt;/p&gt;
+
+&lt;h4 id=&quot;346-cliente-estático-y-cliente-dinámico&quot;&gt;3.4.6 Cliente estático y cliente dinámico&lt;/h4&gt;
+
+&lt;p&gt;Desde el punto de vista del &lt;strong&gt;cliente web&lt;/strong&gt; (generalmente el navegador) las páginas que componen una aplicación web también se pueden dividir en estáticas y dinámicas.&lt;/p&gt;
+
+&lt;p&gt;Las estáticas son aquellas en las que el contenido visualizado por el cliente no cambia, a menos que se realice un clic en un enlace y se cargue una nueva página. Las dinámicas son aquellas en las que el contenido mostrado por el cliente cambia sin necesidad de recargar la página. Estos cambios pueden utilizarse para producir efectos gráficos o realizando peticiones asíncronas de tal forma que el contenido de la página cambie sin necesidad de obligar a una recarga de la misma.&lt;/p&gt;
+
+&lt;p&gt;Para crear páginas web de cliente dinámicas se usan técnicas de manipulación del &lt;em&gt;Document Object Model&lt;/em&gt; (&lt;a href=&quot;https://es.wikipedia.org/wiki/Document_Object_Model&quot;&gt;DOM&lt;/a&gt;) del navegador junto con peticiones asíncronas (&lt;a href=&quot;https://es.wikipedia.org/wiki/AJAX&quot;&gt;AJAX&lt;/a&gt; - Asynchrous Javascript and XML). Esta técnica llevada al extremo se conoce como aplicación SPA (&lt;a href=&quot;https://es.wikipedia.org/wiki/Single-page_application&quot;&gt;Single Page Application&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Hoy en día, la mayoría de aplicaciones web se construyen con métodos dinámicos tanto desde el punto de vista del servidor como del cliente. Sólo hay que pensar en aplicaciones tipo Gmail, Facebook, Google Maps, Twitter, etc.&lt;/p&gt;
+
+&lt;h4 id=&quot;347-cliente-estático-creado-a-partir-de-texto-plano-static-site-generator&quot;&gt;3.4.7 Cliente estático creado a partir de texto plano (Static Site Generator)&lt;/h4&gt;
+
+&lt;p&gt;Los generadores de sitios estáticos funcionan convirtiendo texto simple y con formato ligero (generalmente &lt;a href=&quot;https://es.wikipedia.org/wiki/Markdown&quot;&gt;markdown&lt;/a&gt;) en sitios web o blogs estáticos. No hay bases de datos para ralentizar las solicitudes y el sitio es más fácil de mantener, tiene opciones de seguridad mejoradas y, sin embargo, tiene una infraestructura menor en coste.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo: &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekill&lt;/a&gt;, &lt;a href=&quot;http://octopress.org/&quot;&gt;Octopress&lt;/a&gt;, &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;, &lt;a href=&quot;http://gohugo.io/&quot;&gt;Hugo&lt;/a&gt;, &lt;a href=&quot;http://getpelican.com/&quot;&gt;Pelican&lt;/a&gt;, &lt;a href=&quot;https://middlemanapp.com/&quot;&gt;Middleman&lt;/a&gt;, &lt;a href=&quot;http://www.metalsmith.io/&quot;&gt;Metalsmith&lt;/a&gt;, &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;También entra dentro de esta categoría las páginas creadas a partir de &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Los generadores de sitios estáticos (&lt;strong&gt;SSG&lt;/strong&gt;) hacen lo mismo que una web dinámica, pero sin las desventajas de ésta. Aplican datos y contenido a las plantillas y generan una vista de una página que se puede mostrar a los visitantes de un sitio.&lt;/p&gt;
+
+&lt;p&gt;La mayor diferencia entre un generador de sitios estáticos y una pila de aplicaciones web tradicional es que, en lugar de esperar hasta que se solicite una página y luego generar su vista a petición cada vez, un generador de sitios estáticos hace esto con anticipación para que la vista esté lista para ser servida con anticipación. Y lo hace para cada vista posible de un sitio en el momento de la construcción.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tienen una ventaja muy importante desde el punto de vista de la seguridad&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;Dado que los generadores de sitios estáticos crean un conjunto de activos estáticos que pueden ser servidos desde un servidor web simplificado, o mejor aún, directa y completamente desde una red de distribución de contenido (CDN), tienen un perfil de seguridad notablemente bueno. Dado que se procesan con anticipación y están listos para servir, la infraestructura involucrada en servirlos puede simplificarse enormemente y tener muy pocos vectores de ataque malicioso. Cuando eliminamos la necesidad de que los servidores realicen la lógica y el trabajo, eliminamos las formas en que los malos actores les inyecten código malicioso y los engañen para que realicen acciones nefastas.&lt;/p&gt;
+
+&lt;p&gt;Y cuando no necesitamos acceder a bases de datos, realizar operaciones lógicas o modificar recursos para cada vista, podemos simplificar drásticamente nuestra infraestructura de alojamiento. Esto también mejora aún más la seguridad, ya que físicamente hay menos servidores involucrados en la gestión de solicitudes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;No hay servidor más seguro que la ausencia de servidor&lt;/strong&gt;.
+Cuanto menos infraestructura necesite nuestra aplicación mejor desde el punto de vista de la seguridad. Sólo debemos instalar y/o activar aquellos recursos necesarios para que nuestra aplicación funcione. Cuantos menos módulos debamos instalar, mejor para la seguridad ya que nos hemos de preocupar de menos vectores de ataque&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/ssg-host-flow.png&quot; alt=&quot;ssg-host-flow&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-tecnologías-de-desarrollo-web&quot;&gt;4 Tecnologías de desarrollo Web&lt;/h2&gt;
+
+&lt;p&gt;Como hemos comentado en el apartado Aplicaciones Web, hoy en día se utilizan páginas dinámicas tanto del lado del servidor como del cliente.&lt;/p&gt;
+
+&lt;p&gt;El impacto de la Web ha propiciado la aparición de una gran cantidad de tecnologías, librerías, herramientas y estilos arquitectónicos para desarrollar una aplicación web. Para facilitar la tarea de escoger cuál es la tecnología más adecuada para un proyecto, es conveniente conocer los elementos más importantes desde un punto de vista de alto nivel para tener una visión global de la programación web.&lt;/p&gt;
+
+&lt;p&gt;Existen dos enfoques en el desarrollo de aplicaciones web:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Creación de aplicaciones web con &lt;a href=&quot;#41-integración-de-tecnologías-de-desarrollo&quot;&gt;integración de tecnologías de desarrollo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Creación de aplicaciones web con &lt;a href=&quot;#42-sistemas-gestores-de-contenido-cms&quot;&gt;sistemas gestores de contenido&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;41-integración-de-tecnologías-de-desarrollo&quot;&gt;4.1 Integración de tecnologías de desarrollo&lt;/h3&gt;
+
+&lt;p&gt;Una de las formas de crear una aplicación web es implementarla usando componentes ya existentes e integrándolos con tecnología propia para adecuarlos a la lógica de negocio. Una premisa importante en cualquier tipo de desarrollo es “&lt;em&gt;no reinventar la rueda&lt;/em&gt;”. Seguro que existe algún componente que ya hace lo que pretendemos hacer.&lt;/p&gt;
+
+&lt;p&gt;Dentro de las tecnologías de desarrollo, podemos distinguir entre:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Tecnologías de cliente&lt;/strong&gt;: Tecnologías que permiten crear interfaces de usuario atractivos y permiten la comunicación con el servidor. Basadas en HTML, CSS y JavaScript. Entre las de propósito general, cabe destacar &lt;a href=&quot;https://jquery.com/&quot;&gt;jQuery&lt;/a&gt;, &lt;a href=&quot;https://angularjs.org/&quot;&gt;AngularJS&lt;/a&gt;, &lt;a href=&quot;http://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt;. En el informe &lt;a href=&quot;https://w3techs.com/technologies/overview/javascript_library/all&quot;&gt;Usage Statistics and Market Share of JavaScript Libraries for Websites, October 2020&lt;/a&gt;, podemos ver una relación más detallada y hay que tener en cuenta que una aplicación web puede usar más de una de estas tecnologías a la vez. También podemos consultar &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_JavaScript_libraries&quot;&gt;List of Javascript Libraries&lt;/a&gt;, donde están clasificadas por categorías.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG//q16.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fuente. &lt;a href=&quot;https://ashleynolan.co.uk/blog/frontend-tooling-survey-2019-results&quot;&gt;https://ashleynolan.co.uk/blog/frontend-tooling-survey-2019-results&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Tecnologías de servidor&lt;/strong&gt;: Tecnologías que permiten implementar el comportamiento de la aplicación web en el servidor: lógica de negocio, generación de informes, compartir información entre usuarios, envío de correos, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En &lt;strong&gt;PHP&lt;/strong&gt;, tenemos &lt;a href=&quot;https://codeigniter.com/&quot;&gt;CodeIgniter&lt;/a&gt;,  &lt;a href=&quot;https://symfony.com/&quot;&gt;Sympony&lt;/a&gt; y &lt;a href=&quot;https://laravel.com/&quot;&gt;Laravel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://coderseye.com/wp-content/uploads/google-trends-best-php-frameworks-comparison.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;PHP Frameworks. Fuente: &lt;a href=&quot;https://coderseye.com/best-php-frameworks-for-web-developers/&quot;&gt;https://coderseye.com/best-php-frameworks-for-web-developers/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;En &lt;strong&gt;Java&lt;/strong&gt;, &lt;a href=&quot;http://spring.io/&quot;&gt;Spring MVC&lt;/a&gt;, &lt;a href=&quot;https://es.wikipedia.org/wiki/JavaServer_Faces&quot;&gt;JSF&lt;/a&gt;, &lt;a href=&quot;https://struts.apache.org/&quot;&gt;Struts&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG//image-20201019161052177.png&quot; alt=&quot;image-20201019161052177&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fuente: https://www.jetbrains.com/lp/devecosystem-2020/java/&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Bases de datos&lt;/strong&gt;: La gran mayoría de las webs necesitan guardar información. Las bases de datos son una parte esencial del desarrollo web. Entre ellas destacan, Oracle, MySQL, Microsoft SQL Server, PostgreSQL. En el informe&lt;a href=&quot;https://db-engines.com/en/ranking&quot;&gt; DB-Engines Ranking - popularity ranking of database management systems&lt;/a&gt; podemos ver la lista completa.
+&lt;img src=&quot;/img/AWCG/image-20201019161232828.png&quot; alt=&quot;image-20201019161232828&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;Fuente: &lt;a href=&quot;https://db-engines.com/en/ranking&quot;&gt;https://db-engines.com/en/ranking&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;42-sistemas-gestores-de-contenido-cms&quot;&gt;4.2 Sistemas gestores de contenido (CMS)&lt;/h3&gt;
+
+&lt;p&gt;Existen aplicaciones web cuya principal funcionalidad es la publicación de contenido: blogs, páginas de empresas, organismos públicos, comercio electrónico, etc.&lt;/p&gt;
+
+&lt;p&gt;Todas estas webs tienen mucho en común, prácticamente sólo se diferencian en el contenido y en el aspecto gráfico.&lt;/p&gt;
+
+&lt;p&gt;Para desarrollar este tipo de webs, en vez de desarrollar la web con integración de tecnologías de desarrollo se usa una aplicación ya creada que se puede personalizar y adaptar (mayormente vía web).&lt;/p&gt;
+
+&lt;p&gt;A las aplicaciones de este tipo se las denomina &lt;strong&gt;Sistemas Gestores de Contenido&lt;/strong&gt; (&lt;em&gt;Content Managemenet Systems&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Entre las &lt;strong&gt;ventajas&lt;/strong&gt; de contar con un CMS están:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Fácilmente actualizable&lt;/strong&gt;. La edición del contenido está separada del diseño y funcionalidad del sitio. Esto permite introducir contenido a usuarios con poca formación técnica sin interferir en el diseño.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A cada usuario se le pueden asignar permisos de acceso selectivo basados en sus &lt;strong&gt;roles&lt;/strong&gt; (por ejemplo, puede permitir que algunos usuarios solo agreguen y edite su propio contenido, mientras que otros le dan acceso universal).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Uso de plantillas totalmente personalizables.&lt;/strong&gt;Tanto para el contenido como para el diseño de tu propio sitio web. Esta es una de las partes que más suelen asustar si no se tienen conocimientos. Pero ahora no hace falta ser un experto en diseño.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Los componentes básicos de la aplicación como menús, cabeceras, pies de página y laterales se mantienen desde la interfaz de administración.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Además, &lt;strong&gt;los mejores CMS incluyen plugins&lt;/strong&gt; para poder sacar aún más partido a todas las funcionalidades&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Evidentemente, no son todo ventajas. Los principales &lt;strong&gt;inconvenientes&lt;/strong&gt; de usar un CMS son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Desafortunadamente, como el código fuente está disponible al público en general y &lt;em&gt;todas las aplicaciones tienen bugs&lt;/em&gt; de seguridad, hay algunos hackers malévolos por ahí que pueden averiguar cómo entrar en estas plataformas; por lo que la seguridad requerirá precauciones adicionales.&lt;/li&gt;
+  &lt;li&gt;Hacer que el sitio web se vea exactamente como queremos puede suponer desafío. Esto es cierto en algunos &lt;em&gt;frameworks&lt;/em&gt; de CMS más que otros, pero todos presentan un poco más de trabajo para definir un ‘estilo’ propio.&lt;/li&gt;
+  &lt;li&gt;El CMS almacena todo por separado, luego lo monta en el momento en que el cliente web solicita una página, lo que significa que pueden ser lentos; sin embargo, esto se puede mitigar mediante el uso de un almacenamiento en &lt;a href=&quot;https://es.wikipedia.org/wiki/Caché_web&quot;&gt;caché&lt;/a&gt; fuerte y eficaz y con una &lt;a href=&quot;https://es.wikipedia.org/wiki/Red_de_entrega_de_contenidos&quot;&gt;Red de Entrega de Contenidos&lt;/a&gt; (&lt;em&gt;Content Delivery Network&lt;/em&gt; - CDN).&lt;/li&gt;
+  &lt;li&gt;Limitaciones de funcionalidad: Hay algunas cosas que no se pueden hacer en un CMS, al menos no sin reescribir parte del código.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Los principales CMS &lt;em&gt;libres&lt;/em&gt; propiamente dichos son &lt;a href=&quot;https://wordpress.org/download/&quot;&gt;WordPress&lt;/a&gt;, &lt;a href=&quot;https://www.drupal.org/&quot;&gt;Drupal&lt;/a&gt; y &lt;a href=&quot;https://downloads.joomla.org/&quot;&gt;Joomla&lt;/a&gt;. Para una estadística más detallada podemos consultar la página de tendencias de &lt;a href=&quot;https://trends.builtwith.com/cms&quot;&gt;buildwith.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/image-20201019161414692.png&quot; alt=&quot;image-20201019161414692&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fuente: &lt;a href=&quot;https://cms2cms.com/uncategorized/what-cms-will-be-your-choice-in-2017-facts-and-figures/&quot;&gt;https://cms2cms.com/uncategorized/what-cms-will-be-your-choice-in-z017-facts-and-figures/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Existen otros tipos de aplicaciones orientadas a otros ámbitos, como por ejemplo al comercio electrónico. Entre ellas cabe destacar &lt;a href=&quot;https://woocommerce.com/&quot;&gt;WooCommerce&lt;/a&gt; y &lt;a href=&quot;https://magento.com/products/open-source&quot;&gt;Magento&lt;/a&gt; que se utilizan para la creación de tiendas virtuales. Podemos ver una estadística completa en &lt;a href=&quot;https://trends.builtwith.com/shop&quot;&gt;builtwith.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/image-20201019161452846.png&quot; alt=&quot;image-20201019161452846&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-servidores-web-y-de-aplicaciones&quot;&gt;5 Servidores web y de aplicaciones&lt;/h2&gt;
+
+&lt;p&gt;Una vez tenemos definida la funcionalidad de nuestra aplicación y las tecnologías de desarrollo que vamos a utilizar, hemos de escoger entre servir las peticiones a nuestra aplicación mediante un servidor web o mediante un servidor de aplicaciones. Esta decisión viene marcada, evidentemente, por el tipo de tecnología que hayamos escogido para implementar el lado del servidor. Si hemos escogido implementar nuestra aplicación con Java, usaremos un servidor de aplicaciones; mientras si la tecnología es PHP o ASP.NET escogeremos un servidor web.&lt;/p&gt;
+
+&lt;h3 id=&quot;51-servidor-web&quot;&gt;5.1 Servidor Web&lt;/h3&gt;
+
+&lt;p&gt;Un servidor Web controla el protocolo HTTP. Cuando el servidor Web recibe una solicitud mediante el &lt;strong&gt;protocolo HTTP&lt;/strong&gt;, responde con una respuesta HTTP, como el envío de una página HTML. Para procesar una solicitud, un servidor Web puede responder con una página o imagen HTML estática, enviar una redirección o delegar la generación de respuestas dinámicas a algún otro programa, como secuencias de comandos CGI, PHP, JSP (Servidores Java), servlets, ASPs (Active Server Pages), JavaScripts del lado del servidor, o alguna otra tecnología del lado del servidor.&lt;/p&gt;
+
+&lt;p&gt;Cualquiera que sea su propósito, tales programas del lado del servidor generan una respuesta, la mayoría de las veces en HTML, para ver en un navegador Web.&lt;/p&gt;
+
+&lt;p&gt;Este modelo de delegación de un servidor Web es bastante simple. Cuando una solicitud entra en el servidor Web, el servidor Web simplemente pasa la solicitud al programa más capaz de manejarla.&lt;/p&gt;
+
+&lt;p&gt;El servidor Web no proporciona ninguna funcionalidad más allá de simplemente proporcionar un entorno en el que el programa del lado del servidor puede ejecutar y devolver las respuestas generadas.&lt;/p&gt;
+
+&lt;p&gt;Como vemos en el siguiente gráfico de uso, el servidor más usado es &lt;a href=&quot;https://httpd.apache.org/&quot;&gt;Apache&lt;/a&gt;, seguido de &lt;a href=&quot;http://nginx.org/&quot;&gt;Nginx&lt;/a&gt;. Si desarrollamos una aplicación en ASP.NET, escogeríamos &lt;a href=&quot;https://www.iis.net/&quot;&gt;Internet Information Services (IIS)&lt;/a&gt; de Microsoft.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/image-20201019161629503.png&quot; alt=&quot;image-20201019161629503&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fuente: &lt;a href=&quot;https://trends.builtwith.com/web-server&quot;&gt;https://trends.builtwith.com/web-server&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://httpd.apache.org/images/httpd_logo_wide_new.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.nginx.com/resources/wiki/_static/img/logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;52-servidor-de-aplicaciones&quot;&gt;5.2 Servidor de aplicaciones&lt;/h3&gt;
+
+&lt;p&gt;Un servidor de aplicaciones expone la lógica empresarial a las aplicaciones cliente a través de &lt;strong&gt;varios protocolos&lt;/strong&gt;, posiblemente incluyendo HTTP.&lt;/p&gt;
+
+&lt;p&gt;Aunque un servidor Web se ocupa principalmente del envío de HTML para su visualización en un navegador Web, un servidor de aplicaciones proporciona acceso a la lógica empresarial para su uso por los programas de aplicación del cliente.&lt;/p&gt;
+
+&lt;p&gt;Como consecuencia del éxito del lenguaje de programación Java, el término servidor de aplicaciones usualmente hace referencia a un servidor de aplicaciones Java EE, aunque también hay servidores aplicaciones para PHP como &lt;a href=&quot;http://www.zend.com/en/products/zend_server&quot;&gt;Zend Server&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/image-20201019163053269.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fuente: https://www.jrebel.com/blog/2020-java-technology-report#application-server&lt;/p&gt;
+
+&lt;h2 id=&quot;6-despliegue-de-aplicaciones-web&quot;&gt;6 Despliegue de Aplicaciones web&lt;/h2&gt;
+
+&lt;p&gt;Cuando se crea una &lt;strong&gt;aplicación web&lt;/strong&gt; en nuestro ordenador suele hacerse en un &lt;strong&gt;Entorno de Desarrollo&lt;/strong&gt; (&lt;em&gt;Development Environment&lt;/em&gt;) al que sólo somos capaces de acceder desde ese ordenador.&lt;/p&gt;
+
+&lt;p&gt;Esto se conoce como entorno de &lt;strong&gt;desarrollo local o localhost&lt;/strong&gt;. Trabajando en localhost, el código de la aplicación se mantiene en nuestro ordenador y será accesible únicamente desde el mismo. Pero para hacer la aplicación web accesible a todo el mundo, se necesita ponerla a disposición en un ordenador público, accesible a través de una URL. A estos ordenadores se les denomina &lt;strong&gt;Servidores Web&lt;/strong&gt; y el entorno en el que se despliegan se denomina &lt;strong&gt;Entorno de Producción&lt;/strong&gt; (&lt;em&gt;Production Environment&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Estos servidores web son los encargados de ejecutar la aplicación web y entregar las páginas a cualquiera que las pida.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;El proceso de mover una aplicación web desde localhost a un servidor web se denomina &lt;strong&gt;Despliegue (&lt;/strong&gt;&lt;em&gt;&lt;strong&gt;Deployment&lt;/strong&gt;&lt;/em&gt;&lt;strong&gt;)&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Desde el momento que desplegamos una aplicación en un servidor web tenemos una versión que está públicamente disponible por cualquiera a través de la URL y todavía mantenemos la versión que corre en nuestro anfitrión local que continuamos retocando y probando. Periódicamente, deberemos actualizar (desplegar) el código al servidor web después de que hayamos probado los nuevos cambios en localhost e implementado procesos &lt;strong&gt;CD/CI&lt;/strong&gt; (Continuos Development/Continuos Integration)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/despliegue.svg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Este proceso no es tan sencillo como parece, sobre todo cuando hablamos de aplicaciones empresariales en las que participan gran cantidad de profesionales tanto en desarrollo como en sistemas, así como multitud de sistemas operativos, servidores de aplicaciones, API’s end-points, servidores web, contenedores, orquestadores, etc. &lt;strong&gt;De hacer todo este proceso de forma segura es de lo que trata este módulo profesional.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;un-caso-real-storyblocks&quot;&gt;Un caso real: Storyblocks&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Esta es una traducción del artículo &lt;a href=&quot;https://engineering.videoblocks.com/web-architecture-101-a3224e126947&quot;&gt;original&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG//uno.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;El diagrama de arriba es una representación bastante buena de la arquitectura en &lt;a href=&quot;https://es.storyblocks.com/&quot;&gt;Storyblocks&lt;/a&gt;. Si no eres un desarrollador web experimentado, es probable que lo encuentres complicado. El recorrido explicado debajo debería ser más accesible antes de profundizar en los detalles de cada componente.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Un usuario busca en Google “Strong Beautiful Fog And Sunbeams In The Forest”. El primer resultado es &lt;a href=&quot;https://www.storyblocks.com/stock-image/strong-beautiful-fog-and-sunbeams-in-the-forest-bxxg0dvxdzj6gt9ini&quot;&gt;Storyblocks&lt;/a&gt;, nuestro sitio principal de fotos y vectores. El usuario hace clic en el resultado que redirige su navegador a la página de detalles de la imagen. Entre bambalinas, el navegador del usuario envía una solicitud a un  servidor DNS para buscar cómo contactar a Storyblocks y luego envía la  solicitud.&lt;/p&gt;
+
+  &lt;p&gt;La  solicitud llega a nuestro balanceador de carga (&lt;strong&gt;load balancer&lt;/strong&gt;), que elige aleatoriamente uno de los 10 servidores web que tenemos para ejecutar el  sitio en ese momento para procesar la solicitud. El  servidor web busca información sobre la imagen de nuestro servicio de  almacenamiento en caché (&lt;strong&gt;cahing service&lt;/strong&gt;) y recupera los datos restantes de la base de  datos. Observamos que el perfil de color de la imagen aún no se ha  calculado, por lo que enviamos un trabajo de “perfil de color” a nuestra  cola de trabajos (&lt;strong&gt;job queue&lt;/strong&gt;), que nuestros servidores de trabajo procesarán de  forma asincrónica, actualizando la base de datos de forma adecuada con  los resultados.
+​  &lt;br /&gt;
+A  continuación, intentamos encontrar fotos similares enviando una  solicitud a nuestro servicio de búsqueda de texto (&lt;strong&gt;full text service&lt;/strong&gt;) completo utilizando el  título de la foto como entrada. El  usuario está registrado en Storyblocks como miembro, por lo que  buscamos la información de su cuenta en nuestro servicio de cuenta (&lt;strong&gt;account service&lt;/strong&gt;). Finalmente, lanzamos un evento de visualización de página a nuestra firehose de datos (&lt;strong&gt;data firehose&lt;/strong&gt;) para registrarlo en nuestro sistema de  almacenamiento en la nube (&lt;strong&gt;cloud storage&lt;/strong&gt;) y finalmente cargarlo en nuestro almacén de  datos (&lt;strong&gt;data warehouse&lt;/strong&gt;), que los analistas usan para ayudar a responder preguntas sobre el  negocio.&lt;/p&gt;
+
+  &lt;p&gt;​    El  servidor ahora muestra la vista como HTML y la envía al navegador del  usuario, pasando primero a través del equilibrador de carga. La  página contiene activos de Javascript y CSS que cargamos en nuestro  sistema de almacenamiento en la nube, que está conectado a nuestro &lt;strong&gt;CDN&lt;/strong&gt;,  por lo que el navegador del usuario contacta al CDN para recuperar el  contenido. Por último, el navegador muestra visiblemente la página para que el usuario la vea.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A continuación, te guiaré a través de cada componente, proporcionando una introducción de “101” a cada uno que te proporcionará un buen modelo mental para pensar a través de la arquitectura web en el futuro.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-dns&quot;&gt;1 DNS&lt;/h3&gt;
+
+&lt;p&gt;DNS significa “Servidor de nombres de dominio” (&lt;strong&gt;Domain Name Server&lt;/strong&gt;) y es una tecnología troncal que hace posible la red mundial. En el nivel más básico, DNS proporciona una búsqueda de clave / valor  desde un nombre de dominio (por ejemplo, &lt;a href=&quot;&quot;&gt;google.com&lt;/a&gt;) a una dirección IP  (por ejemplo, 85.129.83.120), que es necesaria para que tu computadora  enrute una solicitud al servidor. Analizando  los números de teléfono, la diferencia entre un nombre de dominio y una  dirección IP es la diferencia entre “llamar a John Doe” y “llamar al  201-867-5309”. Al igual que necesitabas una guía telefónica para buscar  el número de John en los viejos tiempos, necesita DNS para buscar la dirección IP de un dominio. Entonces, puedes pensar en DNS como el directorio telefónico de Internet.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-balanceador-de-carga-load-balancer&quot;&gt;2 Balanceador de carga (load balancer)&lt;/h3&gt;
+
+&lt;p&gt;Antes  de profundizar en los detalles sobre el equilibrio de carga, debemos  dar un paso atrás para analizar el escalado horizontal/vertical de la  aplicación. ¿Qué son y cuál es la diferencia? De una manera muy sencilla, la escala &lt;strong&gt;horizontal&lt;/strong&gt; significa que escala agregando &lt;strong&gt;más máquinas&lt;/strong&gt; a su grupo de  recursos mientras que la escala &lt;strong&gt;vertical&lt;/strong&gt; significa que escala  agregando &lt;strong&gt;más potencia&lt;/strong&gt; (por ejemplo, CPU, RAM) a una máquina existente.&lt;/p&gt;
+
+&lt;p&gt;En el desarrollo web,  (casi) siempre quieres escalar horizontalmente porque, para simplificar, las cosas se rompen. Los servidores se bloquean aleatoriamente. Las redes se degradan. Centros de datos completos ocasionalmente se desconectan. Tener más de un servidor te permite planificar las interrupciones para que su aplicación continúe ejecutándose. En otras palabras, tu aplicación es “tolerante a fallos” (&lt;strong&gt;fault tolerant&lt;/strong&gt;). En segundo lugar, la escala horizontal te permite acoplar al menos partes  diferentes de tu aplicación backend (servidor web, base de datos,  servicio X, etc.) ejecutando cada uno de ellos en servidores diferentes.  Por últimos, puede alcanzar una escala en la que ya no sea posible escalar verticalmente. No hay una computadora en el mundo lo suficientemente grande como para hacer todos los cálculos de su aplicación. Piensa en la plataforma de búsqueda de Google como un ejemplo por excelencia, aunque esto se aplica a las empresas a escalas mucho más pequeñas. Storyblocks, por ejemplo, ejecuta de 150 a 400 instancias de &lt;a href=&quot;https://aws.amazon.com/es/ec2/&quot;&gt;AWS EC2&lt;/a&gt; en cualquier momento dado. Sería un desafío proporcionar toda la potencia de cálculo a través de escalamiento vertical.&lt;/p&gt;
+
+&lt;p&gt;Ok, de vuelta a los balanceadores de carga. Son la salsa mágica que hace que el escalado horizontal sea posible. Enrutan  las solicitudes entrantes a uno de los muchos servidores de  aplicaciones que suelen ser clones / imágenes espejo entre sí y envían la respuesta desde el servidor de la aplicación al cliente. Cualquiera de ellos debe procesar la solicitud de la misma manera, por  lo que solo se trata de distribuir las solicitudes en el conjunto de servidores para que ninguno de ellos esté sobrecargado.&lt;/p&gt;
+
+&lt;p&gt;Eso es. Conceptualmente, los equilibradores de carga son bastante sencillos. Seguramente hay más complejidad internamente pero no hay necesidad de sumergirse para nuestra versión 101.&lt;/p&gt;
+
+&lt;p&gt;El siguiente artículo, profundiza en los &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/what-is-load-balancing&quot;&gt;balanceadores de carga&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-servidores-de-aplicaciones-web&quot;&gt;3 Servidores de aplicaciones web&lt;/h3&gt;
+
+&lt;p&gt;En un nivel alto, los servidores de aplicaciones web son relativamente simples de describir. Ejecutan la lógica de negocio principal que maneja la solicitud de un usuario y envía de vuelta HTML al navegador del usuario. Para hacer su trabajo, normalmente se comunican con una variedad de infraestructura de back-end, como bases de datos, capas de  almacenamiento en caché, colas de trabajos, servicios de búsqueda, otros  microservicios, colas de datos / registro y más. Como se  mencionó anteriormente, normalmente se tienen al menos dos y muchas veces más, conectados a un balanceador de carga para procesar las solicitudes  de los usuarios.&lt;/p&gt;
+
+&lt;p&gt;Debes saber que las implementaciones del servidor de aplicaciones requieren elegir un idioma específico  (Node.js, Ruby, PHP, Scala, Java, C # .NET, etc.) y un marco web MVC  para ese idioma (Express for Node.js, Ruby on Rails , Play para Scala, Laravel para PHP, Spring para Java, etc.). Sin embargo, profundizar en los detalles de estos lenguajes y frameworks está más allá del alcance de este artículo.&lt;/p&gt;
+
+&lt;h3 id=&quot;servidores-de-bases-de-datos&quot;&gt;Servidores de bases de datos&lt;/h3&gt;
+
+&lt;p&gt;Cada aplicación web moderna aprovecha una o más bases de datos para almacenar información. Las  bases de datos proporcionan formas de definir sus estructuras de datos, insertar nuevos datos, encontrar datos existentes, actualizar o eliminar datos existentes, realizar cálculos entre los datos, y más. En  la mayoría de los casos, los servidores de aplicaciones web hablan directamente con uno, al igual que los servidores de trabajo. Además, cada servicio backend puede tener su propia base de datos que está aislada del resto de la aplicación.&lt;/p&gt;
+
+&lt;p&gt;Aunque estoy evitando una inmersión profunda en tecnologías particulares para cada componente de la arquitectura, les estaría haciendo un flaco favor sin mencionar el siguiente nivel de detalle para  las bases de datos: SQL y NoSQL.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SQL&lt;/strong&gt;, significa “Structured Query Language” y se inventó en la década de 1970  para proporcionar una forma estándar de consulta de conjuntos de datos relacionales que era accesible para una amplia audiencia. Las bases de datos SQL almacenan datos en tablas que están vinculadas entre sí a través de ID comunes, generalmente enteros. Veamos un ejemplo simple de almacenamiento de información histórica de direcciones para los usuarios. Es posible que tengas dos tablas, usuarios y direcciones de usuario, vinculados entre sí por la identificación del usuario. La siguiente imagen muestra para una versión simplista. Las  tablas están vinculadas porque la columna &lt;em&gt;user_id&lt;/em&gt; en &lt;em&gt;user_addresses&lt;/em&gt; es una “clave externa” a la columna &lt;em&gt;id&lt;/em&gt; en la tabla de &lt;em&gt;users&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/sql.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Si no sabes mucho sobre SQL, te recomiendo que consultes un tutorial como el que puedes encontrar en Khan Academy &lt;a href=&quot;https://www.khanacademy.org/computing/computer-programming/sql&quot;&gt;aquí&lt;/a&gt;. Es omnipresente en el desarrollo web, por lo que al menos querrás saber los conceptos básicos para poder diseñar una aplicación de forma adecuada.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NoSQL&lt;/strong&gt;, que significa “No SQL”, es un conjunto de tecnologías de bases de datos más reciente que ha surgido  para manejar cantidades masivas de datos que pueden ser producidos por aplicaciones web de gran escala (la mayoría de las variantes de SQL no se escalan horizontalmente muy bien y solo pueden escalar verticalmente hasta un cierto punto). Si no sabes nada acerca de NoSQL, te recomiendo comenzar con algunas presentaciones de alto nivel como estas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.w3resource.com/mongodb/nosql.php&quot;&gt;https://www.w3resource.com/mongodb/nosql.php&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;[http://www.kdnuggets.com/2016/07/seven-steps-understanding-nosql-databases.html&quot;&gt;http://www.kdnuggets.com/2016/07/seven-steps-understanding-nosql-databases.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.mongodb.com/presentations/back-to-basics-webinar-1-introduction-to-nosql&quot;&gt;https://www.mongodb.com/presentations/back-to-basics-webinar-1-introduction-to-nosql&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;También debes tener en cuenta que, en general, la industria se está alineando con SQL como una interfaz incluso para las bases de datos NoSQL, por lo que realmente deberías aprender SQL si no lo sabes. Casi no hay forma de evitarlo estos días.&lt;/p&gt;
+
+&lt;h3 id=&quot;5-servicio-de-caché&quot;&gt;5 Servicio de caché&lt;/h3&gt;
+
+&lt;p&gt;Un  servicio de almacenamiento en caché proporciona un almacén de datos de  clave/valor simple que permite guardar y buscar información en un tiempo cerca de O(1) (esta notación describe el tiempo en ejecutar un proceso en función de los datos. En este caso, el 1 indica que es un tiempo constante, independientemente de la cantidad de claves que haya el el conjunto) . Las  aplicaciones generalmente aprovechan los servicios de almacenamiento en caché para guardar los resultados de cálculos costosos, de modo que es posible recuperar los resultados de la memoria caché en lugar de volver a calcularlos la próxima vez que se necesiten. Una  aplicación puede almacenar en caché los resultados de una consulta de base de datos, llamadas a servicios externos, HTML para una URL  determinada y muchas más. Aquí hay algunos ejemplos de aplicaciones del mundo real:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Google almacena en caché los resultados de búsqueda para consultas  de búsqueda comunes como “perro” o “Taylor Swift” en lugar de volver a  computarlos cada vez&lt;/li&gt;
+  &lt;li&gt;Facebook guarda en caché gran parte de la información que ves cuando inicias sesión, como datos de publicaciones, amigos, etc. Lee &lt;a href=&quot;https://medium.com/@shagun/scaling-memcache-at-facebook-1ba77d71c082&quot;&gt;aquí&lt;/a&gt; un artículo detallado sobre la tecnología de caché de Facebook.&lt;/li&gt;
+  &lt;li&gt;Storyblocks almacena en caché el resultado HTML de la representación de React del lado del servidor, resultados de búsqueda, resultados de escritura anticipada y más.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Las dos tecnologías de servidor de caché más extendidas son &lt;strong&gt;Redis&lt;/strong&gt; y &lt;strong&gt;Memcache&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;6-colas-de-trabajos-y-servidores&quot;&gt;6 Colas de trabajos y servidores&lt;/h3&gt;
+
+&lt;p&gt;La  mayoría de las aplicaciones web necesitan realizar un trabajo asincrónico entre bastidores que no está directamente asociado con la  respuesta a la solicitud de un usuario. Por ejemplo, Google necesita rastrear e indexar todo Internet para poder devolver resultados de búsqueda. No hace esto cada vez que buscas. En cambio, rastrea la web de forma asincrónica, actualizando los índices de búsqueda a lo largo del camino.&lt;/p&gt;
+
+&lt;p&gt;Si  bien hay diferentes arquitecturas que permiten que se realice un trabajo asíncrono, la más ubicua es lo que llamaré la arquitectura de  “cola de trabajos”. Consta de dos componentes: una cola de “trabajos” que deben ejecutarse y uno o más servidores de trabajos (a menudo llamados “trabajadores”)  que ejecutan los trabajos en la cola.&lt;/p&gt;
+
+&lt;p&gt;Las colas de trabajos almacenan una lista de trabajos que deben ejecutarse de forma asincrónica. Las  más simples son las colas de primero en entrar, primero en salir (&lt;strong&gt;FIFO: First In First Out&lt;/strong&gt;), aunque la mayoría de las aplicaciones terminan necesitando algún tipo de sistema de colas de prioridad. Cuando la aplicación necesita que se ejecute un trabajo, ya sea en algún tipo de programa regular o según lo determinen las acciones del usuario, simplemente agrega el trabajo adecuado a la cola.&lt;/p&gt;
+
+&lt;p&gt;Storyblocks, por ejemplo, aprovecha una cola de trabajos para potenciar una gran parte del trabajo detrás de escena requerido para respaldar nuestros mercados. Ejecutamos trabajos para codificar vídeos y fotos, procesar CSV para el etiquetado  de metadatos, agregar estadísticas de usuario, enviar correos  electrónicos de restablecimiento de contraseña y más. Comenzamos con una cola FIFO simple aunque nos actualizamos a una cola  de prioridad para garantizar que las operaciones urgentes como el envío  de correos electrónicos de restablecimiento de contraseña se completaran lo antes posible.&lt;/p&gt;
+
+&lt;p&gt;Los servidores de trabajos procesan trabajos. Realizan  una consulta en la cola de trabajos para determinar si hay trabajo por hacer y, si los hay, extraen un trabajo de la cola y lo ejecutan. Los  idiomas subyacentes y las opciones de frameworks son tan numerosos como para los servidores web, por lo que no profundizaré en los detalles de  este artículo.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, en PHP se puede utilizar &lt;a href=&quot;https://bernard.readthedocs.io/&quot;&gt;Bernard&lt;/a&gt; y se pueden implementar colas por ejemplo con &lt;a href=&quot;https://beanstalkd.github.io/&quot;&gt;beanstalkd&lt;/a&gt; o &lt;a href=&quot;https://www.rabbitmq.com/&quot;&gt;RabbitMQ&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;7-servicio-de-búsqueda-de-texto-completo&quot;&gt;7 Servicio de búsqueda de texto completo&lt;/h3&gt;
+
+&lt;p&gt;Muchas,  si no la mayoría, de las aplicaciones web admiten algún tipo de función  de búsqueda en la que un usuario proporciona una entrada de texto (a menudo llamada “consulta o query”) y la aplicación devuelve los resultados más “relevantes”. La tecnología que alimenta esta funcionalidad  se conoce como “&lt;a href=&quot;https://en.wikipedia.org/wiki/Full-text_search&quot;&gt;búsqueda de texto completo&lt;/a&gt;” (&lt;strong&gt;full-text search&lt;/strong&gt;), que aprovecha un &lt;a href=&quot;https://en.wikipedia.org/wiki/Inverted_index&quot;&gt;índice invertido&lt;/a&gt; para buscar rápidamente documentos que contienen las palabras  clave de consulta.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/fulltext.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;El ejemplo muestra cómo tres títulos de documentos se convierten en un índice invertido para facilitar la búsqueda rápida desde una palabra clave específica a los documentos con esa palabra clave en el título. Ten en cuenta que las palabras comunes como “en”, “el”, “con”, etc. (llamadas palabras de finalización - &lt;strong&gt;stop words&lt;/strong&gt;-) generalmente no se incluyen en un índice invertido.&lt;/p&gt;
+
+&lt;p&gt;Si bien es posible realizar búsquedas de texto completo directamente desde algunas bases de datos (por ejemplo, MySQL admite la búsqueda de texto completo), es típico ejecutar un “servicio de búsqueda” separado que computa y almacena el índice invertido y proporciona una interfaz de consulta. La plataforma de búsqueda de texto completo más popular en la actualidad es &lt;a href=&quot;https://www.elastic.co/products/elasticsearch&quot;&gt;Elasticsearch&lt;/a&gt;, aunque hay otras opciones como &lt;a href=&quot;http://sphinxsearch.com/&quot;&gt;Sphinx&lt;/a&gt; o &lt;a href=&quot;http://lucene.apache.org/solr/features.html&quot;&gt;Apache Solr&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;8-servicios&quot;&gt;8 Servicios&lt;/h3&gt;
+
+&lt;p&gt;Una vez que  una aplicación alcanza cierta escala, es probable que existan ciertos  “servicios” que se diseñen para ejecutarse como aplicaciones separadas. No están expuestos al mundo externo, pero la aplicación y otros servicios interactúan con ellos. Storyblocks, por ejemplo, tiene varios servicios operacionales y planificados:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;El servicio de cuenta almacena datos de usuario en todos nuestros sitios,  lo que nos permite ofrecer oportunidades de venta cruzada y crear una  experiencia de usuario más unificada.&lt;/li&gt;
+  &lt;li&gt;El servicio de contenido almacena metadatos para todo nuestro contenido de vídeo, audio e imagen. También proporciona interfaces para descargar el contenido y ver el historial de descargas.&lt;/li&gt;
+  &lt;li&gt;El servicio de pago proporciona una interfaz para facturar tarjetas de crédito de clientes.&lt;/li&gt;
+  &lt;li&gt;El servicio HTML → PDF proporciona una interfaz simple que acepta HTML y devuelve un documento PDF correspondiente.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;9-datos&quot;&gt;9 Datos&lt;/h3&gt;
+
+&lt;p&gt;Hoy, las compañías viven y mueren en base en que saben aprovechar  los datos. Casi todas las aplicaciones actualmente, una vez que alcanzan cierta escala, aprovechan un flujo de datos o tubería (&lt;strong&gt;data pipeline&lt;/strong&gt;) para garantizar que los datos se puedan recopilar, almacenar y analizar. Una tubería típica tiene tres etapas principales:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;La aplicación envía datos, generalmente eventos sobre las interacciones del usuario, a los datos “firehose”, que proporciona una interfaz de transmisión para ingerir y procesar los datos. A menudo, los datos brutos se transforman o aumentan y pasan a otro firehose. &lt;a href=&quot;https://aws.amazon.com/es/kinesis/&quot;&gt;AWS Kinesis&lt;/a&gt; y &lt;a href=&quot;https://kafka.apache.org/&quot;&gt;Kafka&lt;/a&gt; son las dos tecnologías más comunes para este propósito.&lt;/li&gt;
+  &lt;li&gt;Los datos brutos (&lt;strong&gt;raw data&lt;/strong&gt;), así como los datos finales transformados/aumentados se guardan en el almacenamiento en la nube. AWS Kinesis proporciona una configuración llamada “firehose” que hace que guardar los datos sin formato en su almacenamiento en la nube (S3) sea extremadamente fácil de configurar.&lt;/li&gt;
+  &lt;li&gt;Los datos transformados / aumentados a menudo se cargan en un almacén de datos para su análisis. Usamos AWS Redshift, al igual que una porción grande y en crecimiento del mundo de las startups, aunque las compañías más grandes a menudo usan Oracle u otras tecnologías de almacenamiento patentadas. Si los conjuntos de datos son lo suficientemente grandes, puede ser necesaria una tecnología NoSQL MapReduce similar a &lt;a href=&quot;https://hadoop.apache.org/&quot;&gt;Hadoop&lt;/a&gt; para el análisis.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;10-almacenamiento-en-la-nube&quot;&gt;10 Almacenamiento en la nube&lt;/h3&gt;
+
+&lt;p&gt;“El almacenamiento en la nube es una forma simple y escalable de almacenar, acceder y compartir datos a través de Internet” según AWS. Puedes usarlo para almacenar y acceder más o menos a cualquier cosa que almacenes en un sistema de archivos local con los beneficios de poder interactuar con él a través de una API RESTful a través de HTTP. La oferta S3 de Amazon es de lejos el almacenamiento en la nube más popular disponible en la actualidad y en el que confiamos extensamente aquí en Storyblocks para almacenar nuestros activos de vídeo, foto y audio, nuestro CSS y Javascript, nuestros datos de eventos de usuario y mucho más.&lt;/p&gt;
+
+&lt;h3 id=&quot;11-cdn&quot;&gt;11 CDN&lt;/h3&gt;
+
+&lt;p&gt;CDN significa “Content Delivery Network” y la tecnología proporciona una forma de servir activos (&lt;strong&gt;assets&lt;/strong&gt;) como HTML estático, CSS, Javascript e imágenes en la web mucho más rápido que servirlos desde un solo servidor de origen. Funciona distribuyendo el contenido a través de muchos servidores de todo el mundo para que los usuarios terminen descargando activos desde su servidor más cercano en lugar del servidor de origen. Por ejemplo, en la imagen siguiente, un usuario en España solicita una página web desde un sitio con servidores de origen en Nueva York, pero los activos estáticos para la página se cargan desde un servidor “&lt;strong&gt;edge&lt;/strong&gt;” de CDN en Inglaterra, evitando muchas peticiones HTTP transatlánticas lentas.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/AWCG/cdn.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;12-desde-el-punto-de-vista-de-la-seguridad&quot;&gt;12 Desde el punto de vista de la seguridad&lt;/h3&gt;
+
+&lt;p&gt;Todos estos servicios son potencialmente atacables por un hacker. Sin duda alguna es seguro que van a tener algún fallo de seguridad en algún momento de su ciclo de vida. Y en este diagrama no se habla de la infraestructura necesaria para implementar el ciclo &lt;strong&gt;CD/CI&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Seguro que ahora ya comprendemos la necesidad de securizar todo nuestro proceso de puesta en producción.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Credits.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Víctor Ponz victorponz@gmail.com&lt;/p&gt;
+
+&lt;p&gt;Este material está licenciado bajo una licencia &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;Creative Commons, Attribution-NonCommercial-ShareAlike&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Adaptado de los siguientes materiales&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Antonio LaTorre (atorre@fi.upm.es)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://laurel.datsi.fi.upm.es/_media/docencia/asignaturas/daw/pub/2015_2016/daw-tema1.1.pdf&quot;&gt;http://laurel.datsi.fi.upm.es/_media/docencia/asignaturas/daw/pub/2015_2016/daw-tema1.1.pdf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://laurel.datsi.fi.upm.es/_media/docencia/asignaturas/daw/pub/2015_2016/daw-tema1.2.pdf&quot;&gt;http://laurel.datsi.fi.upm.es/_media/docencia/asignaturas/daw/pub/2015_2016/daw-tema1.2.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Adobe. Aspectos básicos de las aplicaciones web&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://helpx.adobe.com/es/dreamweaver/using/web-applications.html&quot;&gt;https://helpx.adobe.com/es/dreamweaver/using/web-applications.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;App server, Web server: What’s the difference? | JavaWorld&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.javaworld.com/article/2077354/learn-java/app-server-web-server-what-s-the-difference.html&quot;&gt;https://www.javaworld.com/article/2077354/learn-java/app-server-web-server-what-s-the-difference.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Otros materiales&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.hongkiat.com/blog/static-site-generators/&quot;&gt;https://www.hongkiat.com/blog/static-site-generators/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.yeeply.com/blog/6-tipos-desarrollo-de-aplicaciones-web/&quot;&gt;https://www.yeeply.com/blog/6-tipos-desarrollo-de-aplicaciones-web/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.sitepoint.com/front-end-tooling-trends-2017/&quot;&gt;https://www.sitepoint.com/front-end-tooling-trends-2017/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.antevenio.com/blog/2017/06/los-6-mejores-gestores-de-contenido-cms/&quot;&gt;http://www.antevenio.com/blog/2017/06/los-6-mejores-gestores-de-contenido-cms&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://glasscanopy.com/website-development-pros-cons-using-cms/&quot;&gt;http://glasscanopy.com/website-development-pros-cons-using-cms/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/&quot;&gt;https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://engineering.videoblocks.com/web-architecture-101-a3224e126947&quot;&gt;https://engineering.videoblocks.com/web-architecture-101-a3224e126947&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Imagen de cabecera obtenida en:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.freepik.es/vectores/dibujos-animados&quot;&gt;Vector de Dibujos animados creado por&lt;/a&gt; &lt;a href=&quot;https://www.freepik.es/vectores/tecnologia&quot;&gt;Vector de Tecnología creado por upklyak - www.freepik.es&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="dwes" /><summary type="html"></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2020/11/11/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-11-11T17:10:03+01:00</published><updated>2020-11-11T17:10:03+01:00</updated><id>http://localhost:4000/jekyll/update/2020/11/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2020/11/11/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Jekyll</title><link href="http://localhost:4000/dwes/2019/01/23/jekyll.html" rel="alternate" type="text/html" title="Jekyll" /><published>2019-01-23T00:00:00+01:00</published><updated>2019-01-23T00:00:00+01:00</updated><id>http://localhost:4000/dwes/2019/01/23/jekyll</id><content type="html" xml:base="http://localhost:4000/dwes/2019/01/23/jekyll.html">&lt;h1 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h1&gt;
+&lt;h2 id=&quot;uno&quot;&gt;uno&lt;/h2&gt;
+&lt;h3 id=&quot;dos&quot;&gt;dos&lt;/h3&gt;
+&lt;h4 id=&quot;tres&quot;&gt;tres&lt;/h4&gt;
+&lt;h5 id=&quot;cuatro&quot;&gt;cuatro&lt;/h5&gt;
+&lt;h6 id=&quot;cinco&quot;&gt;cinco&lt;/h6&gt;
+
+&lt;p&gt;Jekyll es un tipo de CMS especial. Pertenece a la categoría de &lt;a href=&quot;https://medium.com/tech-tajawal/why-headless-cms-is-becoming-so-popular-57d262b1e096&quot;&gt;Headless CMS&lt;/a&gt; también llamados &lt;strong&gt;Static Site Generator&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;En este tipo de CMS no necesitamos un lenguaje de programación en la parte del servidor, porque todo el contenido es estático. Ahora bien, si el contenido es estático, ¿dónde está la ventaja?&lt;/p&gt;
+
+&lt;p&gt;Pues la ventaja viene porque estos CMS generan contenido estático a partir de ficheros fuente, sin necesidad de tener ni tan siquiera una base de datos.&lt;/p&gt;
+
+&lt;p&gt;Este contenido estático, pero generado dinámicamente, es el que compone nuestra aplicación.&lt;/p&gt;
+
+&lt;p&gt;Cuáles son las &lt;a href=&quot;https://learn.cloudcannon.com/jekyll/why-use-a-static-site-generator/&quot;&gt;ventajas&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Menos complejos&lt;/li&gt;
+  &lt;li&gt;Mayor velocidad&lt;/li&gt;
+  &lt;li&gt;Mayor seguridad&lt;/li&gt;
+  &lt;li&gt;Mayor escalabilidad&lt;/li&gt;
+  &lt;li&gt;Control de versiones&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Top ten&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://www.creativebloq.com/features/10-best-static-site-generators&lt;/li&gt;
+  &lt;li&gt;https://www.netlify.com/blog/2017/05/25/top-ten-static-site-generators-of-2017/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Más información acerca de Headless CMS&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;https://jamstack.org/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;https://www.staticgen.com/&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para nuestra página personal de Github vamos a usar &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;, pues es mantenido por el propio Github y es soportado nativamente.&lt;/p&gt;
+
+&lt;h2 id=&quot;instalación&quot;&gt;Instalación&lt;/h2&gt;
+
+&lt;p&gt;Jekyll está basado en &lt;a href=&quot;http://www.ruby-lang.org/en/&quot;&gt;Ruby&lt;/a&gt;, por lo que el primer paso es instalar Ruby&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby-full build-essential zlib1g-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Después hay que configurar nuestras variables de entorno para no tener que usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt; al instalar &lt;strong&gt;gemas&lt;/strong&gt; (las gemas son como los paquetes de &lt;strong&gt;composer&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'# Install Ruby Gems to ~/gems'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export GEM_HOME=&quot;$HOME/gems&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PATH=&quot;$HOME/gems/bin:$PATH&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y finalmente instalar, &lt;strong&gt;Jekyll&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Más información en:&lt;/p&gt;
+
+&lt;p&gt;https://jekyllrb.com/docs/installation/ubuntu/&lt;/p&gt;
+
+&lt;h2 id=&quot;primera-aplicación&quot;&gt;Primera aplicación&lt;/h2&gt;
+
+&lt;p&gt;Primero vamos a clonar nuestro repositorio personal de &lt;strong&gt;GitHub&lt;/strong&gt; en un directorio local.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;tu-usuario.github.io.git 
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;tu-usuario.github.io.git 
+git clone https://github.com/tu-usuario/tu-usuario.github.io.git &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y creamos nuestra primera página:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Home&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Hello World!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;build&quot;&gt;Build&lt;/h2&gt;
+
+&lt;p&gt;Jekyll es un generador de sitios estáticos, por lo que necesitamos que Jekyll construya el sitio antes de poder verlo. Hay dos comandos que puedes ejecutar en la raíz de tu sitio para construirlo:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt;: crea el sitio y genera un sitio estático en un directorio llamado &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;: hace lo mismo, excepto que se reconstruye cada vez que se realiza un cambio y ejecuta un servidor web local en http://localhost:4000.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547636039260.png&quot; alt=&quot;1547636039260&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Parece que no hace mucho, ya que sólo ha copiado los archivos al directorio &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt;, pero ya veremos que puede hacer muchas más cosas.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547636528231.png&quot; alt=&quot;localhost&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Como queremos actualizar nuestra página personal, vamos a hacerlo directamente con &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt;. En el caso de subir la web a &lt;strong&gt;GitHub&lt;/strong&gt;, hemos de ignorar el directorio &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt;, mediante &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; ya que es el propio &lt;strong&gt;GitHub&lt;/strong&gt; quien generará automáticamente nuestra web.&lt;/p&gt;
+
+&lt;p&gt;Y desplegamos nuestra primera versión haciendo un &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;push&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add .gitignore
+git add index.html
+git commit -m &quot;jekyll&quot;
+git push
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547636457711.png&quot; alt=&quot;Github Web Pages&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Y ahora vistamos https://victorponz.github.io/&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547636567403.png&quot; alt=&quot;1547636567403&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;GitHub&lt;/strong&gt; se ha encargado de todo y ha generado la página personal.&lt;/p&gt;
+
+&lt;h2 id=&quot;liquid&quot;&gt;Liquid&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://shopify.github.io/liquid/&quot;&gt;Liquid&lt;/a&gt; es donde &lt;strong&gt;Jekyll&lt;/strong&gt; comienza a ponerse más interesante. &lt;strong&gt;Liquid&lt;/strong&gt; es un lenguaje de plantillas que tiene tres partes principales: objetos, etiquetas y filtros.&lt;/p&gt;
+
+&lt;p&gt;En esta página tenéis información de cómo usar &lt;a href=&quot;https://jekyllrb.com/docs/step-by-step/02-liquid/&quot;&gt;Liquid&lt;/a&gt; en Jekyll.&lt;/p&gt;
+
+&lt;p&gt;Ahora cambia &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+---
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Home&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;hello world!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547636874493.png&quot; alt=&quot;Liquid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hemos usado el primer objeto, la parte que va entre `` de Liquid y el primer filtro: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downcase&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;front-matter&quot;&gt;Front Matter&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Front Matter&lt;/em&gt; es un fragmento de &lt;a href=&quot;https://yaml.org/&quot;&gt;YAML&lt;/a&gt; que se encuentra entre dos líneas de tres puntos en la parte superior de un archivo. Front Matter se utiliza para establecer variables para la página, por ejemplo:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+my_number: 5
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Estas variables son accesibles en &lt;strong&gt;Liquid&lt;/strong&gt; mediante la variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, para imprimir esta variable en una plantilla:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+{% this %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Vamos a usar una variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;title&lt;/code&gt;en nuestro Front matter&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Home&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doctype&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;De momento, tampoco ha cambiado nada. Luego le daremos más funcionalidad.&lt;/p&gt;
+
+&lt;h2 id=&quot;layouts&quot;&gt;Layouts&lt;/h2&gt;
+
+&lt;p&gt;Si queremos hacer una nueva página, por ejemplo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.html&lt;/code&gt; podríamos copiar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; y modificarlo.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+title: About
+---
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Jekyll&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;About page&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This page tells you a little bit about me.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Pero claro, ¿dónde está la ventaja de usar &lt;strong&gt;Jekyll&lt;/strong&gt; si todo lo hacemos de esta forma?&lt;/p&gt;
+
+&lt;p&gt;La respuesta está en los &lt;strong&gt;Layouts&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Primero, creamos un directorio llamado &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; y creamos un nuevo archivo llamado &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default.html&lt;/code&gt; con el siguiente código:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Jekyll&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Es parecido al código a anterior, pero no tiene Front matter y el contenido de la página está reemplazado con la variable Liquid &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;content&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Para que &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; use este layout, reemplaza todo el contenido por&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;default&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Home&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;hello world!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y reemplaza el código de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.html&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;default&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;About&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;About page&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This page tells you a little bit about me.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;includes&quot;&gt;Includes&lt;/h2&gt;
+
+&lt;p&gt;Ahora tenemos dos páginas pero no hay forma de navegar entre ellas.&lt;/p&gt;
+
+&lt;p&gt;Para ello usamos el tag &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include&lt;/code&gt; y colocamos el código en un archivo dentro del directorio &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Creamos nuestro primer include en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/navigation.html&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Home&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/about.html&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;About&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y ahora lo usamos en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default.html&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Jekyll&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;topnav&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;myTopnav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Home&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/about.html&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;About&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/blog.html&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Blog&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;javascript:void(0);&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;showMenu()&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-bars&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+
+
+    
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547641761185.png&quot; alt=&quot;navigation&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resaltar-la-página-actual&quot;&gt;Resaltar la página actual&lt;/h3&gt;
+
+&lt;p&gt;Usamos una de las variables que proporciona Jekyll automáticamente: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.url&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    Home
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/about.html&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    About
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547642695047.png&quot; alt=&quot;page.url&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Todavía hay mucha repetición aquí si desea agregar un nuevo elemento a la navegación o cambiar el color de resaltado. En el siguiente paso abordaremos esto.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-files&quot;&gt;Data Files&lt;/h2&gt;
+
+&lt;p&gt;Jekyll admite la carga de datos desde archivos YAML, JSON y CSV ubicados en un directorio &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data&lt;/code&gt;. Los archivos de datos son una excelente manera de separar el contenido del código fuente para hacer que el sitio sea más fácil de mantener.&lt;/p&gt;
+
+&lt;p&gt;En este paso, almacenaremos el contenido de la navegación en un archivo de datos y luego iteraremos sobre él en el include de navegación.&lt;/p&gt;
+
+&lt;p&gt;YAML es el formato que más común en el ecosistema de Ruby. Lo usaremos para almacenar una serie de elementos de navegación, cada uno con un nombre y un enlace.&lt;/p&gt;
+
+&lt;p&gt;Crea un archivo de datos para la navegación en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/navigation.yml&lt;/code&gt; con lo siguiente:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Home&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;About&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/about.html&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jekyll pone este archivo de datos a tu disposición en la variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.data.navigation&lt;/code&gt;. En lugar de mostrar cada enlace en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/navigation.html&lt;/code&gt;, ahora podemos iterar sobre el archivo de datos:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      Home
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/about.html&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      About
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/blog.html&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      Blog
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Si ahora añadimos una nueva entrada en navigation.yml, automáticamente creará el nuevo enlace:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Home&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;About&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/about.html&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Nueva&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/nueva.html&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547743023998.png&quot; alt=&quot;Menú con YAML&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;assetsjekyll&quot;&gt;/assets/jekyll&lt;/h2&gt;
+
+&lt;p&gt;El uso de CSS, JS, imágenes y otros recursos es sencillo con Jekyll. Colócalos en la carpeta de tu sitio y se copiarán al sitio creado.&lt;/p&gt;
+
+&lt;p&gt;Los sitios de Jekyll a menudo usan esta estructura para mantener los activos organizados&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.
+├── /assets/jekyll
+|   ├── css
+|   ├── images
+|   └── js
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;sass&quot;&gt;SASS&lt;/h3&gt;
+
+&lt;p&gt;Los estilos en línea utilizados en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/navigation.html&lt;/code&gt; no son las mejores prácticas, vamos a diseñar la página actual con una clase css.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Home&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/about.html&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;About&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/blog.html&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Blog&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Puedes usar un archivo CSS estándar para el estilo, vamos a ir un paso más allá usando &lt;a href=&quot;https://sass-lang.com/&quot;&gt;Sass&lt;/a&gt;. Sass es una fantástica extensión de CSS incluida directamente en Jekyll.&lt;/p&gt;
+
+&lt;p&gt;Primero crea un archivo Sass en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;//assets/jekyll/css/styles.scss&lt;/code&gt; con el siguiente contenido:&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El front matter vacío en la parte superior le dice a Jekyll que necesita procesar el archivo.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@import &quot;main&quot;&lt;/code&gt; le dice a Sass que busque un archivo llamado &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.scss&lt;/code&gt; en el directorio sass (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass/&lt;/code&gt; por defecto).&lt;/p&gt;
+
+&lt;p&gt;Así que creamos el archivo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass/main.scss&lt;/code&gt; con el siguiente contenido:&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.current&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Deberemos hacer referencia a la hoja de estilo en el diseño.&lt;/p&gt;
+
+&lt;p&gt;Abre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts/default.html&lt;/code&gt; y agrega la hoja de estilo al  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Jekyll&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//assets/jekyll/css/styles.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;topnav&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;myTopnav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Home&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/about.html&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;About&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/blog.html&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Blog&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;javascript:void(0);&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;showMenu()&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-bars&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+
+
+    
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547743756709.png&quot; alt=&quot;scss&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;blogging&quot;&gt;Blogging&lt;/h2&gt;
+
+&lt;p&gt;Quizás te preguntes cómo puedes tenes un blog sin una base de datos. En el verdadero estilo Jekyll, los blogs solo funcionan con archivos de texto.&lt;/p&gt;
+
+&lt;h3 id=&quot;posts&quot;&gt;Posts&lt;/h3&gt;
+
+&lt;p&gt;Las publicaciones de blog se almacenan en una carpeta llamada _posts. El nombre de archivo de las publicaciones tiene un formato especial: la fecha de publicación (yyyy-mm-dd), luego un título, seguido de una extensión.&lt;/p&gt;
+
+&lt;p&gt;Crea tu primera publicación en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts/2019-01-17-primera-entrada.md&lt;/code&gt; con el siguiente contenido:&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;victor&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;gh&quot;&gt;# Esta es mi primera entrada de blog&lt;/span&gt;
+Está en formato markdown, por lo se puede usar cualquier editor de markdown como typora o instalar una extensión para Visual Studio Code.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;http://jmcglone.com/guides/github-pages/&lt;/p&gt;
+
+&lt;p&gt;https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site-with-the-jekyll-theme-chooser/&lt;/p&gt;
+
+&lt;h3 id=&quot;layout&quot;&gt;Layout&lt;/h3&gt;
+
+&lt;p&gt;El layout &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt; no existe, así que vamos a crearlo con el siguiente contenido:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: default
+---
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Jekyll&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;23 Jan 2019 - &lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Este es un ejemplo de herencia de diseño. El layout &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt; genera el título, la fecha, el autor y el cuerpo del contenido, que está incluido en el diseño predeterminado (hereda de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;También aplica el filtro &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date_to_string&lt;/code&gt;, que da formato a una fecha en un forma más agradable.&lt;/p&gt;
+
+&lt;h3 id=&quot;listas-de-posts&quot;&gt;Listas de Posts&lt;/h3&gt;
+
+&lt;p&gt;Actualmente no hay manera de navegar a la publicación del blog. Normalmente, un blog tiene una página que enumera todas las publicaciones, hagámoslo a continuación.&lt;/p&gt;
+
+&lt;p&gt;Jekyll pone las publicaciones disponibles en la variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.posts&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Crea &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blog.html&lt;/code&gt; en tu raíz (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/blog.html&lt;/code&gt;) con el siguiente contenido:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Blog&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Latest&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Posts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/dwes/2020/11/16/Arquitectura-web-Conceptos-generales.html&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Arquitectura&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Web&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Conceptos&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Generales&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/img/AWCG/2187.jpg&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;18824957&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/jekyll/update/2020/11/11/welcome-to-jekyll.html&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Welcome&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;You&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;find&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;language-plaintext highlighter-rouge&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_posts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Go&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ahead&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;see&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;changes&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;You&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rebuild&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;many&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;different&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ways&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;but&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;common&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;way&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;language-plaintext highlighter-rouge&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serve&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;which&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;launches&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;web&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regenerates&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/dwes/2019/01/23/jekyll.html&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;jekyll&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;uno&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uno&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;dos&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tres&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h5&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;cuatro&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuatro&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h6&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;cinco&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cinco&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hay algunas cosas a tener en cuenta con este código:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Jekyll establece automáticamente &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post.url&lt;/code&gt; en la ruta de salida de la publicación.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post.title&lt;/code&gt; se extrae del nombre de archivo de la publicación y se puede anular configurando el título en el front matter.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post.excerpt&lt;/code&gt; es el primer párrafo de contenido por defecto&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;También necesitamos una forma de navegar a esta página a través de la navegación principal. Abre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/navigation.yml&lt;/code&gt; y agrega una entrada para la página del blog:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Home&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;About&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/about.html&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Blog&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/blog.html&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y este es el resultado:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547745125732.png&quot; alt=&quot;Lista de blogs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547745202892.png&quot; alt=&quot;Entrada de blog&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;más-posts&quot;&gt;Más posts&lt;/h3&gt;
+
+&lt;p&gt;Crear una nueva entrada es tan sencillo como crear otro archivo en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts/2019-01-17-headless-cms.md&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;victor&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;¿Qué es un Headless CMS?&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;excerpt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;En esta entrada se explica qué es un Headless CMS&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;gh&quot;&gt;# Headless CMS&lt;/span&gt;
+A headless content management system, or headless CMS, is a back-end only content management system (CMS) built from the ground up as a content repository that makes content accessible via a RESTful API for display on any device.
+
+The term “headless” comes from the concept of chopping the “head” (the front end, i.e. the website) off the “body” (the back end, i.e. the content repository). 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547745581454.png&quot; alt=&quot;1547745581454&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547745619372.png&quot; alt=&quot;1547745619372&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;actualizar-nuestro-repo&quot;&gt;Actualizar nuestro repo&lt;/h2&gt;
+
+&lt;p&gt;Ya sólo nos queda subir los cambios a &lt;strong&gt;GitHub&lt;/strong&gt; y ya tenemos nuestra página personal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547746402189.png&quot; alt=&quot;1547746402189&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Una vez subimos los archivos, GitHub tiene que construir el sitio mediante Jekyll. Así que a veces no es automático.&lt;/p&gt;
+
+&lt;p&gt;Para ver el estado de vuestro sitio, id a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Settings&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547746473642.png&quot; alt=&quot;1547746473642&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En este caso dice:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Your GitHub Pages site is currently being built from the master branch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A veces tarda bastante en actualizar, pero está en ello!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547803981952.png&quot; alt=&quot;1547803981952&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;uso-de-github-pages-sin-jekyll&quot;&gt;Uso de GitHub Pages sin Jekyll&lt;/h2&gt;
+
+&lt;p&gt;No es necesario realizar nuestro sitio con &lt;strong&gt;Jekyll&lt;/strong&gt;. Lo podemos realizar con cualquier &lt;strong&gt;Headless CMS&lt;/strong&gt; e incluso hacerlo a la antigua usanza.&lt;/p&gt;
+
+&lt;p&gt;Otra opción posible es hacerlo con &lt;strong&gt;Jekyll&lt;/strong&gt; pero que nuestro repositorio apunte al directorio &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; en vez de a raíz. De esta forma al hacer un &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt; no nos hemos de esperar a que &lt;strong&gt;GitHub&lt;/strong&gt; procese nuestro sitio.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, supongamos que hemos hecho ya un &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;commit&lt;/code&gt; de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; al repositorio:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547803168281.png&quot; alt=&quot;1547803168281&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ahora modificamos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts/post.hml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Víctor&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Ponz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Jan&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2019&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y ahora el estado del repositorio es:
+&lt;img src=&quot;/assets/jekyll/1547803310328.png&quot; alt=&quot;1547803310328&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Por lo que ya podría subir nuestros cambios a &lt;strong&gt;GitHub Pages&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ejemplos&quot;&gt;Ejemplos&lt;/h2&gt;
+
+&lt;p&gt;En la siguiente dirección encontraréis más ejemplos de páginas personales.&lt;/p&gt;
+
+&lt;p&gt;https://github.com/topics/personal-website&lt;/p&gt;
+
+&lt;h1 id=&quot;disqus&quot;&gt;Disqus&lt;/h1&gt;
+
+&lt;p&gt;Vamos a integrar &lt;strong&gt;Disqus&lt;/strong&gt; en nuestra página personal.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Disqus is a networked community platform used by hundreds of  thousands of sites all over the web. With Disqus, your website gains a  feature-rich comment system complete with social network integration,  advanced administration and moderation options, and other extensive  community functions. Most importantly, by utilizing Disqus, you are  instantly plugging into our web-wide community network, connecting  millions of global users to your small blog or large media hub.&lt;/p&gt;
+
+  &lt;p&gt;Disqus works on just about any type of website or blog and can be  installed either with a drop-in code snippet or by using one of the  plugins available on our &lt;a href=&quot;https://disqus.com/admin/install/&quot;&gt;Install page&lt;/a&gt;.  You can also customize and tweak Disqus for your website with extensive  APIs and JavaScript hooks. Check out the Quick Start Guide or visit &lt;a href=&quot;https://www.disqus.com/&quot;&gt;our homepage&lt;/a&gt; for more information and a &lt;a href=&quot;https://disqus.com/features/&quot;&gt;demo of Disqus&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;El primer paso es registrarse en &lt;strong&gt;Disqus&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Una vez os habéis registrado, seleccionad &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;I Want to install Disqus on my site&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547747539220.png&quot; alt=&quot;1547747539220&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Y completad el formulario con la url de vuestra página personal de &lt;strong&gt;GitHub&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547747606148.png&quot; alt=&quot;1547747606148&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Seleccionad la opción &lt;strong&gt;Free&lt;/strong&gt;!!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547747685245.png&quot; alt=&quot;1547747685245&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Finalmente, elegid Jekyll&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547747717160.png&quot; alt=&quot;1547747717160&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ahora lo único que hay que hacer es modificar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post.html&lt;/code&gt; con el código que provee &lt;strong&gt;Disqus&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+---
+layout: default
+---
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;{{ page.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;{{ page.date | date_to_string }} - {{ page.author }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+{{ content }}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;hr&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;disqus_thread&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;disqus_config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://username.github.io/{{page.url}}&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Replace PAGE_URL with your page's canonical URL variable&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// DON'T EDIT BELOW THIS LINE&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://https-username-github-io.disqus.com/embed.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;data-timestamp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;noscript&amp;gt;&lt;/span&gt;Please enable JavaScript to view the &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://disqus.com/?ref_noscript&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;comments powered by Disqus.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/noscript&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Reemplazando &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;username&lt;/code&gt;por tu página personal de &lt;strong&gt;GitHub&lt;/strong&gt; y con el código la url que te ha generado &lt;strong&gt;Disqus&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Aquí os dejo el enlace para instalarlo en &lt;a href=&quot;https://disqus.com/admin/install/platforms/jekyll/&quot;&gt;Jekyll&lt;/a&gt;, por si tenéis algún problema.&lt;/p&gt;
+
+&lt;p&gt;Y este es el resultado:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/jekyll/1547804249547.png&quot; alt=&quot;Disqus&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Credits.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Víctor Ponz victorponz@gmail.com&lt;/p&gt;
+
+&lt;p&gt;Este material está licenciado bajo una licencia &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;Creative Commons, Attribution-NonCommercial-ShareAlike&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="dwes" /><summary type="html">Jekyll uno dos tres cuatro cinco</summary></entry></feed>

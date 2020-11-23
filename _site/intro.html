@@ -1,0 +1,543 @@
+ 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
+    <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
+    <title>Remark</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 25%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 70%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      blockquote {
+        font-style: italic;
+        margin: 0.25em 0;
+        padding: 0.25em 40px;
+        line-height: 1.45;
+        position: relative;
+      }
+
+      blockquote:before {
+        opacity: 0.8;
+        display: block;
+        content: "\201C";
+        font-size: 3em;
+        position: absolute;
+        left: -20px;
+        top: -20px;
+      }
+
+      blockquote cite {
+        opacity: 0.8;
+        font-size: 1em;
+        display: block;
+        margin-top: 5px;
+      }
+ 
+      blockquote cite:before {
+        content: "\2014 \2009";
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+#Puesta en Producción Segura
+## Curso de especialización en ciberseguridad FRancisco
+[PEPS]
+.footnote[[Sitio del proyecto](https://github.com/victoponz/PEPS)]
+---
+## De qué trata este módulo?
+---
+layout: false
+.left-column[
+  ## Qué es?
+]
+.right-column[
+Este módulo profesional contiene la formación necesaria para **desempeñar la función de puesta en producción** mediante el **desarrollo de un sistema de despliegue de software seguro**.
+
+La función de implantación de un sistema de despliegue seguro incluye aspectos como la monitorización de aplicaciones y dispositivos para detectar los vectores de ataque más comunes.
+
+]
+---
+.left-column[
+  ## ¿Qué es?
+  ## ¿Qué aprenderás en este módulo?
+]
+.right-column[
+* A analizar la estructura de aplicaciones y dispositivos móviles.
+* Los vectores de ataque más comunes.
+* A analizar el nivel de seguridad requerido por las aplicaciones.
+* A configurar servidores web seguros.
+* A detectar los problemas de seguridad de las aplicaciones para los dispositivos móviles.
+* A implantar sistemas seguros de desplegado de software.
+]
+---
+.left-column[
+  ## ¿Qué es?
+  ## ¿Qué aprenderás en este módulo?
+  ## ¿Qué actividades profesionales podrás llevar a cabo?
+]
+.right-column[
+Las actividades profesionales asociadas a esta función se aplican en el **análisis de las aplicaciones web y dispositivos móviles** así como en la **configuración de servidores web**.
+]
+---
+template: inverse
+
+## Entonces, ¿qué aprenderemos en este módulo?
+---
+.left-column[
+  ### - Git
+]
+.right-column[
+![git](https://git-scm.com/images/logo@2x.png)
+
+<blockquote>Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y 
+la confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente
+</blockquote>
+]
+---
+
+.left-column[
+  ### - Git
+  ### - Markdown
+]
+.right-column[
+![Markdown](https://raw.githubusercontent.com/dcurtis/markdown-mark/360a3657fef7f6ad0b303296a95ad52985caa0d3/svg/markdown-mark.svg)
+
+<blockquote>Markdown es un lenguaje de marcado ligero. </blockquote>
+Por ejemplo: 
+```markdown
+# Esta es una cabecera
+Y mi primer documento en Markdown.
+```
+
+Markdown nos ayuda a generar documentación técnica. 
+Es el lenguaje de marcado usado, entre otros, por:
+
+  [GitHub](https://github.com/)  - [GitBook](https://www.gitbook.com/)    - [MkDocs](https://www.mkdocs.org/)  - [Read the Docs](https://readthedocs.org/)  - [GitHub Pages](https://pages.github.com/) - etc.
+
+Además, nos permite automatizar dicha generación. Por ejemplo, usando Jekyll junto a [GitHub Pages](https://pages.github.com/).
+
+Echa un vistazo al [sitio Markdown](http://daringfireball.net/projects/markdown/) si no estás familiarizado con dicho formato.
+]
+---
+
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+]
+.right-column[
+<blockquote>La programación del lado del servidor es una tecnología que consiste en el procesamiento de una petición de un usuario 
+  mediante la interpretación de un script en el servidor web para generar dinámicamente páginas HTML como respuesta.</blockquote>
+Por ejemplo, en PHP
+```PHP
+<html>
+ <head>
+  <title>Prueba de PHP</title>
+ </head>
+ <body>
+ <?php echo '<p>Hola Mundo</p>'; ?>
+ </body>
+</html>
+```
+Y en node.js
+```javascript
+const express = require('express')
+const app = express()
+const port = 3000
+app.get('/', (req, res) => {  res.send('Hello World!')})
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
+```
+]
+---
+
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+  ### - Containers
+]
+.right-column[
+![Docker](https://d1q6f0aelx0por.cloudfront.net/product-logos/644d2f15-c5db-4731-a353-ace6235841fa-registry.png)
+
+<blockquote>
+  Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas operativos.​
+
+</blockquote>
+
+]
+---
+
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+  ### - Containers
+  ### - Orchestrators
+]
+.right-column[
+![Kubernetes](https://gblobscdn.gitbook.com/spaces%2F-LRciXC9SHZkinGj5xux%2Favatar.png?alt=media)
+
+<blockquote>
+  Kubernetes es un sistema de código libre para la automatización del despliegue, ajuste de escala y manejo de aplicaciones en contenedores​ que fue originalmente diseñado por Google y donado a la Cloud Native Computing Foundation. Soporta diferentes entornos para la ejecución de contenedores, incluido Docker.
+</blockquote>
+
+]
+---
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+  ### - Containers
+  ### - Orchestrators
+  ### - Web Application Security Risks
+]
+.right-column[
+![OWASP](assets/logoOWASP.png)
+
+<blockquote>
+  The Open Web Application Security Project® (OWASP) is a nonprofit foundation that works to improve the security of software. Through community-led open source software projects, hundreds of local chapters worldwide, tens of thousands of members, and leading educational and training conferences, the OWASP Foundation is the source for developers and technologists to secure the web.
+</blockquote>
+
+]
+---
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+  ### - Containers
+  ### - Orchestrators
+  ### - Web Application Security Risks
+  ### - OWASP mobile security
+]
+.right-column[
+![OWASP mobile security](assets/logoOWASPMobile.png)
+
+<blockquote>
+  The OWASP Mobile Security Project is a centralized resource intended to give developers and security teams the resources they need to build and maintain secure mobile applications. Through the project, our goal is to classify mobile security risks and provide developmental controls to reduce their impact or likelihood of exploitation. 
+</blockquote>
+
+]
+---
+template: inverse
+
+## Of course, Markdown can only go so far.
+---
+.left-column[
+  ## Markdown extensions
+]
+.right-column[
+To help out with slide layout and formatting, a few Markdown extensions have been included:
+
+- Slide properties, for naming, styling and templating slides
+
+- Content classes, for styling specific content
+
+- Syntax highlighting, supporting a range of languages
+]
+
+---
+.left-column[
+  ## Markdown extensions
+  ### - Slide properties
+]
+.right-column[
+Initial lines containing key-value pairs are extracted as slide properties:
+
+```remark
+name: agenda
+class: middle, center
+
+# Agenda
+
+The name of this slide is {{ name }}.
+```
+
+Slide properties serve multiple purposes:
+
+* Naming and styling slides using properties `name` and `class`
+
+* Using slides as templates using properties `template` and `layout`
+
+* Expansion of `{{ property }}` expressions to property values
+
+See the [complete list](https://github.com/gnab/remark/wiki/Markdown#slide-properties) of slide properties.
+]
+---
+.left-column[
+  ## Markdown extensions
+  ### - Slide properties
+  ### - Content classes
+]
+.right-column[
+Any occurences of one or more dotted CSS class names followed by square brackets are replaced with the contents of the brackets with the specified classes applied:
+
+```remark
+.footnote[.red.bold[*] Important footnote]
+```
+
+Resulting HTML extract:
+
+```xml
+<span class="footnote">
+  <span class="red bold">*</span> Important footnote
+</span>
+```
+]
+---
+.left-column[
+  ## Markdown extensions
+  ### - Slide properties
+  ### - Content classes
+  ### - Syntax Highlighting
+]
+.right-column[
+Code blocks can be syntax highlighted by specifying a language from the set of [supported languages](https://github.com/gnab/remark/wiki/Configuration#highlighting).
+
+Using [GFM](http://github.github.com/github-flavored-markdown/) fenced code blocks you can easily specify highlighting language:
+
+.pull-left[
+
+<pre><code>```javascript
+function add(a, b)
+  return a + b
+end
+```</code></pre>
+]
+.pull-right[
+
+<pre><code>```ruby
+def add(a, b)
+  a + b
+end
+```</code></pre>
+]
+
+A number of highlighting [styles](https://github.com/gnab/remark/wiki/Configuration#highlighting) are available, including several well-known themes from different editors and IDEs.
+
+]
+---
+.left-column[
+  ## Presenter mode
+]
+.right-column[
+To help out with giving presentations, a presenter mode comprising the
+following features is provided:
+
+- Display of slide notes for the current slide, to help you remember
+  key points
+
+- Display of upcoming slide, to let you know what's coming
+
+- Cloning of slideshow for viewing on extended display
+]
+---
+.left-column[
+  ## Presenter mode
+  ### - Inline notes
+]
+.right-column[
+Just like three dashes separate slides,
+three question marks separate slide content from slide notes:
+
+```
+Slide 1 content
+
+*???
+
+Slide 1 notes
+
+---
+
+Slide 2 content
+
+*???
+
+Slide 2 notes
+```
+
+Slide notes are also treated as Markdown, and will be converted in the
+same manner slide content is.
+
+Pressing __P__ will toggle presenter mode.
+]
+???
+Congratulations, you just toggled presenter mode!
+
+Now press __P__ to toggle it back off.
+---
+.left-column[
+  ## Presenter mode
+  ### - Inline notes
+  ### - Cloned view
+]
+.right-column[
+Presenter mode of course makes no sense to the audience.
+
+Creating a cloned view of your slideshow lets you:
+
+- Move the cloned view to the extended display visible to the audience
+
+- Put the original slideshow in presenter mode
+
+- Navigate as usual, and the cloned view will automatically keep up with the original
+
+Pressing __C__ will open a cloned view of the current slideshow in a new
+browser window.
+]
+---
+template: inverse
+
+## It's time to get started!
+---
+.left-column[
+  ## Getting started
+]
+.right-column[
+Getting up and running is done in only a few steps:
+
+1. Visit the [project site](http://github.com/gnab/remark)
+
+2. Follow the steps in the Getting Started section
+
+For more information on using remark, please check out the [wiki](https://github.com/gnab/remark/wiki) pages.
+]
+---
+name: last-page
+template: inverse
+
+## That's all folks (for now)!
+
+Slideshow created using [remark](http://github.com/gnab/remark).
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script>
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'remark',
+          highlightLines: true
+        }) ;
+    </script>
+
+  </body>
+</html>
+
