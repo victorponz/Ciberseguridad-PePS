@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: dwes
+categories: tema1
 typora-root-url: ../assets
 ---
 ![18824957](/img/AWCG/2187.jpg)
