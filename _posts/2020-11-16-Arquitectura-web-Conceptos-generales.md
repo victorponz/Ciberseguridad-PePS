@@ -2,6 +2,8 @@
 layout: post
 categories: tema1
 typora-root-url: ../assets
+categories: tema1 HTTP
+conToc: true
 ---
 ![18824957](/img/AWCG/2187.jpg)
 
@@ -472,15 +474,6 @@ Seguro que ahora ya comprendemos la necesidad de securizar todo nuestro proceso 
 
 
 ------
-
-**Credits.**
-
-Víctor Ponz victorponz@gmail.com
-
-Este material está licenciado bajo una licencia [Creative Commons, Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/3.0/)
-
-![](https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png)
-
 **Adaptado de los siguientes materiales**
 
 **Antonio LaTorre \(atorre@fi.upm.es\)**

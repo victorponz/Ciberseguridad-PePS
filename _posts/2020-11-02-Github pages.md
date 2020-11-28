@@ -2,7 +2,9 @@
 typora-copy-images-to: ../assets/img/github-pages/
 typora-root-url: ../assets/
 layout: post
-categories: tema1 git practicas
+categories: tema1 git
+title: GitHub Pages
+conToc: false
 ---
 # GitHub Pages
 Ya que tenemos una cuenta en `GitHub`, vamos a usar la posibilidad de alojar una web estática personal en la url `https://nombre-de-usuario.github.io`
@@ -39,3 +41,6 @@ git commit -m "Initial commit"
 git push -u origin master
 ```
 5. Ya está!! https://victorponz.github.io/
+
+## -tarea-Crea tu página personal
+> Crea tu página en GitHub Pages. Todas las prácticas que hagas, las has de crear como un nuevo post y en la tarea de Moodle hacer referencia al mismo

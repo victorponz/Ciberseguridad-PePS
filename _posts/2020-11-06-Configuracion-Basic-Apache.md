@@ -2,8 +2,9 @@
 typora-copy-images-to: ../assets/img/apache/
 typora-root-url: ../assets/
 layout: post
-categories: tema1 apache practicas
+categories: tema1 apache
 title: Configuración básica de Apache
+conToc: true
 ---
 
 

@@ -1,13 +1,19 @@
 ---
 layout: default
 ---
+{% if page.conToc %}
 <h1>{{ page.title }}</h1>
+{% endif %}
         {% include postNavigation.html %}
         {% assign content = content | replace: '<img src="/img/', '<img src="/Ciberseguridad-PePS/assets/img/' | replace: '>-tarea-', ' class="task"><i class="fa fa-check"></i> ' %}
         <div>
-            {% include toc.html html=content class="atypora-menu" id="menu"%}
+            {% if page.conToc %}
+                {% include toc.html html=content class="atypora-menu" id="menu"%}
+            {% endif %}
             <div id="menuContainer">
-                {% include toc.html html=content class="typora-menu-hidden" id="menuFixed"%}
+                {% if page.conToc %}
+                    {% include toc.html html=content class="typora-menu-hidden" id="menuFixed"%}
+                {% endif %}
                 <div class="top-hidden" id="topFixed">
                     <a class="toogle expanded pull-left js-toolbar-action" aria-label="" href="#"><i class="fas fa-align-justify"></i></a>
                 </div>

@@ -2,7 +2,9 @@
 typora-copy-images-to: ../assets/
 typora-root-url: ../assets/
 layout: post
-categories: tema1
+categories: tema1 HTTP
+conToc: true
+title: Protocolo HTTP
 ---
 
 # Generalidades del protocolo HTTP y HTTPS
@@ -377,7 +379,7 @@ En consecuencia, tanto el cliente como el servidor deben usar el nuevo mecanismo
 
 ¿Cómo se consigue ese aumento de velocidad tan significativo? Pues multiplexando las peticiones que reciben los servidores por parte de los usuarios y sus navegadores web. Es decir: que esos servidores puedan atender varias peticiones al mismo tiempo. Eso también ahorra en cantidad de conexiones, liberando de trabajo a los servidores. Este gráfico lo explica bien
 
-![](assets/1366_2000.jpg)
+![](/img/HTTP/1366_2000.jpg)
 
 Además los servidores podrán ser proactivos: reconocerán qué tipo de cliente (navegador web) ha enviado una petición y, además de enviar la respuesta que necesita, enviará también respuestas con datos que ya sabe que el navegador va a necesitar antes de que éste los pida en una nueva petición. Por ejemplo: mientras que con HTML tenemos que cargar primero todo el HTML de la web para después cargar su contenido (CSS, imágenes), con HTTP/2 podemos cargar todo ese contenido al mismo tiempo que el mismo HTML base. También se implementa Server Push, de esta forma el servidor puede enviar datos al cliente sin que este los solicite para que sean cacheados en el navegador. 
 
@@ -394,7 +396,7 @@ Como el protocolo HTTP no está cifrado a nivel de la capa de red, se pueden rea
 
 Es por ello que hoy en día se recomienda el uso del protocolo HTTPS no sólo en aquellas webs que manejan datos sensibles.
 
-<img src="assets/MITM.png" alt="MITM" style="zoom:150%;" />
+<img src="/img/HTTP/MITM.png" alt="MITM" style="zoom:150%;" />
 
 
 
@@ -424,7 +426,7 @@ De hecho es ya tan habitual, que los navegadores muestran una alerta cuando se i
 
 También los navegadores han empezado a marcar aquellas webs que no usan el protocolo https:
 
-![image-20201021165324671](assets/image-20201021165324671.png)
+![image-20201021165324671](/img/HTTP/image-20201021165324671.png)
 
 ## ¿Cómo funciona?
 
@@ -454,34 +456,22 @@ Y también cuidado con los [PunyCodes](https://es.wikipedia.org/wiki/Punycode). 
 
 **En Firefox**
 
-![image-20201021164422312](assets/image-20201021164422312.png)
+![image-20201021164422312](/img/HTTP/image-20201021164422312.png)
 
 
 
 **En Chrome**
 
-![image-20201021164334542](assets/image-20201021164334542.png)
+![image-20201021164334542](/img/HTTP/image-20201021164334542.png)
 
 **Ejemplo de ataque**
 
 En primer lugar, Alice le pregunta a Bob por su [clave pública](https://es.wikipedia.org/wiki/Clave_pública). Si Bob envía su clave pública a Alice, pero Mallory es capaz de  interceptarla, un ataque de intermediario puede comenzar. Mallory envía  un mensaje falsificado a Alice que dice ser de Bob, pero en cambio incluye la clave pública de Mallory. Alice, creyendo que esta clave  pública sea de Bob, cifra su mensaje con la clave de Mallory y envía el  mensaje cifrado de nuevo a Bob. Mallory intercepta otra vez, descifra el mensaje utilizando su clave privada, posiblemente lo altera si quiere, y vuelve a cifrar con la clave pública de Bob que fue enviada originalmente a Alice. Cuando Bob recibe el nuevo mensaje cifrado, él cree que vino de Alice.
-![image-20201021163246099](assets/image-20201021163246099.png)
-
-
-
+![image-20201021163246099](/img/HTTP/image-20201021163246099.png)
 
 
 ------
 
-**Credits.**
-
-Víctor Ponz victorponz@gmail.com
-
-
-> The content is available under the terms of the
->
-> [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/2.5/)
->
 > Basado en:
 >
 > https://developers.google.com/web/fundamentals/performance/http2/?hl=es
