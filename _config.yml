@@ -32,13 +32,13 @@ description: >- # this means to ignore newlines until "url:"
   Google search results) and in your feed.xml site description.
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  victorponz
-github_repo:  victorponz/Ciberseguridad-PEPS/tree/master
+github_repo:  victorponz/Ciberseguridad-PePS
 defaults:
   - scope:
       path: "assets/img"
     values:
       image: true
-baseurl: /Ciberseguridad-PEPS2
+baseurl: /Ciberseguridad-PePS
 # Build settings
 #theme: minima
 #plugins:
