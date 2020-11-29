@@ -1,11 +1,12 @@
 ---
+typora-root-url: ../../
+typora-copy-images-to: ../../assets/img/AWCG/
 layout: post
 categories: tema1
-typora-root-url: ../assets
 categories: tema1 HTTP
 conToc: true
 ---
-![18824957](/img/AWCG/2187.jpg)
+![18824957](/Ciberseguridad-PePS/assets/img/AWCG/2187.jpg)
 
 ## 1 Introducción
 
@@ -97,7 +98,7 @@ Cuando el servidor Web recibe una petición de una página estática, el servido
 
 **1.** El navegador web solicita la página estática **2.** El servidor localiza la página **3.** El servidor Web envía la página al navegador solicitante. Finalmente, el navegador renderiza la página mostrando el siguiente resultado.
 
-![](/img/AWCG/pagina estatica.png)
+![](/Ciberseguridad-PePS/assets/img/AWCG/pagina estatica.png)
 
 Actualmente esta arquitectura se usa principalmente para:
 
@@ -136,7 +137,7 @@ echo $x + $y;
 
 Y este sería el resultado mostrado en el navegador, donde el servidor de aplicaciones ha interpretado las órdenes PHP
 
-![](/img/AWCG/dinamica.png)
+![](/Ciberseguridad-PePS/assets/img/AWCG/dinamica.png)
 
 #### 3.4.5 Páginas dinámicas con acceso a una base de datos.
 
@@ -199,7 +200,7 @@ Y cuando no necesitamos acceder a bases de datos, realizar operaciones lógicas 
 > Cuanto menos infraestructura necesite nuestra aplicación mejor desde el punto de vista de la seguridad. Sólo debemos instalar y/o activar aquellos recursos necesarios para que nuestra aplicación funcione. Cuantos menos módulos debamos instalar, mejor para la seguridad ya que nos hemos de preocupar de menos vectores de ataque
 
 
-![ssg-host-flow](/img/AWCG/ssg-host-flow.png)
+![ssg-host-flow](/Ciberseguridad-PePS/assets/img/AWCG/ssg-host-flow.png)
 
 
 ## 4 Tecnologías de desarrollo Web
@@ -221,7 +222,7 @@ Dentro de las tecnologías de desarrollo, podemos distinguir entre:
 
 * **Tecnologías de cliente**: Tecnologías que permiten crear interfaces de usuario atractivos y permiten la comunicación con el servidor. Basadas en HTML, CSS y JavaScript. Entre las de propósito general, cabe destacar [jQuery](https://jquery.com/), [AngularJS](https://angularjs.org/), [Bootstrap](http://getbootstrap.com/). En el informe [Usage Statistics and Market Share of JavaScript Libraries for Websites, October 2020](https://w3techs.com/technologies/overview/javascript_library/all), podemos ver una relación más detallada y hay que tener en cuenta que una aplicación web puede usar más de una de estas tecnologías a la vez. También podemos consultar [List of Javascript Libraries](https://en.wikipedia.org/wiki/List_of_JavaScript_libraries), donde están clasificadas por categorías.
 
-![](/img/AWCG//q16.jpg)
+![](/Ciberseguridad-PePS/assets/img/AWCG//q16.jpg)
 
 Fuente. [https://ashleynolan.co.uk/blog/frontend-tooling-survey-2019-results](https://ashleynolan.co.uk/blog/frontend-tooling-survey-2019-results)
 
@@ -235,14 +236,14 @@ PHP Frameworks. Fuente: [https://coderseye.com/best-php-frameworks-for-web-devel
 
 En **Java**, [Spring MVC](http://spring.io/), [JSF](https://es.wikipedia.org/wiki/JavaServer_Faces), [Struts](https://struts.apache.org/).
 
-![image-20201019161052177](/img/AWCG//image-20201019161052177.png)
+![image-20201019161052177](/Ciberseguridad-PePS/assets/img/AWCG//image-20201019161052177.png)
 
 
 
 Fuente: https://www.jetbrains.com/lp/devecosystem-2020/java/
 
 * **Bases de datos**: La gran mayoría de las webs necesitan guardar información. Las bases de datos son una parte esencial del desarrollo web. Entre ellas destacan, Oracle, MySQL, Microsoft SQL Server, PostgreSQL. En el informe[ DB-Engines Ranking - popularity ranking of database management systems](https://db-engines.com/en/ranking) podemos ver la lista completa.
-  ![image-20201019161232828](/img/AWCG/image-20201019161232828.png)
+  ![image-20201019161232828](/Ciberseguridad-PePS/assets/img/AWCG/image-20201019161232828.png)
 
   Fuente: [https://db-engines.com/en/ranking](https://db-engines.com/en/ranking)
 
@@ -276,7 +277,7 @@ Evidentemente, no son todo ventajas. Los principales **inconvenientes** de usar 
 
 Los principales CMS _libres_ propiamente dichos son [WordPress](https://wordpress.org/download/), [Drupal](https://www.drupal.org/) y [Joomla](https://downloads.joomla.org/). Para una estadística más detallada podemos consultar la página de tendencias de [buildwith.com](https://trends.builtwith.com/cms)
 
-![image-20201019161414692](/img/AWCG/image-20201019161414692.png)
+![image-20201019161414692](/Ciberseguridad-PePS/assets/img/AWCG/image-20201019161414692.png)
 
 
 
@@ -284,7 +285,7 @@ Fuente: [https://cms2cms.com/uncategorized/what-cms-will-be-your-choice-in-z017-
 
 Existen otros tipos de aplicaciones orientadas a otros ámbitos, como por ejemplo al comercio electrónico. Entre ellas cabe destacar [WooCommerce](https://woocommerce.com/) y [Magento](https://magento.com/products/open-source) que se utilizan para la creación de tiendas virtuales. Podemos ver una estadística completa en [builtwith.com](https://trends.builtwith.com/shop)
 
-![image-20201019161452846](/img/AWCG/image-20201019161452846.png)
+![image-20201019161452846](/Ciberseguridad-PePS/assets/img/AWCG/image-20201019161452846.png)
 
 
 ## 5 Servidores web y de aplicaciones
@@ -303,7 +304,7 @@ El servidor Web no proporciona ninguna funcionalidad más allá de simplemente p
 
 Como vemos en el siguiente gráfico de uso, el servidor más usado es [Apache](https://httpd.apache.org/), seguido de [Nginx](http://nginx.org/). Si desarrollamos una aplicación en ASP.NET, escogeríamos [Internet Information Services \(IIS\)](https://www.iis.net/) de Microsoft.
 
-![image-20201019161629503](/img/AWCG/image-20201019161629503.png)
+![image-20201019161629503](/Ciberseguridad-PePS/assets/img/AWCG/image-20201019161629503.png)
 
 Fuente: [https://trends.builtwith.com/web-server](https://trends.builtwith.com/web-server)
 
@@ -320,7 +321,7 @@ Aunque un servidor Web se ocupa principalmente del envío de HTML para su visual
 
 Como consecuencia del éxito del lenguaje de programación Java, el término servidor de aplicaciones usualmente hace referencia a un servidor de aplicaciones Java EE, aunque también hay servidores aplicaciones para PHP como [Zend Server](http://www.zend.com/en/products/zend_server).
 
-![](/img/AWCG/image-20201019163053269.png)
+![](/Ciberseguridad-PePS/assets/img/AWCG/image-20201019163053269.png)
 
 Fuente: https://www.jrebel.com/blog/2020-java-technology-report#application-server
 
@@ -337,7 +338,7 @@ Estos servidores web son los encargados de ejecutar la aplicación web y entrega
 
 Desde el momento que desplegamos una aplicación en un servidor web tenemos una versión que está públicamente disponible por cualquiera a través de la URL y todavía mantenemos la versión que corre en nuestro anfitrión local que continuamos retocando y probando. Periódicamente, deberemos actualizar \(desplegar\) el código al servidor web después de que hayamos probado los nuevos cambios en localhost e implementado procesos **CD/CI** (Continuos Development/Continuos Integration)
 
-![](/img/AWCG/despliegue.svg.png)
+![](/Ciberseguridad-PePS/assets/img/AWCG/despliegue.svg.png)
 
 Este proceso no es tan sencillo como parece, sobre todo cuando hablamos de aplicaciones empresariales en las que participan gran cantidad de profesionales tanto en desarrollo como en sistemas, así como multitud de sistemas operativos, servidores de aplicaciones, API's end-points, servidores web, contenedores, orquestadores, etc. **De hacer todo este proceso de forma segura es de lo que trata este módulo profesional.**
 
@@ -347,7 +348,7 @@ Este proceso no es tan sencillo como parece, sobre todo cuando hablamos de aplic
 
 > Esta es una traducción del artículo [original](https://engineering.videoblocks.com/web-architecture-101-a3224e126947)
 
-![](/img/AWCG//uno.png)
+![](/Ciberseguridad-PePS/assets/img/AWCG//uno.png)
 
 El diagrama de arriba es una representación bastante buena de la arquitectura en [Storyblocks](https://es.storyblocks.com/). Si no eres un desarrollador web experimentado, es probable que lo encuentres complicado. El recorrido explicado debajo debería ser más accesible antes de profundizar en los detalles de cada componente.
 
@@ -391,7 +392,7 @@ Aunque estoy evitando una inmersión profunda en tecnologías particulares para 
 
 **SQL**, significa "Structured Query Language" y se inventó en la década de 1970  para proporcionar una forma estándar de consulta de conjuntos de datos relacionales que era accesible para una amplia audiencia. Las bases de datos SQL almacenan datos en tablas que están vinculadas entre sí a través de ID comunes, generalmente enteros. Veamos un ejemplo simple de almacenamiento de información histórica de direcciones para los usuarios. Es posible que tengas dos tablas, usuarios y direcciones de usuario, vinculados entre sí por la identificación del usuario. La siguiente imagen muestra para una versión simplista. Las  tablas están vinculadas porque la columna *user_id* en *user_addresses* es una "clave externa" a la columna *id* en la tabla de *users*.
 
-![](/img/AWCG/sql.png)
+![](/Ciberseguridad-PePS/assets/img/AWCG/sql.png)
 
 Si no sabes mucho sobre SQL, te recomiendo que consultes un tutorial como el que puedes encontrar en Khan Academy [aquí](https://www.khanacademy.org/computing/computer-programming/sql). Es omnipresente en el desarrollo web, por lo que al menos querrás saber los conceptos básicos para poder diseñar una aplicación de forma adecuada.
 
@@ -431,7 +432,7 @@ Por ejemplo, en PHP se puede utilizar [Bernard](https://bernard.readthedocs.io/)
 
 Muchas,  si no la mayoría, de las aplicaciones web admiten algún tipo de función  de búsqueda en la que un usuario proporciona una entrada de texto (a menudo llamada "consulta o query") y la aplicación devuelve los resultados más "relevantes". La tecnología que alimenta esta funcionalidad  se conoce como "[búsqueda de texto completo](https://en.wikipedia.org/wiki/Full-text_search)" (**full-text search**), que aprovecha un [índice invertido](https://en.wikipedia.org/wiki/Inverted_index) para buscar rápidamente documentos que contienen las palabras  clave de consulta.
 
-![](/img/AWCG/fulltext.png)
+![](/Ciberseguridad-PePS/assets/img/AWCG/fulltext.png)
 
 El ejemplo muestra cómo tres títulos de documentos se convierten en un índice invertido para facilitar la búsqueda rápida desde una palabra clave específica a los documentos con esa palabra clave en el título. Ten en cuenta que las palabras comunes como "en", "el", "con", etc. (llamadas palabras de finalización - **stop words**-) generalmente no se incluyen en un índice invertido.
 
@@ -462,8 +463,7 @@ Hoy, las compañías viven y mueren en base en que saben aprovechar  los datos. 
 
 CDN significa "Content Delivery Network" y la tecnología proporciona una forma de servir activos (**assets**) como HTML estático, CSS, Javascript e imágenes en la web mucho más rápido que servirlos desde un solo servidor de origen. Funciona distribuyendo el contenido a través de muchos servidores de todo el mundo para que los usuarios terminen descargando activos desde su servidor más cercano en lugar del servidor de origen. Por ejemplo, en la imagen siguiente, un usuario en España solicita una página web desde un sitio con servidores de origen en Nueva York, pero los activos estáticos para la página se cargan desde un servidor "**edge**" de CDN en Inglaterra, evitando muchas peticiones HTTP transatlánticas lentas.
 
-![](/img/AWCG/cdn.png)
-
+![](/Ciberseguridad-PePS/assets/img/AWCG/cdn.png)
 
 
 ### 12 Desde el punto de vista de la seguridad

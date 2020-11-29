@@ -1,6 +1,6 @@
 ---
-typora-copy-images-to: ../assets/
-typora-root-url: ../assets/
+typora-copy-images-to: ../../assets/img/HTTP/
+typora-root-url: ../../
 layout: post
 categories: tema1 HTTP
 title: Protocolo HTTP
@@ -11,11 +11,11 @@ conToc: true
 
 > **HTTP**, de sus siglas en inglés: "_Hypertext Transfer Protocol_", es el nombre de un protocolo el cual nos permite realizar una petición de datos y recursos, como pueden ser documentos HTML. Es la base de cualquier intercambio de datos en la Web, y un protocolo de estructura cliente-servidor, esto quiere decir que una petición de datos es iniciada, por el elemento que recibirá los datos \(el cliente\), normalmente un navegador Web. Así una página web completa, resulta de la unión de distintos sub-documentos recibidos, como por ejemplo: un documento que especifique el estilo de maquetación de la página web \(CSS\), el texto, las imágenes, vídeos, scripts ...
 
-![](/img/HTTP/Fetching_a_page.png)
+![](/Ciberseguridad-PePS/assets/img/HTTP/Fetching_a_page.png)
 
 Clientes y servidores se comunican intercambiando mensajes individuales \(en contraposición a las comunicaciones que utilizan flujos continuos de datos\). Los mensajes que envía el cliente, normalmente un navegador Web, se llaman peticiones, y los mensajes enviados por el servidor, se llaman respuestas.
 
-![](/img/HTTP/HTTP & layers.png)
+![](/Ciberseguridad-PePS/assets/img/HTTP/HTTP & layers.png)
 Diseñado a principios de la década de 1990, HTTP es un protocolo ampliable, que ha ido evolucionando con el tiempo. Es lo que se conoce como un protocolo de la capa de aplicación, y se transmite sobre el protocolo [TCP](#tcp), o el protocolo encriptado [TLS](#tls), aunque teóricamente podría usarse cualquier otro protocolo fiable. Gracias a que es un protocolo capaz de ampliarse, se usa no solo para transmitir documentos de hipertexto \(HTML\), si no que además, se usa para transmitir imágenes o vídeos, o enviar datos o contenido a los servidores, como en el caso de los formularios de datos. HTTP puede incluso ser utilizado para transmitir partes de documentos, y actualizar páginas Web en el acto.
 
 **TCP**
@@ -34,7 +34,7 @@ HTTP es un protocolo basado en el principio de cliente-servidor: las peticiones 
 
 Cada petición individual se envía a un servidor, el cuál la gestiona y responde. Entre cada petición y respuesta, hay varios intermediarios, normalmente denominados proxies, los cuales realizan distintas funciones, como: gateways o cachés.
 
-![](/img/HTTP/Client-server-chain.png)
+![](/Ciberseguridad-PePS/assets/img/HTTP/Client-server-chain.png)
 
 En realidad, hay más elementos intermedios, entre un navegador y el servidor que gestiona su petición: hay otros tipos de dispositivos: como routers, modems ... Es gracias a la arquitectura en capas de la Web, que estos intermediarios, son transparentes al navegador y al servidor, ya que HTTP se apoya en los protocolos de red y transporte. HTTP es un protocolo de aplicación, y por tanto se apoya sobre los anteriores. Aunque para diagnosticar problemas en redes de comunicación, las capas inferiores son irrelevantes para la definición del protocolo HTTP .
 
@@ -195,7 +195,7 @@ Content-Type: text/html
 
 Los mensajes HTTP se componen de información textual codificada en ASCII, y se extienden sobre varias líneas. En HTTP / 1.1 y versiones anteriores del protocolo, estos mensajes se enviaron abiertamente a través de la conexión. En HTTP / 2, el mensaje antes legible por humanos ahora se divide en marcos HTTP, proporcionando mejoras de optimización y rendimiento. Los desarrolladores web, o webmasters, raramente elaboran estos mensajes HTTP textuales ellos mismos: un software, un navegador Web, proxy o servidor Web, realiza esta acción. Proporcionan mensajes HTTP a través de archivos de configuración \(para proxies o servidores\), API \(para navegadores\) u otras interfaces.
 
-![](/img/HTTP/HTTPMsg2.png)
+![](/Ciberseguridad-PePS/assets/img/HTTP/HTTPMsg2.png)
 
 Las solicitudes HTTP y las respuestas comparten una estructura similar y están compuestas por:
 
@@ -206,7 +206,7 @@ Las solicitudes HTTP y las respuestas comparten una estructura similar y están 
 
 Los encabezados de línea de inicio y HTTP del mensaje HTTP se conocen colectivamente como la cabecera \(_header_\) de las solicitudes, mientras que su carga útil \(_payload_\) se conoce como el cuerpo \(_body_\).
 
- ![](/img/HTTP/HTTPMsgStructure2.png)
+ ![](/Ciberseguridad-PePS/assets/img/HTTP/HTTPMsgStructure2.png)
 
 ## Tipos de mensajes HTTP
 
@@ -216,7 +216,7 @@ Existen dos tipos de mensajes HTTP: peticiones  y respuestas,, cada uno sigue su
 
 Un ejemplo de petición HTTP:
 
-![](/img/HTTP/HTTP_Request.png)
+![](/Ciberseguridad-PePS/assets/img/HTTP/HTTP_Request.png)
 
 Una petición de HTTP, está formado  por los siguientes campos:
 
@@ -230,7 +230,7 @@ Una petición de HTTP, está formado  por los siguientes campos:
 
 Un ejemplo de repuesta:
 
-![](/img/HTTP/HTTP_Response.png)
+![](/Ciberseguridad-PePS/assets/img/HTTP/HTTP_Response.png)
 
 Las respuestas están formadas por los siguentes campos:
 
@@ -247,7 +247,7 @@ Las respuestas están formadas por los siguentes campos:
 > 3. Selecciona la opción Red
 > 4. Recarga la página y revisa las cabeceras
 > 
-> ![](/img/HTTP/cabecerashttp.png)
+> ![](/Ciberseguridad-PePS/assets/img/HTTP/cabecerashttp.png)
 
 ## Método HTTP
 
@@ -379,7 +379,7 @@ En consecuencia, tanto el cliente como el servidor deben usar el nuevo mecanismo
 
 ¿Cómo se consigue ese aumento de velocidad tan significativo? Pues multiplexando las peticiones que reciben los servidores por parte de los usuarios y sus navegadores web. Es decir: que esos servidores puedan atender varias peticiones al mismo tiempo. Eso también ahorra en cantidad de conexiones, liberando de trabajo a los servidores. Este gráfico lo explica bien
 
-![](/img/HTTP/1366_2000.jpg)
+![](/Ciberseguridad-PePS/assets/img/HTTP/1366_2000.jpg)
 
 Además los servidores podrán ser proactivos: reconocerán qué tipo de cliente (navegador web) ha enviado una petición y, además de enviar la respuesta que necesita, enviará también respuestas con datos que ya sabe que el navegador va a necesitar antes de que éste los pida en una nueva petición. Por ejemplo: mientras que con HTML tenemos que cargar primero todo el HTML de la web para después cargar su contenido (CSS, imágenes), con HTTP/2 podemos cargar todo ese contenido al mismo tiempo que el mismo HTML base. También se implementa Server Push, de esta forma el servidor puede enviar datos al cliente sin que este los solicite para que sean cacheados en el navegador. 
 
@@ -396,7 +396,7 @@ Como el protocolo HTTP no está cifrado a nivel de la capa de red, se pueden rea
 
 Es por ello que hoy en día se recomienda el uso del protocolo HTTPS no sólo en aquellas webs que manejan datos sensibles.
 
-<img src="/img/HTTP/MITM.png" alt="MITM" style="zoom:150%;" />
+<img src="/Ciberseguridad-PePS/assets/img/HTTP/MITM.png" alt="MITM" style="zoom:150%;" />
 
 
 
@@ -416,17 +416,17 @@ Las dos primeras capas se consiguen mediante la creación de un par de claves: u
 
 La autenticación se consigue mediante la participación de una autoridad de confianza de certificados que garantiza que el certificado ha sido emitido "para y sólo para" el sitio certificado.
 
-![](/img/HTTP/seg4.png)
+![](/Ciberseguridad-PePS/assets/img/HTTP/seg4.png)
 
 Hoy en día, este protocolo se usa en la mayoría de sitios en los que el visitante puede proporcionar información sensible, como contraseñas, transacciones bancarias, correo electrónico, etc.
 
 De hecho es ya tan habitual, que los navegadores muestran una alerta cuando se intenta informar un campo de un formulario de tipo password.
 
-![](/img/HTTP/pass.png)
+![](/Ciberseguridad-PePS/assets/img/HTTP/pass.png)
 
 También los navegadores han empezado a marcar aquellas webs que no usan el protocolo https:
 
-![image-20201021165324671](/img/HTTP/image-20201021165324671.png)
+![image-20201021165324671](/Ciberseguridad-PePS/assets/img/HTTP/image-20201021165324671.png)
 
 ## ¿Cómo funciona?
 
@@ -438,7 +438,7 @@ Una transacción segura TSL se realiza de acuerdo al siguiente modelo \(resumido
 
 **Ejemplo de cifrado de mensaje: Ana envía un mensaje a David**
 
-> ![](/img/HTTP/CriptografiaAsimetrica.png)
+> ![](/Ciberseguridad-PePS/assets/img/HTTP/CriptografiaAsimetrica.png)
 >
 > 1. Ana redacta un mensaje
 > 2. Ana cifra el mensaje con la clave pública de David
@@ -456,18 +456,18 @@ Y también cuidado con los [PunyCodes](https://es.wikipedia.org/wiki/Punycode). 
 
 **En Firefox**
 
-![image-20201021164422312](/img/HTTP/image-20201021164422312.png)
+![image-20201021164422312](/Ciberseguridad-PePS/assets/img/HTTP/image-20201021164422312.png)
 
 
 
 **En Chrome**
 
-![image-20201021164334542](/img/HTTP/image-20201021164334542.png)
+![image-20201021164334542](/Ciberseguridad-PePS/assets/img/HTTP/image-20201021164334542.png)
 
 **Ejemplo de ataque**
 
 En primer lugar, Alice le pregunta a Bob por su [clave pública](https://es.wikipedia.org/wiki/Clave_pública). Si Bob envía su clave pública a Alice, pero Mallory es capaz de  interceptarla, un ataque de intermediario puede comenzar. Mallory envía  un mensaje falsificado a Alice que dice ser de Bob, pero en cambio incluye la clave pública de Mallory. Alice, creyendo que esta clave  pública sea de Bob, cifra su mensaje con la clave de Mallory y envía el  mensaje cifrado de nuevo a Bob. Mallory intercepta otra vez, descifra el mensaje utilizando su clave privada, posiblemente lo altera si quiere, y vuelve a cifrar con la clave pública de Bob que fue enviada originalmente a Alice. Cuando Bob recibe el nuevo mensaje cifrado, él cree que vino de Alice.
-![image-20201021163246099](/img/HTTP/image-20201021163246099.png)
+![image-20201021163246099](/Ciberseguridad-PePS/assets/img/HTTP/image-20201021163246099.png)
 
 
 ------

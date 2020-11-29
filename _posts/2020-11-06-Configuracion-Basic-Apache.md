@@ -1,6 +1,6 @@
 ---
-typora-copy-images-to: ../assets/img/apache/
-typora-root-url: ../assets/
+typora-copy-images-to: ../../assets/img/apache/
+typora-root-url: ../../
 layout: post
 categories: tema1 apache
 title: Configuración básica de Apache
@@ -36,19 +36,19 @@ Vamos a crear 2 hots virtuales en nuestra instalación de **apache** de tal form
 
 A continuación se muestra la estructura de directorios de una instalación típica:
 
-![](/img/apache/dir_apache.png)
+![](/Ciberseguridad-PePS/assets/img/apache/dir_apache.png)
 
 Todos los hosts se definen dentro de la carpeta `sites-available` y los que están activos están en la carpeta `sites-enabled`.
 
-![](/img/apache/sites-available.png)
+![](/Ciberseguridad-PePS/assets/img/apache/sites-available.png)
 
-![](/img/apache/sites-enabled.png)
+![](/Ciberseguridad-PePS/assets/img/apache/sites-enabled.png)
 
 Por tanto, podemos tener definidos muchos sites en `sites-available` pero no tenemos porqué tenerlos todos activos a la vez.
 
 Para crear un host virtual \(suponiendo que se llama `website1`\), debemos crear un archivo llamado `website1.conf` (el nombre del archivo de configuración no importa) dentro se `sites-available` y editar su configuración. Por ejemplo, una configuración mínima sería:
 
-![1537281856382](/img/apache/1537281856382.png)
+![1537281856382](/Ciberseguridad-PePS/assets/img/apache/1537281856382.png)
 
 La directiva `ServerName` sirve para establecer el nombre del host virtual, mientras que `ServerAlias` sirve para especificar un nombre alternativo. Si tenemos más de un virtual host, `ServerName` o `ServerAlias` deben coincidir con el nombre del host virtual, en este caso **website1.local**.
 
@@ -87,19 +87,19 @@ phpinfo();
 
 Si todo ha ido bien, al visitar la url www.website1.local nos devolverá la información de la configuración de php
 
-![](/img/apache/phpinfo.png)
+![](/Ciberseguridad-PePS/assets/img/apache/phpinfo.png)
 
 ## Permisos
 
 Es muy importante establecer los permisos de los directorios correctamente o puedes encontrarte con el siguiente error cuando accedas a tu host virtual.
 
-![1537284433352](/img/apache/1537284433352.png)
+![1537284433352](/Ciberseguridad-PePS/assets/img/apache/1537284433352.png)
 
 En sistemas Unix, los permisos de un archivo o directorio se definen para el propietario, el grupo al que pertenece el mismo y otros usuarios.
 
 Por ejemplo:
 
-![1537285319233](/img/apache/1537285319233.png)
+![1537285319233](/Ciberseguridad-PePS/assets/img/apache/1537285319233.png)
 
 Por ejemplo, en el directorio `website1` que pertenece al usuario **victor** y grupo **victor**, indica **drwxrwx---**:
 
@@ -120,7 +120,7 @@ chmod -R 775 website1
 
 Ahora sí que puede acceder porque los permisos para *otros* están definidos como de **lectura** y de **ejecución**. 
 
-![1537286094413](/img/apache/1537286094413.png)
+![1537286094413](/Ciberseguridad-PePS/assets/img/apache/1537286094413.png)
 
 Si además, nuestra web tiene la opción de subir archivos de cualquier tipo, también debemos darle permiso de escritura.
 
@@ -176,7 +176,7 @@ Finalmente creamos el alias dentro del archivo de configuración del sitio,  añ
 
 
 
-![1537282410116](/img/apache/1537282410116.png)
+![1537282410116](/Ciberseguridad-PePS/assets/img/apache/1537282410116.png)
 
 ### -tarea-Tarea 2
 
@@ -188,7 +188,7 @@ Finalmente creamos el alias dentro del archivo de configuración del sitio,  añ
 Utilizando la directiva `Redirect` podemos crear una redirección de un recurso hacia una URL. Por ejemplo, vamos a crear una redirección de `/ieselcaminas` hacia la URL http://www.ieselcaminas.org .
 Para ello modificaremos el archivo de configuración:
 
-![1537282492432](/img/apache/1537282492432.png)
+![1537282492432](/Ciberseguridad-PePS/assets/img/apache/1537282492432.png)
 
 ###  -tarea-Tarea 3
 >Realiza esta modificación en tu archivo de configuración de apache. Adjunta el contenido de tu archivo de configuración de apache y una captura de pantalla de Firebug donde se vea el `Status Code 302`
