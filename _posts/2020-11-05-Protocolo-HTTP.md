@@ -3,8 +3,8 @@ typora-copy-images-to: ../assets/
 typora-root-url: ../assets/
 layout: post
 categories: tema1 HTTP
-conToc: true
 title: Protocolo HTTP
+conToc: true
 ---
 
 # Generalidades del protocolo HTTP y HTTPS
@@ -125,36 +125,36 @@ Se presenta a continuación una lista con los elementos que se pueden controlar 
 
 * **Sesiones**. El uso de HTTP cookies permite relacionar peticiones con el estado del servidor. Esto define las sesiones, a pesar de que por definición el protocolo HTTP es un protocolo sin estado. Esto es muy útil no sólo para aplicaciones de comercio electrónico, sino también para cualquier sitio que permita configuración al usuario.
 
-> **Tarea 3**
->
+### -tarea-Tarea 1
+
 > Crea una página html con el código a continuación. Guárdala y ábrela con el navegador
 >
 > ```html
-> <!DOCTYPE html>
+><!DOCTYPE html>
 > <html>
->     <head>
->         <title>Wikipedia Insertada</title>
+>  <head>
+>      <title>Wikipedia Insertada</title>
 >     </head>
 >     <body>
 >         <iframe src='https://es.wikipedia.org/wiki/Wikipedia:Portada' width='100%' height='800px'></iframe>
 >     </body>
-> </html>
-> ```
->
+>    </html>
+>    ```
+> 
 > Ahora, crea otra con el siguiente código:
 >
 > ```html
-> <!DOCTYPE html>
+><!DOCTYPE html>
 > <html>
->     <head>
->         <title>Wikipedia Insertada</title>
+>  <head>
+>      <title>Wikipedia Insertada</title>
 >     </head>
 >     <body>
 >         <iframe src='https://www.google.es/' width='100%' height='800px'></iframe>
 >     </body>
-> </html>
-> ```
->
+>    </html>
+>    ```
+> 
 > Ahora responde, ¿por qué no se ve la página con el iframe a [https://www.google.es/?](https://www.google.es/?)
 
 ## Flujo de HTTP
@@ -240,13 +240,13 @@ Las respuestas están formadas por los siguentes campos:
 * **Cabeceras HTTP**, como las de las peticiones.
 * Opcionalmente, **el recurso que se ha pedido**.
 
->  **Tarea 4**
->
-> 1. Abre en el Firefox una dirección web.
-> 2. Activa Firebug \(tecla F12\)
+### -tarea-Tarea 2
+
+>  1. Abre en el Firefox una dirección web.
+>2. Activa Firebug \(tecla F12\)
 > 3. Selecciona la opción Red
 > 4. Recarga la página y revisa las cabeceras
->
+> 
 > ![](/img/HTTP/cabecerashttp.png)
 
 ## Método HTTP
@@ -387,8 +387,8 @@ En la siguiente [página oficial de HTTP/2](https://http2.github.io/faq/#what-ar
 
 Podéis ver un ejemplo de esta mejora en las siguiente páginas
 
-* https://http2.akamai.com/demo
-* https://www.cloudflare.com/website-optimization/http2/
+* [https://http2.akamai.com/demo](https://http2.akamai.com/demo)
+* [https://www.cloudflare.com/website-optimization/http2/](https://www.cloudflare.com/website-optimization/http2/)
 
 ### Desde el punto de vista de la ciberseguridad
 
