@@ -5,7 +5,7 @@ layout: default
 <h1>{{ page.title }}</h1>
 {% endif %}
         {% include postNavigation.html %}
-        {% assign content = content | replace: '<img src="/img/', '<img src="/Ciberseguridad-PePS/assets/img/' | replace: '>-tarea-', ' class="task"><i class="fa fa-check"></i> ' %}
+        {% assign content = content | replace: '>-tarea-', ' class="task"><i class="fa fa-check"></i> ' %}
         <div>
             {% if page.conToc %}
                 {% include toc.html html=content class="atypora-menu" id="menu"%}

@@ -38,6 +38,7 @@ defaults:
     values:
       image: true
 baseurl: /Ciberseguridad-PePS
+
 # Build settings
 #theme: minima
 #plugins:
