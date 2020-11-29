@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
     <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
-    <title>Remark</title>
+    <title>Introducción a PePS</title>
     <style>
       @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -146,6 +146,9 @@
       blockquote cite:before {
         content: "\2014 \2009";
       }
+      .right-column li{
+        line-height: 150%;
+      }
     </style>
   </head>
   <body>
@@ -155,9 +158,10 @@ layout: true
 class: center, middle, inverse
 ---
 #Puesta en Producción Segura
-## Curso de especialización en ciberseguridad FRancisco
-[PEPS]
-.footnote[[Sitio del proyecto](https://github.com/victoponz/PEPS)]
+## Curso de especialización en ciberseguridad
+[PePS]
+<a href='mailto:victorponz@ieselcaminas.org'>Víctor Ponz</a>
+.footnote[[Sitio del proyecto](https://github.com/victorponz/Ciberseguridad-PePS)]
 ---
 ## De qué trata este módulo?
 ---
@@ -335,196 +339,74 @@ app.listen(port, () => {
 
 ]
 ---
-template: inverse
-
-## Of course, Markdown can only go so far.
----
 .left-column[
-  ## Markdown extensions
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+  ### - Containers
+  ### - Orchestrators
+  ### - Web Application Security Risks
+  ### - OWASP mobile security
+  ### - CI/CD
 ]
 .right-column[
-To help out with slide layout and formatting, a few Markdown extensions have been included:
+![OWASP mobile security](assets/DevOps.png)
 
-- Slide properties, for naming, styling and templating slides
+<blockquote>
+  La CI/CD es un método para distribuir aplicaciones a los clientes con frecuencia mediante el uso de la automatización en las etapas del 
+  desarrollo de aplicaciones. Los principales conceptos que se atribuyen a la CI/CD son la integración continua, la distribución continua y 
+  la implementación continua. La CI/CD es una solución para los problemas que puede generar la integración del código nuevo a los equipos de
+   desarrollo y de operaciones (también conocida como <a href='https://www.solutionsiq.com/agile-glossary/integration-hell/'> "Integration Hell" </a>).</blockquote>
 
-- Content classes, for styling specific content
-
-- Syntax highlighting, supporting a range of languages
-]
-
----
-.left-column[
-  ## Markdown extensions
-  ### - Slide properties
-]
-.right-column[
-Initial lines containing key-value pairs are extracted as slide properties:
-
-```remark
-name: agenda
-class: middle, center
-
-# Agenda
-
-The name of this slide is {{ name }}.
-```
-
-Slide properties serve multiple purposes:
-
-* Naming and styling slides using properties `name` and `class`
-
-* Using slides as templates using properties `template` and `layout`
-
-* Expansion of `{{ property }}` expressions to property values
-
-See the [complete list](https://github.com/gnab/remark/wiki/Markdown#slide-properties) of slide properties.
-]
----
-.left-column[
-  ## Markdown extensions
-  ### - Slide properties
-  ### - Content classes
-]
-.right-column[
-Any occurences of one or more dotted CSS class names followed by square brackets are replaced with the contents of the brackets with the specified classes applied:
-
-```remark
-.footnote[.red.bold[*] Important footnote]
-```
-
-Resulting HTML extract:
-
-```xml
-<span class="footnote">
-  <span class="red bold">*</span> Important footnote
-</span>
-```
-]
----
-.left-column[
-  ## Markdown extensions
-  ### - Slide properties
-  ### - Content classes
-  ### - Syntax Highlighting
-]
-.right-column[
-Code blocks can be syntax highlighted by specifying a language from the set of [supported languages](https://github.com/gnab/remark/wiki/Configuration#highlighting).
-
-Using [GFM](http://github.github.com/github-flavored-markdown/) fenced code blocks you can easily specify highlighting language:
-
-.pull-left[
-
-<pre><code>```javascript
-function add(a, b)
-  return a + b
-end
-```</code></pre>
-]
-.pull-right[
-
-<pre><code>```ruby
-def add(a, b)
-  a + b
-end
-```</code></pre>
-]
-
-A number of highlighting [styles](https://github.com/gnab/remark/wiki/Configuration#highlighting) are available, including several well-known themes from different editors and IDEs.
-
-]
----
-.left-column[
-  ## Presenter mode
-]
-.right-column[
-To help out with giving presentations, a presenter mode comprising the
-following features is provided:
-
-- Display of slide notes for the current slide, to help you remember
-  key points
-
-- Display of upcoming slide, to let you know what's coming
-
-- Cloning of slideshow for viewing on extended display
-]
----
-.left-column[
-  ## Presenter mode
-  ### - Inline notes
-]
-.right-column[
-Just like three dashes separate slides,
-three question marks separate slide content from slide notes:
-
-```
-Slide 1 content
-
-*???
-
-Slide 1 notes
-
----
-
-Slide 2 content
-
-*???
-
-Slide 2 notes
-```
-
-Slide notes are also treated as Markdown, and will be converted in the
-same manner slide content is.
-
-Pressing __P__ will toggle presenter mode.
-]
-???
-Congratulations, you just toggled presenter mode!
-
-Now press __P__ to toggle it back off.
----
-.left-column[
-  ## Presenter mode
-  ### - Inline notes
-  ### - Cloned view
-]
-.right-column[
-Presenter mode of course makes no sense to the audience.
-
-Creating a cloned view of your slideshow lets you:
-
-- Move the cloned view to the extended display visible to the audience
-
-- Put the original slideshow in presenter mode
-
-- Navigate as usual, and the cloned view will automatically keep up with the original
-
-Pressing __C__ will open a cloned view of the current slideshow in a new
-browser window.
 ]
 ---
 template: inverse
 
-## It's time to get started!
+## Entendido. ¿Cómo va a ser la metodología y la evaluación de este módulo?
 ---
 .left-column[
-  ## Getting started
+## Evaluación
+### - Metodología
 ]
 .right-column[
-Getting up and running is done in only a few steps:
-
-1. Visit the [project site](http://github.com/gnab/remark)
-
-2. Follow the steps in the Getting Started section
-
-For more information on using remark, please check out the [wiki](https://github.com/gnab/remark/wiki) pages.
+- El curso es eminentemente práctico. 
+- Las fechas de entrega de las prácticas no tienen ampliación de plazos.
+- En el caso de entregarlas fuera del mismo, supondrá una penalización extra de entre el 10% y el 80%
+- Tampoco se podrán reenviar
+]
+---
+.left-column[
+## Evaluación
+### - Metodología
+### - Teoría
+]
+.right-column[
+- En principio no va a haber exámen teórico. 
+- En otro caso, se avisará con el tiempo necesario
+]
+---
+.left-column[
+## Evaluación
+### - Metodología
+### - Teoría
+### - Calificación
+]
+.right-column[
+# Criterios de calificación
+- La nota de la primera evaluación estará formada por:
+  - la nota obtenida en las **prácticas hasta un 80%**
+  - el **20%** restante corresponde a las notas obtenidas en las **prácticas de ampliación**.
+  - la no asistencia a clase supone la **pérdida de la evaluación continua**
+  - si algún alumno/alumna **discrepa de dicha nota**, se le realizará un **examen teórico-práctico**.
+- Para la nota final, se aplicará el mismo criterio que en la primera evaluación para calificar el trabajo realizado. Después se realizará la media.
 ]
 ---
 name: last-page
 template: inverse
 
-## That's all folks (for now)!
-
-Slideshow created using [remark](http://github.com/gnab/remark).
+## Esto es todo (por ahora)!
+### Nos vemos los lunes de 15:00 a 16:50 y los miércoles de 15:00 a 17:45 
+### [ y todos los días en en [Aules](https://aules.edu.gva.es/fp/)]
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
     <script>

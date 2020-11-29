@@ -1,6 +1,6 @@
-- name: Home
+- name: Índice
   link: /
-- name: About
+- name: Acerca de 
   link: /about.html
-- name: Blog
-  link: /blog.html
+- name: Intro 
+  link: /intro.html
