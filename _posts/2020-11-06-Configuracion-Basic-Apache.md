@@ -106,7 +106,7 @@ Por ejemplo, en el directorio `website1` que pertenece al usuario **victor** y g
 * es un directorio porque empieza por **d**
 * El usuario `victor` tiene permisos de lectura (read), escritura (write) y ejecución (x). Lo sabemos con los tres siguientes caracteres d**rwx**rwx---
 * El grupo `victor` al que pertenece el directorio tiene  permisos de lectura (read), escritura (write) y ejecución (x).  Lo sabemos con los tres siguientes caracteres drwx**rwx**---
-* Otros usuarios (que no sean el propietario ni pertenezcan a dicho grupo) no tienen ningún permiso  drwxrwx**---**. Cuando aperece un guión significa que no tiene permiso.
+* Otros usuarios (que no sean el propietario ni pertenezcan a dicho grupo) no tienen ningún permiso  drwxrwx**---**. Cuando aparece un guión significa que no tiene permiso.
 
 Cuando un cliente hace una petición a un recurso de nuestro servidor lo hace como un usuario sin autenticar en el sistema, y **apache** actúa de su parte intentando acceder a dicho recurso con sus credenciales propias, que suelen ser usuario `www-data` y grupo `www-data`.
 
@@ -130,7 +130,7 @@ Si además, nuestra web tiene la opción de subir archivos de cualquier tipo, ta
 >
 > Sin embargo, si las prácticas las vamos haciendo en un directorio que esté en nuestro `home`, **apache** va a seguir sin poder acceder, a no ser que definamos la directiva `Require all granted` para `DocumentRoot` dentro del archivo de configuración de nuestro host virtual.
 >
-> **Nunca pero nunca**, des permisos 777 a tu servidor en producción. Si hace falta que **Apache** acceda en modo escritura a tu `DocumentRoot` piensa en cambiar el grupo al que pertenece **apache** o usa cualquier otra técnica.
+> **Nunca pero nunca**, des permisos 777 a tu servidor en producción. Si hace falta que **apache** acceda en modo escritura a tu `DocumentRoot` piensa en cambiar el grupo al que pertenece **apache** o usa cualquier otra técnica.
 >
 > Más información en [https://askubuntu.com/questions/325498/apache-cant-access-folders-in-my-home-directory](https://askubuntu.com/questions/325498/apache-cant-access-folders-in-my-home-directory) y en [https://serverfault.com/questions/357108/what-permissions-should-my-website-files-folders-have-on-a-linux-webserver](https://serverfault.com/questions/357108/what-permissions-should-my-website-files-folders-have-on-a-linux-webserver)
 
@@ -148,7 +148,7 @@ Y ¿de dónde salen esos dígitos? Pues de una técnica que se usa mucho en info
 
 Por ejemplo, si queremos dar permisos de lectura y escritura usaremos el valor **6**, resultante de sumar **4 + 2**, que en binario es **110**
 
-#### -tarea-Tarea 1
+### -tarea-Tarea 1
 
 > 1. Cread dos hosts virtuales usando el método descrito en este documento \(website1 y website2\).
 > 2. Una vez creados, cread un documento `markdown` con las capturas de pantalla de los directorios `sites-available` y `sites-enabled`, así como de los directorios creados dentro del `DocumentRoot` definido en cada uno de ellos.
