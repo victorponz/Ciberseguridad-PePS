@@ -1,6 +1,6 @@
 ---
-typora-copy-images-to: ../assets/img/github-pages/
-typora-root-url: ../assets/
+typora-copy-images-to: ../../assets/img/github-pages/
+typora-root-url: ../../
 layout: post
 categories: tema1 git
 title: GitHub Pages
@@ -11,16 +11,16 @@ Ya que tenemos una cuenta en `GitHub`, vamos a usar la posibilidad de alojar una
 
 Esta web la usaremos para realizar las actividades del módulo. De esta forma, podéis practicar con git y tener siempre actualizadas las mismas.
 
-> En mi opinión personal, la mejor herramienta para trabajar en formato markdown es [typora](https://typora.io/)
+> En mi opinión personal, la mejor herramienta para trabajar en formato **markdown** es [typora](https://typora.io/)
 
-Hay muchas webs alojadas en `GitHub`: Bootstrap, Semantic UI, Electron.io, Foundation, Facebook design, ...
+Hay muchas webs alojadas en `GitHub`: [Bootstrap](https://getbootstrap.com/), [Semantic UI](https://semantic-ui.com/), [Electron](https://www.electronjs.org/), [Foundation](https://get.foundation/), [Facebook design](https://design.facebook.com/), ...
 
 En las siguientes URLs tenéis más ejemplos:
 * https://github.com/collections/github-pages-examples
 * https://webdesignledger.com/best-github-project-pages/
 
 Crear una página personal o para un proyecto es muy sencillo (además de gratis):
-1. Crear un nuevo repositorio con el formato `username.github.io` donde `username` es vuestro nombre usuario de `GitHub`
+1. Crear un nuevo repositorio con el formato `username.github.io` donde `username` es vuestro nombre usuario de `GitHub`. También lo podéis crear en cualquier repositorio si os dais de alta en [GitHub Student Developer Pack](https://education.github.com/students)
 2. Clonar el repositorio en local
 ```bash
 git clone https://github.com/username/username.github.io
