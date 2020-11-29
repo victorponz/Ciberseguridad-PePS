@@ -2,14 +2,20 @@
 layout: default
 title: Apuntes Puesta en producción segura.
 ---
-        <img src='{{site.baseurl}}/assets/img/DevOps.png' alt='Puesta en producción segura'>
-        <h1>Puesta en producción segura</h1>
-        <ul>
-            {% for post in site.posts %}
-              <li>
-                <h2><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2>
-                <p>{{ post.excerpt | replace: '<img src="/img/', '<img src="/Ciberseguridad-PEPS2/assets/img/'}}</p>
-              </li>
-            {% endfor %}
-          </ul>
+<h1>Puesta en producción segura</h1>        
+<img src='{{site.baseurl}}/assets/img/DevOps.png' alt='Puesta en producción segura'>
 
+    <h2>Tema 1 - Introducción</h2>
+    <blockquote>
+      En esta parte del módulo crearemos el entorno necesario que usaremos durante el resto del curso, 
+      así como aprenderemos los conceptos básicos que nos servirán para empezar a familiarizarnos con el término
+       <strong>Puesta en Producción (Segura)</strong>
+    </blockquote>
+
+<ol> 
+  {% for post in site.posts reversed %}
+    {% if post.categories contains "tema1" %}
+      <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2></li>
+    {% endif %}
+{% endfor %}
+</ol>
