@@ -172,6 +172,7 @@ body {
 }
 #write{
   padding: 80px;
+  padding-top: 12px;
 }
 
 #content p, #content li{
@@ -379,4 +380,13 @@ h4.task + blockquote code.highlighter-rouge,
 h5.task + blockquote code.highlighter-rouge,
 h6.task + blockquote code.highlighter-rouge{
   background-color: black;
+}
+.PageNavigation a, .pdf, #menu a{
+  text-decoration: none; color:rgb(51, 51, 51); font-size:0.8em
+}
+.PageNavigation a, #menu a{
+  font-size:inherit;
+}
+#menuContainer code.highlighter-rouge{
+  background-color: transparent;
 }

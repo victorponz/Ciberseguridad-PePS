@@ -1,10 +1,12 @@
 ---
 layout: default
 ---
+{% assign pathToPdf = page.path %}
+<a class='pdf' alt='Versión en Pdf' title='Versión en PDF' href="{{ site.baseurl }}{{ pathToPdf | remove: ".md" | replace: "_posts/" , "/assets/pdf/"}}.pdf"> (Descarga la versión en <i class="fas fa-file-pdf"></i>)</a>
+        {% include postNavigation.html %}
 {% if page.conToc %}
 <h1>{{ page.title }}</h1>
 {% endif %}
-        {% include postNavigation.html %}
         {% assign content = content | replace: '>-tarea-', ' class="task"><i class="fa fa-check"></i> ' %}
         <div>
             {% if page.conToc %}
