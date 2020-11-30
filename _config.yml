@@ -19,7 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 # https://tomkadwill.com/adding-last-modified-date-to-jekyll
-
+# TODO:
+  # https://github.com/samrayner/jekyll-asset-path-plugin
 markdown: kramdown
 transliterated_header_ids: true
 #highlighter: rouged
@@ -38,7 +39,6 @@ defaults:
     values:
       image: true
 baseurl: /Ciberseguridad-PePS
-
 # Build settings
 #theme: minima
 #plugins:
