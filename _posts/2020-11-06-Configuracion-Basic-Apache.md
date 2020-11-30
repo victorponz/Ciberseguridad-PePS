@@ -5,6 +5,18 @@ layout: post
 categories: tema1 apache
 title: Configuración básica de Apache
 conToc: true
+header-includes: |
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \newcommand{\changefont}{%
+    \fontsize{8}{11}\selectfont}
+    \fancyhead[CO,CE]{}
+    \fancyhead[LO,CE]{}
+    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
+    \fancyfoot[CO,CE]{}
+    \fancyfoot[LE,RO]{\thepage}
+    \renewcommand{\headrulewidth}{2pt}
+    \renewcommand{\footrulewidth}{1pt}
 ---
 
 
@@ -148,7 +160,7 @@ Y ¿de dónde salen esos dígitos? Pues de una técnica que se usa mucho en info
 
 Por ejemplo, si queremos dar permisos de lectura y escritura usaremos el valor **6**, resultante de sumar **4 + 2**, que en binario es **110**
 
-### -tarea-Tarea 1
+### Tarea 1
 
 > 1. Cread dos hosts virtuales usando el método descrito en este documento \(website1 y website2\).
 > 2. Una vez creados, cread un documento `markdown` con las capturas de pantalla de los directorios `sites-available` y `sites-enabled`, así como de los directorios creados dentro del `DocumentRoot` definido en cada uno de ellos.
@@ -178,7 +190,7 @@ Finalmente creamos el alias dentro del archivo de configuración del sitio,  añ
 
 ![1537282410116](/Ciberseguridad-PePS/assets/img/apache/1537282410116.png)
 
-### -tarea-Tarea 2
+### Tarea 2
 
 >Configurad vuestro servidor apache de esta manera y adjuntad las capturas de pantalla tanto del archivo de configuración de apache como del navegador apuntado a dicho alias.
 
@@ -190,13 +202,15 @@ Para ello modificaremos el archivo de configuración:
 
 ![1537282492432](/Ciberseguridad-PePS/assets/img/apache/1537282492432.png)
 
-###  -tarea-Tarea 3
+###  Tarea 3
 >Realiza esta modificación en tu archivo de configuración de apache. Adjunta el contenido de tu archivo de configuración de apache y una captura de pantalla de Firebug donde se vea el `Status Code 302`
+
+
 ## Error 404
 
 Siguiendo la información que puedes encontrar en este [enlace](https://httpd.apache.org/docs/2.2/es/custom-error.html), configura tu instalación de apache para que muestre una página html con un mensaje de error personalizado. 
 
-###  -tarea- Tarea 4
+###  Tarea 4
 
 >Realiza esta modificación en tu archivo de configuración.  
 Crea un documento `markdown` con esta información y adjunta una captura de pantalla de firebug mostrando esta página y en la que se vea el `status code 404`
