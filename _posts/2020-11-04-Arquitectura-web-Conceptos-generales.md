@@ -1,6 +1,6 @@
 ---
 typora-root-url: ../../
-typora-copy-images-to: ../../assets/img/AWCG/
+typora-copy-images-to: ../assets/img/AWCG/
 layout: post
 categories: tema1
 categories: tema1 HTTP
@@ -287,6 +287,26 @@ Existen otros tipos de aplicaciones orientadas a otros ámbitos, como por ejempl
 
 ![image-20201019161452846](/Ciberseguridad-PePS/assets/img/AWCG/image-20201019161452846.png)
 
+### 4.3 Headless CMS
+
+Ahora bien, en los últimos años hemos podido presenciar el surgimiento de una nueva clase de CMS, el 'headless CMS'. Ciertamente, el término traducido al español no resulta muy explicativo ('CMS sin cabeza'), por lo que vamos a explicar un poco en qué consisten.
+
+Este tipo de CMS sólo se encargan de generar una interfaz web para introducir los datos. Una vez creada esta interfaz y alimentada con datos, proveen de una API REST, generalmente en JSON, para consultarlos.
+
+Después ya sólo hace falta conectar los datos con:
+
+1. Un front-end para Web
+2. Otro para móvil
+3. Otro para relojes inteligentes.
+4. ...
+
+Parece que no tiene sentido, ¿verdad?
+
+Pues debe tenerlo porque existe un gran ecosistema alrededor de esta tecnología como se puede comprobar en [https://jamstack.org/headless-cms/](https://jamstack.org/headless-cms/)
+
+![image-20201130081246932](/Ciberseguridad-PePS/assets/img/AWCG/image-20201130081246932.png)
+
+Podéis consultar más información en [https://www.genbeta.com/desarrollo/headless-cms-que-que-se-diferencian-tradicionales](https://www.genbeta.com/desarrollo/headless-cms-que-que-se-diferencian-tradicionales)
 
 ## 5 Servidores web y de aplicaciones
 
