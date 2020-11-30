@@ -381,8 +381,11 @@ h5.task + blockquote code.highlighter-rouge,
 h6.task + blockquote code.highlighter-rouge{
   background-color: black;
 }
-.PageNavigation a, .pdf, #menu a{
+.PageNavigation a, .pdf, #menu a, .portada a{
   text-decoration: none; color:rgb(51, 51, 51); font-size:0.8em
+}
+.portada a{
+  font-size:inherit;
 }
 .PageNavigation a, #menu a{
   font-size:inherit;
