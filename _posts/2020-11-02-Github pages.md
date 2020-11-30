@@ -5,6 +5,17 @@ layout: post
 categories: tema1 git
 title: GitHub Pages
 conToc: false
+header-includes: |
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \newcommand{\changefont}{%
+    \fontsize{8}{11}\selectfont}
+    \fancyhead[CO,CE]{}
+    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
+    \fancyfoot[CO,CE]{}
+    \fancyfoot[LE,RO]{\thepage}
+    \renewcommand{\headrulewidth}{2pt}
+    \renewcommand{\footrulewidth}{1pt}
 ---
 # GitHub Pages
 Ya que tenemos una cuenta en `GitHub`, vamos a usar la posibilidad de alojar una web estática personal en la url `https://nombre-de-usuario.github.io`
@@ -42,5 +53,8 @@ git push -u origin master
 ```
 5. Ya está!! https://victorponz.github.io/
 
-## -tarea-Crea tu página personal
-> Crea tu página en GitHub Pages. Todas las prácticas que hagas, las has de crear como un nuevo post y en la tarea de Moodle hacer referencia al mismo
+## Crea tu página personal
+
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Tarea</strong><br> Crea tu página en GitHub Pages. Todas las prácticas que hagas, las has de crear como un nuevo post y en la tarea de Moodle hacer referencia al mismo
+</blockquote>
