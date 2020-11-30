@@ -363,24 +363,15 @@ video {
   }
 }
 
-h1.task + blockquote, 
-h2.task + blockquote, 
-h3.task + blockquote, 
-h4.task + blockquote, 
-h5.task + blockquote,
-h6.task + blockquote{
+blockquote.task{
   background-color: darkgray;
   color:white;
 }
-
-h1.task + blockquote code.highlighter-rouge,
-h2.task + blockquote code.highlighter-rouge,
-h3.task + blockquote code.highlighter-rouge,
-h4.task + blockquote code.highlighter-rouge,
-h5.task + blockquote code.highlighter-rouge,
-h6.task + blockquote code.highlighter-rouge{
-  background-color: black;
+blockquote.task strong, blockquote.task i{
+  color:rgb(51, 51, 51);
 }
+
+
 .PageNavigation a, .pdf, #menu a, .portada a{
   text-decoration: none; color:rgb(51, 51, 51); font-size:0.8em
 }
@@ -392,22 +383,4 @@ h6.task + blockquote code.highlighter-rouge{
 }
 #menuContainer code.highlighter-rouge{
   background-color: transparent;
-}
-
-@page {
-
-  margin-bottom: 40px;
-  counter-increment: page;
-
-  @bottom-right {
-      border-top: 1px solid #000000;
-      padding-right:20px;
-      font-size: 12px !important;
-      content: "Page " counter(page) " of " counter(pages);
-  }
-  @bottom-left {
-      content: "Footer content goes here.";
-      border-top: 1px solid #000000;
-  }
-
 }
