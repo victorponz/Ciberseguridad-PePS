@@ -28,6 +28,7 @@ header-includes: |
 Clientes y servidores se comunican intercambiando mensajes individuales \(en contraposición a las comunicaciones que utilizan flujos continuos de datos\). Los mensajes que envía el cliente, normalmente un navegador Web, se llaman peticiones, y los mensajes enviados por el servidor, se llaman respuestas.
 
 ![Capas HTTP](/Ciberseguridad-PePS/assets/img/HTTP/HTTP & layers.png)
+
 Diseñado a principios de la década de 1990, HTTP es un protocolo ampliable, que ha ido evolucionando con el tiempo. Es lo que se conoce como un protocolo de la capa de aplicación, y se transmite sobre el protocolo [TCP](#tcp), o el protocolo encriptado [TLS](#tls), aunque teóricamente podría usarse cualquier otro protocolo fiable. Gracias a que es un protocolo capaz de ampliarse, se usa no solo para transmitir documentos de hipertexto \(HTML\), si no que además, se usa para transmitir imágenes o vídeos, o enviar datos o contenido a los servidores, como en el caso de los formularios de datos. HTTP puede incluso ser utilizado para transmitir partes de documentos, y actualizar páginas Web en el acto.
 
 **TCP**
@@ -479,18 +480,40 @@ En primer lugar, Alice le pregunta a Bob por su [clave pública](https://es.wiki
 
 Y también cuidado con los [PunyCodes](https://es.wikipedia.org/wiki/Punycode). Por ejemplo si visitas esta [web](https://www.аррӏе.com/) que parece legítima ocurre lo siguiente:
 
-En **Firefox**
+### En Firefox
+&nbsp;
+![PunyCodes en Firefox](/Ciberseguridad-PePS/assets/img/HTTP/image-20201021164422312.png)
 
-
-
-### ![PunyCodes en Firefox](/Ciberseguridad-PePS/assets/img/HTTP/image-20201021164422312.png)
-
-En **Chrome**
-
-
+### En Chrome
+&nbsp;
 ![PunyCodes en Chrome](/Ciberseguridad-PePS/assets/img/HTTP/image-20201021164334542.png)
 
 
+
+## Antes y después de la renderización: todo lo demás que hace el navegador
+
+Un navegador es mucho más que una canalización de renderizado y un motor JavaScript. Además de renderizar HTML y ejecutar JavaScript, los navegadores modernos contienen lógica para muchas otras responsabilidades. Los navegadores se conectan con el sistema operativo para resolver y almacenar en caché direcciones `DNS`, interpretar y verificar certificados de seguridad, codificar solicitudes en HTTPS si es necesario y almacenar y transmitir `cookies` de acuerdo con las instrucciones del servidor web. Para comprender cómo encajan estas responsabilidades, echemos un vistazo entre bastidores a un usuario que inicia sesión en Amazon:
+
+1. El usuario visita [www.amazon.es](www.amazon.es) en su navegador favorito.
+
+2. El navegador intenta resolver el dominio ([amazon.es](amazon.es)) en una dirección `IP`. Primero, el navegador consulta la caché de `DNS` del sistema operativo. Si no encuentra resultados, le pide al proveedor de servicios de Internet que busque en la caché de `DNS` del proveedor. En el improbable caso de que nadie del `ISP` haya visitado el sitio web de Amazon antes, el `ISP` resolverá el dominio en un servidor `DNS` autorizado.
+
+3. Ahora que ha resuelto la dirección `IP`, el navegador intenta iniciar un protocolo de enlace `TCP` con el servidor correspondiente a la dirección `IP` para establecer una conexión segura.
+
+4. Una vez que se ha establecido la sesión de `TCP`, el navegador construye una solicitud `HTTP` `GET` a [www.amazon.es](www.amazon.es). `TCP` divide la solicitud `HTTP` en paquetes y los envía al servidor para ser reensamblados.
+
+5. En este punto, la conversación `HTTP` se actualiza a `HTTPS` para garantizar una comunicación segura. El navegador y el servidor realizan un protocolo de enlace `TLS`, acuerdan un cifrado de cifrado e intercambian claves de cifrado.
+
+6. El servidor utiliza el canal seguro para enviar una respuesta `HTTP` que contiene `HTML` de la página principal de Amazon. El navegador analiza y muestra la página, lo que generalmente activa muchas otras solicitudes `HTTP` `GET`.
+
+7. El usuario navega a la página de inicio de sesión, ingresa sus credenciales de inicio de sesión y envía el formulario de inicio de sesión, que genera una solicitud `POST` al servidor.
+
+8. El servidor valida las credenciales de inicio de sesión y establece una sesión devolviendo un encabezado `Set-Cookie` en la respuesta. El navegador almacena la `cookie` durante el tiempo prescrito y la devuelve con solicitudes posteriores a Amazon.
+
+&nbsp;
+![image-20201206190308318](/Ciberseguridad-PePS/assets/img/HTTP/image-20201206190308318.png)
+&nbsp;
+Después de que todo esto suceda, el usuario puede acceder a su cuenta de Amazon.
 
 **Basado en:**
 
