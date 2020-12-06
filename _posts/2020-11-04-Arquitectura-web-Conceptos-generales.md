@@ -194,15 +194,13 @@ Hoy en día, la mayoría de aplicaciones web se construyen con métodos dinámic
 
 Los generadores de sitios estáticos funcionan convirtiendo texto simple y con formato ligero (generalmente [markdown](https://es.wikipedia.org/wiki/Markdown)) en sitios web o blogs estáticos. No hay bases de datos para ralentizar las solicitudes y el sitio es más fácil de mantener, tiene opciones de seguridad mejoradas y, sin embargo, tiene una infraestructura menor en coste. 
 
-Por ejemplo: [Jekill](http://jekyllrb.com/), [Octopress](http://octopress.org/), [Hexo](https://hexo.io/), [Hugo](http://gohugo.io/), [Pelican](http://getpelican.com/), [Middleman](https://middlemanapp.com/), [Metalsmith](http://www.metalsmith.io/), [Ghost](https://ghost.org/).
+Por ejemplo: [Jekill](http://jekyllrb.com/), [Hexo](https://hexo.io/), [Hugo](http://gohugo.io/), [Pelican](http://getpelican.com/), [Middleman](https://middlemanapp.com/), [Metalsmith](http://www.metalsmith.io/), [Ghost](https://ghost.org/).
 
 También entra dentro de esta categoría las páginas creadas a partir de [GitHub Pages](https://pages.github.com/).
 
 Los generadores de sitios estáticos (**SSG**) hacen lo mismo que una web dinámica, pero sin las desventajas de ésta. Aplican datos y contenido a las plantillas y generan una vista de una página que se puede mostrar a los visitantes de un sitio.
 
-La mayor diferencia entre un generador de sitios estáticos y una pila de aplicaciones web tradicional es que, en lugar de esperar hasta que se solicite una página y luego generar su vista a petición cada vez, un generador de sitios estáticos hace esto con anticipación para que la vista esté lista para ser servida con anticipación. Y lo hace para cada vista posible de un sitio en el momento de la construcción.
-
-**Tienen una ventaja muy importante desde el punto de vista de la seguridad**:
+La mayor diferencia entre un generador de sitios estáticos y una pila de aplicaciones web tradicional es que, en lugar de esperar hasta que se solicite una página y luego generar su vista a petición cada vez, un generador de sitios estáticos hace esto con anticipación para que la vista esté lista para ser servida con anticipación. Y lo hace para cada vista posible de un sitio en el momento de la construcción.**Tienen una ventaja muy importante desde el punto de vista de la seguridad**:
 
 Dado que los generadores de sitios estáticos crean un conjunto de activos estáticos que pueden ser servidos desde un servidor web simplificado, o mejor aún, directa y completamente desde una red de distribución de contenido (CDN), tienen un perfil de seguridad notablemente bueno. Dado que se procesan con anticipación y están listos para servir, la infraestructura involucrada en servirlos puede simplificarse enormemente y tener muy pocos vectores de ataque malicioso. Cuando eliminamos la necesidad de que los servidores realicen la lógica y el trabajo, eliminamos las formas en que los malos actores les inyecten código malicioso y los engañen para que realicen acciones nefastas.
 
@@ -214,6 +212,9 @@ Y cuando no necesitamos acceder a bases de datos, realizar operaciones lógicas 
 
 ![Flujo en SSG](/Ciberseguridad-PePS/assets/img/AWCG/ssg-host-flow.png)
 
+
+
+Una de las **mayores plataformas para desplegar** Stactic Site Generators es [https://www.netlify.com/](https://www.netlify.com/). En el siguiente enlace encontrarás un libro gratuito de dicha plataforma con el título [Modern Web Development on the JAMStack](/Ciberseguridad-PePS/assets/pdf/oreilly-modern-web-development-on-the-jamstack.pdf). Por cierto, JAM son las iniciales de **J**avascript, **A**Pi's y **M**arkup
 
 ## 4 Tecnologías de desarrollo Web
 
