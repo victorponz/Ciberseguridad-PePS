@@ -384,3 +384,46 @@ blockquote.task strong, blockquote.task i{
 #menuContainer code.highlighter-rouge{
   background-color: transparent;
 }
+
+textarea,
+input[type="text"] {
+	width: 100%;
+	padding: 10px;
+	font-size: 18px;
+	display: block;
+	box-sizing: padding-box;
+}
+
+textarea {
+	height: 250px;
+	line-height: 1.5em;
+	border: 1px solid #ccc;
+	resize: none;
+}
+
+label {
+	margin: 30px 0 10px 0;
+	display: block;
+}
+
+input[type="submit"] {
+	margin: 30px 0 0 0;
+	font-size: 20px;
+}
+
+.search {
+	margin: 0 auto;
+	padding: 100px 0;
+}
+.search h3 a{
+  display: inline-block;
+  text-decoration: none;
+  color:rgb(51, 51, 51)
+}
+span.hit{
+  color:white;
+  background-color: #376872;
+  padding: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
