@@ -19,6 +19,15 @@ header-includes: |
     \renewcommand{\footrulewidth}{1pt}
 ---
 
+## Instalación de Apache
+
+El primer paso será instalar el servidor web Apache
+
+```bash
+sudo apt-get install apache2
+```
+
+Para verificar que está corriendo, visita [http://127.0.0.1](http://127.0.0.1) 
 
 ## Ficheros de configuración de Apache
 
