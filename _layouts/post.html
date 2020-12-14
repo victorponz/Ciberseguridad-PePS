@@ -3,10 +3,15 @@ layout: default
 ---
 {% assign pathToPdf = page.path %}
 <a class='pdf' alt='Versión en Pdf' title='Versión en PDF' href="{{ site.baseurl }}{{ pathToPdf | remove: ".md" | replace: "_posts/" , "/assets/pdf/"}}.pdf"> (Descarga la versión en <i class="fas fa-file-pdf"></i>)</a>
-        {% include postNavigation.html %}
+{% if page.presentation %}
+<a class='presentation' alt='Presentación {{ page.title }}' title='Presentación {{ page.title }}' href="{{ site.baseurl }}{{ pathToPdf | remove: ".md" | replace: "_posts/" , "/assets/presentation/"}}.html"> (Diapositivas <i class="fas fa-desktop"></i>)</a>
+
+{% endif %}
+{% include postNavigation.html %}
 {% if page.conToc %}
 <h1>{{ page.title }}</h1>
 {% endif %}
+
         {% assign content = content | replace: '>-tarea-', ' class="task"><i class="fa fa-check"></i> ' %}
         <div>
             {% if page.conToc %}

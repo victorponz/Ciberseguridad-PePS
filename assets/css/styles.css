@@ -372,7 +372,7 @@ blockquote.task strong, blockquote.task i{
 }
 
 
-.PageNavigation a, .pdf, #menu a, .portada a{
+.PageNavigation a, .pdf,  .presentation, #menu a, .portada a{
   text-decoration: none; color:rgb(51, 51, 51); font-size:0.8em
 }
 .portada a{
