@@ -1,0 +1,425 @@
+ 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
+    <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
+    <title>Introducción a PePS</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 25%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 70%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      blockquote {
+        font-style: italic;
+        margin: 0.25em 0;
+        padding: 0.25em 40px;
+        line-height: 1.45;
+        position: relative;
+      }
+
+      blockquote:before {
+        opacity: 0.8;
+        display: block;
+        content: "\201C";
+        font-size: 3em;
+        position: absolute;
+        left: -20px;
+        top: -20px;
+      }
+
+      blockquote cite {
+        opacity: 0.8;
+        font-size: 1em;
+        display: block;
+        margin-top: 5px;
+      }
+ 
+      blockquote cite:before {
+        content: "\2014 \2009";
+      }
+      .right-column li{
+        line-height: 150%;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+#Puesta en Producción Segura
+## Curso de especialización en ciberseguridad
+[PePS]
+<a href='mailto:victorponz@ieselcaminas.org'>Víctor Ponz</a>
+.footnote[[Sitio del proyecto](https://github.com/victorponz/Ciberseguridad-PePS)]
+---
+## De qué trata este módulo?
+---
+layout: false
+.left-column[
+  ## Qué es?
+]
+.right-column[
+Este módulo profesional contiene la formación necesaria para **desempeñar la función de puesta en producción** mediante el **desarrollo de un sistema de despliegue de software seguro**.
+
+La función de implantación de un sistema de despliegue seguro incluye aspectos como la monitorización de aplicaciones y dispositivos para detectar los vectores de ataque más comunes.
+
+]
+---
+.left-column[
+  ## ¿Qué es?
+  ## ¿Qué aprenderás en este módulo?
+]
+.right-column[
+* A analizar la estructura de aplicaciones y dispositivos móviles.
+* Los vectores de ataque más comunes.
+* A analizar el nivel de seguridad requerido por las aplicaciones.
+* A configurar servidores web seguros.
+* A detectar los problemas de seguridad de las aplicaciones para los dispositivos móviles.
+* A implantar sistemas seguros de desplegado de software.
+]
+---
+.left-column[
+  ## ¿Qué es?
+  ## ¿Qué aprenderás en este módulo?
+  ## ¿Qué actividades profesionales podrás llevar a cabo?
+]
+.right-column[
+Las actividades profesionales asociadas a esta función se aplican en el **análisis de las aplicaciones web y dispositivos móviles** así como en la **configuración de servidores web**.
+]
+---
+template: inverse
+
+## Entonces, ¿qué aprenderemos en este módulo?
+---
+.left-column[
+  ### - Git
+]
+.right-column[
+![git](https://git-scm.com/images/logo@2x.png)
+
+<blockquote>Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y 
+la confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente
+</blockquote>
+]
+---
+
+.left-column[
+  ### - Git
+  ### - Markdown
+]
+.right-column[
+![Markdown](https://raw.githubusercontent.com/dcurtis/markdown-mark/360a3657fef7f6ad0b303296a95ad52985caa0d3/svg/markdown-mark.svg)
+
+<blockquote>Markdown es un lenguaje de marcado ligero. </blockquote>
+Por ejemplo: 
+```markdown
+# Esta es una cabecera
+Y mi primer documento en Markdown.
+```
+
+Markdown nos ayuda a generar documentación técnica. 
+Es el lenguaje de marcado usado, entre otros, por:
+
+  [GitHub](https://github.com/)  - [GitBook](https://www.gitbook.com/)    - [MkDocs](https://www.mkdocs.org/)  - [Read the Docs](https://readthedocs.org/)  - [GitHub Pages](https://pages.github.com/) - etc.
+
+Además, nos permite automatizar dicha generación. Por ejemplo, usando Jekyll junto a [GitHub Pages](https://pages.github.com/).
+
+Echa un vistazo al [sitio Markdown](http://daringfireball.net/projects/markdown/) si no estás familiarizado con dicho formato.
+]
+---
+
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+]
+.right-column[
+<blockquote>La programación del lado del servidor es una tecnología que consiste en el procesamiento de una petición de un usuario 
+  mediante la interpretación de un script en el servidor web para generar dinámicamente páginas HTML como respuesta.</blockquote>
+Por ejemplo, en PHP
+```PHP
+<html>
+ <head>
+  <title>Prueba de PHP</title>
+ </head>
+ <body>
+ <?php echo '<p>Hola Mundo</p>'; ?>
+ </body>
+</html>
+```
+Y en node.js
+```javascript
+const express = require('express')
+const app = express()
+const port = 3000
+app.get('/', (req, res) => {  res.send('Hello World!')})
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
+```
+]
+---
+
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+  ### - Containers
+]
+.right-column[
+![Docker](https://d1q6f0aelx0por.cloudfront.net/product-logos/644d2f15-c5db-4731-a353-ace6235841fa-registry.png)
+
+<blockquote>
+  Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas operativos.​
+
+</blockquote>
+
+]
+---
+
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+  ### - Containers
+  ### - Orchestrators
+]
+.right-column[
+![Kubernetes](https://gblobscdn.gitbook.com/spaces%2F-LRciXC9SHZkinGj5xux%2Favatar.png?alt=media)
+
+<blockquote>
+  Kubernetes es un sistema de código libre para la automatización del despliegue, ajuste de escala y manejo de aplicaciones en contenedores​ que fue originalmente diseñado por Google y donado a la Cloud Native Computing Foundation. Soporta diferentes entornos para la ejecución de contenedores, incluido Docker.
+</blockquote>
+
+]
+---
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+  ### - Containers
+  ### - Orchestrators
+  ### - Web Application Security Risks
+]
+.right-column[
+![OWASP](assets/logoOWASP.png)
+
+<blockquote>
+  The Open Web Application Security Project® (OWASP) is a nonprofit foundation that works to improve the security of software. Through community-led open source software projects, hundreds of local chapters worldwide, tens of thousands of members, and leading educational and training conferences, the OWASP Foundation is the source for developers and technologists to secure the web.
+</blockquote>
+
+]
+---
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+  ### - Containers
+  ### - Orchestrators
+  ### - Web Application Security Risks
+  ### - OWASP mobile security
+]
+.right-column[
+![OWASP mobile security](assets/logoOWASPMobile.png)
+
+<blockquote>
+  The OWASP Mobile Security Project is a centralized resource intended to give developers and security teams the resources they need to build and maintain secure mobile applications. Through the project, our goal is to classify mobile security risks and provide developmental controls to reduce their impact or likelihood of exploitation. 
+</blockquote>
+
+]
+---
+.left-column[
+  ### - Git
+  ### - Markdown
+  ### - Server Side Programming
+  ### - Containers
+  ### - Orchestrators
+  ### - Web Application Security Risks
+  ### - OWASP mobile security
+  ### - CI/CD
+]
+.right-column[
+![OWASP mobile security](assets/DevOps.png)
+
+<blockquote>
+  La CI/CD es un método para distribuir aplicaciones a los clientes con frecuencia mediante el uso de la automatización en las etapas del 
+  desarrollo de aplicaciones. Los principales conceptos que se atribuyen a la CI/CD son la integración continua, la distribución continua y 
+  la implementación continua. La CI/CD es una solución para los problemas que puede generar la integración del código nuevo a los equipos de
+   desarrollo y de operaciones (también conocida como <a href='https://www.solutionsiq.com/agile-glossary/integration-hell/'> "Integration Hell" </a>).</blockquote>
+
+]
+---
+template: inverse
+
+## Entendido. ¿Cómo va a ser la metodología y la evaluación de este módulo?
+---
+.left-column[
+## Evaluación
+### - Metodología
+]
+.right-column[
+- El curso es eminentemente práctico. 
+- Las fechas de entrega de las prácticas no tienen ampliación de plazos.
+- En el caso de entregarlas fuera del mismo, supondrá una penalización extra de entre el 10% y el 80%
+- Tampoco se podrán reenviar
+]
+---
+.left-column[
+## Evaluación
+### - Metodología
+### - Teoría
+]
+.right-column[
+- En principio no va a haber examen teórico. 
+- En otro caso, se avisará con el tiempo necesario
+]
+---
+.left-column[
+## Evaluación
+### - Metodología
+### - Teoría
+### - Calificación
+]
+.right-column[
+# Criterios de calificación
+- La nota de la primera evaluación estará formada por:
+  - la nota obtenida en las **prácticas hasta un 80%**
+  - el **20%** restante corresponde a las notas obtenidas en las **prácticas de ampliación**.
+  - la no asistencia a clase supone la **pérdida de la evaluación continua**
+  - si algún alumno/alumna **discrepa de dicha nota**, se le realizará un **examen teórico-práctico**.
+- Para la nota final, se aplicará el mismo criterio que en la primera evaluación para calificar el trabajo realizado. Después se realizará la media.
+]
+---
+name: last-page
+template: inverse
+
+## Esto es todo (por ahora)!
+### Nos vemos los lunes de 15:00 a 16:50 y los miércoles de 15:00 a 17:45 
+### [ y todos los días en [Aules](https://aules.edu.gva.es/fp/)]
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script>
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'remark',
+          highlightLines: true
+        }) ;
+    </script>
+
+  </body>
+</html>
+

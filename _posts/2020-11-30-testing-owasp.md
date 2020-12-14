@@ -243,6 +243,10 @@ Si bien las pruebas de penetración han demostrado ser eficaces en la seguridad 
 
 
 
+**TODO** revisar https://owasp.org/www-project-web-security-testing-guide/latest/ los apartados 2 y 3
+
+
+
 
 
 
