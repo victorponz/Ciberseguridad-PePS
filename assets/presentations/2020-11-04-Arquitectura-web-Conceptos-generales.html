@@ -149,6 +149,12 @@
       .right-column li{
         line-height: 150%;
       }
+      .right-column img{
+          max-width: 100%;
+      }
+      .right-column p{
+          font-size:.8em;
+      }
     </style>
   </head>
   <body>
@@ -157,60 +163,61 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-#Puesta en Producción Segura
-## Curso de especialización en ciberseguridad
-[PePS]
-<a href='mailto:victorponz@ieselcaminas.org'>Víctor Ponz</a>
-.footnote[[Sitio del proyecto](https://github.com/victorponz/Ciberseguridad-PePS)]
----
-## De qué trata este módulo?
+#Arquitectura web. Conceptos generales
 ---
 layout: false
 .left-column[
-  ## Qué es?
+## Aplicaciones Web
+
 ]
 .right-column[
-Este módulo profesional contiene la formación necesaria para **desempeñar la función de puesta en producción** mediante el **desarrollo de un sistema de despliegue de software seguro**.
-
-La función de implantación de un sistema de despliegue seguro incluye aspectos como la monitorización de aplicaciones y dispositivos para detectar los vectores de ataque más comunes.
-
+## Diferencias entre:
+* Página web
+* Sitio web
+* Aplicación Web
+]
+---
+layout: false
+.left-column[
+ Beneficios de las aplicaciones web
+]
+.right-column[
+* **Se ejecutan en múltiples plataformas, independientemente del sistema operativo o dispositivo**
+* **Misma versión**
+* **Reducen los costes** 
+* **No requiere instalar software especial**
+* **Información centralizada**.
+* **Seguridad y copias de seguridad**
 ]
 ---
 .left-column[
-  ## ¿Qué es?
-  ## ¿Qué aprenderás en este módulo?
+  ## Procesamiento de páginas en el servidor
+  ## Páginas web estáticas
 ]
 .right-column[
-* A analizar la estructura de aplicaciones y dispositivos móviles.
-* Los vectores de ataque más comunes.
-* A analizar el nivel de seguridad requerido por las aplicaciones.
-* A configurar servidores web seguros.
-* A detectar los problemas de seguridad de las aplicaciones para los dispositivos móviles.
-* A implantar sistemas seguros de desplegado de software.
+![Página Estática](https://helpx.adobe.com/es/dreamweaver/using/web-applications/_jcr_content/main-pars/image_0.img.png/ds_process_static.png)<br>
+**1.** El navegador web solicita la página estática **2.** El servidor localiza la página **3.** El servidor Web envía la página al navegador solicitante. Finalmente, el navegador renderiza la página mostrando el siguiente resultado.
 ]
 ---
 .left-column[
-  ## ¿Qué es?
-  ## ¿Qué aprenderás en este módulo?
-  ## ¿Qué actividades profesionales podrás llevar a cabo?
+  ## Procesamiento de páginas en el servidor
+  ## Páginas web estáticas
+  ## Páginas web dinámicas
 ]
 .right-column[
-Las actividades profesionales asociadas a esta función se aplican en el **análisis de las aplicaciones web y dispositivos móviles** así como en la **configuración de servidores web**.
+![Página Dinámica](https://helpx.adobe.com/es/dreamweaver/using/web-applications/_jcr_content/main-pars/image_1.img.png/ds_process_dynamic.png)<br>
+**1.** El navegador web solicita la página dinámica. **2.** El servidor web localiza la página y la envía al servidor de aplicaciones. **3.** El servidor de aplicaciones busca instrucciones en la página y la termina. **4.** El servidor de aplicaciones pasa la página terminada al servidor web. **5.** El servidor web envía la página finalizada al navegador solicitante que la renderiza.
 ]
----
-template: inverse
-
-## Entonces, ¿qué aprenderemos en este módulo?
 ---
 .left-column[
-  ### - Git
+  ## Procesamiento de páginas en el servidor
+  ## Páginas web estáticas
+  ## Páginas web dinámicas
+  ## Páginas web dinámicas con acceso a datos
 ]
 .right-column[
-![git](https://git-scm.com/images/logo@2x.png)
-
-<blockquote>Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y 
-la confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente
-</blockquote>
+![Página Dinámica con acceso a datos](https://helpx.adobe.com/es/dreamweaver/using/web-applications/_jcr_content/main-pars/image_2.img.png/ds_process_complete.png)<br>
+**1.** El navegador web solicita la página dinámica. **2.** El servidor web localiza la página y la envía al servidor de aplicaciones. **3.** El servidor de aplicaciones busca instrucciones en la página. **4.** El servidor de aplicaciones envía la consulta al controlador de la base de datos. **5.** El controlador ejecuta la consulta en la base de datos. **6.** El juego de registros se devuelve al controlador. **7.** El controlador pasa el juego de registros al servidor de aplicaciones. **8.** El servidor de aplicaciones inserta los datos en una página y luego pasa la página al servidor web. **9.** El servidor Web envía la página finalizada al navegador solicitante.
 ]
 ---
 
