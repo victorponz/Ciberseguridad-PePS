@@ -241,7 +241,7 @@ Fuente. [https://ashleynolan.co.uk/blog/frontend-tooling-survey-2019-results](ht
 
 * **Tecnologías de servidor**: Tecnologías que permiten implementar el comportamiento de la aplicación web en el servidor: lógica de negocio, generación de informes, compartir información entre usuarios, envío de correos, etc.
 
-En **PHP**, tenemos [CodeIgniter](https://codeigniter.com/),  [Sympony](https://symfony.com/) y [Laravel](https://laravel.com/).
+En **PHP**, tenemos [CodeIgniter](https://codeigniter.com/),  [Symfony](https://symfony.com/) y [Laravel](https://laravel.com/).
 
 ![Tecnologías en el Servidor](/Ciberseguridad-PePS/assets/img/AWCG/google-trends-best-php-frameworks-comparison.png)
 
