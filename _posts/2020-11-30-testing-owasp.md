@@ -20,7 +20,11 @@ header-includes: |
 
 ## Pruebas de software
 
-La presente guía está basada en [**OWASP Testing Project**](https://owasp.org/www-project-web-security-testing-guide/latest/). 
+**Esta documentación NO es definitiva. Se encuentra en proceso de desarrollo**
+
+
+
+>  La presente guía está basada en [**OWASP Testing Project**](https://owasp.org/www-project-web-security-testing-guide/latest/). 
 
 El **objetivo** de dicho proyecto es crear un marco de trabajo para ayudar a la gente a entender el *qué*, *por qué*, *cuándo*, *dónde* y *cómo* de las pruebas de aplicaciones web. Este marco ayuda a las organizaciones a probar sus aplicaciones web con el fin de crear software confiable y seguro.
 
@@ -249,8 +253,6 @@ Si bien las pruebas de penetración han demostrado ser eficaces en la seguridad 
 
 
 
-
-
 **Referencias**
 
 **OWASP Web Security Testing Guide**
@@ -267,9 +269,9 @@ Si bien las pruebas de penetración han demostrado ser eficaces en la seguridad 
 
 **Protección de datos de carácter personal**
 
-https://www.boe.es/legislacion/codigos/codigo.php?id=55&modo=1&nota=0&tab=2
+[https://www.boe.es/legislacion/codigos/codigo.php?id=55&modo=1&nota=0&tab=2](https://www.boe.es/legislacion/codigos/codigo.php?id=55&modo=1&nota=0&tab=2)
 
-https://www.aepd.es/es/prensa-y-comunicacion/notas-de-prensa/aepd-publica-herramienta-comunica-brecha-rgpd
+[https://www.aepd.es/es/prensa-y-comunicacion/notas-de-prensa/aepd-publica-herramienta-comunica-brecha-rgpd](https://www.aepd.es/es/prensa-y-comunicacion/notas-de-prensa/aepd-publica-herramienta-comunica-brecha-rgpd)
 
 **Métricas**
 
