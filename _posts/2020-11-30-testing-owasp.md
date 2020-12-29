@@ -126,7 +126,7 @@ En metodologías de desarrollo modernas como (pero no limitado a): [agile](https
 
 Es importante saber cuánta seguridad requerirá un proyecto determinado. Los bienes que se van a proteger deben recibir una clasificación que indique cómo se van a manejar. No todos los proyectos necesitan tener el mismo nivel de confianza. Pensemos, por ejemplo, un software destinado a una intranet no necesita de la misma seguridad como un software médico con historiales de pacientes al que se pueda acceder mediante Internet o con una aplicación móvil.
 
-Como modelo nos puede ayudar el [Open Web Application Security Project](https://blog.segu-info.com.ar/2020/03/isoiec-27034-seguridad-en-las.html) (versión en [PDF](https://owasp.org/www-pdf-archive/Est%C3%A1ndar_de_Verificaci%C3%B3n_de_Seguridad_en_Aplicaciones_3.0.1.pdf)) de tal forma que podamos cumplir el [Esquema Nacional de Seguridad](https://administracionelectronica.gob.es/pae_Home/pae_Estrategias/pae_Seguridad_Inicio/pae_Esquema_Nacional_de_Seguridad.html) (**ENS**). Y no nos hemos de olvidar de la protección de datos de carácter personal.
+Como modelo nos puede ayudar el [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/) (versión en español [PDF](https://owasp.org/www-pdf-archive/Est%C3%A1ndar_de_Verificaci%C3%B3n_de_Seguridad_en_Aplicaciones_3.0.1.pdf)) de tal forma que podamos cumplir el [Esquema Nacional de Seguridad](https://administracionelectronica.gob.es/pae_Home/pae_Estrategias/pae_Seguridad_Inicio/pae_Esquema_Nacional_de_Seguridad.html) (**ENS**). Y no nos hemos de olvidar de la protección de datos de carácter personal.
 
 ### Desarrollar la mentalidad correcta
 
