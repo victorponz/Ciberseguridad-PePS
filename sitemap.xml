@@ -7,7 +7,7 @@ layout: null
   {% for post in site.posts %}
     {% unless post.published == false %}    
     <url>
-      <loc>{{ site.url }}{{ site.baseurl }}{{ post.url }}</loc>
+      <loc>https://victorponz.github.io/{{ site.baseurl }}{{ post.url }}</loc>
       <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
