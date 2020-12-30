@@ -180,7 +180,7 @@ En el siguiente ejemplo se muestra el proceso de consulta de base de datos y de 
 
 **1.** El navegador web solicita la página dinámica. **2.** El servidor web localiza la página y la envía al servidor de aplicaciones. **3.** El servidor de aplicaciones busca instrucciones en la página. **4.** El servidor de aplicaciones envía la consulta al controlador de la base de datos. **5.** El controlador ejecuta la consulta en la base de datos. **6.** El juego de registros se devuelve al controlador. **7.** El controlador pasa el juego de registros al servidor de aplicaciones. **8.** El servidor de aplicaciones inserta los datos en una página y luego pasa la página al servidor web. **9.** El servidor Web envía la página finalizada al navegador solicitante.
 
-#### 3.4.6 Cliente estático y cliente dinámico
+#### 3.4.6 Cliente estático o cliente dinámico
 
 Desde el punto de vista del **cliente web** \(generalmente el navegador\) las páginas que componen una aplicación web también se pueden dividir en estáticas y dinámicas.
 
@@ -200,7 +200,9 @@ También entra dentro de esta categoría las páginas creadas a partir de [GitHu
 
 Los generadores de sitios estáticos (**SSG**) hacen lo mismo que una web dinámica, pero sin las desventajas de ésta. Aplican datos y contenido a las plantillas y generan una vista de una página que se puede mostrar a los visitantes de un sitio.
 
-La mayor diferencia entre un generador de sitios estáticos y una pila de aplicaciones web tradicional es que, en lugar de esperar hasta que se solicite una página y luego generar su vista a petición cada vez, un generador de sitios estáticos hace esto con anticipación para que la vista esté lista para ser servida con anticipación. Y lo hace para cada vista posible de un sitio en el momento de la construcción.**Tienen una ventaja muy importante desde el punto de vista de la seguridad**:
+La mayor diferencia entre un generador de sitios estáticos y una pila de aplicaciones web tradicional es que, en lugar de esperar hasta que se solicite una página y luego generar su vista a petición cada vez, un generador de sitios estáticos hace esto con anticipación para que la vista esté lista para ser servida con anticipación. Y lo hace para cada vista posible de un sitio en el momento de la construcción.
+
+**Tienen una ventaja muy importante desde el punto de vista de la seguridad**:
 
 Dado que los generadores de sitios estáticos crean un conjunto de activos estáticos que pueden ser servidos desde un servidor web simplificado, o mejor aún, directa y completamente desde una red de distribución de contenido (CDN), tienen un perfil de seguridad notablemente bueno. Dado que se procesan con anticipación y están listos para servir, la infraestructura involucrada en servirlos puede simplificarse enormemente y tener muy pocos vectores de ataque malicioso. Cuando eliminamos la necesidad de que los servidores realicen la lógica y el trabajo, eliminamos las formas en que los malos actores les inyecten código malicioso y los engañen para que realicen acciones nefastas.
 
@@ -300,7 +302,7 @@ Existen otros tipos de aplicaciones orientadas a otros ámbitos, como por ejempl
 
 ![Top eCommerce](/Ciberseguridad-PePS/assets/img/AWCG/image-20201019161452846.png)
 
-### 4.3 Headless CMS
+#### 4.2.1 Headless CMS
 
 Ahora bien, en los últimos años hemos podido presenciar el surgimiento de una nueva clase de CMS, el 'headless CMS'. Ciertamente, el término traducido al español no resulta muy explicativo ('CMS sin cabeza'), por lo que vamos a explicar un poco en qué consisten.
 
@@ -373,7 +375,9 @@ Desde el momento que desplegamos una aplicación en un servidor web tenemos una 
 
 ![Despliegue](/Ciberseguridad-PePS/assets/img/AWCG/despliegue.svg.png)
 
-Este proceso no es tan sencillo como parece, sobre todo cuando hablamos de aplicaciones empresariales en las que participan gran cantidad de profesionales tanto en desarrollo como en sistemas, así como multitud de sistemas operativos, servidores de aplicaciones, API's end-points, servidores web, contenedores, orquestadores, etc. **De hacer todo este proceso de forma segura es de lo que trata este módulo profesional.**
+Este proceso no es tan sencillo como parece, sobre todo cuando hablamos de aplicaciones empresariales en las que participan gran cantidad de profesionales tanto en desarrollo como en sistemas, así como multitud de sistemas operativos, servidores de aplicaciones, API's end-points, servidores web, contenedores, orquestadores, etc. 
+
+> **De hacer todo este proceso de forma segura es de lo que trata este módulo profesional.** 
 
 
 
@@ -417,7 +421,7 @@ En un nivel alto, los servidores de aplicaciones web son relativamente simples d
 
 Debes saber que las implementaciones del servidor de aplicaciones requieren elegir un idioma específico  (Node.js, Ruby, PHP, Scala, Java, C # .NET, etc.) y un marco web MVC  para ese idioma (Express for Node.js, Ruby on Rails , Play para Scala, Laravel para PHP, Spring para Java, etc.). Sin embargo, profundizar en los detalles de estos lenguajes y frameworks está más allá del alcance de este artículo.
 
-### Servidores de bases de datos
+### 4 Servidores de bases de datos
 
 Cada aplicación web moderna aprovecha una o más bases de datos para almacenar información. Las  bases de datos proporcionan formas de definir sus estructuras de datos, insertar nuevos datos, encontrar datos existentes, actualizar o eliminar datos existentes, realizar cálculos entre los datos, y más. En  la mayoría de los casos, los servidores de aplicaciones web hablan directamente con uno, al igual que los servidores de trabajo. Además, cada servicio backend puede tener su propia base de datos que está aislada del resto de la aplicación.
 
@@ -504,6 +508,10 @@ CDN significa "Content Delivery Network" y la tecnología proporciona una forma 
 Todos estos servicios son potencialmente atacables por un hacker. Sin duda alguna es seguro que van a tener algún fallo de seguridad en algún momento de su ciclo de vida. Y en este diagrama no se habla de la infraestructura necesaria para implementar el ciclo **CD/CI**.
 
 Seguro que ahora ya comprendemos la necesidad de securizar todo nuestro proceso de puesta en producción.
+
+
+
+
 
 **Adaptado de los siguientes materiales**
 
