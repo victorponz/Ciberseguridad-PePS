@@ -97,15 +97,6 @@ Estos pueden ser transparentes, o no \(modificando las peticiones que pasan por 
 * autentificación \(para el control al acceso de recursos y datos\)
 * registro de eventos \(para tener un histórico de los eventos que se producen\)
 
-**Caché**
-
-Se trata de un proxy para una aplicación específica: el acceso a la web con los protocolos HTTP y HTTPS, y accesoriamente FTP. Aparte de la utilidad general de un proxy, puede proporcionar una caché compartida para las páginas web y contenidos descargados, actuando entonces como servidor proxy-caché. Esta caché es compartida por múltiples usuarios con la consiguiente mejora en los tiempos de acceso para consultas coincidentes y liberando de carga a los enlaces de acceso a Internet.
-
-Funcionamiento:
-
-* El usuario realiza una petición \(por ejemplo, en un navegador web\) de un recurso de Internet \(una página web o cualquier otro archivo\) especificado por una URL.
-* Cuando el proxy caché recibe la petición, busca la URL resultante en su caché local. Si la encuentra, contrasta la fecha y hora de la versión de la página demanda con el servidor remoto. Si la página no ha cambiado desde que se cargo en caché la devuelve inmediatamente, ahorrándose mucho tráfico dado que solo envía un paquete por la red para comprobar la versión. Si la versión es antigua o simplemente no se encuentra en la caché, lo solicita al servidor remoto, lo devuelve al cliente que lo pidió y guarda o actualiza una copia en su caché para futuras peticiones.
-
 ## Características clave del protocolo HTTP
 
 **HTTP es sencillo**
