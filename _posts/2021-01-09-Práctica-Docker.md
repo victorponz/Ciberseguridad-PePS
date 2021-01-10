@@ -2,7 +2,7 @@
 typora-copy-images-to: ../assets/img/docker/
 typora-root-url: ../../
 layout: post
-categories: tema2 Docker 
+categories: tema2 Docker
 title: Práctica Docker
 conToc: true
 header-includes: |
@@ -18,9 +18,11 @@ header-includes: |
     \renewcommand{\headrulewidth}{2pt}
     \renewcommand{\footrulewidth}{1pt}
 ---
-## Primer contenedor en Docker
+# Primer contenedor en Docker
 
-Vamos a usar un repositorio de GitHub que ya tiene todos los componentes contenedorizados. El repositorio se encuentra en [https://github.com/victorponz/Docker-for-Developers](https://github.com/victorponz/Docker-for-Developers) y el que vamos a utilizar es el directorio `chapter2`. Es una pequeña aplicación Apache+PHP. Hay una serie de archivos `sh` para ahorrarnos el trabajo de escribir comandos pero estaría bien que echaras un vistazo a los mismos.
+Vamos a usar un repositorio de GitHub que ya tiene todos los componentes contenedorizados. El repositorio se encuentra en [https://github.com/victorponz/docker/tree/master/P1](https://github.com/victorponz/docker/tree/master/P1).
+
+Es una pequeña aplicación Apache+PHP. Hay una serie de archivos `sh` para ahorrarnos el trabajo de escribir comandos pero estaría bien que echaras un vistazo a los mismos.
 
 Antes de empezar a trabajar, comprobaremos si Docker está instalado correctamente, mediante el comando `docker ps` que muestra esta salida:
 
@@ -46,7 +48,7 @@ FROM debian
 
 # set timezone so files' timestamps are correct
 ENV TZ=Europe/Madrid
- 
+
 # install apache and php 7.3
 # we include procps and telnet so you can use these with shell.sh prompt
 RUN apt-get update -qq >/dev/null && apt-get install -y -qq procps telnet apache2 php7.3 -qq >/dev/null
@@ -55,18 +57,18 @@ RUN apt-get update -qq >/dev/null && apt-get install -y -qq procps telnet apache
 RUN useradd --user-group --create-home --shell /bin/false app
 
 # set up and copy files to /home/app
-ENV HOME=/usr/app
-WORKDIR /home/app
-COPY . /home/app
+ENV HOME=/home/app
+WORKDIR /var/www/html
+COPY . /var/www/html/
 
 # The PHP app is going to save its state in /data so we make a /data inside the container
-RUN mkdir /data && chown -R app /data && chmod 777 /data
+RUN mkdir /data && chown -R app /data && chmod 755 /data && chmod -R 755 /var/www/html
 
 # we need custom php configuration file to enable userdirs
 COPY php.conf /etc/apache2/mods-available/php7.3.conf
 
 # enable userdir and php
-RUN a2enmod userdir && a2enmod php7.3
+RUN a2enmod php7.3
 
 # we run a script to stat the server; the array syntax makes it so ^C will work as we want
 CMD  ["./entrypoint.sh"]
@@ -90,15 +92,15 @@ Vamos a ver qué hace este fichero `Dockerfile`, paso a paso:
 >
 > 5. De forma predeterminada, el usuario y el grupo que ejecutarán el proyecto en el contenedor es root. Para proporcionar una seguridad típica de Unix / Linux, queremos ejecutar como un usuario real; en nuestro caso, el nombre de usuario es app. Entonces agregamos al usuario al entorno del contenedor con useradd.
 >
-> 6. Vamos a poner nuestros scripts PHP en `/home/app`, con la capacidad de mapear nuestro directorio de trabajo con nuestros scripts PHP en el host sobre `/home/app`.
+> 6. Vamos a poner nuestros scripts PHP en `/var/www/html`.
 >
 > 7. Nuestra aplicación de demostración escribe su estado en `/data`, por lo que debemos crearla y asegurarnos de que el script PHP que se ejecuta como aplicación de usuario pueda leer y escribir archivos allí.
 >
 > 8. Creamos un archivo de configuración PHP personalizado que queremos usar dentro del contenedor, así que lo copiamos al contenedor en la ubicación correcta en el sistema de archivos.
 >
-> 9. Necesitamos habilitar los módulos `userdir` y `php7.3`. Esto nos permite ejecutar scripts PHP desde Apache, así como acceder a nuestros scripts PHP en `/home/app public_html` a través de una URL como [http://localhost/~app/index.php](http://localhost/~app/index.php).
+> 9. Necesitamos habilitar el módulo `php7.3`. Esto nos permite ejecutar scripts PHP desde Apache.
 >
-> 10. Cuando se inicia el contenedor, necesita ejecutar algún programa o script dentro del contenedor. Usamos un script `sh` llamado `entrypoint.sh` en el directorio `/home/app` para iniciar la aplicación. Podemos editar este archivo para satisfacer nuestras necesidades durante el desarrollo.
+> 10. Cuando se inicia el contenedor, necesita ejecutar algún programa o script dentro del contenedor. Usamos un script `sh` llamado `entrypoint.sh` en el directorio `/var/www/html` para iniciar la aplicación. Podemos editar este archivo para satisfacer nuestras necesidades durante el desarrollo.
 
 
 
@@ -154,7 +156,7 @@ El comando `docker run` toma muchos argumentos opcionales que son demasiado nume
 >
 >   > **Nota**. No persistimos `/data` en el contenedor. Podemos hacer esto agregando el modificador `-v` para mapear un volumen Docker a `/data`, lo que haremos en el script `persist.sh`.
 
-### Ejecutar el contenedor
+## Ejecutar el contenedor
 
 Hemos lanzado `build.sh` y todo fue bien. Ahora usaremos `debug.sh`para lanzar el contenedor en modo `debug/foreground`
 
