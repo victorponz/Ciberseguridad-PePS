@@ -161,7 +161,9 @@ El comando `docker run` toma muchos argumentos opcionales que son demasiado nume
 Hemos lanzado `build.sh` y todo fue bien. Ahora usaremos `debug.sh`para lanzar el contenedor en modo `debug/foreground`
 
 Una vez visitemos la página varias veces veremos que el contador de visitas aumenta:
-![Contador](/Ciberseguridad-PePS/assets/img/docker/image-20210109183444612.png)
+
+
+![image-20210110210411340](/Ciberseguridad-PePS/assets/img/docker/image-20210110210411340.png)
 
 Podemos comprobar que el contenedor está corriendo ejecutando `docker ps`
 
