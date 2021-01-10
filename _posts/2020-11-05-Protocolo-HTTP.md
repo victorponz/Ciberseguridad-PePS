@@ -109,7 +109,7 @@ Presentadas en la versión HTTP/1.0, las cabeceras de HTTP, han hecho que este p
 
 **HTTP es un protocolo con sesiones, pero sin estados**
 
-HTTP es un protocolo sin estado, es decir: no guarda ningún dato entre dos peticiones en la mísma sesión. Esto plante la problemática, en caso de que los usuarios requieran interactuar con determinadas páginas Web de forma ordenada y coherente, por ejemplo, para el uso de "cestas de la compra" en páginas que utilizan en comercio electrónico. Pero, mientras HTTP ciertamente es un protocolo sin estado, el uso de HTTP cookies, si permite guardar datos con respecto a la sesión de comunicación. Usando la capacidad de ampliación del protocolo HTTP, las cookies permiten crear un contexto común para cada sesión de comunicación.
+HTTP es un protocolo sin estado, es decir: no guarda ningún dato entre dos peticiones en la misma sesión. Esto plantea la problemática, en caso de que los usuarios requieran interactuar con determinadas páginas Web de forma ordenada y coherente, por ejemplo, para el uso de "cestas de la compra" en páginas que utilizan en comercio electrónico. Pero, mientras HTTP ciertamente es un protocolo sin estado, el uso de HTTP cookies, sí permite guardar datos con respecto a la sesión de comunicación. Usando la capacidad de ampliación del protocolo HTTP, las cookies permiten crear un contexto común para cada sesión de comunicación.
 
 **HTTP y conexiones**
 
@@ -119,7 +119,7 @@ Una conexión se gestiona al nivel de la capa de trasporte, y por tanto queda fu
 
 La característica del protocolo HTTP de ser ampliable, ha permitido que durante su desarrollo se hayan implementado más funciones de control y funcionalidad sobre la Web: caché o métodos de identificación o autentificación fueron temas que se abordaron pronto en su historia. Al contrario la relajación de la restricción de origen solo se ha abordado en los años de la década de 2010.
 
-Se presenta a continuación una lista con los elementos que se pueden controlar con el protocolo HTTP:
+Se presenta a continuación una lista con algunos de los elementos que se pueden controlar con el protocolo HTTP:
 
 * **Caché**. El como se almacenan los documentos en la caché, puede ser especificado por HTTP. El servidor puede indicar a los proxies y clientes, que quiere almacenar y durante cuanto tiempo. Aunque el cliente, también puede indicar a los proxies de caché intermedios que ignoren el documento almacenado.
 
@@ -192,6 +192,8 @@ Content-Type: text/html
 
 4.- Cierre o reuso de la conexión para futuras peticiones.
 
+
+
 ## Mensajes HTTP
 
 > Los mensajes HTTP son la forma en que se intercambian los datos entre un servidor y un cliente.
@@ -209,13 +211,33 @@ Las solicitudes HTTP y las respuestas comparten una estructura similar y están 
 3. Una línea en blanco indicando que toda la meta-información para la solicitud se ha enviado.
 4. Un cuerpo opcional que contiene datos asociados con la solicitud \(como el contenido de un formulario HTML\) o el documento asociado a una respuesta. La presencia del cuerpo y su tamaño se especifica por la línea de inicio y los encabezados HTTP.
 
-Los encabezados de línea de inicio y HTTP del mensaje HTTP se conocen colectivamente como la cabecera \(_header_\) de las solicitudes, mientras que su carga útil \(_payload_\) se conoce como el cuerpo \(_body_\).
+Los encabezados de línea de inicio del mensaje HTTP se conocen colectivamente como la cabecera \(_header_\) de las solicitudes, mientras que su carga útil \(_payload_\) se conoce como el cuerpo \(_body_\).
 
  ![Request - Response](/Ciberseguridad-PePS/assets/img/HTTP/HTTPMsgStructure2.png)
 
+Si deseas obtener las cabeceras de respuesta desde línea de comandos, puedes usar:
+
+```
+curl -I google.es
+```
+
+cuya salida será la siguiente:
+
+![Curl](/Ciberseguridad-PePS/assets/img/HTTP/image-20210107184019813.png)
+
+o bien
+
+```
+wget -q --server-response www.google.es
+```
+
+cuya salida será la siguiente
+
+![wget](/Ciberseguridad-PePS/assets/img/HTTP/image-20210107184133895.png)
+
 ## Tipos de mensajes HTTP
 
-Existen dos tipos de mensajes HTTP: peticiones  y respuestas,, cada uno sigue su propio formato.
+Existen dos tipos de mensajes HTTP: peticiones  y respuestas, cada uno sigue su propio formato.
 
 ### Peticiones
 
@@ -334,7 +356,7 @@ Las principales cabeceras son:
 
   `Content-Type: text/html; charset=UTF-8`
   
-* Principales cabeceras para proteger contra [hackeos](https://speakerdeck.com/triblondon/headers-for-hackers?slide=73) (las iremos viendo a lo largo del módulo)
+* Principales cabeceras para proteger contra [hackeos](https://speakerdeck.com/triblondon/headers-for-hackers) (las iremos viendo a lo largo del módulo)
 
   * `X-Frame-Options`
   * `X-Content-Type-Options`
@@ -343,6 +365,10 @@ Las principales cabeceras son:
   * `Content Security Policy`
 
 Para una lista exhaustiva de todas las cabeceras, consultad [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+
+La siguiente [presentación](https://speakerdeck.com/triblondon/headers-for-hackers), en inglés, explica las headers desde el punto de vista de los hackers
+
+<script async class="speakerdeck-embed" data-id="3faf91d6f1574cb3bcaf058f1f75b54a" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### Principales códigos de estado \(`status codes`\)
 
@@ -502,7 +528,7 @@ Un navegador es mucho más que una canalización de renderizado y un motor JavaS
 8. El servidor valida las credenciales de inicio de sesión y establece una sesión devolviendo un encabezado `Set-Cookie` en la respuesta. El navegador almacena la `cookie` durante el tiempo prescrito y la devuelve con solicitudes posteriores a Amazon.
 
 &nbsp;
-![image-20201206190308318](/Ciberseguridad-PePS/assets/img/HTTP/image-20201206190308318.png)
+![Amazon](/Ciberseguridad-PePS/assets/img/HTTP/image-20201206190308318.png)
 &nbsp;
 Después de que todo esto suceda, el usuario puede acceder a su cuenta de Amazon.
 
