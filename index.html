@@ -19,3 +19,17 @@ title: Apuntes Puesta en producción segura.
     {% endif %}
 {% endfor %}
 </ol>
+
+<h2>Tema 2 - Docker</h2>
+<blockquote>
+  En esta parte del módulo aprenderemos <a href='https://www.docker.com/'>Docker.</a><br>
+  Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas operativos.​ 
+</blockquote>
+
+<ol class='portada'> 
+{% for post in site.posts reversed %}
+{% if post.categories contains "tema2" %}
+  <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2></li>
+{% endif %}
+{% endfor %}
+</ol>
