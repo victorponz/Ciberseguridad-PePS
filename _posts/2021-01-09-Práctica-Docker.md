@@ -20,6 +20,8 @@ header-includes: |
 ---
 # Primer contenedor en Docker
 
+> <span style='color: red'><strong>NOTA</strong>. ESTA PRÁCTICA LA HAREMOS EN CLASE</span>
+
 Vamos a usar un repositorio de GitHub que ya tiene todos los componentes contenedorizados. El repositorio se encuentra en [https://github.com/victorponz/docker/tree/master/P1](https://github.com/victorponz/docker/tree/master/P1).
 
 Es una pequeña aplicación Apache+PHP. Hay una serie de archivos `sh` para ahorrarnos el trabajo de escribir comandos pero estaría bien que echaras un vistazo a los mismos.
