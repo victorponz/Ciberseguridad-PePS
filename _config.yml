@@ -39,6 +39,7 @@ defaults:
     values:
       image: true
 baseurl: /Ciberseguridad-PePS
+analytics: G-LVGGL675M4
 # Build settings
 #theme: minima
 #plugins:
