@@ -15,7 +15,7 @@ title: Apuntes Puesta en producción segura.
 <ol class='portada'> 
   {% for post in site.posts reversed %}
     {% if post.categories contains "tema1" %}
-      <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2></li>
+      <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
     {% endif %}
 {% endfor %}
 </ol>
@@ -29,7 +29,7 @@ title: Apuntes Puesta en producción segura.
 <ol class='portada'> 
 {% for post in site.posts reversed %}
 {% if post.categories contains "tema2" %}
-  <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2></li>
+  <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
 {% endif %}
 {% endfor %}
 </ol>
