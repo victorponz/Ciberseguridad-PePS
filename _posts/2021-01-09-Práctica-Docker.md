@@ -72,7 +72,7 @@ COPY php.conf /etc/apache2/mods-available/php7.3.conf
 # enable userdir and php
 RUN a2enmod php7.3
 
-# we run a script to stat the server; the array syntax makes it so ^C will work as we want
+# we run a script to start the server; the array syntax makes it so ^C will work as we want
 CMD  ["./entrypoint.sh"]
 ```
 
