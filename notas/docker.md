@@ -42,12 +42,9 @@ https://www.atlassian.com/continuous-delivery/pipeline
 
 https://www.atlassian.com/continuous-delivery/continuous-deployment
 
-# Docker
+## Usar ngix como un reverse-proxy
+https://www.thepolyglotdeveloper.com/2017/03/nginx-reverse-proxy-containerized-docker-applications/
 
-* Historia del hosting y porqué hace falta docker
-* Diferencias entre virtualización y contenedorización (`c15n`) con una máquina virtual y usando Docker para crear una aplicación con estado
-* Microservicios y contenedores. Una aplicación CRUD de ejemplo con varios contenedores incluyendo alguna preparada por terceros y compartida en Docker Hub..
-* Por último, Docker Compose para orquestrar aplicaciones compuestas de múltiples contenedores, pero proveyendo acceso privado entre los mismos
 
 
 
