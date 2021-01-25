@@ -55,16 +55,13 @@ ENV TZ=Europe/Madrid
 # we include procps and telnet so you can use these with shell.sh prompt
 RUN apt-get update -qq >/dev/null && apt-get install -y -qq procps telnet apache2 php7.3 -qq >/dev/null
 
-# add a user - this user will own the files in /home/app
-RUN useradd --user-group --create-home --shell /bin/false app
-
-# set up and copy files to /home/app
-ENV HOME=/home/app
+# HTML server directory
 WORKDIR /var/www/html
 COPY . /var/www/html/
 
+
 # The PHP app is going to save its state in /data so we make a /data inside the container
-RUN mkdir /data && chown -R app /data && chmod 755 /data && chmod -R 755 /var/www/html
+RUN mkdir /data && chown -R www-data /data && chmod 755 /data & chmod 755 -R /var/www/html/
 
 # we need custom php configuration file to enable userdirs
 COPY php.conf /etc/apache2/mods-available/php7.3.conf
@@ -72,7 +69,7 @@ COPY php.conf /etc/apache2/mods-available/php7.3.conf
 # enable userdir and php
 RUN a2enmod php7.3
 
-# we run a script to start the server; the array syntax makes it so ^C will work as we want
+# we run a script to stat the server; the array syntax makes it so ^C will work as we want
 CMD  ["./entrypoint.sh"]
 ```
 
@@ -230,3 +227,4 @@ docker run \
 El script `shell.sh` ejecuta el contenedor e inicia el shell Bash para que pueda usar programas de línea de comandos para diagnosticar problemas con el contenedor.
 
 **!Ya hemos creado nuestro primer contenedor!**
+
