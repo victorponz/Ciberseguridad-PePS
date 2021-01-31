@@ -68,9 +68,9 @@ Ahora ya no parece tan inocuo, ¿no?
 
 Como se ha comentado antes, **nunca pero nunca** se ha de confiar en lo que escriben los usuarios en los formularios. Siempre hay que sanear (**sanitize**) de caracteres peligrosos mediante las funciones que provea el lenguaje en el que escribimos la parte del servidor.
 
-Para ello podemos usar la función `htmlspecialchars` o `htmlentities`, aunque mejor si usamos un purificador como por ejemplo [http://htmlpurifier.org/](http://htmlpurifier.org/)
+Para ello podemos usar en PHP la función `htmlspecialchars` o `htmlentities`, aunque mejor si usamos un purificador como por ejemplo [http://htmlpurifier.org/](http://htmlpurifier.org/)
 
-Vamos a crear un nuevo archivo llamado post_mejorado.php que realiza el escape de los caracteres peligrosos.
+Vamos a crear un nuevo archivo llamado `post_mejorado.php` que realiza el escape de los caracteres peligrosos.
 
 ```php
 <!DOCTYPE html>
@@ -113,7 +113,7 @@ Mejor aún, si también usamos un purificador como [DOMPurify](https://github.co
 
 El mecanismo en el manejo de la sesión es un componente fundamental de la seguridad en la mayoría de aplicaciones web. Permite a la aplicación identificar a un único usuario entre diversas solicitudes, y maneja los datos que se acumula sobre el estado de la interacción del usuario con la aplicación.
 
-xDebido al importante rol que esto cumple, son el principal objetivo de ataque contra la aplicación, si es factible romperlo, puede evadir los controles de autenticación y enmascararse como otro usuario sin conocer las credenciales.
+Debido al importante rol que esto cumple, son el principal objetivo de ataque contra la aplicación, si es factible romperlo, puede evadir los controles de autenticación y enmascararse como otro usuario sin conocer las credenciales.
 
 Existen dos aspectos para establecer o mantener una sesión. La primera pieza es un “Session ID” único, el cual es algún tipo de identificador que el servidor asigna y envía al navegador. La segunda pieza es algún dato que el servidor asocia con el “Session ID”. Es como una fila en una BD que corresponde con todas las cosas que se hacen (contenido, expiración, rol, etc). El Session ID, entonces es la única clave única que el servidor utiliza para buscar la fila en la BD. Para manipular una Sesión se debe primero encontrar los Identificadores de sesión. La forma más sencilla de hacerlo es buscar la cadena “session”. Los más populares son: `JSESSIONID` (JSP),  `ASPSESSIONID` (ASP.NET), `PHPSESSID` (PHP) o `RAMDOM_ID` (ASP.NET).
 
@@ -176,16 +176,15 @@ header('Location: login.php');
 
 Esta pequeña pieza de información es importantísima **desde el punto de vista de la ciberseguridad** pues se puede producir un robo de sesión. 
 
-Supongamos que  nuestra página es vulnerable a un ataque [XSS](https://owasp.org/www-community/attacks/xss/) (este tipo de ataque se encuentra dentro de los Top 10 según la [OWASP](https://owasp.org/www-project-top-ten/))
-
 ### Robo de sesión - Puesta en práctica
 
 <blockquote class='task'>
 <i class='fa fa-check'> </i><strong> Práctica 2</strong> Realiza y documenta este punto</blockquote>
+Supongamos que  nuestra página es vulnerable a un ataque [XSS](https://owasp.org/www-community/attacks/xss/) (este tipo de ataque se encuentra dentro de los Top 10 según la [OWASP](https://owasp.org/www-project-top-ten/))
 
 Durante el funcionamiento normal, las *cookies* se envían en los  dos sentidos entre el servidor (o grupo de servidores en el mismo  dominio) y el ordenador del usuario que está navegando. Dado que las *cookies* pueden contener información sensible (nombre de usuario, un testigo  utilizado como autenticación, etc.), sus valores no deberían ser  accesibles desde otros ordenadores. Sin embargo, las *cookies* enviadas sobre sesiones HTTP normales son visibles a todos los usuarios que pueden escuchar en la red utilizando un *[sniffer](https://es.wikipedia.org/wiki/Sniffer)* de paquetes. Estas *cookies* no deben contener por lo tanto información sensible. Este problema se puede **solventar mediante el uso de [https](https://es.wikipedia.org/wiki/Https)**, que invoca [seguridad de la capa de transporte](https://es.wikipedia.org/wiki/Transport_Layer_Security) para cifrar la conexión ya que de lo contrario se pueden sufrir ataques por medio de [https://es.wikipedia.org/wiki/Ataque_de_intermediario](https://es.wikipedia.org/wiki/Ataque_de_intermediario)
 
-Vamos a ver un secuestro de sesión en directo.
+**Vamos a ver un secuestro de sesión en directo.**
 
 Para ello es necesario que creemos un host virtual en apache que responda a la url [evil.local](evil.local)
 
@@ -220,7 +219,7 @@ Al acceder, envía la cookie de sesión al sitio http://evil.local
 
 Para que funcione, primero debes iniciar sesión en la página `dominioseguro.local/login.php` y después visitar la página `dominioseguro.local/hackeada.html`
 
-Ahora abre el archivo `sessions.txt` y comprobarás que tiene una clave de sesión que puedes usar para suplantar al usuario original. Para ello, haz una petición en una página privada a `login.php`, abre la pestaña Red en Firebug , selecciona la página y pulsa el botón Reenviar
+Ahora abre el archivo `sessions.txt` y comprobarás que tiene una clave de sesión que puedes usar para suplantar al usuario original. Para ello, haz una petición en una página privada a `login.php`, abre la pestaña `Red` en **Firebug** , selecciona la página y pulsa el botón `Reenviar`
 
 ![image-20210131184754004](/Ciberseguridad-PePS/assets/img/validacion/image-20210131184754004.png)
 
@@ -242,7 +241,7 @@ ini_set( 'session.cookie_httponly', 1 );
 
 Si modificamos `login.php` para que incluya esta directiva, comprobaremos que al visitar la página `hackeada.html` la página en `evil.local` ya no recibe la cookie de sesión.
 
-```php+HTML
+```php
 <?php
 ini_set( 'session.cookie_httponly', 1 );
 session_start();
@@ -353,4 +352,4 @@ Ahora en el navegador al acceder a la página `hackeada-redirect.html`  se visit
 
 [https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)#Robo_de_cookies](https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)#Robo_de_cookies)
 
-https://dev.to/anastasionico/good-practices-how-to-sanitize-validate-and-escape-in-php-3-methods-139b
+[https://dev.to/anastasionico/good-practices-how-to-sanitize-validate-and-escape-in-php-3-methods-139b](https://dev.to/anastasionico/good-practices-how-to-sanitize-validate-and-escape-in-php-3-methods-139b)
