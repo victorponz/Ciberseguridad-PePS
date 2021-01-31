@@ -19,7 +19,7 @@ header-includes: |
     \renewcommand{\footrulewidth}{1pt}
 ---
 
-## Validación de entradas
+## ¿Qué es?
 
 <blockquote class='task'>
 <i class='fa fa-check'> </i><strong> Práctica 1</strong> Realiza y documenta este punto</blockquote>
