@@ -1,12 +1,11 @@
 ## docker
 
-Instalar kali en linux y correr un contenedor directamente desde Docker hub
-
-https://medium.com/@airman604/installing-docker-in-kali-linux-2017-1-fbaa4d1447fe
-
 Esta entrada es muy buena
 
 https://blog.dinahosting.com/servicio-web-con-docker-y-docker-compose/
+
+https://www.kodetop.com/crea-tu-ambiente-de-desarrollo-php-mysql-con-docker/
+
 
 Crear un docker con nginx y --network host
 

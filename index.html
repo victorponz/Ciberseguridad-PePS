@@ -33,3 +33,16 @@ title: Apuntes Puesta en producción segura.
 {% endif %}
 {% endfor %}
 </ol>
+
+<h2>Tema 3 - Seguridad Web</h2>
+<blockquote>
+  En esta parte del módulo aprenderemos cómo desarrollar webs de forma segura y a detectar y corregir vulnerabilidades web
+</blockquote>
+
+<ol class='portada'> 
+{% for post in site.posts reversed %}
+{% if post.categories contains "tema3" %}
+  <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
+{% endif %}
+{% endfor %}
+</ol>

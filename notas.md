@@ -32,5 +32,8 @@ pandoc _posts/2021-01-08-Docker.md --pdf-engine=xelatex --resource-path=.:/home/
 
 pandoc _posts/2021-01-09-Práctica-Docker.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-01-09-Práctica-Docker.pdf
 
+pandoc _posts/2021-01-12-nginx.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-01-12-nginx.pdf
+pandoc _posts/2021-01-31-Validación-de-entradas.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-01-31-Validación-de-entradas.md.pdf
+
 ```
 
