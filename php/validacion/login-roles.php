@@ -1,23 +1,24 @@
 <?php
 session_start();
 
-//En una aplicación real, los usuarios estarían almaenados en la base de datos
-$all_users = array ("mario" => "qwerty", "juan" => "123456");
+//En una aplicación real, los usuarios estarían almacenados en la base de datos y la contraseña estaría encriptada, como veremos más adelante
+$all_users = array ("mario" => ["carbonell", "ADMIN"], "juan" => ["123456", "USER"]);
 $valid_users = array_keys($all_users);
 
 $ya_registrado = $_SESSION['ya_registrado'] ?? false;
 
-
 if ($_SERVER['REQUEST_METHOD'] == "POST" && !$ya_registrado){
 	$usuario = $_POST['usuario'] ?? "";
-
 	$password = $_POST['password'] ?? "";
 
-
-	$ya_registrado = (in_array($usuario, $valid_users)) && ($password == $all_users[$usuario]);
+	$passwordUsuario = $all_users[$usuario][0];
+	$rolUsuario = $all_users[$usuario][1];
+	
+	$ya_registrado = (in_array($usuario, $valid_users)) && ($password == $passwordUsuario);
 	if ($ya_registrado){
 		$_SESSION['ya_registrado'] = true;
 		$_SESSION['usuario'] = $usuario;
+		$_SESSION['ROL'] = $rolUsuario;
 	}else{
         	echo "Usuario no encontrado";
     	}
@@ -30,7 +31,7 @@ if ($ya_registrado){
 }else{
 ?>
 	
-	<form action='login.php' method='post'>
+	<form action='login-roles.php' method='post'>
 		Usuario: <input type='text' name = "usuario" id="usuario" value=""><br>
 		Contraseña: <input type='password' name = "password" id = "password" value=""><br>
 		<input type='submit' value='Enviar'>

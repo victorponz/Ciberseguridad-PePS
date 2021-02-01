@@ -119,13 +119,15 @@ Existen dos aspectos para establecer o mantener una sesión. La primera pieza es
 
 Si se ven algunos de estos valores en la Cookie, entonces probablemente se ha encontrado el Identificador de Sesión.
 
+El siguiente código es un ejemplo básico (`login.php`) para crear un formulario de inicio de sesión en PHP.
+
 ```php
 <?php
 session_start();
 
 //En una aplicación real, los usuarios estarían almaenados en la base de datos
-$valid_passwords = array ("mario" => "carbonell");
-$valid_users = array_keys($valid_passwords);
+$all_users = array ("mario" => "qwerty", "juan" => "123456");
+$valid_users = array_keys($all_users);
 
 $ya_registrado = $_SESSION['ya_registrado'] ?? false;
 
@@ -133,7 +135,8 @@ $ya_registrado = $_SESSION['ya_registrado'] ?? false;
 if ($_SERVER['REQUEST_METHOD'] == "POST" && !$ya_registrado){
 	$usuario = $_POST['usuario'] ?? "";
 	$password = $_POST['password'] ?? "";
-	$ya_registrado = (in_array($usuario, $valid_users)) && ($password == $valid_passwords[$usuario]);
+    
+	$ya_registrado = (in_array($usuario, $valid_users)) && ($password == $all_users[$usuario]);
 	if ($ya_registrado){
 		$_SESSION['ya_registrado'] = true;
 		$_SESSION['usuario'] = $usuario;
@@ -141,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && !$ya_registrado){
 }
 
 if ($ya_registrado){
-	// If arrives here, is a valid user.
+	// Si llega aqui es porque es un usuario válido.
 	echo "<p>Welcome " . $_SESSION['usuario'] . "</p>";
 	echo "<p>Congratulations, you are into the system.</p>";
 }else{
@@ -217,7 +220,7 @@ Al acceder, envía la cookie de sesión al sitio http://evil.local
 </html>
 ```
 
-Para que funcione, primero debes iniciar sesión en la página `dominioseguro.local/login.php` y después visitar la página `dominioseguro.local/hackeada.html`
+Para que funcione, **primero debes iniciar sesión** en la página `dominioseguro.local/login.php` y después visitar la página `dominioseguro.local/hackeada.html`
 
 Ahora abre el archivo `sessions.txt` y comprobarás que tiene una clave de sesión que puedes usar para suplantar al usuario original. Para ello, haz una petición en una página privada a `login.php`, abre la pestaña `Red` en **Firebug** , selecciona la página y pulsa el botón `Reenviar`
 
@@ -250,6 +253,109 @@ session_start();
 ```
 
 Más información en [stackoverflow](https://stackoverflow.com/questions/36877/how-do-you-set-up-use-httponly-cookies-in-php/8726269#8726269)
+
+### Otras consideraciones
+
+Se debe cerrar la sesión en un plazo determinado de tal forma que si no se interactúa con la página esta expire y el usuario deba volver a iniciar sesión. Al menos se deben fijar las cookies para que se eliminen al cerrar el navegador. 
+
+Además, se debe volver a solicitar las credenciales de acceso cuando el usuario acceda a acciones relacionadas con su perfil. Por ejemplo, pidiendo la contraseña cuando el usuario desee cambiar la misma. Esto protege al usuario si se deja desatendido el navegador y otro usuario intenta cambiar la contraseña. 
+
+### Control de acceso
+
+Se debe gestionar la aplicación de tal forma que la cookie de sesión se propague siempre entre las distintas páginas de la misma. 
+
+Y se deben definir las acciones  que pueden llevar a cabo cada uno de los roles asociados a los usuarios. Por ejemplo, se pueden definir tres roles:
+
+* Usuario anónimo: no ha iniciado sesión
+* Usuario identificado: ha iniciado sesión
+* Usuario administrador: ha iniciado sesión y es administrador del sitio.
+
+Esto se puede implementar fácilmente en PHP modificando un poco la página `login.php` 
+
+```php
+<?php
+session_start();
+
+//En una aplicación real, los usuarios estarían almacenados en la base de datos y la contraseña estaría encriptada, como veremos más adelante
+$all_users = array ("mario" => ["carbonell", "ADMIN"], "juan" => ["123456", "USER"]);
+$valid_users = array_keys($all_users);
+
+$ya_registrado = $_SESSION['ya_registrado'] ?? false;
+
+if ($_SERVER['REQUEST_METHOD'] == "POST" && !$ya_registrado){
+	$usuario = $_POST['usuario'] ?? "";
+	$password = $_POST['password'] ?? "";
+
+	$passwordUsuario = $all_users[$usuario][0];
+	$rolUsuario = $all_users[$usuario][1];
+	
+	$ya_registrado = (in_array($usuario, $valid_users)) && ($password == $passwordUsuario);
+	if ($ya_registrado){
+		$_SESSION['ya_registrado'] = true;
+		$_SESSION['usuario'] = $usuario;
+		$_SESSION['ROL'] = $rolUsuario;
+	}else{
+        echo "Usuario no encontrado";
+    }
+}
+
+if ($ya_registrado){
+	// Si llega aqui es porque es un usuario válido.
+	echo "<p>Welcome " . $_SESSION['usuario'] . "</p>";
+	echo "<p>Congratulations, you are into the system.</p>";
+}else{
+?>
+	
+	<form action='login-roles.php' method='post'>
+		Usuario: <input type='text' name = "usuario" id="usuario" value=""><br>
+		Contraseña: <input type='password' name = "password" id = "password" value=""><br>
+		<input type='submit' value='Enviar'>
+	</form>
+<?php
+}
+?>
+```
+
+Ahora podemos controlar el acceso a nuestro sistema validando que el usuario posee el rol adecuado para acceder a las secciones de nuestra aplicación. Por ejemplo, creamos una página para el perfil de usuario (`rol:USER`) y otra para administrar la aplicación (`Rol:ADMIN`)
+
+La página de perfil (`perfil.php`) sería la siguiente:
+
+```php
+<?php
+session_start();
+if (!$_SESSION['ya_registrado']){
+	header('Location: login.php');
+}
+if ($_SESSION['ROL'] != "USER"){
+	header('Location: no-autorizado.php');
+}
+?>
+<h1>Página de perfil del usuario.</h1>
+```
+
+Y la página de administración (`admin.php`) quedaría así:
+
+```php
+<?php
+session_start();
+if (!$_SESSION['ya_registrado']){
+	header('Location: login.php');
+}
+if ($_SESSION['ROL'] != "ADMIN"){
+	header('Location: no-autorizado.php');
+}
+?>
+<h1>Página de administración del sitio</h1>
+```
+
+Y este es el código de la página `no-autorizado.php`
+
+```php
+<?php
+session_start();
+?>
+<h1>Acceso no autorizado</h1>
+```
 
 ## Autenticación HTTP
 
