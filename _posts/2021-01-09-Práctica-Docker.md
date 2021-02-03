@@ -176,7 +176,7 @@ Para que persista entre reinicios en `data/container.txt`debemos:
 
 * Crear un fichero llamado `container.txt`en el anfitrión y que sea `/data/container.txt` en el huésped
 * Montar un directorio en el anfitrión como `data` en el huésped
-* Hacer que Docker cree y mantenga un volumen por nosostros.
+* Hacer que Docker cree y mantenga un volumen por nosotros.
 
 Para ello creamos un volumen con nombre usando la opción `-v` en `docker run` con justamente el nombre del directorio el en huésped; por ejemplo, `-v name:/data`. El script `persist.sh` hace justamente eso. Es como `debug.sh`pero con la opción `-v`
 
@@ -198,7 +198,7 @@ docker run \
     chapter2
 ```
 
-Cuando lo ejecutamos y apuntamos nuestro navegador a [http://localhost:8086/~app/index.php](http://localhost:8086/~app/index.php), vemos que el contador funciona, incluso si paramos y reiniciamos el contenedor.
+Cuando lo ejecutamos y apuntamos nuestro navegador a [http://localhost:8086/public_html/](http://localhost:8086/public_html/), vemos que el contador funciona, incluso si paramos y reiniciamos el contenedor.
 
 El script `run.sh` ejecuta el contenedor en modo demonio; no podrás ver la salida de la aplicación sin usar el comando de registro de docker. Tampoco monta el directorio de host como un volumen en el contenedor. Esto simula el entorno de producción:
 
