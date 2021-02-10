@@ -110,6 +110,8 @@ Mejor aún, si también usamos un purificador como [DOMPurify](https://github.co
 > DOMPurify sanitizes HTML and prevents XSS attacks. You can feed  DOMPurify with string full of dirty HTML and it will return a string  (unless configured otherwise) with clean HTML. DOMPurify will strip out  everything that contains dangerous HTML and thereby prevent XSS attacks  and other nastiness. It's also damn bloody fast. We use the technologies the browser provides and turn them into an XSS filter. The faster your  browser, the faster DOMPurify will be.
 
 ## Autenticación con Sesiones
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 2</strong> Realiza y documenta este punto</blockquote>
 
 El mecanismo en el manejo de la sesión es un componente fundamental de la seguridad en la mayoría de aplicaciones web. Permite a la aplicación identificar a un único usuario entre diversas solicitudes, y maneja los datos que se acumula sobre el estado de la interacción del usuario con la aplicación.
 
@@ -182,7 +184,7 @@ Esta pequeña pieza de información es importantísima **desde el punto de vista
 ### Robo de sesión - Puesta en práctica
 
 <blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 2</strong> Realiza y documenta este punto</blockquote>
+<i class='fa fa-check'> </i><strong> Práctica 3</strong> Realiza y documenta este punto</blockquote>
 Supongamos que  nuestra página es vulnerable a un ataque [XSS](https://owasp.org/www-community/attacks/xss/) (este tipo de ataque se encuentra dentro de los Top 10 según la [OWASP](https://owasp.org/www-project-top-ten/))
 
 Durante el funcionamiento normal, las *cookies* se envían en los  dos sentidos entre el servidor (o grupo de servidores en el mismo  dominio) y el ordenador del usuario que está navegando. Dado que las *cookies* pueden contener información sensible (nombre de usuario, un testigo  utilizado como autenticación, etc.), sus valores no deberían ser  accesibles desde otros ordenadores. Sin embargo, las *cookies* enviadas sobre sesiones HTTP normales son visibles a todos los usuarios que pueden escuchar en la red utilizando un *[sniffer](https://es.wikipedia.org/wiki/Sniffer)* de paquetes. Estas *cookies* no deben contener por lo tanto información sensible. Este problema se puede **solventar mediante el uso de [https](https://es.wikipedia.org/wiki/Https)**, que invoca [seguridad de la capa de transporte](https://es.wikipedia.org/wiki/Transport_Layer_Security) para cifrar la conexión ya que de lo contrario se pueden sufrir ataques por medio de [https://es.wikipedia.org/wiki/Ataque_de_intermediario](https://es.wikipedia.org/wiki/Ataque_de_intermediario)
@@ -266,6 +268,8 @@ Se debe cerrar la sesión en un plazo determinado de tal forma que si no se inte
 Además, se debe volver a solicitar las credenciales de acceso cuando el usuario acceda a acciones relacionadas con su perfil. Por ejemplo, pidiendo la contraseña cuando el usuario desee cambiar la misma. Esto protege al usuario si se deja desatendido el navegador y otro usuario intenta cambiar la contraseña. 
 
 ### Control de acceso
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 4</strong> Realiza y documenta este punto</blockquote>
 
 Se debe gestionar la aplicación de tal forma que la cookie de sesión se propague siempre entre las distintas páginas de la misma. 
 
@@ -363,7 +367,8 @@ session_start();
 ```
 
 ## Autenticación HTTP
-
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 5</strong> Realiza y documenta este punto</blockquote>
 También merece la pena conocer el tipo de autenticación HTTP que provee de un mecanismo sencillo para acceder a recursos protegidos por usuario y contraseña.
 
 > Según la [Wikipedia](https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica)
@@ -421,7 +426,7 @@ Documenta la configuración e instalación con una entrada en tu blog
 Otro tipo de ataque que se puede realizar mediante XSS es la redirección a una página controlada por un atacante.
 
 <blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 4</strong> Realiza y documenta este punto</blockquote>
+<i class='fa fa-check'> </i><strong> Práctica 6</strong> Realiza y documenta este punto</blockquote>
 
 Para reproducirlo, vamos a crear una página en el sitio `dominioseguro.local` llamada `hackeada-redirect.html` con el siguiente contenido:
 
