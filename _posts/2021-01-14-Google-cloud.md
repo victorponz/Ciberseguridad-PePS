@@ -21,7 +21,7 @@ header-includes: |
 
 ## ¿Qué es?
 
-> https://en.wikipedia.org/wiki/Google_Cloud_Platform
+> Según la [Wikipedia](https://en.wikipedia.org/wiki/Google_Cloud_Platform)
 >
 > **Google Cloud Platform** (**GCP**), offered by [Google](https://en.wikipedia.org/wiki/Google), is a suite of [cloud computing](https://en.wikipedia.org/wiki/Cloud_computing) services that runs on the same infrastructure that Google uses internally for its end-user products, such as [Google Search](https://en.wikipedia.org/wiki/Google_Search), [Gmail](https://en.wikipedia.org/wiki/Gmail), [file storage](https://en.wikipedia.org/wiki/Google_Drive), and [YouTube](https://en.wikipedia.org/wiki/YouTube).[[1\]](https://en.wikipedia.org/wiki/Google_Cloud_Platform#cite_note-1) Alongside a set of management tools, it provides a series of modular cloud services including computing, [data storage](https://en.wikipedia.org/wiki/Computer_data_storage), [data analytics](https://en.wikipedia.org/wiki/Data_analysis) and [machine learning](https://en.wikipedia.org/wiki/Machine_learning).[[2\]](https://en.wikipedia.org/wiki/Google_Cloud_Platform#cite_note-auto-2) Registration requires a [credit card](https://en.wikipedia.org/wiki/Credit_card) or bank account details.[[3\]](https://en.wikipedia.org/wiki/Google_Cloud_Platform#cite_note-3)
 >
