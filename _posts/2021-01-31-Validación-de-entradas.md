@@ -334,7 +334,7 @@ Más información en [stackoverflow](https://stackoverflow.com/questions/36877/h
 
 ## Fijación de sesión (Session Fixation)
 
-Otro ataque relacionado con las cookies de sesión es Sesion Fixation. El engaño parte de un hacker que hace llegar a otro usuario un enlace (por correo electrónico, o insertado en una web hackeada con XSS) con un identificador de sesión incluido en la url.
+Otro ataque relacionado con las cookies de sesión es Session Fixation. El engaño parte de un hacker que hace llegar a otro usuario un enlace (por correo electrónico, o insertado en una web hackeada con XSS) con un identificador de sesión incluido en la url.
 
 Por ejemplo, http://localhost:8080/login.php?PHPSESSID=HOLA
 
@@ -515,7 +515,7 @@ Al acceder, realiza una transferencia de 1000 € al atacante.
 <img src='http://dominiodeguro.local/transfer.php?quantity=1000&to=juan'>
 ```
 
-Para reproducir el ataque, haz login como `mario` y luego visita la página ``hackeada-csrf.html`
+Para reproducir el ataque, haz login como `mario` y luego visita la página `hackeada-csrf.html`
 
 Existen múltiples contramedidas para este tipo de ataque explicadas en la entrada de la Wikipedia como por ejemplo el patrón [Synchronizer token pattern](ttps://en.wikipedia.org/wiki/Cross-site_request_forgery#Synchronizer_token_pattern)
 
@@ -563,4 +563,4 @@ Ahora en el navegador al acceder a la página `hackeada-redirect.html`  se visit
 
 [https://dev.to/anastasionico/good-practices-how-to-sanitize-validate-and-escape-in-php-3-methods-139b](https://dev.to/anastasionico/good-practices-how-to-sanitize-validate-and-escape-in-php-3-methods-139b)
 
-https://developer.mozilla.org/es/docs/Web/HTTP/CSP
+[https://developer.mozilla.org/es/docs/Web/HTTP/CSP](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
