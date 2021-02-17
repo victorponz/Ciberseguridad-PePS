@@ -338,7 +338,7 @@ Otro ataque relacionado con las cookies de sesión es Session Fixation. El enga�
 
 Por ejemplo, http://localhost:8080/login.php?PHPSESSID=HOLA
 
-En el momento que el usuario legítimo inicia sesión en el sistema da acceso al hacker pues éste tiene acceso al a la cookie de sesión `HOLA`. Ahora prueba a acceder con una sesión privada u otro navegador y comprobarás que **estás logeado!**
+En el momento que el usuario legítimo inicia sesión en el sistema  da acceso al hacker, pues éste tiene acceso a la cookie de sesión `HOLA`. Ahora prueba a acceder con una sesión privada u otro navegador y comprobarás que **estás logeado!**
 
 Cambia la página `login.php` para que quede como a continuación:
 
@@ -350,6 +350,7 @@ if ($_GET["PHPSESSID"]){
 }
 
 session_start();
+//... demás código
 ```
 
 Más información en la web de [OWASP](https://owasp.org/www-community/attacks/Session_fixation)
