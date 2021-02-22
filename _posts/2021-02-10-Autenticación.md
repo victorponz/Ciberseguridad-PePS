@@ -54,7 +54,7 @@ if (!$validated) {
 // If it arrives here, it is a valid user.
 echo "<p>Welcome $user.</p>";
 echo "<p>Congratulation, you are into the system.</p>";
-Y las cabeceras que envían el cliente y el servidor
+
     
 ```
 
@@ -84,9 +84,10 @@ OAuth es un estándar para permitir delegar la autenticación a terceras partes.
 
 ![OAuth0](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221173937946.png)
 
-> **Práctica 3.**
->
-> Realiza este punto. Como resultado debes realizar una entrada de blog y un repositorio en GitHub
+
+
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 3</strong>Realiza este punto. Como resultado debes realizar una entrada de blog y un repositorio en GitHub</blockquote>
 
 El flujo de autorización es el siguiente: Nuestra aplicación  redirecciona a los usuarios para pedir permiso y acceder a parte de su  información. Si los usuarios aceptan, este servicio nos devuelve un  token de acceso que podemos utilizar para consumir la información  protegida de nuestros usuarios.
 
