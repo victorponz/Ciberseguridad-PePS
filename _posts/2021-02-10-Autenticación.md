@@ -18,6 +18,7 @@ header-includes: |
     \renewcommand{\headrulewidth}{2pt}
     \renewcommand{\footrulewidth}{1pt}
 ---
+
 ## Autenticación HTTP
 <blockquote class='task'>
 <i class='fa fa-check'> </i><strong> Práctica 1</strong> Realiza y documenta este punto</blockquote>
@@ -146,13 +147,33 @@ Si todo ha ido bien, verás un listado con todos tus documentos de Drive
 
 [https://platzi.com/blog/aprende-estandares-de-seguridad-y-oauth/](https://platzi.com/blog/aprende-estandares-de-seguridad-y-oauth/)
 
-## Single Sign-On
+## Single Sign-On (SSO)
 
+Según la [Wikipedia](https://es.wikipedia.org/wiki/Single_Sign-On)
 
+> El "Inicio de Sesión Único" o "Inicio de Sesión Unificado" (***Single Sign-On***, **SSO**) es un procedimiento de autenticación que habilita a un [usuario](https://es.wikipedia.org/wiki/Usuario_(informática)) determinado para acceder a varios sistemas con una sola instancia de identificación. Su traducción literal es «autenticación única» o «validación única».
+
+Un ejemplo real es el uso de los distintos servicios de Google ya que una vez hemos iniciado sesión en uno de ellos, estamos logeados en todos los demás servicio (Gmail, Maps, Docs, Drive, ...).
+
+| Ventajas                                                  | Desventajas                                                  |
+| --------------------------------------------------------- | ------------------------------------------------------------ |
+| Acelera el acceso de los usuarios a sus aplicaciones      | Utilizar una única combinación aumenta las probabilidades de vulnerabilidad de contraseñas |
+| Reduce la carga de memorizar diversas contraseñas         | Al fallar SSO se pierde acceso a todos los sistemas relacionados |
+| Fácil de implementar y conectar a nuevas fuentes de datos | Suplantación de identidades en los accesos externos de los usuarios |
+
+*Fuente*: https://www.chakray.com/es/que-es-el-single-sign-on-sso-definicion-caracteristicas-y-ventajas/
 
 ## Contraseñas de un sólo uso (One-time password)
 
+Según la [Wikipedia](https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_con_contrase%C3%B1a_de_un_solo_uso)
 
+> Una **contraseña de un solo uso** u **OTP** (del inglés *One-Time Password*) es una [contraseña](https://es.wikipedia.org/wiki/Contraseña) válida solo para una [autenticación](https://es.wikipedia.org/wiki/Autenticación). La OTP soluciona una serie de deficiencias que se asocian con la tradicional (estática) [contraseña](https://es.wikipedia.org/wiki/Contraseña). La deficiencia más importante que se aborda en las OTP es que, en contraste con contraseñas estáticas, no son vulnerables a [ataques de REPLAY](https://es.wikipedia.org/wiki/Ataques_de_REPLAY). También hace al sistema más resistente frente ataques de [fuerza bruta](https://es.wikipedia.org/wiki/Ataque_de_fuerza_bruta), ya que cada vez que cambia la contraseña, los intentos realizados anteriormente para romper la contraseña anterior son inútiles y hay que empezar de nuevo. Esto significa que un posible intruso que logre registrar una OTP que ya se utiliza para iniciar sesión en un servicio o realizar una transacción no será capaz de abusar de ella, puesto que ya no será válida. En el lado negativo, las OTPs son difíciles de utilizar en los seres humanos, debido a que un ser humano no puede memorizar todas. Por lo tanto, se requiere de una tecnología adicional para funcionar.
+
+Una de las implementaciones más comunes es mediante Google Authenticator que asigna un código de 6 dígitos que el usuario debe proporciona además de su usuario y contraseña. Estos códigos One-time son generados haciendo uso de standards abiertos desarrollados por [The Initiative for Open Authentication (OATH)](https://en.wikipedia.org/wiki/Initiative_for_Open_Authentication) (no guarda relación con OAuth).
+
+**Mediante correo electrónico**
+
+En este método el inicio de sesión sin contraseña está basado en correo electrónico. Cuando nos registramos recibimos un correo con un enlace que incluye la contraseña generada aleatoriamente por el servidor. Este enlace se invalida cuando iniciamos sesión y también se fija una ventana temporal para su uso.  De esta forma es complicado suplantar al usuario ya que los ataques por fuerza bruta sólo serían válidos durante dicha ventana temporal.
 
 ## FIDO (Fast IDentity Online) 
 
@@ -169,6 +190,10 @@ Algunas de las herramientas y aplicaciones más populares de la web ya utilizan 
 * Las empresas ganan. Los propietarios de sitios y proveedores de servicios pueden proteger a sus usuarios de manera más eficaz.
 
 **¿Cómo funciona la autenticación FIDO?**
+
+Cuando un usuario se registra en un servicio ‘online’ que emplea el estándar FIDO, el sistema genera una pareja de **claves criptográficas**, de forma que **la clave privada se conserva en el ‘hardware’ del dispositivo y la clave pública se guarda en el servicio ‘online’**. Para realizar la autenticación, el dispositivo del cliente debe  demostrar al servicio ‘online’ que dispone de la clave privada  realizando una verificación matemática. Además, la clave privada del  cliente únicamente se podrá utilizar una vez que el usuario la haya  desbloqueado de forma local en el dispositivo. Este desbloqueo puede  realizarse mediante una acción segura y fácil como por ejemplo  introduciendo su huella dactilar, utilizando su voz o introduciendo un  PIN.
+
+De esta forma se consigue **proteger la privacidad del usuario y sus credenciales de acceso**,  consiguiendo que los usuarios no se vean obligados a elegir entre mejor seguridad o mejor experiencia de usuario, sino que pueden disponer de  ambas.
 
 En un flujo de autenticación FIDO, una parte que confía usa API para interactuar con el autenticador de un usuario.
 
@@ -199,7 +224,7 @@ El autenticador se utiliza en dos interacciones básicas: registro y autenticaci
 
 En un escenario de registro, cuando un usuario se registra para obtener una cuenta en un sitio web, el autenticador genera un nuevo par de claves que solo se puede utilizar en su servicio. La clave pública y un identificador de la credencial se almacenarán con el servidor.
 
-**Autenticador**
+**Autenticación**
 
 En un escenario de autenticación, cuando un usuario regresa al servicio en un nuevo dispositivo, o después de que expira su sesión, el autenticador debe proporcionar prueba de la clave privada del usuario. Lo hace respondiendo a un desafío criptográfico emitido por el servidor.
 
@@ -215,11 +240,35 @@ Para verificar la identidad del usuario, algunos tipos de autenticadores utiliza
 
 ## JSON web tokens
 
-FALTA
+Según la [Wikipedia](https://es.wikipedia.org/wiki/JSON_Web_Token)
+
+> **JSON Web Token** (abreviado **JWT**) es un [estándar abierto](https://es.wikipedia.org/wiki/Estándar_abierto) basado en [JSON](https://es.wikipedia.org/wiki/JSON) propuesto por [IETF](https://es.wikipedia.org/wiki/IETF) ([RFC 7519](https://tools.ietf.org/html/rfc7519)) para la creación de [tokens de acceso](https://es.wikipedia.org/w/index.php?title=Tokens_de_acceso&action=edit&redlink=1) que permiten la propagación de identidad y privilegios o *claims* en inglés. Por ejemplo, un servidor podría generar un token indicando que el usuario tiene privilegios de administrador y proporcionarlo a un cliente. El cliente entonces podría utilizar el token para probar que está actuando como un administrador en el cliente o en otro sistema. El token está firmado por la clave del servidor, así que el cliente y el servidor son ambos capaz de verificar que el token es legítimo. Los JSON Web Tokens están diseñados para ser compactos, poder ser enviados en las URLs -*URL-safe*- y ser utilizados en escenarios de [Single Sign-On](https://es.wikipedia.org/wiki/Single_Sign-On) (SSO). Los privilegios de los JSON Web Tokens puede ser utilizados para propagar la identidad de usuarios como parte del proceso de [autenticación](https://es.wikipedia.org/wiki/Autenticación) entre un [proveedor de identidad](https://es.wikipedia.org/wiki/Proveedor_de_identidad) y un [proveedor de servicio](https://es.wikipedia.org/wiki/Proveedor_de_servicios), o cualquiera otro tipo de privilegios requeridos por procesos empresariales 
+
+La autorización se logra cuando el usuario ingresa sus credenciales con éxito, entonces se genera un JSON Web Token que es retornado al cliente, quien tiene que guardarlo localmente, en vez del modelo tradicional de crear una sesión en el servidor y retornar una *[cookie](https://es.wikipedia.org/wiki/Cookie_(informática))*.
+
+Siempre que el usuario quiere acceder a una ruta protegida o recurso, el cliente tiene que enviar el JWT, generalmente en el encabezado de `Authorization` utilizando el esquema `Bearer`. El contenido del encabezado HTTP se ve de la siguiente forma:
+
+```
+Authorization: Bearer eyJhbGci...<snip>...yu5CSpyHI
+```
+
+Este es un mecanismo de autenticación sin estado - *stateless*- ya que la sesión del usuario nunca se guarda en el proveedor de identidad o en el proveedor del servicio. Los recursos protegidos siempre comprobaran si existe un JWT válido en cada pedido de acceso. Si el token esta presente y es válido, el proveedor del servicio otorga accesos a los recursos protegidos. Como los JWTs contienen toda la información necesaria en sí mismos, se reduce la necesidad de consultar la base de datos u otras fuentes de información múltiples veces. 
+
+A continuación se muestra un ejemplo de token, que está formado por tres partes: un encabezado o *header*, un contenido o *payload*, y una firma o *signature*.
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+```
+
+que decodificado se convierte el siguiente json:
+
+![image-20210222115158023](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210222115158023.png)
+
+
 
 ## Autenticación en dos factores
 
-FALTA
+La Autenticación de Dos Factores es una herramienta que ofrecen varios proveedores de servicios en línea, que cumple la función de agregar una capa de seguridad adicional al proceso de inicio de sesión de tus cuentas de Internet. La mecánica es simple: cuando el usuario inicia sesión en su cuenta personal de algún servicio online, esta herramienta le solicita que autentifique la titularidad de su cuenta, proporcionando dos factores distintos. El primero de estos, es la contraseña. El segundo, puede ser varias cosas, siempre dependiendo del servicio. En el más común de los casos, suele tratarse de  un código que se envía a un teléfono móvil vía SMS o a una cuenta de email. La esencia fundamental de esta herramienta se reduce a que, si quieres logearte a una de tus cuentas personales, debes “saber algo” y “poseer algo”. Así, por ejemplo, para acceder a la red virtual privada de una compañía, es posible que necesites de una clave y de una memoria USB. La autenticación de dos factores esencialmente logra que un atacante tenga que no sólo descifrar la contraseña de los usuarios, sino también acceder a un segundo factor, mucho más difícil de conseguir, y que implicaría o robar un teléfono celular o comprometer un correo electrónico.
 
 ## Cómo almacenar de forma segura la contraseña
 
