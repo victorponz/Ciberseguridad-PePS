@@ -359,15 +359,19 @@ session_start();
 
 Más información en la web de [OWASP](https://owasp.org/www-community/attacks/Session_fixation)
 
-Para evitar este tipo de ataques, la cookie de sesión cuando el usuario ha hecho **login debe ser distinta de la cookie** cuando no se ha iniciado sesión.
+> **Desde el punto de vista de la ciberseguridad**
+>
+> Para evitar este tipo de ataques, la cookie de sesión cuando el usuario ha hecho **login debe ser distinta de la cookie** cuando no se ha iniciado sesión.
 
-### Otras consideraciones
+
+
+## Otras consideraciones
 
 Se debe cerrar la sesión en un plazo determinado de tal forma que si no se interactúa con la página esta expire y el usuario deba volver a iniciar sesión. Al menos se deben fijar las cookies para que se eliminen al cerrar el navegador. 
 
 Además, se debe volver a solicitar las credenciales de acceso cuando el usuario acceda a acciones relacionadas con su perfil. Por ejemplo, pidiendo la contraseña cuando el usuario desee cambiar la misma. Esto protege al usuario si se deja desatendido el navegador y otro usuario intenta cambiarle la contraseña.
 
-### Control de acceso (Autorización)
+## Control de acceso (Autorización)
 ![Autenticación vs Autorización](https://www.redeszone.net/app/uploads-redeszone.net/2020/06/diferencias-autenticacion-autorizacion-3-930x487.jpg)
 
 Por seguridad, todas las organizaciones deben seguir el **principio de mínimo privilegio** 
