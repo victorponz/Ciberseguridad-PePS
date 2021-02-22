@@ -22,8 +22,9 @@ header-includes: |
 ## ¿Qué es?
 
 <blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica </strong><br> Realiza y documenta todos los puntos de esta entrada de blog<br>Debes crear todas las páginas mencionadas en el mismo y como resultado, debes crear un Dockerfile con una instalación de apache y php.<br>
+<i class='fa fa-check'> </i><strong> Práctica </strong><br> Realiza y documenta todos los puntos de esta entrada de blog<br>Debes crear todas las páginas mencionadas en el mismo y como resultado, debes crear un Dockerfile con dos instalaciones de apache y php: una para el atacante y otra para el hacker<br>
 Además, debes crear un repositorio en GitHub con un commit por cada nuevo archivo crees o modifiques </blockquote>
+
 
 
 Nunca hay que confiar en aquello que introducen los usuarios en un formulario web. Estamos acostumbrados a trabajar con ellos en cualquier aplicación web de hoy en día: Facebook, Twitter, Instagram, ... y realmente no nos damos cuenta de lo fácil que es atacar una web a través de ellos si no se toman las debidas precauciones al validar los datos de entrada.
@@ -264,6 +265,9 @@ $actual = file_get_contents($fichero);
 // Escribe el contenido al fichero
 file_put_contents($fichero, $session_robada, FILE_APPEND);
 ```
+
+> **Importante**
+> Para escribir en el fichero `sessions.txt` usa el mismo método que en la [Práctica Docker](https://victorponz.github.io/Ciberseguridad-PePS/tema2/docker/2021/01/09/Pr%C3%A1ctica-Docker.html) hacíamos con el archivo `counter.txt`
 
 Y ahora en el sitio `dominioseguro.local`, crea el siguiente contenido en la página `hackeada.php`
 
