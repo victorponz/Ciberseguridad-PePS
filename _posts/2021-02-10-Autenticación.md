@@ -71,9 +71,10 @@ Es muy fácil, decodificar `base64`. Por ejemplo en [https://www.base64decode.or
 Este método se puede emplear para una intranet o para una parte de la aplicación en la que sea necesario iniciar sesión, añadiendo una capa más de seguridad, porque se deben realizar dos autorizaciones: la primera basada en `HTTP` y la segunda, como veremos a continuación, mediante **sesiones**
 
 <blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 1</strong><br> Configura apache para que al  directorio <code>/protegido</code> sólo se pueda acceder mediante un usuario y contraseña siguiendo las instrucciones detalladas en <a href='https://cwiki.apache.org/confluence/display/HTTPD/PasswordBasicAuth'>Password protect a directory using basic authentication</a>.<br>
+<i class='fa fa-check'> </i><strong> Práctica 2</strong><br> Configura apache para que al  directorio <code>/protegido</code> sólo se pueda acceder mediante un usuario y contraseña siguiendo las instrucciones detalladas en <a href='https://cwiki.apache.org/confluence/display/HTTPD/PasswordBasicAuth'>Password protect a directory using basic authentication</a>.<br>
 Documenta la configuración e instalación con una entrada en tu blog
 </blockquote>
+
 
 
 
@@ -82,6 +83,10 @@ Documenta la configuración e instalación con una entrada en tu blog
 OAuth es un estándar para permitir delegar la autenticación a terceras partes. Lo usamos en servicios del día a día cuando, por ejemplo hacemos login en un servicio con las credenciales de Google, como muestra la imagen siguiente.
 
 ![OAuth0](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221173937946.png)
+
+> **Práctica 3.**
+>
+> Realiza este punto. Como resultado debes realizar una entrada de blog y un repositorio en GitHub
 
 El flujo de autorización es el siguiente: Nuestra aplicación  redirecciona a los usuarios para pedir permiso y acceder a parte de su  información. Si los usuarios aceptan, este servicio nos devuelve un  token de acceso que podemos utilizar para consumir la información  protegida de nuestros usuarios.
 
