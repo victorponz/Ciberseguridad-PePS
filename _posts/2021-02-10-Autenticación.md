@@ -153,9 +153,7 @@ Si todo ha ido bien, verás un listado con todos tus documentos de Drive
 
 [https://platzi.com/blog/aprende-estandares-de-seguridad-y-oauth/](https://platzi.com/blog/aprende-estandares-de-seguridad-y-oauth/)
 
-En el siguiente vídeo Chema Alonso explica cómo atacar oAuth0 entre otros temas muy interesantes
 
-<iframe width="560" height="615" src="https://www.youtube.com/embed/Fj9TwMTxGuc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Single Sign-On (SSO)
 
