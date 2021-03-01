@@ -348,9 +348,9 @@ Almacenar contraseñas en texto plano NO es una solución segura. Nadie, incluid
 
 ### Contraseñas encriptadas
 
-En algunos casos, las contraseñas se almacenan en una base de datos después de haber sido encriptadas por un algoritmo reversible (rot13, mask encryption…). Como el algoritmo es reversible, no cumple con las reglas de la CNIL
+En algunos casos, las contraseñas se almacenan en una base de datos después de haber sido encriptadas por un algoritmo reversible (rot13, mask encryption…). Como el algoritmo es reversible, no cumple con las reglas del ENS.
 
-De hecho, recomienda que cualquier contraseña sea transformada por una función criptográfica no reversible. (fuente en francés)
+De hecho, recomienda que cualquier contraseña sea transformada por una función criptográfica no reversible.
 
 Dado que el atacante conoce su contraseña en formato de texto sin formato / cifrado, puede adivinar la lógica del cifrado e intentar revertirla. Si tiene éxito, todas las contraseñas se recuperarán tan rápido como estaban en texto sin formato, independientemente de la complejidad del algoritmo.
 
