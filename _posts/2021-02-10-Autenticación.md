@@ -461,7 +461,7 @@ Por ejemplo, con salt, toto y tata no tendrán el mismo hash en la base de datos
 
 Las ventajas de la sal son múltiples: 
 
-1. Es casi imposible encontrar hachís directamente en Internet si está salado. Sin embargo, la sal debe ser lo suficientemente larga y aleatoria.
+1. Es casi imposible encontrar el hashF directamente en Internet si está salado. Sin embargo, la sal debe ser lo suficientemente larga y aleatoria.
 2.  Las tablas Rainbow no funcionan con hashes con salt.
 3.  Como se dijo antes, dos usuarios con la misma contraseña no tendrán el mismo hash si se usa salt. Software para descifrar contraseñas (hashcat, Johntheripper…), después de romper un hash, busque si no está presente para otro usuario. Por lo tanto, sin sal, después de descubrir la contraseña de toto, la contraseña de tata se descubre directamente. Sin embargo, con una sal, el software debe comenzar de nuevo desde cero para cada usuario.
 
