@@ -465,8 +465,6 @@ Las ventajas de la sal son múltiples:
 2.  Las tablas Rainbow no funcionan con hashes con salt.
 3.  Como se dijo antes, dos usuarios con la misma contraseña no tendrán el mismo hash si se usa salt. Software para descifrar contraseñas (hashcat, Johntheripper…), después de romper un hash, busque si no está presente para otro usuario. Por lo tanto, sin sal, después de descubrir la contraseña de toto, la contraseña de tata se descubre directamente. Sin embargo, con una sal, el software debe comenzar de nuevo desde cero para cada usuario.
 
-**Falta Benchmark with salt**
-
 | Login | Salt                   | **Hash sha512 with salt**                                    |
 | ----- | ---------------------- | ------------------------------------------------------------ |
 | admin | BGdd6d6^ZgvkMhKf@W3RqT | 7509d123bce1aa92331861cf8fd738a58205045123f0e25f0862477cb19d3ee0757cd99865c30b123ad1e7f1be1e31a6058090458cb9941031f5c36683c8446e |
