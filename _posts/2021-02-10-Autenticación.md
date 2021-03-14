@@ -486,9 +486,9 @@ Se puede utilizar una [pimienta](<https://tools.ietf.org/id/draft-whited-kitten-
 
 El propósito de la pimienta es evitar que un atacante pueda descifrar cualquiera de los hashes si sólo tiene acceso a la base de datos, por ejemplo si ha explotado una vulnerabilidad de inyección SQL u obtenido una copia de seguridad de la base de datos.
 
-La pimienta debe tener *al menos* 32 caracteres y debe generarse aleatoriamente utilizando un generador pseudoaleatorio seguro (CSPRNG). Debe almacenarse de forma segura en una "bóveda de secretos" (no en un archivo de configuración de la aplicación, independientemente de los permisos de los archivos que son susceptibles de SSRF) utilizando las API de acceso seguro, o para un almacenamiento seguro óptimo almacenar la pimienta en un Módulo de Seguridad de Hardware (HSM) si es posible.<br>
+La pimienta debe tener *al menos* 32 caracteres y debe generarse aleatoriamente utilizando un generador pseudoaleatorio seguro (CSPRNG). Debe almacenarse de forma segura en una "bóveda de secretos" (no en un archivo de configuración de la aplicación, independientemente de los permisos de los archivos que son susceptibles de SSRF) utilizando las API de acceso seguro, o para un almacenamiento seguro óptimo almacenar la pimienta en un Módulo de Seguridad de Hardware (HSM) si es posible.
 
-La pimienta se utiliza a menudo de forma similar a la sal, concatenándola con la contraseña antes del hash, utilizando una construcción como `hash($pepper . $password)`. Mientras que la concatenación se considera apropiada para una sal, sólo el prefijo se considera apropiado para una pimienta.<br>
+La pimienta se utiliza a menudo de forma similar a la sal, concatenándola con la contraseña antes del hash, utilizando una construcción como `hash($pepper . $password)`. Mientras que la concatenación se considera apropiada para una sal, sólo el prefijo se considera apropiado para una pimienta.
 
 Nunca coloque una pimienta como sufijo, ya que esto puede conducir a vulnerabilidades tales como problemas relacionados con el truncamiento y los ataques de extensión de longitud. Prácticamente estas amenazas permiten que el componente de la contraseña de entrada se valide con éxito porque la contraseña única nunca se trunca, sólo la pimienta probabilística se truncaría.
 
@@ -566,7 +566,7 @@ El factor de trabajo para PBKDF2 se implementa a través del recuento de iteraci
 
 [Bcrypt](<https://en.wikipedia.org/wiki/Bcrypt>) es el algoritmo más ampliamente soportado y debería ser la elección por defecto a menos que haya requisitos específicos para PBKDF2, o conocimientos apropiados para ajustar Argon2.
 
-El factor de trabajo por defecto para Bcrypt es 10, y por lo general debe ser elevado a 12 a menos que se opere en sistemas más antiguos o de menor potencia.**Bcrypt**
+El factor de trabajo por defecto para Bcrypt es 10, y por lo general debe ser elevado a 12 a menos que se opere en sistemas más antiguos o de menor potencia.
 
 bcrypt es una función hash creada por Niels Provos y David Mazières. Se basa en el algoritmo de cifrado Blowfish y se presentó en USENIX en 1999.
 
@@ -579,11 +579,13 @@ $2y$11$SXAXZyioy60hbnymeoJ9.ulscXwUFMhbvLaTxAt729tGusw.5AG4C
 ```
 
 * Algoritmo: Este puede tomar varias versiones dependiendo de la versión de bcrypt ($2$, $2a$, $2x$, $2y$ y $2b$
-* El costo: el número de iteraciones en potencia de 2. Por ejemplo, aquí, la iteración es 11, el algoritmo hará 211 iteraciones (2048 iteraciones).
+* El costo: el número de iteraciones en potencia de 2. Por ejemplo, aquí, la iteración es 11, el algoritmo hará 2^11 iteraciones (2048 iteraciones).
 *  Sal: en lugar de almacenar la sal en una columna dedicada, se almacena directamente en el hash final. 
 * La contraseña hash
 
 Dado que bcrypt almacena el número de iteraciones, esto la convierte en una función adaptativa, porque el número de iteraciones se puede aumentar y, por lo tanto, es cada vez más largo. Esto le permite, a pesar de su antigüedad y la evolución de la potencia informática, seguir siendo robusto contra los ataques de fuerza bruta. El siguiente punto de referencia muestra que el `hashcat` tarda 23 días en calcular la totalidad de los hashes de `rockyou`.
+
+En un algoritmo sha512, herramientas como hascat o john de ripper pueden hashear hasta 5.000.000 de entradas por segundo (Hahs/Seconds) mientras que con bcrypt (con 8 iteraciones) sólo puede procesar unas 300
 
 ![https://www.vaadata.com/blog/wp-content/uploads/2020/05/bcrypt-1-768x514.png](https://www.vaadata.com/blog/wp-content/uploads/2020/05/bcrypt-1-768x514.png)
 
