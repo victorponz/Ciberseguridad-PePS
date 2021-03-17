@@ -1,16 +1,21 @@
+1. [Seguridad en el host](https://player.vimeo.com/video/517148290)
 
+2. [Seguridad en el demonio](https://player.vimeo.com/video/517148194)
+3. [Seguridad en contenedores](https://player.vimeo.com/video/517147973)
+4. [Seguridad en la construcción de imágenes I](https://player.vimeo.com/video/517161900)
+5. [Seguridad en la construcción de imágenes II](https://player.vimeo.com/video/517161039)
+6. [Seguridad en la construcción de imágenes III](https://player.vimeo.com/video/517162103)
+7. [Seguridad en la construcción de imágenes IV](https://player.vimeo.com/video/517162393)
 
 # Seguridad en docker
 
 ## Seguridad host
 
-Comparte el mismo kernel con todos los contenedores y con el host
+Como comparte el mismo kernel de la máquina host, todo el software del sistema debe estar actualizado a la máxima versión estable.
 
-Todo el software debe estar actualizado correctamente
+Antes de aplicar seguridad en el host, se debería usar alguna tipo de seguridad en el host mediante `ip_tables`, `SELinux`, `apparmor`, defensa en profundidad, perímetro etc.
 
-Se debería usar alguna tipo de seguridad en el host mediante ip_tables, SELinux, apparmor, defensa en profundidad, perímetro etc.
-
-Otro sistema es controlar los permisos de usuarios. Por lo tanto, sólo deben acceder a docker aquellos usuarios con permiso de root, ya que docker debe acceder al kernel. Por lo que hemos de crear un grupo de docker e ir añadiendo ahí los usuarios que puedan lanzar contenedores.
+Algo también muy importante es controlar los permisos de usuarios. Sólo deben acceder a docker aquellos usuarios con permiso de root, ya que docker debe acceder al kernel. Por lo que hemos de crear un grupo de docker e ir añadiendo ahí los usuarios que puedan lanzar contenedores.
 
 `sudo usermod -aG docker $USER`
 
@@ -18,33 +23,29 @@ y recargar los permisos
 
 `newgrp docker`
 
-
-
-## Seguridad en un demonio
-
-
+## Seguridad en el demonio
 
 El demonio corre como superusuario, así que debemos impedir que los usuarios puedan tocar la configuración  y el socket no deberían poder verlo.
 
 El archivo es `/etc/docker/daemon.json`
 
-Poner debug: false y es muy interesante configurar `ulimits`que permiten definir los archivos que pueden cargar los contenedores y es interesante dejar unos límites por defecto.
+Poner `debug: false` y es muy interesante configurar `ulimits`que permiten definir los archivos que pueden cargar los contenedores y es interesante dejar unos límites por defecto.
 
 También es interesante `icc` que impide que haya conectividad entre los contenedores ya que todos están en la misma red por defecto de tal manera que no se verán entre sí y sólo aquellos que estén linkados explícitamente en su configuración. Por ejemplo wordpress y mysql
 
-otro archivo es key.json y ningún usuario que no sea root no debería acceder porque ahí se almacena en base64 el acceso al sistema.
+otro archivo es `key.json` y ningún usuario que no sea root no debería acceder porque ahí se almacena en base64 el acceso al sistema.
 
 ## Seguridad en contenedores
 
-Son uno de los ejes principales del hardening pues donde hay más configuraciones afectas.
+Son uno de los ejes principales del hardening pues donde hay más configuraciones afectadas.
 
-Por ejemplo asignando un ulimit al contenedor:
+Por ejemplo asignando un `ulimit` al contenedor:
 
 ```
 docker run --ulimit nofile=512:512 --rm debian sh -c "unlimit -n"
 ```
 
-Si se retira el flag de ulimits, daría los de por defecto. Si por ejemplo, queremos modificar el archivo de configuración unos límites pequeños y luego modificarlo en tiempo de ejecución.
+Si se retira el flag de ulimits, daría los de por defecto. Si por ejemplo, queremos modificar el archivo de configuración para fijar unos límites pequeños y luego modificarlo en tiempo de ejecución.
 
 También se pueden meter límites para otro tipo de recursos. Por ejemplo nos hacen un DDoS. Si nuestro contenedor puede quedarse sin recursos. Pero no podemos hacer que esto suponga la parada de todos los contenedores. Eso se puede hacer también mediante orquestadores.
 
@@ -70,7 +71,7 @@ Por ejemplo:
 
 Nos dirá que no tengo acceso
 
-Hay un flag --privilege:
+Hay un flag `--privilege`:
 
 `docker run -it --privileged ubuntu`
 
@@ -78,7 +79,7 @@ Por ejemplo y desaconsejable porque tiene permisos hasta en host
 
 En el privileged, correr
 
-mount -t tmpfs none /mnt
+`mount -t tmpfs none /mnt`
 
 Luego correr:
 
@@ -89,8 +90,6 @@ Y sale que está montado
 Pero en el que no tiene privilegios devuelve permission denied
 
 El que sí tiene hereda las [capabilities](https://www.incibe-cert.es/blog/linux-capabilities) de linux
-
-
 
 Otra cosa es montar el socket de docker en un contenedor. Por ejemplo, levantar un docker dentro de docker. Esto se ve mucho en CD/CI y que lo solicitan.
 
@@ -174,3 +173,4 @@ CD/CI youtube https://www.youtube.com/watch?v=6eRkCnFhHRg
 https://www.koryschneider.com/tab
 
 [https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html)
+
