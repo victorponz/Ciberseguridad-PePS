@@ -18,7 +18,12 @@ header-includes: |
     \renewcommand{\headrulewidth}{2pt}
     \renewcommand{\footrulewidth}{1pt}
 ---
+
+
 ## Seguridad host
+
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 1</strong><br>Realiza los comandos y configuraciones del documento.</blockquote>
 
 Como comparte el mismo kernel de la máquina host, todo el software del sistema debe estar actualizado a la máxima versión estable.
 
@@ -122,23 +127,21 @@ Cuando se lanza tengo un docker dentro de docker es la misma ejecución de docke
 
 ## Seguridad en imágenes
 
-Es más fiable confiar en una imagen de la que tengo acceso al Dockerfile que una que ya viene construida. Puede tener malware si la imagen no es confiable.
+Es más fiable confiar en una imagen de la que tengo acceso al `Dockerfile` que una que ya viene construida. Puede tener malware si la imagen no es confiable.
 
-Con docker commit se crea una imagen, aunque su uso es desaconsejable. ya que no se puede auditar. Sólo confiar en las imágenes de Docker, o de fuente confiable como Google Cloud o Microsoft Azure
+Con docker commit se crea una imagen, aunque su uso es desaconsejable. ya que no se puede auditar. Sólo confiar en las imágenes de Docker, o de fuente confiable como Google Cloud o Microsoft Azure.
 
-Por ejemplo, si buscamos un imagen de Wodpress encontraremos unas 8000 imágenes. La más popular es la imagen oficial que es la generada por Docker. En el caso de que la haya generado otro desarrollador estará indicado en la imagen. Por ejemplo Multicontainer WordPress de Microsoft
+Por ejemplo, si buscamos un imagen de Wodpress encontraremos unas 8000 imágenes. La más popular es la imagen oficial que es la generada por Docker. En el caso de que la haya generado otro desarrollador estará indicado en la imagen. Por ejemplo `Multicontainer WordPress` de **Microsoft**
 
-Se puede hacer una imagen a partir de un repositorio en GitHub como por ejemplo, esta [imagen](https://hub.docker.com/r/irespaldiza/whoami) alojada en https://github.com/irespaldiza/whoami
-
-Puedes clonarlo o crearlo tú a partir del Dockerfile.
+Se puede hacer una imagen a partir de un repositorio en GitHub como por ejemplo, esta [imagen](https://hub.docker.com/r/irespaldiza/whoami) alojada en https://github.com/irespaldiza/whoami por lo que se puede clonar o crearlo tú a partir del Dockerfile.
 
 Cada imagen tiene un hash para que se pueda hacer una comprobación y hay que setear la variable de entorno `DOCKER_CONTENT_TRUST` a 1 y al hacer un `docker pull hello-world` y ahora va a comprobar si el digest de la imagen bajada coincide con el original de la imagen con lo que comprobamos que la imagen no haya sido modificada en el camino.
 
 El servicio que lo soporta es Notary que es una de las aplicaciones a las que da soporte Docker.
 
-Esta variable de entorno es muy aconsejable tenerla a true. Por ejemplo se puede incluir en el bash.rc.
+Esta variable de entorno es muy aconsejable tenerla a true. Por ejemplo se puede incluir en el `bash.rc`.
 
-A partir de una imagen es parecido a compilar a partir de la definición para generar las capas y guardarla en un registry como docker.hub
+A partir de una imagen es parecido a compilar a partir de la definición para generar las capas y guardarla en un registry como `docker.hub`
 
 La imagen de alpine sólo pesa  5.61 MB porque comparte el kernel con el host.
 
@@ -148,19 +151,17 @@ Lo normal es poner en ENTRYPOINT un comando y en CMD los parámetros (que se pue
 
 También existe el comando ADD que es muy parecido a COPY. La diferencia es que COPY sólo permite copiar desde el equipo y ADD desde una url.
 
-Y otra diferencia es que ADD puede copiar y descomprimir archivos, pero la capa no se puede cachear.
+Y otra diferencia es que ADD puede copiar y descomprimir archivos, pero la capa no se podrá cachear.
 
-Es una mala praxis no usar la versión al utilizar un paquete. Por ejemplo,
+Es una mala praxis no usar la versión al utilizar un paquete. Por ejemplo, `alpine`
 
-para buscar imágenes se usa `docker search alpine`. Pero da el tag
+para buscar imágenes se usa `docker search alpine`, pero no nos muetra tag
 
-De esta forma, se puede comprobar si tiene vulnerabilidades o si dentro de un tiempo la vuelvo a generar puede dar problemas de compatibilidad
-
-NOTA. Hacer un docker file en github y que genere el build cada vez que se modifica.
+De esta forma, se puede comprobar si tiene vulnerabilidades o si dentro de un tiempo la vuelvo a generar puede dar problemas de compatibilidad.
 
 Es  bastante normal que el código deba estar compilado lo que añade más superficie a ser atacada porque no interesa tener un compilador en la imagen ya que si nuestro contenedor es atacado el atacante podría compilar programas en nuestro sistema, cosa que está totalmente prohibida.
 
-por ejemplo (sacado de whoami-multistage)
+por ejemplo
 
 ```dockerfile
 FROM golang:alpine AS builder
@@ -177,7 +178,10 @@ ENTRYPOINT ./whoami
 
 El concepto `pot` es de **Kubernetes** que son un grupo de contenedores que comparten en el mismo espacio de puertos
 
-Para subir una imagen se usa `push` victorponz/hello:0.1.0
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 2</strong><br> Haz un docker file en GitHub y conéctalo con Docker Hub para que genere el build cada vez que se modifica.</blockquote>
+
+
 
 ### Escaneo pasivo de vulnerabilidades
 
