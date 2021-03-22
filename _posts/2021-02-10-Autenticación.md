@@ -585,7 +585,7 @@ $2y$11$SXAXZyioy60hbnymeoJ9.ulscXwUFMhbvLaTxAt729tGusw.5AG4C
 
 Dado que bcrypt almacena el número de iteraciones, esto la convierte en una función adaptativa, porque el número de iteraciones se puede aumentar y, por lo tanto, es cada vez más largo. Esto le permite, a pesar de su antigüedad y la evolución de la potencia informática, seguir siendo robusto contra los ataques de fuerza bruta. El siguiente punto de referencia muestra que el `hashcat` tarda 23 días en calcular la totalidad de los hashes de `rockyou`.
 
-En un algoritmo sha512, herramientas como hascat o john de ripper pueden hashear hasta 5.000.000 de entradas por segundo (Hahs/Seconds) mientras que con bcrypt (con 8 iteraciones) sólo puede procesar unas 300
+En un algoritmo sha512, herramientas como hascat o John de ripper pueden hashear hasta 5.000.000 de entradas por segundo (Hahs/Seconds) mientras que con bcrypt (con 8 iteraciones) sólo puede procesar unas 300
 
 ![https://www.vaadata.com/blog/wp-content/uploads/2020/05/bcrypt-1-768x514.png](https://www.vaadata.com/blog/wp-content/uploads/2020/05/bcrypt-1-768x514.png)
 

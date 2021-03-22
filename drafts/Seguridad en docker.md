@@ -15,11 +15,11 @@ Como comparte el mismo kernel de la máquina host, todo el software del sistema 
 
 Antes de aplicar seguridad en el host, se debería usar alguna tipo de seguridad en el host mediante `ip_tables`, `SELinux`, `apparmor`, defensa en profundidad, perímetro etc.
 
-Algo también muy importante es controlar los permisos de usuarios. Sólo deben acceder a docker aquellos usuarios con permiso de root, ya que docker debe acceder al kernel. Por lo que hemos de crear un grupo de docker e ir añadiendo ahí los usuarios que puedan lanzar contenedores.
+Algo también muy importante es controlar los permisos de usuarios. Sólo deben acceder a docker aquellos usuarios con permiso de root, ya que docker debe acceder al kernel. Lo aconsejable es crear un grupo de docker e ir añadiendo ahí los usuarios que puedan lanzar contenedores.
 
 `sudo usermod -aG docker $USER`
 
-y recargar los permisos
+y recargar los permisos (o reiniciar sesión)
 
 `newgrp docker`
 
@@ -27,13 +27,22 @@ y recargar los permisos
 
 El demonio corre como superusuario, así que debemos impedir que los usuarios puedan tocar la configuración  y el socket no deberían poder verlo.
 
-El archivo es `/etc/docker/daemon.json`
+El archivo es `/etc/docker/daemon.json` (si no existe, se debe crear para introducir las siguientes configuraciones)
 
 Poner `debug: false` y es muy interesante configurar `ulimits`que permiten definir los archivos que pueden cargar los contenedores y es interesante dejar unos límites por defecto.
 
 También es interesante `icc` que impide que haya conectividad entre los contenedores ya que todos están en la misma red por defecto de tal manera que no se verán entre sí y sólo aquellos que estén linkados explícitamente en su configuración. Por ejemplo wordpress y mysql
 
-otro archivo es `key.json` y ningún usuario que no sea root no debería acceder porque ahí se almacena en base64 el acceso al sistema.
+Ejemplo de archivo `daemon.json`
+
+```json
+{
+    "debug": true
+}
+
+```
+
+Otro archivo es `key.json` y ningún usuario que no sea root no debería acceder porque ahí se almacena en base64 la key para conectarse por TLS (por ejemplo con el Registry).
 
 ## Seguridad en contenedores
 
@@ -45,39 +54,40 @@ Por ejemplo asignando un `ulimit` al contenedor:
 docker run --ulimit nofile=512:512 --rm debian sh -c "unlimit -n"
 ```
 
-Si se retira el flag de ulimits, daría los de por defecto. Si por ejemplo, queremos modificar el archivo de configuración para fijar unos límites pequeños y luego modificarlo en tiempo de ejecución.
+Si se retira el flag de ulimits, daría los de por defecto. Se puede modificar el archivo de configuración para fijar unos límites pequeños y luego modificarlo en tiempo de ejecución.
 
-También se pueden meter límites para otro tipo de recursos. Por ejemplo nos hacen un DDoS. Si nuestro contenedor puede quedarse sin recursos. Pero no podemos hacer que esto suponga la parada de todos los contenedores. Eso se puede hacer también mediante orquestadores.
+También se pueden meter límites para otro tipo de recursos. Por ejemplo para limitar el alcance de una ataque un DDoS en el que nuestro contenedor puede quedarse sin recursos y esto afectaría al resto de contenedores (incluso a la máquina host) pues se quedarían sin recursors
 
 Por ejemplo:
 
-docker run -it --cpus=".5" ubuntu /bin/bash
+`docker run -it --cpus=".5" ubuntu /bin/bash`
 
-De esta forma  nunca gastaría más de 0.5 CPUS
+De esta forma  nunca gastaría más de 0.5 CPUs
 
 Otra configuración interesante es reiniciar en el fallo:
 
 en el comando `--restart=on-failure`
 
-### Tema de privilegios.
+### Privilegios
 
 Por defecto el usuario es `root`
 
-Se puede cambiar en la imagen aunque podemos forzar a ello con el flag `-u uuid`
+Se puede cambiar el usuario por defecto al correr la  imagen y podemos forzar a ello con el flag `-u uuid`
 
-Por ejemplo:
+Por ejemplo, si corremos el siguiente comando con el usurio 4400 
 
 `docker run -u 4400 alpine ls /root`
 
-Nos dirá que no tengo acceso
+Nos devolverá que no tengo accesos
 
-Hay un flag `--privilege`:
+```
+ls: can't open '/root': Permission denied
+
+```
+
+Otro flag relacionado con permisos es `--privileged`:
 
 `docker run -it --privileged ubuntu`
-
-Por ejemplo y desaconsejable porque tiene permisos hasta en host
-
-En el privileged, correr
 
 `mount -t tmpfs none /mnt`
 
@@ -85,11 +95,13 @@ Luego correr:
 
 `df -h`
 
-Y sale que está montado
+Y nos muestra que ha sido capaz de montarlo, pero si no le añadimos privilegios devuelve:
 
-Pero en el que no tiene privilegios devuelve permission denied
+```
+mount: /mnt: permission denied.
+```
 
-El que sí tiene hereda las [capabilities](https://www.incibe-cert.es/blog/linux-capabilities) de linux
+El que sí tiene privilegios hereda todas las [capabilities](https://www.incibe-cert.es/blog/linux-capabilities) de linux.
 
 Otra cosa es montar el socket de docker en un contenedor. Por ejemplo, levantar un docker dentro de docker. Esto se ve mucho en CD/CI y que lo solicitan.
 
@@ -166,11 +178,6 @@ como trivy. Por ejemplo
 
 `trivy image python:3.4-alpine`
 
-**NOTAS**
 
-CD/CI youtube https://www.youtube.com/watch?v=6eRkCnFhHRg
 
-https://www.koryschneider.com/tab
-
-[https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html)
-
+Más información en [Docker Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html)

@@ -61,6 +61,8 @@ Ir a OWASP top ten y para cada una de ellas comprobar en el cheatsheet los proce
 
 https://openwebinars.net/academia/aprende/desarrollo-seguro/?enroll=1
 
+### **1 Ciclo de desarrollo seguro de software**
+
 La seguridad como "*La protección de la información frente a las distintas amenazas al objeto de garantizar el buen funcionamiento*"
 
 La seguridad (ACID)
@@ -85,7 +87,7 @@ Comprobar vulnerabilidades de software (por ejemplo en GitHub)
   Frameworks
   **¿Como se solucionan problemas de seguridad?** Pues, por ejemplo, comprobando la versión del lenguaje y del framework para que no tengan vulnerabilidades conocidas, también de las librerías usadas. Se puede hacer un gráfico de vulnerabilidades  
 
-  Por ejemplo,  buscamos scikit-learn en GitHub y tiene 44.9K stars
+  Por ejemplo,  buscamos `scikit-learn` en GitHub y tiene 44.9K stars
 
   Vídeo explicativo de [madurez del ciclo de vida](https://www.youtube.com/watch?v=oi6p7UjMjAM)
 
@@ -160,13 +162,16 @@ Comprobar vulnerabilidades de software (por ejemplo en GitHub)
   * Gestión de usuarios
 
   * Gestión de operaciones
+
+    
+
     Seguridad en el despliegue
 
   * Se configura de manera segura cada servicio
 
   * Se configura de manera segura cada sistema
 
-  * Gestionar de manera segura los permisos y opraciones
+  * Gestionar de manera segura los permisos y operaciones
 
     El entorno de testing es distinto del mundo real
 
@@ -182,6 +187,8 @@ Comprobar vulnerabilidades de software (por ejemplo en GitHub)
     * Actualizar procedimientos
     * Revisión de logs
 
+
+
 **¿Por qué desarrollar de forma segura?**
 
 El coste de arreglar un fallo de seguridad aumenta exponencialmente con el tiempo
@@ -191,4 +198,8 @@ En DevSecOps usamos TLS, conexiones ssh con claves públicas y privadas, usando 
 Por ejemplo, enseñar el punto [37.3.1](https://owasp.org/www-pdf-archive/OWASP_Cheatsheets_Book.pdf) donde habla de la autenticación.
 
 De hecho mejor explicar el 37.  **Secure Coding Cheat Sheet**
+
+### 2 Seguridad en el desarrollo
+
+#### Validación de entradas
 
