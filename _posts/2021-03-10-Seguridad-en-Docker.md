@@ -1,5 +1,23 @@
-# Seguridad en docker
-
+---
+typora-copy-images-to: ../assets/img/Seguridad-docker/
+typora-root-url: ../../
+layout: post
+categories: tema3 Seguridad Web
+title: Seguridad en docker
+conToc: true
+header-includes: |
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \newcommand{\changefont}{%
+    \fontsize{8}{11}\selectfont}
+    \fancyhead[CO,CE]{}
+    \fancyhead[LO,CE]{}
+    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
+    \fancyfoot[CO,CE]{}
+    \fancyfoot[LE,RO]{\thepage}
+    \renewcommand{\headrulewidth}{2pt}
+    \renewcommand{\footrulewidth}{1pt}
+---
 ## Seguridad host
 
 Como comparte el mismo kernel de la máquina host, todo el software del sistema debe estar actualizado a la máxima versión estable.
