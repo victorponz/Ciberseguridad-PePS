@@ -103,7 +103,7 @@ mount: /mnt: permission denied.
 
 El que sí tiene privilegios hereda todas las [capabilities](https://www.incibe-cert.es/blog/linux-capabilities) de linux.
 
-Otra cosa es montar el socket de docker en un contenedor. Por ejemplo, levantar un docker dentro de docker. Esto se ve mucho en CD/CI y que lo solicitan.
+Otra cosa es montar el socket de docker en un contenedor. Por ejemplo, levantar un docker dentro de docker. Esto se ve mucho en CD/CI.
 
 Por ejemplo:
 
