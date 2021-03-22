@@ -46,7 +46,7 @@ Ejemplo de archivo `daemon.json`
 
 ```json
 {
-    "debug": true
+    "debug": false
 }
 
 ```
