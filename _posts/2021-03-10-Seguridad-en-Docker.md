@@ -185,12 +185,13 @@ El concepto `pot` es de **Kubernetes** que son un grupo de contenedores que comp
 
 ### Escaneo pasivo de vulnerabilidades
 
-Se puede hacer con alternativas gratuitas pues en dockerhub es Pro.
+Se puede hacer con alternativas gratuitas pues en DockerHub es Pro.
 
 como trivy. Por ejemplo 
 
 `trivy image python:3.4-alpine`
 
-
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 3</strong><br>Realiza un testeo de una imagen de Wordpress (no uses tags recientes, pues no tendrán tantas vulnerabilidades)</blockquote>
 
 Más información en [Docker Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html)
