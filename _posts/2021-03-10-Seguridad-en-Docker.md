@@ -1,12 +1,3 @@
-1. [Seguridad en el host](https://player.vimeo.com/video/517148290)
-
-2. [Seguridad en el demonio](https://player.vimeo.com/video/517148194)
-3. [Seguridad en contenedores](https://player.vimeo.com/video/517147973)
-4. [Seguridad en la construcción de imágenes I](https://player.vimeo.com/video/517161900)
-5. [Seguridad en la construcción de imágenes II](https://player.vimeo.com/video/517161039)
-6. [Seguridad en la construcción de imágenes III](https://player.vimeo.com/video/517162103)
-7. [Seguridad en la construcción de imágenes IV](https://player.vimeo.com/video/517162393)
-
 # Seguridad en docker
 
 ## Seguridad host

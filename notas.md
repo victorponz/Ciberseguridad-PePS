@@ -1,4 +1,16 @@
+
+Vídeos seguridad en docker
+1. [Seguridad en el host](https://player.vimeo.com/video/517148290)
+2. [Seguridad en el demonio](https://player.vimeo.com/video/517148194)
+3. [Seguridad en contenedores](https://player.vimeo.com/video/517147973)
+4. [Seguridad en la construcción de imágenes I](https://player.vimeo.com/video/517161900)
+5. [Seguridad en la construcción de imágenes II](https://player.vimeo.com/video/517161039)
+6. [Seguridad en la construcción de imágenes III](https://player.vimeo.com/video/517162103)
+7. [Seguridad en la construcción de imágenes IV](https://player.vimeo.com/video/517162393)
+
+
 Apache
+
 
 https://geekflare.com/apache-web-server-hardening-security/
 
@@ -40,8 +52,5 @@ pandoc _posts/2021-01-31-Validación-de-entradas.md --pdf-engine=xelatex --resou
 pandoc _posts/2021-02-10-Autenticación.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-02-10-Autenticación.pdf
 pandoc _posts/2021-01-03-Hardening-Servidor.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-01-03-Hardening-Servidor.pdf
 pandoc _posts/2021-03-10-Seguridad-en-Docker.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-03-10-Seguridad-en-Docker.pdf
-
-
-
 ```
 
