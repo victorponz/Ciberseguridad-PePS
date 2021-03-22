@@ -180,13 +180,11 @@ El concepto `pot` es de **Kubernetes** que son un grupo de contenedores que comp
 <i class='fa fa-check'> </i><strong> Práctica 2</strong><br> Haz un docker file en GitHub y conéctalo con Docker Hub para que genere el build cada vez que se modifica.</blockquote>
 
 
-
-
 ### Escaneo pasivo de vulnerabilidades
 
 Se puede hacer con alternativas gratuitas pues en DockerHub es Pro.
 
-como trivy. Por ejemplo 
+Una de ellas es  `trivy`. Por ejemplo 
 
 `trivy image python:3.4-alpine`
 
