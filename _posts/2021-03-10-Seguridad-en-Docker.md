@@ -135,8 +135,6 @@ Por ejemplo, si buscamos un imagen de Wodpress encontraremos unas 8000 imágenes
 
 Se puede hacer una imagen a partir de un repositorio en GitHub como por ejemplo, esta [imagen](https://hub.docker.com/r/irespaldiza/whoami) alojada en https://github.com/irespaldiza/whoami por lo que se puede clonar o crearlo tú a partir del Dockerfile.
 
-Cada imagen tiene un hash para que se pueda hacer una comprobación y hay que setear la variable de entorno `DOCKER_CONTENT_TRUST` a 1 y al hacer un `docker pull hello-world` y ahora va a comprobar si el digest de la imagen bajada coincide con el original de la imagen con lo que comprobamos que la imagen no haya sido modificada en el camino.
-
 El servicio que lo soporta es Notary que es una de las aplicaciones a las que da soporte Docker.
 
 Esta variable de entorno es muy aconsejable tenerla a true. Por ejemplo se puede incluir en el `bash.rc`.
@@ -180,6 +178,7 @@ El concepto `pot` es de **Kubernetes** que son un grupo de contenedores que comp
 
 <blockquote class='task'>
 <i class='fa fa-check'> </i><strong> Práctica 2</strong><br> Haz un docker file en GitHub y conéctalo con Docker Hub para que genere el build cada vez que se modifica.</blockquote>
+
 
 
 
