@@ -21,7 +21,7 @@ header-includes: |
 
 ## ¿Qué es?
 
-En este apartado vamos a securizar todavía más el servidor. Esto lo hacemos junto a la securización o endurecimiento conseguido  a través del firewall (iptables) y la configuración lógica, es decir, la creación de usuarios y grupos necesarios  para cumplir con el requisito de **mínimo privilegio**.
+En este apartado vamos a securizar todavía más el servidor. Esto lo hacemos junto a la securización o endurecimiento conseguido  a través del firewall (iptables) y la configuración lógica, es decir, la creación de usuarios y grupos necesarios  para cumplir con el requisito de **mínimo privilegio y mínima exposición**.
 
 ## 1 Configurar apache
 
@@ -323,16 +323,25 @@ update mysql.user set user="ciberseguridad" where user="root"
 flush privileges
 ```
 
-## 6 Privilegios de los usuarios:
+## 6 Database Firewall (DBFW)
+
+Al igual que los WAF, los DBFW se sitúan entre el agente de usuario y el servidor de base de datos para intentar *parar* las inyecciones de SQL (que veremos más adelante)
+
+Se pueden configurar mediante:
+
+* **listas blancas:** La Lista Blanca contiene secuencias de instrucciones SQL que se utilizan habitualmente en un entorno de base de datos determinado (por lo que se considera seguro). El firewall de la base de datos compara todas las consultas entrantes con las declaraciones de la Lista Blanca para definir si debe ignorarlas.
+* **listas negras:** Esta lista contiene la descripción de amenazas potenciales. Si alguna declaración SQL detectada por un firewall está presente en la Lista Negra, esa consulta se bloqueará de inmediato.
+
+Hay implementación Open Source es [GreenSQL](https://github.com/larskanis/greensql-fw) que puede funcionar con los SGDB más comunes aunque la versión comunidad sólo protege contra ataques de inyección de SQL. La versión PRO protege además contra desbordamientos de buffer, escalada de privilegios, denegaciones de servicio...
+
+## 7 Privilegios de los usuarios:
 
 De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener una correcta gestión de los usuarios, ya sean para personas o cuentas de servicio para dar acceso a las aplicaciones, otorgando solo los permisos necesarios de los datos necesarios para cumplir con el requisito de mínimo privilegio y mínima exposición.
 
-## 7 nginx y modsecurity
+## 8 nginx y modsecurity
 
  <blockquote class='task'>
 <i class='fa fa-check'> </i><strong> Práctica 4</strong> Instala nginx y modsecurity mediante docker</blockquote>
-
-
 
 
 
@@ -342,4 +351,4 @@ De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener 
 
 [https://phoenixnap.com/kb/setup-configure-modsecurity-on-apache](https://phoenixnap.com/kb/setup-configure-modsecurity-on-apache)
 
-
+[https://www.securityartwork.es/2013/05/23/database-firewalls-introduccion/](https://www.securityartwork.es/2013/05/23/database-firewalls-introduccion/)
