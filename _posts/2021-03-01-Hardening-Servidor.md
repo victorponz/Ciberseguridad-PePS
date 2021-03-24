@@ -340,7 +340,7 @@ De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener 
 
 ## 8 nginx y modsecurity
 
- <blockquote class='task'>
+ <blockquote class='reto'>
 <i class='fa fa-check'> </i><strong> RETO</strong> Instala nginx y realiza las mismas configuraciones que hemos llevado a cabo en Apache: autenticación, cabeceras, modsecurity. Como resultado debes generar una imagen docker</blockquote>
 
 
