@@ -373,10 +373,10 @@ blockquote.task strong, blockquote.task i{
 
 blockquote.reto{
   background-color: rgb(196, 28, 28);
-  color:gray;
+  color:white;
 }
 blockquote.reto strong, blockquote.reto i{
-  color:rgb(51, 51, 51);
+  color:rgb(228, 209, 209);
 }
 
 
