@@ -13,6 +13,7 @@ layout: default
 {% endif %}
 
         {% assign content = content | replace: '>-tarea-', ' class="task"><i class="fa fa-check"></i> ' %}
+        {% assign content = content | replace: '>-reto-', ' class="task"><i class="fa fa-check"></i> ' %}
         <div>
             {% if page.conToc %}
                 {% include toc.html html=content class="atypora-menu" id="menu"%}

@@ -371,6 +371,14 @@ blockquote.task strong, blockquote.task i{
   color:rgb(51, 51, 51);
 }
 
+blockquote.reto{
+  background-color: rgb(196, 28, 28);
+  color:gray;
+}
+blockquote.reto strong, blockquote.reto i{
+  color:rgb(51, 51, 51);
+}
+
 
 .PageNavigation a, .pdf,  .presentation, #menu a, .portada a{
   text-decoration: none; color:rgb(51, 51, 51); font-size:0.8em

@@ -176,8 +176,9 @@ ENTRYPOINT ./whoami
 
 El concepto `pot` es de **Kubernetes** que son un grupo de contenedores que comparten en el mismo espacio de puertos
 
-<blockquote class='task'>
+<blockquote class='reto'>
 <i class='fa fa-check'> </i><strong> RETO</strong><br> Haz un docker file en GitHub y conéctalo con Docker Hub para que genere el build cada vez que se modifica.</blockquote>
+
 
 
 
