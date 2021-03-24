@@ -257,7 +257,7 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
    ```
    que pararía un ataque de [command injection](https://owasp.org/www-community/attacks/Command_Injection).
    
-   Y
+   Y 
    
    ```
    localhost/index.html?exec=/../../ 
@@ -341,7 +341,8 @@ De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener 
 ## 8 nginx y modsecurity
 
  <blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 4</strong> Instala nginx y modsecurity mediante docker</blockquote>
+<i class='fa fa-check'> </i><strong> RETO</strong> Instala nginx y realiza las mismas configuraciones que hemos llevado a cabo en Apache: autenticación, cabeceras, modsecurity. Como resultado debes generar una imagen docker</blockquote>
+
 
 
 
