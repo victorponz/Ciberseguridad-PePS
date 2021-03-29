@@ -364,17 +364,20 @@ video {
 }
 
 blockquote.task{
-  background-color: darkgray;
-  color:white;
+  border-left:0;
 }
 blockquote.task strong, blockquote.task i{
   color:rgb(51, 51, 51);
 }
-
+blockquote.task + blockquote{
+  border-left:4px solid red;
+}
 blockquote.reto{
-  background-color: rgb(196, 28, 28);
+  background-color: rgb(204, 72, 72);
   color:white;
 }
+
+
 blockquote.reto strong, blockquote.reto i{
   color:rgb(228, 209, 209);
 }
