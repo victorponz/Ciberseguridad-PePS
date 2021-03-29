@@ -82,7 +82,7 @@ Según la [Wikipedia](https://es.wikipedia.org/wiki/HTTP_Strict_Transport_Securi
 
 En pocas palabras, le indica al navegador que, durante un tiempo definido en la cabecera, **sólo** puede actuar mediante HTTPS en el servidor.
 
-Para configurarlo en apache se debe añadir en el archivo de configuración del host virtual:
+Para configurarlo en Apache se debe añadir en el archivo de configuración del host virtual:
 
 ```xml
 <VirtualHost *:443>
@@ -136,13 +136,35 @@ Header set Content-Security-Policy \
 	script-src userscripts.example.com
 ```
 
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 1</strong>
+</blockquote>
+
+> Configura tu instalación de apache para:
+>
+> * Deshabilitar el módulo autoindex
+>
+> * Configurar la cabecera `HSTS`. Hay que habilitar el módulo `headers`. Recuerda que hay que instalar el certificado digital para el sitio seguro tal y como hicimos en la [práctica de apache](https://victorponz.github.io/Ciberseguridad-PePS/tema1/practicas/2020/11/08/P1-Apache.html)
+>
+> * Configurar la cabecera `CSP` con alguno de los ejemplos
+>
+> * Una vez configurado de esta manera crea un Dockerfile con toda esta configuración.
+>
+> **NOTA** Para que docker pueda escuchar en dos puertos (80 y 403) hemos de ejecutar el comando run con estos puertos mapeados, por ejemplo:
+>
+> ```dockerfile
+> docker run \
+>     --detach \
+>     --rm \
+>     -p 8080:80 \
+>     -p 8081:443 \
+>     --name="hardenowasp" \
+>     hardenowasp`
+> ```
+
 
 
 ## 2 Web Application Firewall (WAF)
-
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 2</strong> Realiza y documenta este punto. Como resultado, debes crear un docker con una imagen de apache configurada como aquí se indica</blockquote>
-
 
 >  Según la [Wikipedia](https://es.wikipedia.org/wiki/Web_application_firewall)
 >
@@ -150,9 +172,7 @@ Header set Content-Security-Policy \
 
 En 2002 se creó el proyecto de código abierto [ModSecurity](https://es.wikipedia.org/wiki/Mod_Security) para hacer la tecnología WAF más accesible y resolver los obstáculos  dentro de la industria, como casos de negocios, barreras de costos y los conjuntos de reglas particulares de cada empresa. ModSecurity creó un  conjunto de reglas básicas para proteger las aplicaciones web, basado en las vulnerabilidades detectadas por el OASIS Web Application Security  Technical Committee’s (WAS TC). En 2003, este trabajo fue ampliado y  estandarizado con la creación de la Lista Top 10 del Open Web  Application Security Project’s ([OWASP](https://es.wikipedia.org/wiki/Open_Web_Application_Security_Project)). OWASP publica con cierta regularidad una lista con los 10 riesgos de  seguridad más críticos de las aplicaciones web. Esta lista se  convertiría en la referencia de la industria para muchos temas de  seguridad en la web. 
 
-Configurarlo es bastante complicado ya que funciona por reglas por las que aceptamos o rechazamos peticiones, pero podemos instalarlo con las reglas que trae ya definidas el paquete.
-
-Simplemente, hemos de copiar el archivo `/etc/modsecurity/modsecurity.conf-recommended` en `/etc/modsecurity/modsecurity.conf`
+Configurarlo **es bastante complicado** ya que funciona por reglas por las que aceptamos o rechazamos peticiones, pero podemos instalarlo **con las reglas que trae ya definidas el paquete**. Simplemente, hemos de copiar el archivo `/etc/modsecurity/modsecurity.conf-recommended` en `/etc/modsecurity/modsecurity.conf`
 
 Se reinicia Apache y ya funciona!
 
@@ -164,10 +184,16 @@ Si introducimos una entrada en el formulario que está bloqueada nos saltará un
 
 ![image-20210322185933273](/Ciberseguridad-PePS/assets/img/hardening/image-20210322185933273.png)
 
-## 3 Instalar reglas OWASP
+
 
 <blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 3</strong> Realiza y documenta este punto. Como resultado, debes crear un docker con una imagen de apache configurada como aquí se indica</blockquote>
+<i class='fa fa-check'> </i><strong> Práctica 2</strong></blockquote>
+
+> * Configura tu instalación de apache para que se atenga a las reglas de mod_security.
+> * Una vez configurado,  crea un imagen de docker que configure una instalación de apache con mod_security.
+
+## 3 Instalar reglas OWASP
+
 
 Pero la [OWASP](https://owasp.org/www-project-modsecurity-core-rule-set/) provee una configuración por defecto que incluye una protección para las reglas más comunes. Así que lo mejor es empezar por este conjunto de reglas y luego ir añadiendo las propias.
 
@@ -276,6 +302,12 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
    ```
    
 
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 3</strong></blockquote>
+
+> * Realiza una instalación de apache en la que se incluyan las reglas OWASP para mod_security.
+> * Una vez comprobada la instalación de estas reglas, crea un imagen de docker que realice la instalación y configuración de estas reglas
+
 ## 4 apache extra
 
 Si queremos que sólo sirva tráfico a una IP, en `000-default.conf`
@@ -332,16 +364,35 @@ Se pueden configurar mediante:
 * **listas blancas:** La Lista Blanca contiene secuencias de instrucciones SQL que se utilizan habitualmente en un entorno de base de datos determinado (por lo que se considera seguro). El firewall de la base de datos compara todas las consultas entrantes con las declaraciones de la Lista Blanca para definir si debe ignorarlas.
 * **listas negras:** Esta lista contiene la descripción de amenazas potenciales. Si alguna declaración SQL detectada por un firewall está presente en la Lista Negra, esa consulta se bloqueará de inmediato.
 
-Hay implementación Open Source es [GreenSQL](https://github.com/larskanis/greensql-fw) que puede funcionar con los SGDB más comunes aunque la versión comunidad sólo protege contra ataques de inyección de SQL. La versión PRO protege además contra desbordamientos de buffer, escalada de privilegios, denegaciones de servicio...
+Hay una implementación Open Source es [GreenSQL](https://github.com/larskanis/greensql-fw) que puede funcionar con los SGDB más comunes aunque la versión comunidad sólo protege contra ataques de inyección de SQL. La versión PRO protege además contra desbordamientos de buffer, escalada de privilegios, denegaciones de servicio...
 
-## 7 Privilegios de los usuarios:
+## 7 Privilegios de los usuarios
 
 De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener una correcta gestión de los usuarios, ya sean para personas o cuentas de servicio para dar acceso a las aplicaciones, otorgando solo los permisos necesarios de los datos necesarios para cumplir con el requisito de mínimo privilegio y mínima exposición.
 
 ## 8 nginx y modsecurity
 
  <blockquote class='reto'>
-<i class='fa fa-check'> </i><strong> RETO</strong> Instala nginx y realiza las mismas configuraciones que hemos llevado a cabo en Apache: autenticación, cabeceras, modsecurity. Como resultado debes generar una imagen docker</blockquote>
+<i class='fa fa-check'> </i><strong> RETO</strong> </blockquote>
+
+> Instala nginx y realiza las mismas configuraciones que hemos llevado a cabo en Apache
+>
+> * Instalación de PHP con un archivo index.php con el siguiente contenido
+>
+>   ```
+>   <?php
+>   phpinfo();
+>   ```
+>
+> * directorio protegido mediante autenticación
+>
+> * Certificado digital y configuración de un servidor seguro
+>
+> * headers HSTS y CSP
+>
+> * Reglas OWASP de mod_security
+>
+> * La entrega estará formada por la imagen docker y una explicación detallada del proceso de instalación y configuración
 
 
 
@@ -353,3 +404,7 @@ De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener 
 [https://phoenixnap.com/kb/setup-configure-modsecurity-on-apache](https://phoenixnap.com/kb/setup-configure-modsecurity-on-apache)
 
 [https://www.securityartwork.es/2013/05/23/database-firewalls-introduccion/](https://www.securityartwork.es/2013/05/23/database-firewalls-introduccion/)
+
+[https://developer.mozilla.org/es/docs/Web/HTTP/CSP](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
+
+[https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Strict-Transport-Security](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Strict-Transport-Security)
