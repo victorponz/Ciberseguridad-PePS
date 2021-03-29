@@ -25,10 +25,6 @@ En este apartado vamos a securizar todavía más el servidor. Esto lo hacemos ju
 
 ## 1 Configurar apache
 
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 1</strong> Realiza y documenta este punto y el siguiente. Como resultado, debes crear un docker con una imagen de apache configurada como aquí se indica</blockquote>
-Para cumplir con el requisito de **mínima exposición** vamos a eliminar todos aquellos módulos que no nos vayamos utilizar. 
-
 Para conocer qué módulos están activos (aquellos que están en la carpeta `mods_enabled`). Podemos hacer un listado mediante el siguiente comando
 
 ```
