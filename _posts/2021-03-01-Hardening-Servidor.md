@@ -155,7 +155,7 @@ Header set Content-Security-Policy \
 >     -p 8080:80 \
 >     -p 8081:443 \
 >     --name="hardenowasp" \
->     hardenowasp`
+>     hardenowasp
 > ```
 
 
@@ -318,7 +318,19 @@ De esta forma sólo le damos acceso a nuestro reverse proxy
 
 Otra configuración por defecto que es recomendable es prohibir el uso del archivo `.htaccess` en la instalación de apache ya que este uso obliga a que en cada petición de página se deba *parsear* este archivo.
 
-## 5 MySql
+## 5 Evitar ataques DOS
+
+Apache nos provee con un módulo llamado mod_evasive que permite evitar ataques de denegación de servicio (DoS) mediante el escaneo constante de los conexiones entrantes que serán baneadas en el momento que se alcance el umbral establecido en la configuración del módulo.
+Se puede configurar siguiendo el siguiente [manual](https://juantrucupei.wordpress.com/2016/09/07/instalacion-y-configuracion-de-modulo-mod_evasive-servidor-web-apache/).
+
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 4</strong></blockquote>
+
+> * Realiza una instalación de apache en la que se incluya el módulo mod_evasive y crea una imagen Docker que realice el trabajo
+> * Ahora usa apache bench para probar que, efectivamente, el módulo empieza a rechazar peticiones. Adjunta el informe generado por Apache Bench
+
+
+## 6 MySql
 
 Restringir sólo el puerto local y nunca a la máquina remota
 
@@ -351,7 +363,7 @@ update mysql.user set user="ciberseguridad" where user="root"
 flush privileges
 ```
 
-## 6 Database Firewall (DBFW)
+## 7 Database Firewall (DBFW)
 
 Al igual que los WAF, los DBFW se sitúan entre el agente de usuario y el servidor de base de datos para intentar *parar* las inyecciones de SQL (que veremos más adelante)
 
@@ -362,11 +374,11 @@ Se pueden configurar mediante:
 
 Hay una implementación Open Source es [GreenSQL](https://github.com/larskanis/greensql-fw) que puede funcionar con los SGDB más comunes aunque la versión comunidad sólo protege contra ataques de inyección de SQL. La versión PRO protege además contra desbordamientos de buffer, escalada de privilegios, denegaciones de servicio...
 
-## 7 Privilegios de los usuarios
+## 8 Privilegios de los usuarios
 
 De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener una correcta gestión de los usuarios, ya sean para personas o cuentas de servicio para dar acceso a las aplicaciones, otorgando solo los permisos necesarios de los datos necesarios para cumplir con el requisito de mínimo privilegio y mínima exposición.
 
-## 8 nginx y modsecurity
+## 9 nginx y modsecurity
 
  <blockquote class='reto'>
 <i class='fa fa-check'> </i><strong> RETO</strong> </blockquote>
@@ -389,7 +401,6 @@ De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener 
 > * Reglas OWASP de mod_security
 >
 > * La entrega estará formada por la imagen docker y una explicación detallada del proceso de instalación y configuración
-
 
 
 
