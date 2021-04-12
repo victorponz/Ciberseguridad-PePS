@@ -21,8 +21,6 @@ header-includes: |
 
 ## ¿Qué es?
 
-**BORRADOR**
-
 Según la [Wikipedia](https://es.wikipedia.org/wiki/Inyecci%C3%B3n_SQL)
 
 > **Inyección SQL** es un método de infiltración de código intruso que se vale de una [vulnerabilidad informática](https://es.wikipedia.org/wiki/Error_de_software) presente en una aplicación en el nivel de validación de las entradas para realizar operaciones sobre una [base de datos](https://es.wikipedia.org/wiki/Base_de_datos).
@@ -333,7 +331,7 @@ Para que una consulta parametrizada sea eficaz en la prevención de la inyecció
 
 Tenéis a vuestra disposición una hoja de trucos de [SQL injection](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 
-**Obtenido y traducido de ** 
+**Obtenido y traducido de**
 
 [https://portswigger.net/web-security/sql-injection](https://portswigger.net/web-security/sql-injection)
 
