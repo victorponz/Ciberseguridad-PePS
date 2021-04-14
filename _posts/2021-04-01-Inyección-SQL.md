@@ -39,7 +39,9 @@ Vamos a ver unas consultas básicas de una web de ejemplo que es insegura porque
 
 Para obtener  el listado de los productos se accede a la URL
 
-https://insecure-website.com/products?category=Gifts](https://insecure-website.com/products?category=Gifts)
+```
+https://insecure-website.com/products?category=Gifts
+```
 
 Y la petición se transforma en la siguiente consulta:
 
@@ -49,7 +51,13 @@ WHERE category = 'Gifts'
 AND released = 1
 ```
 
-El atacante de una web insegura puede lanzar esta petición [https://insecure-website.com/products?category=Gifts'--](https://insecure-website.com/products?category=Gifts) que en el backend  se convierte en la siguiente consulta:
+El atacante de una web insegura puede lanzar esta petición 
+
+```
+https://insecure-website.com/products?category=Gifts'--
+```
+
+que en el backend  se convierte en la siguiente consulta:
 
 ```sql
 SELECT * FROM produts 
@@ -68,7 +76,11 @@ WHERE category = 'Gifts'
 
 Si la página atacada funciona de esta forma, es muy sencillo hacer una consulta que devuelva todos los productos:
 
-**Petición** [https://insecure-website.com/products?category=Gifts'+OR+1=1'](https://insecure-website.com/products?category=Gifts'+OR+1=1
+**Petición** 
+
+```
+https://insecure-website.com/products?category=Gifts'+OR+1=1
+```
 
 Se convierte en 
 
@@ -78,9 +90,9 @@ WHERE category = 'Gifts'
 OR 1=1--' AND released = 1
 ```
 
-Como 1=1 es siempre cierto, se obtienen TODOS los profuctos de la página
+Como 1=1 es siempre cierto, se obtienen TODOS los productos de la página
 
-> **Realizad todos los laboratorios de esta actividad en un único documento. **
+> **Realizad todos los laboratorios de esta actividad en un único documento.**
 >
 > Para cada uno de ellos debéis incluir una captura de pantalla como que lo habéis logrado. Por ejemplo, el siguiente muestra que lo he resuelto
 >
@@ -112,7 +124,7 @@ username = 'administrator' -- AND
 password = ''
 ```
 
->  **LAB 2 ** [Vulnerabilidad de inyección SQL que permite eludir el inicio de sesión](https://portswigger.net/web-security/sql-injection/lab-login-bypass)
+>  **LAB 2** [Vulnerabilidad de inyección SQL que permite eludir el inicio de sesión](https://portswigger.net/web-security/sql-injection/lab-login-bypass)
 
 ### Inyección SQL de segundo orden
 
@@ -224,7 +236,6 @@ information_schema.tables
 ```
 
 #### Consultar el tipo y versión de del servidor de base de datos
-
 | Database type    | Query                   |
 | ---------------- | ----------------------- |
 | Microsoft, MySQL | SELECT @@version        |
@@ -318,7 +329,7 @@ ResultSet resultSet = statement.executeQuery(query);
 Este código se puede reescribir fácilmente de manera que evite que la entrada del usuario interfiera con la estructura de la consulta:
 
 ```java
- PreparedStatement statement = connection.prepareStatement("SELECT * FROM products WHERE category = ?");
+PreparedStatement statement = connection.prepareStatement("SELECT * FROM products WHERE category = ?");
 
 statement.setString(1, input);
 
