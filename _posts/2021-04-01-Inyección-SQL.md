@@ -79,7 +79,7 @@ Si la página atacada funciona de esta forma, es muy sencillo hacer una consulta
 **Petición** 
 
 ```
-https://insecure-website.com/products?category=Gifts'+OR+1=1
+https://insecure-website.com/products?category=Gifts'+OR+1=1--
 ```
 
 Se convierte en 
@@ -138,7 +138,7 @@ password = ''
 
 ### Obtener datos de otras tablas
 
-Se puede obtener mediante una consulta UNION que añada una nueva setencia sql del tipo `SELECT * FROM table`
+Se puede obtener mediante una consulta `UNION` que añada una nueva sentencia sql del tipo `SELECT * FROM table`
 
 Si por ejemplo la aplicación tiene una consulta del tipo
 
@@ -148,7 +148,7 @@ FROM products WHERE
 category = 'Gifts' 
 ```
 
-El atacante puede hacerle un ataque de UNION
+El atacante puede hacerle un ataque de `UNION`
 
 ```sql
 SELECT name, description
