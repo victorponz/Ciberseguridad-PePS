@@ -248,7 +248,7 @@ Por ejemplo, se puede usar un ataque de tipo UNION
 ' UNION SELECT @@version..
 ```
 
-> **LAB 4**. [Averigua la versión de la base de datos mediante un ataque de UNION](https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns)
+> **LAB 4**. [Averigua la versión de la base de datos mediante un ataque de UNION](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle)
 
 ### Blind SQL Injections
 
