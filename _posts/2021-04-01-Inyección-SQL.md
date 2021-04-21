@@ -2,7 +2,7 @@
 typora-copy-images-to: ../assets/img/injection
 typora-root-url: ../../
 layout: post
-categories: tema3 SQL Injection
+categories: tema4 SQL Injection
 title: SQL Injection
 conToc: true
 header-includes: |
