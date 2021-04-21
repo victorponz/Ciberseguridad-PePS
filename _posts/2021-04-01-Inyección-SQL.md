@@ -310,7 +310,7 @@ xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator')
 
 Podemos continuar este proceso para determinar sistemáticamente la contraseña completa para el usuario Administrador.
 
-> **LAB 5** [Inyección SQL ciega con respuestas condicionales](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-responses)
+> **LAB 5** [Inyección SQL ciega con respuestas condicionales](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-responses) La haremos con Burp Suite más adelante
 
 ### Como prevenir la inyección SQL
 
