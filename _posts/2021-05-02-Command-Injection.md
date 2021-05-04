@@ -4,7 +4,7 @@ typora-root-url: ../../
 layout: post
 categories: tema4 Command Injection
 title: Command Injection
-conToc: true
+conToc: false
 header-includes: |
     \usepackage{fancyhdr}
     \pagestyle{fancy}

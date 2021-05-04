@@ -2,9 +2,9 @@
 typora-copy-images-to: ../assets/img/fileupload
 typora-root-url: ../../
 layout: post
-categories: tema4 SQL Injection
+categories: tema4 File Upload
 title: File Upload
-conToc: true
+conToc: false
 header-includes: |
     \usepackage{fancyhdr}
     \pagestyle{fancy}
