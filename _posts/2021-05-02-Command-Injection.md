@@ -37,7 +37,7 @@ En este formulario se supone que el usuario puede poner una IP a la que hacerle 
 127.0.0.1 ; ls
 ```
 
-Lo que intentamos es que el servidor ejecute también el comando `ls` ya que suponemos que está haciendo el siguiente comando
+Lo que intentamos es que el servidor ejecute también el comando `ls` ya que suponemos que esta es la instrucción que realiza el `ping`
 
 ```php
  $cmd = shell_exec( 'ping  -c 4 ' . $target ); 
@@ -67,7 +67,6 @@ y no comprueba si `$target` es una IP Válida.
 
    Con este comando estamos creando el archivo `shell.txt` con el código en base64.
    
-
 5. Decodificamos el código mediante la siguiente entrada
 
    ```
