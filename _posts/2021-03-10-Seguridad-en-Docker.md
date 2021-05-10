@@ -23,8 +23,9 @@ header-includes: |
 ## Seguridad host
 
 <blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 1</strong><br>Realiza los comandos y configuraciones del documento.</blockquote>
-
+<i class='fa fa-check'> </i><strong> Práctica 1</strong></blockquote>
+<blockquote>
+Realiza los comandos y configuraciones del documento.</blockquote>
 Como comparte el mismo kernel de la máquina host, todo el software del sistema debe estar actualizado a la máxima versión estable.
 
 Antes de aplicar seguridad en el host, se debería usar alguna tipo de seguridad en el host mediante `ip_tables`, `SELinux`, `apparmor`, defensa en profundidad, perímetro etc.
@@ -153,7 +154,7 @@ Y otra diferencia es que ADD puede copiar y descomprimir archivos, pero la capa 
 
 Es una mala praxis no usar la versión al utilizar un paquete. Por ejemplo, `alpine`
 
-para buscar imágenes se usa `docker search alpine`, pero no nos muetra tag
+para buscar imágenes se usa `docker search alpine`, pero no nos muestra tag
 
 De esta forma, se puede comprobar si tiene vulnerabilidades o si dentro de un tiempo la vuelvo a generar puede dar problemas de compatibilidad.
 
@@ -177,8 +178,10 @@ ENTRYPOINT ./whoami
 El concepto `pot` es de **Kubernetes** que son un grupo de contenedores que comparten en el mismo espacio de puertos
 
 <blockquote class='reto'>
-<i class='fa fa-check'> </i><strong> RETO</strong><br> Haz un docker file en GitHub y conéctalo con Docker Hub para que genere el build cada vez que se modifica.</blockquote>
+<i class='fa fa-check'> </i><strong> RETO</strong>
 
+<blockquote>
+Haz un docker file en GitHub y conéctalo con Docker Hub para que genere el build cada vez que se modifica.</blockquote>
 
 
 
@@ -191,7 +194,9 @@ Una de ellas es  `trivy`. Por ejemplo
 `trivy image python:3.4-alpine`
 
 <blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 2</strong><br>Realiza un testeo de una imagen de Wordpress (no uses tags recientes, pues no tendrán tantas vulnerabilidades)</blockquote>
+<i class='fa fa-check'> </i><strong> Práctica 2</strong>
 
+<blockquote>
+Realiza un testeo de una imagen de Wordpress (no uses tags recientes, pues no tendrán tantas vulnerabilidades)</blockquote>
 
 Más información en [Docker Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html)
