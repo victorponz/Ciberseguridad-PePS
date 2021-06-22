@@ -369,7 +369,7 @@ blockquote.task{
 blockquote.task strong, blockquote.task i{
   color:rgb(51, 51, 51);
 }
-blockquote.task + blockquote{
+blockquote.task + blockquote, blockquote.task {
   border-left:4px solid red;
 }
 blockquote.reto{
@@ -437,4 +437,35 @@ span.hit{
   padding: 4px;
   margin-left: 4px;
   margin-right: 4px;
+}
+blockquote.info{
+  color: #bf7900;
+  background: #fffbdc;
+  padding: 12px;
+  padding-left: 28px;
+  border: 1px solid #bf7900;
+}
+blockquote.info i {
+  margin-left: -18px;
+  font-size: 32px;
+  margin-right: 2px;
+}
+blockquote.info{
+  color: #bf7900;
+  background: #fffbdc;
+  padding: 12px;
+  padding-left: 28px;
+  border: 1px solid #bf7900;
+}
+
+.language-plaintext .rouge-gutter.gl{
+  display: none;
+}
+
+.language-plaintext.highlighter-rouge .highlight{
+  padding: unset;
+}
+
+td.rouge-gutter.gl{
+  text-align: right;
 }
