@@ -26,7 +26,7 @@ header-includes: |
 
 * a crear tags para cada nueva característica en git y a hacer un mezclado con la rama principal
 
-  
+  práctica
 
 ## Hello World!
 
@@ -37,8 +37,6 @@ header-includes: |
 Para empezar, crea un nuevo repositorio en GitHub y clónalo en local
 
 </blockquote>
-
-Los tags están en [https://github.com/using-docker/using_docker_in_dev/tags](https://github.com/using-docker/using_docker_in_dev/tags)
 
 Para esta práctica hemos de crear la siguiente estructura:
 
@@ -122,7 +120,7 @@ docker rm $(docker ps -lq)
 
 <blockquote class='task'>
 
-Si todo a ido bien, actualiza tu repositorio remoto
+Si todo ha ido bien, actualiza tu repositorio remoto
 
 </blockquote>
 
