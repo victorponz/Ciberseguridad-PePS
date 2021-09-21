@@ -1,0 +1,356 @@
+ 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
+    <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
+    <title>Curso de especialización en ciberseguridad</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code, strong {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 25%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 70%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      blockquote {
+        font-style: italic;
+        margin: 0.25em 0;
+        padding: 0.25em 40px;
+        line-height: 1.45;
+        position: relative;
+      }
+
+      blockquote:before {
+        opacity: 0.8;
+        display: block;
+        content: "\201C";
+        font-size: 3em;
+        position: absolute;
+        left: -20px;
+        top: -20px;
+      }
+
+      blockquote cite {
+        opacity: 0.8;
+        font-size: 1em;
+        display: block;
+        margin-top: 5px;
+      }
+ 
+      blockquote cite:before {
+        content: "\2014 \2009";
+      }
+      .right-column li{
+        line-height: 150%;
+      }
+      li {
+      	margin-bottom:12px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+#Curso de especialización en ciberseguridad
+---
+## ¿De qué trata este curso?
+---
+layout: false
+.left-column[
+  ## ¿Qué es?
+]
+.right-column[
+* **Denominación**: Ciberseguridad en entornos de las tecnologías de la información.
+* **Nivel**: Formación Profesional de Grado Superior.
+* **Duración**: 720 horas.
+* **Familia Profesional**: Informática y Comunicaciones (únicamente a efectos de
+clasificación de las enseñanzas de formación profesional).
+* **Rama de conocimiento**: Ingeniería y Arquitectura.
+* **Créditos ECTS**: 43.
+* Referente en la Clasificación Internacional Normalizada de la Educación: P-5.5.4.
+]
+---
+.left-column[
+  ## ¿Qué es?
+  ## ¿Qué aprenderás en este curso?
+]
+.right-column[
+* Elaborar e implementar **planes de prevención y concienciación en ciberseguridad** en la organización, aplicando la normativa vigente.
+* **Detectar e investigar incidentes de ciberseguridad**, documentándolos e incluyéndolos en los planes de securización de la organización.
+* **Diseñar planes de securización** contemplando las mejores prácticas para el bastionado de sistemas y redes.
+* **Configurar sistemas de control de acceso y autenticación** en sistemas informáticos, cumpliendo los requisitos de seguridad y minimizando las posibilidades de exposición a ataques.
+]
+---
+.left-column[
+  ## ¿Qué es?
+  ## ¿Qué aprenderás en este curso?
+  ## ¿Qué actividades profesionales podrás llevar a cabo?
+]
+.right-column[
+Este profesional ejercerá su actividad en entidades de los sectores donde sea
+necesario establecer mecanismos y medidas para la **protección de los sistemas de
+información y redes de comunicaciones**.
+
+Las ocupaciones y puestos de trabajo más relevantes son los siguientes:
+* Experto/a en ciberseguridad.
+* Auditor/a de ciberseguridad.
+* Consultor/a de ciberseguridad.
+* Hacker ético.
+
+]
+---
+template: inverse
+
+## Entonces, ¿qué módulos comprende este curso?
+---
+.left-column[
+  ### - Incidentes de ciberseguridad
+]
+.right-column[
+* Este módulo profesional contiene la formación necesaria para desempeñar las
+**funciones de análisis, detección y respuesta a los incidentes de ciberseguridad** de la
+organización.
+* La función de análisis y detección de incidentes de ciberseguridad incluye aspectos
+como la monitorización de los sistemas para la **recopilación de evidencias** que permita dar
+una respuesta adecuada a los incidentes detectados.
+* Las **actividades profesionales** asociadas a esta función se aplican mediante
+la **instalación y configuración de las herramientas necesarias para hacer frente a los
+ciberataques**
+
+]
+---
+
+.left-column[
+  ### - Incidentes de ciberseguridad
+  ### - Bastionado de redes y sistemas
+]
+.right-column[
+* Este módulo profesional contiene la formación necesaria para desempeñar **la
+función de bastionado de los sistemas y redes de la organización.**
+* La función de bastionado incluye aspectos como la **administración de los sistemas
+y redes contemplando la normativa**, tanto a nivel nacional como internacional, de
+ciberseguridad en vigor.
+* Las **actividades profesionales** asociadas a esta función se aplican en el diseño
+de **planes de securización y en el diseño de las redes** contemplando los requisitos de
+seguridad que apliquen a la organización
+]
+---
+
+.left-column[
+  ### - Incidentes de ciberseguridad
+  ### - Bastionado de redes y sistemas
+  ### - Puesta en producción segura
+]
+.right-column[
+* Este módulo profesional contiene la formación necesaria para desempeñar **la
+función de puesta en producción mediante el desarrollo de un sistema de despliegue de
+software seguro**.
+* La función de implantación de un sistema de despliegue seguro incluye aspectos
+como la **monitorización de aplicaciones y dispositivos para detectar los vectores de ataque
+más comunes**.
+* Las **actividades profesionales** asociadas a esta función se aplican en el **análisis de
+las aplicaciones web y dispositivos móviles así como en la configuración de servidores web**.
+]
+---
+.left-column[
+  ### - Incidentes de ciberseguridad
+  ### - Bastionado de redes y sistemas
+  ### - Puesta en producción segura
+  ### - Análisis forense informático
+]
+.right-column[
+* Este módulo profesional contiene la formación necesaria para desempeñar **la
+función de análisis forense**.
+* La función de análisis forense incluye aspectos como el **análisis de dispositivos de
+almacenamiento no volátil, de ficheros Logs, dispositivos móviles, Cloud e IoT**.
+* Las **actividades profesionales** asociadas a esta función se aplican en la **extracción
+de las evidencias** para su análisis mediante la estrategia adecuada que garantice la
+disponibilidad de los recursos.
+]
+---
+.left-column[
+  ### - Incidentes de ciberseguridad
+  ### - Bastionado de redes y sistemas
+  ### - Puesta en producción segura
+  ### - Análisis forense informático
+  ### - Hacking ético
+]
+.right-column[
+* Este módulo profesional contiene la formación necesaria para desempeñar **la
+función de detectar las vulnerabilidades de la organización mediante hacking ético**.
+* La función de hacking incluye aspectos como el **ataque programado a las redes y a
+las aplicaciones web** de la organización.
+* Las **actividades profesionales** asociadas a esta función se aplican en el ataque de
+las redes de comunicaciones para acceder a datos o funcionalidades no autorizadas con
+el propósito de encontrar vulnerabilidades
+]
+---
+.left-column[
+  ### - Incidentes de ciberseguridad
+  ### - Bastionado de redes y sistemas
+  ### - Puesta en producción segura
+  ### - Análisis forense informático
+  ### - Hacking ético
+  ### - Normativa de ciberseguridad
+]
+.right-column[
+* Este módulo profesional contiene la formación necesaria para desempeñar **la función
+de diseñar el sistema de cumplimiento normativo** de ciberseguridad en una organización.
+* La función de diseñar un sistema de cumplimiento normativo incluye aspectos
+como la **caracterización de los principales aspectos de las diferentes normativas** de
+ciberseguridad de obligado cumplimiento para la organización.
+* Las **actividades profesionales** asociadas a esta función se aplican en la integración,
+de las últimas actualizaciones en normativa de ciberseguridad a nivel nacional e
+internacional que apliquen, en el sistema de cumplimiento normativo de la organización.
+]
+---
+template: inverse
+
+## Entendido. ¿Cómo va a ser la metodología de este curso?
+---
+.left-column[
+## Metodología
+]
+.right-column[
+Las metodologías didácticas empleadas serán fundamentalmente procedimentales, basadas en la **realización de ejercicios, tareas y prácticas**, de forma que los contenidos teóricos del módulo pasan a en un segundo plano, dando mayor importancia a los contenidos procedimentales. 
+
+Además, las metodologías utilizadas (**activas, colaborativas y cooperativas**) están enfocadas al hecho que **los estudiantes sean los protagonistas** de su propio aprendizaje.
+]
+---
+.left-column[
+## Horario
+]
+.right-column[
+FALTA
+]
+---
+name: last-page
+template: inverse
+## Esto es todo (por ahora)!
+### Nos vemos todos los días de 15:55 a 20:00
+### y todos los días en https://aules.edu.gva.es/fp/
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script>
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'remark',
+          highlightLines: true
+        }) ;
+    </script>
+
+  </body>
+</html>
+
