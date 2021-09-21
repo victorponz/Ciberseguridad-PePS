@@ -72,7 +72,7 @@ Las metodologías didácticas empleadas serán fundamentalmente procedimentales,
 
 Además, las metodologías utilizadas (**activas, colaborativas y cooperativas**) están enfocadas al hecho que **los estudiantes sean los protagonistas** de su propio aprendizaje.
 ## Horario
-FALTA
+![Horario](horario.png)
 
 ---
 
