@@ -77,4 +77,4 @@ Además, las metodologías utilizadas (**activas, colaborativas y cooperativas**
 ---
 
 ## Esto es todo (por ahora)!
-### Nos vemos todos los días de 15:55 a 20:00 y en https://aules.edu.gva.es/fp/
+### Nos vemos todos los días de 15:55 a 20:55 y en https://aules.edu.gva.es/fp/
