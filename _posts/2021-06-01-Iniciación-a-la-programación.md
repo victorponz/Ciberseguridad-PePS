@@ -307,10 +307,12 @@ Durante las próximas sesiones aprenderemos los fundamentos de la programación 
 
 En el siguiente libro en HTML se explican estos fundamentos [https://coherentpdf.com/python/index.html](https://coherentpdf.com/python/index.html)
 
+
+
 ***Credits***
 
 [IES El Caminàs](http://www.ieselcaminas.org/)
-![Logo](assets/logo_lletres.png)
+![Logo](/Ciberseguridad-PePS/assets/img/inicprog/logo_lletres.png)
 
 
 Este material está licenciado bajo una licencia [Creative Commons, Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/2.5/)
