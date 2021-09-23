@@ -317,7 +317,7 @@ En el siguiente libro en HTML se explican estos fundamentos [https://coherentpdf
 
 Este material está licenciado bajo una licencia [Creative Commons, Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/2.5/)
 
-> **Partes adaptadas del artículo ** 
+> **Partes adaptadas del artículo** 
 >
 > [https://www.digitalocean.com/community/tutorials/como-instalar-java-con-apt-get-en-ubuntu-16-04-es](https://www.digitalocean.com/community/tutorials/como-instalar-java-con-apt-get-en-ubuntu-16-04-es)
 
