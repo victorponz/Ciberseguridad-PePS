@@ -1,0 +1,49 @@
+---
+layout: popup
+---
+    <h2>Tema 0 - Introducción a la programación</h2>
+
+
+<ol class='portada'> 
+  {% for post in site.posts reversed %}
+    {% if post.categories contains "tema0" %}
+      <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
+    {% endif %}
+{% endfor %}
+</ol>
+    <h2>Tema 1 - Introducción</h2>
+<ol class='portada'> 
+  {% for post in site.posts reversed %}
+    {% if post.categories contains "tema1" %}
+      <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
+    {% endif %}
+{% endfor %}
+</ol>
+
+<h2>Tema 2 - Despliegue de software</h2>
+
+<ol class='portada'> 
+{% for post in site.posts reversed %}
+{% if post.categories contains "tema2" %}
+  <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
+{% endif %}
+{% endfor %}
+</ol>
+
+<h2>Tema 3 - Seguridad Web</h2>
+<ol class='portada'> 
+{% for post in site.posts reversed %}
+{% if post.categories contains "tema3" %}
+  <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
+{% endif %}
+{% endfor %}
+</ol>
+<h2>Tema 4 - Riesgos de seguridad en aplicaciones Web</h2>
+
+<ol class='portada'> 
+{% for post in site.posts reversed %}
+{% if post.categories contains "tema4" %}
+  <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
+{% endif %}
+{% endfor %}
+</ol>

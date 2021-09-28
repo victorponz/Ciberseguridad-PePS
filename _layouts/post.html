@@ -23,7 +23,11 @@ layout: default
                     {% include toc.html html=content class="typora-menu-hidden" id="menuFixed"%}
                 {% endif %}
                 <div class="top-hidden" id="topFixed">
-                    <a class="toogle expanded pull-left js-toolbar-action" aria-label="" href="#"><i class="fas fa-align-justify"></i></a>
+                    <a title='Mostrar/Ocultar menú' class="toogle expanded pull-left js-toolbar-action" aria-label="" href="#"><i class="fas fa-align-justify"></i></a>
+                </div>
+                <div class="top-hidden indice btn btn-sm btn-primary shadow p-2 px-3 popup-trigger"
+                    data-popup-trigger="one" id="indexFixed" style='cursor:pointer'>
+                    <a title='Índice' class="toogle expanded pull-left js-toolbar-action" aria-label="" onclick='return false'><i class="fas fa-list"></i></a>
                 </div>
             </div>
         </div>
@@ -31,3 +35,15 @@ layout: default
         {{ content }}
         </div>
         {% include postNavigation.html %}
+<!-- body overlay -->
+<div class="body-blackout"></div>
+
+<!-- Modals Triggers -->
+
+<div 
+  class="popup-modal shadow" 
+  data-popup-modal="one">
+  <i class="fas fa-2x fa-times text-white bg-primary p-3 popup-modal__close"></i>
+  <iframe id="iframeIndice" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;" src='/Ciberseguridad-PePS/index-popup.html'></iframe>
+ 
+</div>

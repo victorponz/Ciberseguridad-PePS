@@ -45,7 +45,8 @@ body {
   opacity: .9; }
 
 .hide-menu .typora-menu-hidden {
-  left: -300px; }
+  left: -300px;
+}
 
 .main-content {
   top: 0;
@@ -62,7 +63,7 @@ body {
   background-color: #2c2c2c;
   opacity: .9; }
 
-.hide-menu #nav-previous, .hide-menu #nav-next, .hide-menu #topFixed a.toogle {
+.hide-menu #nav-previous, .hide-menu #nav-next, .hide-menu #topFixed a.toogle, .hide-menu #indexFixed a.toogle {
   left: 0; }
 
 .hide-menu .main-content {
@@ -77,20 +78,26 @@ body {
   position: relative;
   outline: none; }
 
-.top-hidden {
+.top-hidden, .top-hidden.indice {
   display: none;
   position: fixed;
   top: 0;
   z-index: 4;
   width: 30%; }
 
-.top-hidden a.toogle {
+.top-hidden.indice {
+    top: 30px;
+  }
+.top-hidden a.toogle, .top-hidden.indice a.toogle{
   color: #c2c2c2;
   padding: 8px;
   height: 20px;
   left: 300px;
   position: fixed;
-  padding-top: 2px; }
+  padding-top: 2px;
+  width:16px;
+}
+ 
 
 #nav-previous {
   color: #c2c2c2;
@@ -292,7 +299,7 @@ video {
 .hidden{
   display:none;
 }
-.show{
+.show, .top-hidden.indice.show{
   display:inline;
 }
 
@@ -468,4 +475,105 @@ blockquote.info{
 
 td.rouge-gutter.gl{
   text-align: right;
+}
+
+// ## Import Google font
+// -------------------
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700';
+
+// ## Mixins
+// -------------------
+
+// Clearfix
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+// ## Base
+// -------------------
+
+// apply a natural box layout model to all elements, but 
+// allowing components to change
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f6f6f6;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 35px;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+.body-blackout {
+  position: fixed;
+  z-index: 1010;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .65);
+  display: none;
+}
+  
+.body-blackout.is-blacked-out {
+  display: block;
+}
+.popup-trigger {
+  display: inline-block;
+}
+
+.popup-modal {
+  height: 50%;
+  width: 50%;
+  background-color: #fff;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 45px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in-out;
+  z-index: 1011;
+  
+}
+.popup-modal.is--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.popup-modal.is--visible #iframeIndice{
+  display: inline;
+}
+.popup-modal #iframeIndice{
+  display: none;
+}
+
+.popup-modal__close {
+  position: absolute;
+  font-size: 1.2rem;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
 }

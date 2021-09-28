@@ -25,7 +25,6 @@ function removeClass(el, className){
 
 }
 function hasClass(el, className){
-    console.log(el.classList);
     if (el.classList)
         return el.classList.contains(className);
     else
@@ -79,6 +78,7 @@ function activeCurrentTocItem(){
 var menu = document.getElementById("menu");
 var menuFixed = document.getElementById("menuFixed");
 var topFixed = document.getElementById("topFixed");
+var indexFixed = document.getElementById("indexFixed");
 var menuContainer =  document.getElementById("menuContainer");
 var allHeaders =  document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 var allMenuTopics = menuFixed.querySelectorAll('a');
@@ -92,10 +92,12 @@ window.addEventListener('scroll', function(e) {
     if (!isAnyPartOfElementInViewport(menu)){
         addClass(menuFixed, "show");
         addClass(topFixed, "show");
+        addClass(indexFixed, "show");
         backToTop.style.display = 'inline';
     }else{
         removeClass(menuFixed, "show");
         removeClass(topFixed, "show");
+        removeClass(indexFixed, "show");
         backToTop.style.display = 'none';
     }
 
@@ -156,3 +158,29 @@ function showMenu() {
       x.className = "topnav";
     }
   }
+const modalTriggers = document.querySelectorAll('.popup-trigger')
+const modalCloseTrigger = document.querySelector('.popup-modal__close')
+const bodyBlackout = document.querySelector('.body-blackout')
+const iframeIndice = document.querySelector('#iframeIndice');
+
+modalTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const { popupTrigger } = trigger.dataset
+    const popupModal = document.querySelector(`[data-popup-modal="${popupTrigger}"]`)
+    iframeIndice.classList.add('is--visible')
+    popupModal.classList.add('is--visible')
+    bodyBlackout.classList.add('is-blacked-out')
+    
+    popupModal.querySelector('.popup-modal__close').addEventListener('click', () => {
+       popupModal.classList.remove('is--visible')
+       bodyBlackout.classList.remove('is-blacked-out')
+       iframeIndice.classList.remove('is--visible')
+    })
+    
+    bodyBlackout.addEventListener('click', () => {
+      // TODO: Turn into a function to close modal
+      popupModal.classList.remove('is--visible')
+      bodyBlackout.classList.remove('is-blacked-out')
+    })
+  })
+})
