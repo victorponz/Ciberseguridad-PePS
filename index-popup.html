@@ -1,8 +1,7 @@
 ---
 layout: popup
 ---
-    <h2>Tema 0 - Introducción a la programación</h2>
-
+    <h3>Tema 0 - Introducción a la programación</h3>
 
 <ol class='portada'> 
   {% for post in site.posts reversed %}
@@ -11,7 +10,7 @@ layout: popup
     {% endif %}
 {% endfor %}
 </ol>
-    <h2>Tema 1 - Introducción</h2>
+    <h3>Tema 1 - Introducción</h3>
 <ol class='portada'> 
   {% for post in site.posts reversed %}
     {% if post.categories contains "tema1" %}
@@ -20,7 +19,7 @@ layout: popup
 {% endfor %}
 </ol>
 
-<h2>Tema 2 - Despliegue de software</h2>
+<h3>Tema 2 - Despliegue de software</h3>
 
 <ol class='portada'> 
 {% for post in site.posts reversed %}
@@ -30,7 +29,7 @@ layout: popup
 {% endfor %}
 </ol>
 
-<h2>Tema 3 - Seguridad Web</h2>
+<h3>Tema 3 - Seguridad Web</h3>
 <ol class='portada'> 
 {% for post in site.posts reversed %}
 {% if post.categories contains "tema3" %}
@@ -38,7 +37,7 @@ layout: popup
 {% endif %}
 {% endfor %}
 </ol>
-<h2>Tema 4 - Riesgos de seguridad en aplicaciones Web</h2>
+<h3>Tema 4 - Riesgos de seguridad en aplicaciones Web</h3>
 
 <ol class='portada'> 
 {% for post in site.posts reversed %}
