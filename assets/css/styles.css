@@ -43,7 +43,10 @@ body {
   -o-transition: left 250ms ease;
   transition: left 250ms ease;
   opacity: .9; }
-
+  
+.typora-menu-hidden > ul{
+  padding:0;
+ }
 .hide-menu .typora-menu-hidden {
   left: -300px;
 }
