@@ -580,3 +580,7 @@ a {
   top: 8px;
   cursor: pointer;
 }
+
+ul.doc-info {
+    list-style: none;
+}
