@@ -1,0 +1,558 @@
+<!doctype html>
+<html  lang="es" >
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <link href="https://cdn.statically.io/gh/victorponz/pandoc-html-template/master/assets/syntax.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.statically.io/gh/victorponz/pandoc-html-template/master/assets/styles.css" rel="stylesheet" type="text/css" />
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css' integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp' crossorigin='anonymous'>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <meta name="generator" content="pandoc" />
+  <meta name="author" content="Víctor Ponz" />
+  <title>Arquitectura Web. Conceptos generales</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+
+ <div id="write-wrapper">
+	 <div id='write'>
+	 
+	  	  <div class="navbar navbar-static-top">
+	    <div class="navbar-inner">
+	      <div class="container">
+		<h1 class="doc-title">Arquitectura Web. Conceptos generales</h1>
+		<ul class="nav pull-right doc-info">
+		  		  <li><address class="navbar-text">Víctor Ponz</address></li>
+		  		  		</ul>
+	      </div>
+	    </div>
+	  </div>
+	    
+	  <div class="container">
+	    <div class="row">
+	      	       <div class="atypora-menu" id="menu">
+	      	<ul>
+<li><a href="#introducción">1 Introducción</a></li>
+<li><a href="#conceptos-generales-de-arquitectura-web">2 Conceptos generales de arquitectura web</a></li>
+<li><a href="#aplicaciones-web">3 Aplicaciones Web</a><ul>
+<li><a href="#qué-es-la-web">3.1 ¿Qué es la web?</a></li>
+<li><a href="#página-web">3.2 Página web</a></li>
+<li><a href="#sitio-web">3.3 Sitio web</a></li>
+<li><a href="#aplicación-web">3.4 Aplicación web</a></li>
+</ul></li>
+<li><a href="#tecnologías-de-desarrollo-web">4 Tecnologías de desarrollo Web</a><ul>
+<li><a href="#integración-de-tecnologías-de-desarrollo">4.1 Integración de tecnologías de desarrollo</a></li>
+<li><a href="#sistemas-gestores-de-contenido-cms">4.2 Sistemas gestores de contenido (CMS)</a></li>
+</ul></li>
+<li><a href="#servidores-web-y-de-aplicaciones">5 Servidores web y de aplicaciones</a><ul>
+<li><a href="#servidor-web">5.1 Servidor Web</a></li>
+<li><a href="#servidor-de-aplicaciones">5.2 Servidor de aplicaciones</a></li>
+</ul></li>
+<li><a href="#despliegue-de-aplicaciones-web">6 Despliegue de Aplicaciones web</a></li>
+<li><a href="#un-caso-real-storyblocks">Un caso real: Storyblocks</a><ul>
+<li><a href="#dns">1 DNS</a></li>
+<li><a href="#balanceador-de-carga-load-balancer">2 Balanceador de carga (load balancer)</a></li>
+<li><a href="#servidores-de-aplicaciones-web">3 Servidores de aplicaciones web</a></li>
+<li><a href="#servidores-de-bases-de-datos">4 Servidores de bases de datos</a></li>
+<li><a href="#servicio-de-caché">5 Servicio de caché</a></li>
+<li><a href="#colas-de-trabajos-y-servidores">6 Colas de trabajos y servidores</a></li>
+<li><a href="#servicio-de-búsqueda-de-texto-completo">7 Servicio de búsqueda de texto completo</a></li>
+<li><a href="#servicios">8 Servicios</a></li>
+<li><a href="#datos">9 Datos</a></li>
+<li><a href="#almacenamiento-en-la-nube">10 Almacenamiento en la nube</a></li>
+<li><a href="#cdn">11 CDN</a></li>
+<li><a href="#desde-el-punto-de-vista-de-la-seguridad">12 Desde el punto de vista de la seguridad</a></li>
+</ul></li>
+</ul>
+	      	</div>
+	       <div id="menuContainer">
+		      <div id="TOC" class="span3">
+			<div class="well toc typora-menu-hidden" id="menuFixed" >
+
+			<ul>
+<li><a href="#introducción">1 Introducción</a></li>
+<li><a href="#conceptos-generales-de-arquitectura-web">2 Conceptos generales de arquitectura web</a></li>
+<li><a href="#aplicaciones-web">3 Aplicaciones Web</a><ul>
+<li><a href="#qué-es-la-web">3.1 ¿Qué es la web?</a></li>
+<li><a href="#página-web">3.2 Página web</a></li>
+<li><a href="#sitio-web">3.3 Sitio web</a></li>
+<li><a href="#aplicación-web">3.4 Aplicación web</a></li>
+</ul></li>
+<li><a href="#tecnologías-de-desarrollo-web">4 Tecnologías de desarrollo Web</a><ul>
+<li><a href="#integración-de-tecnologías-de-desarrollo">4.1 Integración de tecnologías de desarrollo</a></li>
+<li><a href="#sistemas-gestores-de-contenido-cms">4.2 Sistemas gestores de contenido (CMS)</a></li>
+</ul></li>
+<li><a href="#servidores-web-y-de-aplicaciones">5 Servidores web y de aplicaciones</a><ul>
+<li><a href="#servidor-web">5.1 Servidor Web</a></li>
+<li><a href="#servidor-de-aplicaciones">5.2 Servidor de aplicaciones</a></li>
+</ul></li>
+<li><a href="#despliegue-de-aplicaciones-web">6 Despliegue de Aplicaciones web</a></li>
+<li><a href="#un-caso-real-storyblocks">Un caso real: Storyblocks</a><ul>
+<li><a href="#dns">1 DNS</a></li>
+<li><a href="#balanceador-de-carga-load-balancer">2 Balanceador de carga (load balancer)</a></li>
+<li><a href="#servidores-de-aplicaciones-web">3 Servidores de aplicaciones web</a></li>
+<li><a href="#servidores-de-bases-de-datos">4 Servidores de bases de datos</a></li>
+<li><a href="#servicio-de-caché">5 Servicio de caché</a></li>
+<li><a href="#colas-de-trabajos-y-servidores">6 Colas de trabajos y servidores</a></li>
+<li><a href="#servicio-de-búsqueda-de-texto-completo">7 Servicio de búsqueda de texto completo</a></li>
+<li><a href="#servicios">8 Servicios</a></li>
+<li><a href="#datos">9 Datos</a></li>
+<li><a href="#almacenamiento-en-la-nube">10 Almacenamiento en la nube</a></li>
+<li><a href="#cdn">11 CDN</a></li>
+<li><a href="#desde-el-punto-de-vista-de-la-seguridad">12 Desde el punto de vista de la seguridad</a></li>
+</ul></li>
+</ul>
+
+			</div>
+		</div>
+		 <div class="top-hidden" id="topFixed">
+                    <a title='Mostrar/Ocultar menú' class="toogle expanded pull-left js-toolbar-action" aria-label="" href="#"><i class="fas fa-align-justify"></i></a>
+                </div>
+	      </div>
+	      	      <div class="span9">
+	      	      <p><img src="assets/img/2187.jpg" /></p>
+<h2 id="introducción">1 Introducción</h2>
+<p>En este tema trataremos los conceptos generales de una aplicación web, así como las tendencias actuales relativas a las tecnologías más usadas en el desarrollo de aplicaciones web dinámicas.</p>
+<h2 id="conceptos-generales-de-arquitectura-web">2 Conceptos generales de arquitectura web</h2>
+<p>En esta unidad aprenderemos los siguientes conceptos.</p>
+<ol type="1">
+<li>Qué es una aplicación web</li>
+<li>Qué tecnologías se pueden utilizar para crear una aplicación web</li>
+<li>Qué es un servidor web</li>
+<li>Y, finalmente, en qué consiste el despliegue de una aplicación Web</li>
+</ol>
+<h2 id="aplicaciones-web">3 Aplicaciones Web</h2>
+<h3 id="qué-es-la-web">3.1 ¿Qué es la web?</h3>
+<p>Según <a href="https://es.wikipedia.org/wiki/World_Wide_Web">Wikipedia</a>,</p>
+<blockquote>
+<p>En informática, la World Wide Web (WWW) o red informática mundial es un sistema de distribución de documentos de hipertexto o hipermedios interconectados y accesibles vía Internet. Con un navegador web, un usuario visualiza sitios web compuestos de páginas web que pueden contener textos, imágenes, vídeos u otros contenidos multimedia, y navega a través de esas páginas usando hiperenlaces.</p>
+</blockquote>
+<h3 id="página-web">3.2 Página web</h3>
+<p>Una página web es un documento electrónico escrito en <strong>HTML</strong> (HyperText Markup Language). Las páginas web están enlazadas a través de hiperenlaces (links). Mediante un navegador un usuario puede navegar a través de la web siguiendo los hiperenlaces</p>
+<p>Las páginas web enlazan contenidos de naturaleza heterogénea:</p>
+<ul>
+<li>Imágenes: JPG, GIF, PNG, …</li>
+<li>Documentos: PDF, TXT, …</li>
+<li>Audio: MP3, WAV, …</li>
+<li>Vídeo: AVI, MPEG, …</li>
+</ul>
+<h3 id="sitio-web">3.3 Sitio web</h3>
+<p>Un sitio web (o portal) es una colección de páginas web relacionadas entre sí que suelen compartir la primera parte de la dirección web (el dominio). Ejemplos:</p>
+<ul>
+<li><a href="http://www.ieselcaminas.org">https://www.ieselcaminas.org</a>: Sitio web del Instituto</li>
+<li><a href="http://es.wikipedia.org">https://es.wikipedia.org</a>: Sitio web de la Wikipedia en español</li>
+</ul>
+<h3 id="aplicación-web">3.4 Aplicación web</h3>
+<p>Según la <a href="https://es.wikipedia.org/wiki/Aplicación_web">Wikipedia</a>,</p>
+<blockquote>
+<p>En la ingeniería de software se denomina <strong>aplicación web</strong> a aquellas herramientas que los usuarios pueden utilizar accediendo a un servidor web a través de Internet o de una intranet mediante un navegador. En otras palabras, es una aplicación software que se codifica en un lenguaje soportado por los navegadores web en la que se confía la ejecución al navegador.</p>
+<p>Las aplicaciones web son populares debido a lo práctico del navegador web como cliente ligero, a la independencia del sistema operativo, así como a la facilidad para actualizar y mantener aplicaciones web sin distribuir e instalar software a miles de usuarios potenciales. Existen aplicaciones como los webmails, wikis, weblogs, tiendas en línea y la propia Wikipedia que son ejemplos bastante conocidos de aplicaciones web.</p>
+</blockquote>
+<h4 id="beneficios-de-las-aplicaciones-web">3.4.1 Beneficios de las aplicaciones web</h4>
+<ul>
+<li>Las aplicaciones Web <strong>se ejecutan en múltiples plataformas, independientemente del sistema operativo o dispositivo</strong>, siempre y cuando el navegador sea compatible</li>
+<li>Todos los usuarios acceden a la <strong>misma versión</strong>, eliminando cualquier problema de compatibilidad</li>
+<li><strong>Reducen los costes</strong> tanto para el negocio como para el usuario final, ya que hay menos soporte y mantenimiento requeridos por el negocio y menores requerimientos para el equipo del usuario final</li>
+<li><strong>No requiere instalar software especial</strong> (en los clientes ) En esencia, para acceder a un software web solo necesitamos disponer de un navegador de páginas web (Internet Explorer, Firefox, Opera, Chrome, etc.). No es necesario tener nada más. Debido a la arquitectura de las aplicaciones web, el navegador suele quedar relegado a mostrar la interfaz de usuario (menús, opciones,formularios, etc.), mientras que toda la compleja lógica de negocio se lleva en el lado del servidor.</li>
+<li><strong>Información centralizada</strong>. En una aplicación web, no solamente la lógica de negocio está centralizada en el servidor, sino también los datos que se ubican en una base de datos centralizada (en ese servidor u otro destinado a tal fin). La centralización tiene la ventaja de facilitar el acceso a la misma.</li>
+<li><strong>Seguridad y copias de seguridad</strong> . Este es un corolario del punto anterior, es decir, una consecuencia. Como disponemos de los datos centralizados es más fácil establecer y llevar el control de una política de copias de seguridad centralizada.</li>
+</ul>
+<h4 id="procesamiento-de-páginas-en-el-lado-del-servidor">3.4.2 Procesamiento de páginas en el lado del servidor</h4>
+<p>Desde el punto de vista del <strong>servidor web</strong>, una aplicación Web es un conjunto de páginas Web estáticas y dinámicas. Una página Web estática es aquélla que no cambia cuando un usuario la solicita: el servidor Web envía la página al navegador Web solicitante sin modificarla. Por el contrario, el servidor modifica las páginas Web dinámicas antes de enviarlas al navegador solicitante. La naturaleza cambiante de este tipo de página es la que le da el nombre de dinámica.</p>
+<p>Por ejemplo, podría diseñar una página para que mostrara los resultados de las notas de un alumno y dejara cierta información fuera (como el nombre del alumno y sus notas) para calcularla cuando la página la solicite un alumno en particular.</p>
+<h4 id="páginas-web-estáticas-en-el-servidor">3.4.3 Páginas web estáticas en el servidor</h4>
+<p>Un sitio Web estático consta de un conjunto de páginas y de archivos HTML relacionados alojados en un equipo que ejecuta un servidor Web.</p>
+<p>Un servidor Web es un software que suministra páginas Web en respuesta a las peticiones de los navegadores Web. La petición de una página se genera cuando el usuario hace clic en un vínculo de una página Web, elige un marcador en un navegador o introduce una URL en el cuadro de texto Dirección del navegador.</p>
+<p>El contenido final de una página Web estática lo determina el diseñador de la página y no cambia cuando se solicita la página. A continuación se incluye un ejemplo:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">&lt;title&gt;</span>Implantación de arquitecturas Web<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">&lt;h1&gt;</span>Acerca del módulo&lt;/h1&gt;</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="kw">&lt;p&gt;</span>Puesta en producción segura ...<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<p>El diseñador escribe todas y cada una de las líneas de código HTML de la página antes de colocarla en el servidor. El código HTML no cambia una vez colocado en el servidor y por ello, este tipo de páginas se denomina página estática.</p>
+<p>Cuando el servidor Web recibe una petición de una página estática, el servidor lee la solicitud, localiza la página y la envía al navegador solicitante, como se muestra en el siguiente ejemplo:</p>
+<figure>
+<img src="https://helpx.adobe.com/es/dreamweaver/using/web-applications/_jcr_content/main-pars/image_0.img.png/ds_process_static.png" alt="" /><figcaption>Página Estática</figcaption>
+</figure>
+<p><strong>1.</strong> El navegador web solicita la página estática <strong>2.</strong> El servidor localiza la página <strong>3.</strong> El servidor Web envía la página al navegador solicitante. Finalmente, el navegador renderiza la página mostrando el siguiente resultado.</p>
+<figure>
+<img src="assets/img/pagina%20estatica.png" alt="" /><figcaption>Página estática. Ejemplo</figcaption>
+</figure>
+<p>Actualmente esta arquitectura se usa principalmente para:</p>
+<ol type="1">
+<li>Páginas personales</li>
+<li>Páginas de proyectos software</li>
+<li>Documentación técnica (<a href="https://docs.oracle.com/javase/7/docs/api/">JavaDoc</a> en Java, Maven site, etc…)</li>
+</ol>
+<h4 id="páginas-dinámicas-en-el-servidor">3.4.4 Páginas dinámicas en el servidor</h4>
+<p>Cuando un servidor Web recibe una petición para mostrar una página Web estática, el servidor la envía directamente al navegador que la solicita. Cuando el servidor Web recibe una petición para mostrar una página dinámica, sin embargo, reacciona de distinta forma: transfiere la página a un software especial encargado de finalizar la página. Este software especial se denomina servidor de aplicaciones.</p>
+<p>El servidor de aplicaciones lee el código de la página, finaliza la página en función de las instrucciones del código y elimina el código de la página. El resultado es una página estática que el servidor de aplicaciones devuelve al servidor Web, que a su vez la envía al navegador solicitante. Lo único que el navegador recibe cuando llega la página es código HTML puro. A continuación se incluye una vista de este proceso:</p>
+<figure>
+<img src="https://helpx.adobe.com/es/dreamweaver/using/web-applications/_jcr_content/main-pars/image_1.img.png/ds_process_dynamic.png" alt="" /><figcaption>Página Dinámica</figcaption>
+</figure>
+<p><strong>1.</strong> El navegador web solicita la página dinámica. <strong>2.</strong> El servidor web localiza la página y la envía al servidor de aplicaciones. <strong>3.</strong> El servidor de aplicaciones busca instrucciones en la página y la termina. <strong>4.</strong> El servidor de aplicaciones pasa la página terminada al servidor web. <strong>5.</strong> El servidor web envía la página finalizada al navegador solicitante que la renderiza.</p>
+<p>Un ejemplo sería el siguiente código PHP.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode php"><code class="sourceCode php"><span id="cb2-1"><a href="#cb2-1"></a>&lt;!<span class="kw">DOCTYPE</span> html&gt;</span>
+<span id="cb2-2"><a href="#cb2-2"></a>&lt;html&gt;</span>
+<span id="cb2-3"><a href="#cb2-3"></a>&lt;body&gt;</span>
+<span id="cb2-4"><a href="#cb2-4"></a>&lt;<span class="ot">?</span>php</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">$txt1</span> = <span class="st">&quot;Learn PHP&quot;</span><span class="ot">;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="kw">$txt2</span> = <span class="st">&quot;W3Schools.com&quot;</span><span class="ot">;</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="kw">$x</span> = <span class="dv">5</span><span class="ot">;</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="kw">$y</span> = <span class="dv">4</span><span class="ot">;</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="kw">echo</span> <span class="st">&quot;&lt;h2&gt;&quot;</span> . <span class="kw">$txt1</span> . <span class="st">&quot;&lt;/h2&gt;&quot;</span><span class="ot">;</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="kw">echo</span> <span class="st">&quot;Study PHP at &quot;</span> . <span class="kw">$txt2</span> . <span class="st">&quot;&lt;br&gt;&quot;</span><span class="ot">;</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="kw">echo</span> <span class="kw">$x</span> + <span class="kw">$y</span><span class="ot">;</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="kw">?&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>&lt;/body&gt;</span>
+<span id="cb2-14"><a href="#cb2-14"></a>&lt;/html&gt;</span></code></pre></div>
+<p>Y este sería el resultado mostrado en el navegador, donde el servidor de aplicaciones ha interpretado las órdenes PHP</p>
+<figure>
+<img src="assets/img/dinamica.png" alt="" /><figcaption>Página Dinámica - Ejemplo</figcaption>
+</figure>
+<h4 id="páginas-dinámicas-con-acceso-a-una-base-de-datos.">3.4.5 Páginas dinámicas con acceso a una base de datos.</h4>
+<p>Un servidor de aplicaciones nos permite trabajar con recursos del lado del servidor, como las bases de datos. Por ejemplo, una página dinámica puede indicar al servidor de aplicaciones que extraiga datos de una base de datos y los inserte en el código HTML de la página.</p>
+<p>El uso de una base de datos para almacenar contenido permite separar el diseño del sitio Web del contenido que se desea mostrar a los usuarios del sitio. En lugar de escribir archivos HTML individuales para cada página, sólo se necesita escribir una página —o plantilla— para los distintos tipos de información que se desea presentar. Posteriormente, podremos cargar contenido en una base de datos y, seguidamente, hacer que el sitio Web recupere el contenido en respuesta a una solicitud del usuario.</p>
+<p>La instrucción para extraer datos de una base de datos recibe el nombre de <strong>consulta de base de datos</strong>. Una consulta consta de criterios de búsqueda expresados en un lenguaje de base de datos denominado <strong>SQL</strong> (<em>Structured Query Language</em>, lenguaje de consulta estructurado). La consulta SQL se escribe en los scripts o etiquetas del lado del servidor de la página.</p>
+<p>Un servidor de aplicaciones no se puede comunicar directamente con una base de datos porque el formato de esta última impide que se descifren los datos, de una forma bastante similar a cuando un documento de Microsoft Word no puede descifrarse al abrirlo con el Bloc de Notas. El servidor de aplicaciones sólo se puede comunicar con la base de datos a través de un <strong>controlador</strong> que actúe de intermediario con la base de datos: el software actúa entonces como un intérprete entre el servidor de aplicaciones y la base de datos.</p>
+<p>Una vez que el controlador establece la comunicación, la consulta se ejecuta en la base de datos y se crea un juego de registros. Un <strong>juego de registros</strong> es un conjunto de datos extraídos de una o varias tablas de una base de datos. El juego de registros se devuelve al servidor de aplicaciones, que emplea los datos para completar la página.</p>
+<p>A continuación se ofrece una consulta de base de datos sencilla escrita en SQL:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">SELECT</span> NOMBRE, APELLIDOS, ASIGNATURA, NOTA</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">FROM</span> NOTAS_ALUMNOS</span></code></pre></div>
+<p>Esta instrucción crea un juego de registros de cuatro columnas y lo completa con filas que contienen el nombre, los apellidos, la asignatura y la nota de todos los alumnos de la base de datos.</p>
+<p>En el siguiente ejemplo se muestra el proceso de consulta de base de datos y de devolución de los datos al navegador:</p>
+<figure>
+<img src="https://helpx.adobe.com/es/dreamweaver/using/web-applications/_jcr_content/main-pars/image_2.img.png/ds_process_complete.png" alt="" /><figcaption>Página Dinámica con acceso a datos</figcaption>
+</figure>
+<p><strong>1.</strong> El navegador web solicita la página dinámica. <strong>2.</strong> El servidor web localiza la página y la envía al servidor de aplicaciones. <strong>3.</strong> El servidor de aplicaciones busca instrucciones en la página. <strong>4.</strong> El servidor de aplicaciones envía la consulta al controlador de la base de datos. <strong>5.</strong> El controlador ejecuta la consulta en la base de datos. <strong>6.</strong> El juego de registros se devuelve al controlador. <strong>7.</strong> El controlador pasa el juego de registros al servidor de aplicaciones. <strong>8.</strong> El servidor de aplicaciones inserta los datos en una página y luego pasa la página al servidor web. <strong>9.</strong> El servidor Web envía la página finalizada al navegador solicitante.</p>
+<h4 id="cliente-estático-o-cliente-dinámico">3.4.6 Cliente estático o cliente dinámico</h4>
+<p>Desde el punto de vista del <strong>cliente web</strong> (generalmente el navegador) las páginas que componen una aplicación web también se pueden dividir en estáticas y dinámicas.</p>
+<p>Las estáticas son aquellas en las que el contenido visualizado por el cliente no cambia, a menos que se realice un clic en un enlace y se cargue una nueva página. Las dinámicas son aquellas en las que el contenido mostrado por el cliente cambia sin necesidad de recargar la página. Estos cambios pueden utilizarse para producir efectos gráficos o realizando peticiones asíncronas de tal forma que el contenido de la página cambie sin necesidad de obligar a una recarga de la misma.</p>
+<p>Para crear páginas web de cliente dinámicas se usan técnicas de manipulación del <em>Document Object Model</em> (<a href="https://es.wikipedia.org/wiki/Document_Object_Model">DOM</a>) del navegador junto con peticiones asíncronas (<a href="https://es.wikipedia.org/wiki/AJAX">AJAX</a> - Asynchrous Javascript and XML). Esta técnica llevada al extremo se conoce como aplicación SPA (<a href="https://es.wikipedia.org/wiki/Single-page_application">Single Page Application</a>).</p>
+<p>Hoy en día, la mayoría de aplicaciones web se construyen con métodos dinámicos tanto desde el punto de vista del servidor como del cliente. Sólo hay que pensar en aplicaciones tipo Gmail, Facebook, Google Maps, Twitter, etc.</p>
+<h4 id="cliente-estático-creado-a-partir-de-texto-plano-static-site-generator">3.4.7 Cliente estático creado a partir de texto plano (Static Site Generator)</h4>
+<p>Los generadores de sitios estáticos funcionan convirtiendo texto simple y con formato ligero (generalmente <a href="https://es.wikipedia.org/wiki/Markdown">markdown</a>) en sitios web o blogs estáticos. No hay bases de datos para ralentizar las solicitudes y el sitio es más fácil de mantener, tiene opciones de seguridad mejoradas y, sin embargo, tiene una infraestructura menor en coste.</p>
+<p>Por ejemplo: <a href="http://jekyllrb.com/">Jekill</a>, <a href="https://hexo.io/">Hexo</a>, <a href="http://gohugo.io/">Hugo</a>, <a href="http://getpelican.com/">Pelican</a>, <a href="https://middlemanapp.com/">Middleman</a>, <a href="http://www.metalsmith.io/">Metalsmith</a>, <a href="https://ghost.org/">Ghost</a>.</p>
+<p>También entra dentro de esta categoría las páginas creadas a partir de <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+<p>Los generadores de sitios estáticos (<strong>SSG</strong>) hacen lo mismo que una web dinámica, pero sin las desventajas de ésta. Aplican datos y contenido a las plantillas y generan una vista de una página que se puede mostrar a los visitantes de un sitio.</p>
+<p>La mayor diferencia entre un generador de sitios estáticos y una pila de aplicaciones web tradicional es que, en lugar de esperar hasta que se solicite una página y luego generar su vista a petición cada vez, un generador de sitios estáticos hace esto con anticipación para que la vista esté lista para ser servida con anticipación. Y lo hace para cada vista posible de un sitio en el momento de la construcción.</p>
+<p><strong>Tienen una ventaja muy importante desde el punto de vista de la seguridad</strong>:</p>
+<p>Dado que los generadores de sitios estáticos crean un conjunto de activos estáticos que pueden ser servidos desde un servidor web simplificado, o mejor aún, directa y completamente desde una red de distribución de contenido (CDN), tienen un perfil de seguridad notablemente bueno. Dado que se procesan con anticipación y están listos para servir, la infraestructura involucrada en servirlos puede simplificarse enormemente y tener muy pocos vectores de ataque malicioso. Cuando eliminamos la necesidad de que los servidores realicen la lógica y el trabajo, eliminamos las formas en que los malos actores les inyecten código malicioso y los engañen para que realicen acciones nefastas.</p>
+<p>Y cuando no necesitamos acceder a bases de datos, realizar operaciones lógicas o modificar recursos para cada vista, podemos simplificar drásticamente nuestra infraestructura de alojamiento. Esto también mejora aún más la seguridad, ya que físicamente hay menos servidores involucrados en la gestión de solicitudes.</p>
+<blockquote>
+<p><strong>No hay servidor más seguro que la ausencia de servidor</strong>. Cuanto menos infraestructura necesite nuestra aplicación mejor desde el punto de vista de la seguridad. Sólo debemos instalar y/o activar aquellos recursos necesarios para que nuestra aplicación funcione. Cuantos menos módulos debamos instalar, mejor para la seguridad ya que nos hemos de preocupar de menos vectores de ataque</p>
+</blockquote>
+<figure>
+<img src="assets/img/ssg-host-flow.png" alt="" /><figcaption>Flujo en SSG</figcaption>
+</figure>
+<p>Una de las <strong>mayores plataformas para desplegar</strong> Stactic Site Generators es <a href="https://www.netlify.com/">https://www.netlify.com/</a>. En el siguiente enlace encontrarás un libro gratuito de dicha plataforma con el título <a href="/Ciberseguridad-PePS/assets/pdf/oreilly-modern-web-development-on-the-jamstack.pdf">Modern Web Development on the JAMStack</a>. Por cierto, JAM son las iniciales de <strong>J</strong>avascript, <strong>A</strong>Pi’s y <strong>M</strong>arkup</p>
+<h2 id="tecnologías-de-desarrollo-web">4 Tecnologías de desarrollo Web</h2>
+<p>Como hemos comentado en el apartado Aplicaciones Web, hoy en día se utilizan páginas dinámicas tanto del lado del servidor como del cliente.</p>
+<p>El impacto de la Web ha propiciado la aparición de una gran cantidad de tecnologías, librerías, herramientas y estilos arquitectónicos para desarrollar una aplicación web. Para facilitar la tarea de escoger cuál es la tecnología más adecuada para un proyecto, es conveniente conocer los elementos más importantes desde un punto de vista de alto nivel para tener una visión global de la programación web.</p>
+<p>Existen dos enfoques en el desarrollo de aplicaciones web:</p>
+<ul>
+<li>Creación de aplicaciones web con <a href="#41-integración-de-tecnologías-de-desarrollo">integración de tecnologías de desarrollo</a></li>
+<li>Creación de aplicaciones web con <a href="#42-sistemas-gestores-de-contenido-cms">sistemas gestores de contenido</a></li>
+</ul>
+<h3 id="integración-de-tecnologías-de-desarrollo">4.1 Integración de tecnologías de desarrollo</h3>
+<p>Una de las formas de crear una aplicación web es implementarla usando componentes ya existentes e integrándolos con tecnología propia para adecuarlos a la lógica de negocio. Una premisa importante en cualquier tipo de desarrollo es “<em>no reinventar la rueda</em>”. Seguro que existe algún componente que ya hace lo que pretendemos hacer.</p>
+<p>Dentro de las tecnologías de desarrollo, podemos distinguir entre:</p>
+<ul>
+<li><strong>Tecnologías de cliente</strong>: Tecnologías que permiten crear interfaces de usuario atractivos y permiten la comunicación con el servidor. Basadas en HTML, CSS y JavaScript. Entre las de propósito general, cabe destacar <a href="https://jquery.com/">jQuery</a>, <a href="https://angularjs.org/">AngularJS</a>, <a href="http://getbootstrap.com/">Bootstrap</a>. En el informe <a href="https://w3techs.com/technologies/overview/javascript_library/all">Usage Statistics and Market Share of JavaScript Libraries for Websites, October 2020</a>, podemos ver una relación más detallada y hay que tener en cuenta que una aplicación web puede usar más de una de estas tecnologías a la vez. También podemos consultar <a href="https://en.wikipedia.org/wiki/List_of_JavaScript_libraries">List of Javascript Libraries</a>, donde están clasificadas por categorías.</li>
+</ul>
+<figure>
+<img src="assets/img//q16.jpg" alt="" /><figcaption>Lista de librerías Javascript</figcaption>
+</figure>
+<p>Fuente. <a href="https://ashleynolan.co.uk/blog/frontend-tooling-survey-2019-results">https://ashleynolan.co.uk/blog/frontend-tooling-survey-2019-results</a></p>
+<ul>
+<li><strong>Tecnologías de servidor</strong>: Tecnologías que permiten implementar el comportamiento de la aplicación web en el servidor: lógica de negocio, generación de informes, compartir información entre usuarios, envío de correos, etc.</li>
+</ul>
+<p>En <strong>PHP</strong>, tenemos <a href="https://codeigniter.com/">CodeIgniter</a>, <a href="https://symfony.com/">Symfony</a> y <a href="https://laravel.com/">Laravel</a>.</p>
+<figure>
+<img src="assets/img/google-trends-best-php-frameworks-comparison.png" alt="" /><figcaption>Tecnologías en el Servidor</figcaption>
+</figure>
+<p>PHP Frameworks. Fuente: <a href="https://coderseye.com/best-php-frameworks-for-web-developers/">https://coderseye.com/best-php-frameworks-for-web-developers/</a></p>
+<p>En <strong>Java</strong>, <a href="http://spring.io/">Spring MVC</a>, <a href="https://es.wikipedia.org/wiki/JavaServer_Faces">JSF</a>, <a href="https://struts.apache.org/">Struts</a>.</p>
+<figure>
+<img src="assets/img//image-20201019161052177.png" alt="" /><figcaption>Java Frameworks</figcaption>
+</figure>
+<p>Fuente: https://www.jetbrains.com/lp/devecosystem-2020/java/</p>
+<ul>
+<li><p><strong>Bases de datos</strong>: La gran mayoría de las webs necesitan guardar información. Las bases de datos son una parte esencial del desarrollo web. Entre ellas destacan, Oracle, MySQL, Microsoft SQL Server, PostgreSQL. En el informe<a href="https://db-engines.com/en/ranking">DB-Engines Ranking - popularity ranking of database management systems</a> podemos ver la lista completa. <img src="assets/img/image-20201019161232828.png" alt="Ranking de bases de datos" /></p>
+<p>Fuente: <a href="https://db-engines.com/en/ranking">https://db-engines.com/en/ranking</a></p></li>
+</ul>
+<h3 id="sistemas-gestores-de-contenido-cms">4.2 Sistemas gestores de contenido (CMS)</h3>
+<p>Existen aplicaciones web cuya principal funcionalidad es la publicación de contenido: blogs, páginas de empresas, organismos públicos, comercio electrónico, etc.</p>
+<p>Todas estas webs tienen mucho en común, prácticamente sólo se diferencian en el contenido y en el aspecto gráfico.</p>
+<p>Para desarrollar este tipo de webs, en vez de desarrollar la web con integración de tecnologías de desarrollo se usa una aplicación ya creada que se puede personalizar y adaptar (mayormente vía web).</p>
+<p>A las aplicaciones de este tipo se las denomina <strong>Sistemas Gestores de Contenido</strong> (<em>Content Managemenet Systems</em>).</p>
+<p>Entre las <strong>ventajas</strong> de contar con un CMS están:</p>
+<ol type="1">
+<li><p><strong>Fácilmente actualizable</strong>. La edición del contenido está separada del diseño y funcionalidad del sitio. Esto permite introducir contenido a usuarios con poca formación técnica sin interferir en el diseño.</p></li>
+<li><p>A cada usuario se le pueden asignar permisos de acceso selectivo basados en sus <strong>roles</strong> (por ejemplo, puede permitir que algunos usuarios solo agreguen y edite su propio contenido, mientras que otros le dan acceso universal).</p></li>
+<li><p><strong>Uso de plantillas totalmente personalizables.</strong>Tanto para el contenido como para el diseño de tu propio sitio web. Esta es una de las partes que más suelen asustar si no se tienen conocimientos. Pero ahora no hace falta ser un experto en diseño.</p></li>
+<li><p>Los componentes básicos de la aplicación como menús, cabeceras, pies de página y laterales se mantienen desde la interfaz de administración.</p></li>
+<li><p>Además, <strong>los mejores CMS incluyen plugins</strong> para poder sacar aún más partido a todas las funcionalidades</p></li>
+</ol>
+<p>Evidentemente, no son todo ventajas. Los principales <strong>inconvenientes</strong> de usar un CMS son:</p>
+<ol type="1">
+<li>Desafortunadamente, como el código fuente está disponible al público en general y <em>todas las aplicaciones tienen bugs</em> de seguridad, hay algunos hackers malévolos por ahí que pueden averiguar cómo entrar en estas plataformas; por lo que la seguridad requerirá precauciones adicionales.</li>
+<li>Hacer que el sitio web se vea exactamente como queremos puede suponer desafío. Esto es cierto en algunos <em>frameworks</em> de CMS más que otros, pero todos presentan un poco más de trabajo para definir un ‘estilo’ propio.</li>
+<li>El CMS almacena todo por separado, luego lo monta en el momento en que el cliente web solicita una página, lo que significa que pueden ser lentos; sin embargo, esto se puede mitigar mediante el uso de un almacenamiento en <a href="https://es.wikipedia.org/wiki/Caché_web">caché</a> fuerte y eficaz y con una <a href="https://es.wikipedia.org/wiki/Red_de_entrega_de_contenidos">Red de Entrega de Contenidos</a> (<em>Content Delivery Network</em> - CDN).</li>
+<li>Limitaciones de funcionalidad: Hay algunas cosas que no se pueden hacer en un CMS, al menos no sin reescribir parte del código.</li>
+</ol>
+<p>Los principales CMS <em>libres</em> propiamente dichos son <a href="https://wordpress.org/download/">WordPress</a>, <a href="https://www.drupal.org/">Drupal</a> y <a href="https://downloads.joomla.org/">Joomla</a>. Para una estadística más detallada podemos consultar la página de tendencias de <a href="https://trends.builtwith.com/cms">buildwith.com</a></p>
+<figure>
+<img src="assets/img/image-20201019161414692.png" alt="" /><figcaption>Top CMS</figcaption>
+</figure>
+<p>Fuente: <a href="https://cms2cms.com/uncategorized/what-cms-will-be-your-choice-in-2017-facts-and-figures/">https://cms2cms.com/uncategorized/what-cms-will-be-your-choice-in-z017-facts-and-figures/</a></p>
+<p>Existen otros tipos de aplicaciones orientadas a otros ámbitos, como por ejemplo al comercio electrónico. Entre ellas cabe destacar <a href="https://woocommerce.com/">WooCommerce</a> y <a href="https://magento.com/products/open-source">Magento</a> que se utilizan para la creación de tiendas virtuales. Podemos ver una estadística completa en <a href="https://trends.builtwith.com/shop">builtwith.com</a></p>
+<figure>
+<img src="assets/img/image-20201019161452846.png" alt="" /><figcaption>Top eCommerce</figcaption>
+</figure>
+<h4 id="headless-cms">4.2.1 Headless CMS</h4>
+<p>Ahora bien, en los últimos años hemos podido presenciar el surgimiento de una nueva clase de CMS, el ‘headless CMS’. Ciertamente, el término traducido al español no resulta muy explicativo (‘CMS sin cabeza’), por lo que vamos a explicar un poco en qué consisten.</p>
+<p>Este tipo de CMS sólo se encargan de generar una interfaz web para introducir los datos. Una vez creada esta interfaz y alimentada con datos, proveen de una API REST, generalmente en JSON, para consultarlos.</p>
+<p>Después ya sólo hace falta conectar los datos con:</p>
+<ol type="1">
+<li>Un front-end para Web</li>
+<li>Otro para móvil</li>
+<li>Otro para relojes inteligentes.</li>
+<li>…</li>
+</ol>
+<p>Parece que no tiene sentido, ¿verdad?</p>
+<p>Pues debe tenerlo porque existe un gran ecosistema alrededor de esta tecnología como se puede comprobar en <a href="https://jamstack.org/headless-cms/">https://jamstack.org/headless-cms/</a></p>
+<figure>
+<img src="assets/img/image-20201130081246932.png" alt="" /><figcaption>Jamstack</figcaption>
+</figure>
+<p>Podéis consultar más información en <a href="https://www.genbeta.com/desarrollo/headless-cms-que-que-se-diferencian-tradicionales">https://www.genbeta.com/desarrollo/headless-cms-que-que-se-diferencian-tradicionales</a></p>
+<h2 id="servidores-web-y-de-aplicaciones">5 Servidores web y de aplicaciones</h2>
+<p>Una vez tenemos definida la funcionalidad de nuestra aplicación y las tecnologías de desarrollo que vamos a utilizar, hemos de escoger entre servir las peticiones a nuestra aplicación mediante un servidor web o mediante un servidor de aplicaciones. Esta decisión viene marcada, evidentemente, por el tipo de tecnología que hayamos escogido para implementar el lado del servidor. Si hemos escogido implementar nuestra aplicación con Java, usaremos un servidor de aplicaciones; mientras si la tecnología es PHP o ASP.NET escogeremos un servidor web.</p>
+<h3 id="servidor-web">5.1 Servidor Web</h3>
+<p>Un servidor Web controla el protocolo HTTP. Cuando el servidor Web recibe una solicitud mediante el <strong>protocolo HTTP</strong>, responde con una respuesta HTTP, como el envío de una página HTML. Para procesar una solicitud, un servidor Web puede responder con una página o imagen HTML estática, enviar una redirección o delegar la generación de respuestas dinámicas a algún otro programa, como secuencias de comandos CGI, PHP, JSP (Servidores Java), servlets, ASPs (Active Server Pages), JavaScripts del lado del servidor, o alguna otra tecnología del lado del servidor.</p>
+<p>Cualquiera que sea su propósito, tales programas del lado del servidor generan una respuesta, la mayoría de las veces en HTML, para ver en un navegador Web.</p>
+<p>Este modelo de delegación de un servidor Web es bastante simple. Cuando una solicitud entra en el servidor Web, el servidor Web simplemente pasa la solicitud al programa más capaz de manejarla.</p>
+<p>El servidor Web no proporciona ninguna funcionalidad más allá de simplemente proporcionar un entorno en el que el programa del lado del servidor puede ejecutar y devolver las respuestas generadas.</p>
+<p>Como vemos en el siguiente gráfico de uso, el servidor más usado es <a href="https://httpd.apache.org/">Apache</a>, seguido de <a href="http://nginx.org/">Nginx</a>. Si desarrollamos una aplicación en ASP.NET, escogeríamos <a href="https://www.iis.net/">Internet Information Services (IIS)</a> de Microsoft.</p>
+<figure>
+<img src="assets/img/image-20201019161629503.png" alt="" /><figcaption>Uso de servidores web</figcaption>
+</figure>
+<p>Fuente: <a href="https://trends.builtwith.com/web-server">https://trends.builtwith.com/web-server</a></p>
+<figure>
+<img src="https://httpd.apache.org/images/httpd_logo_wide_new.png" alt="" /><figcaption>apache</figcaption>
+</figure>
+<figure>
+<img src="https://www.nginx.com/resources/wiki/_static/img/logo.png" alt="" /><figcaption>Nginx</figcaption>
+</figure>
+<h3 id="servidor-de-aplicaciones">5.2 Servidor de aplicaciones</h3>
+<p>Un servidor de aplicaciones expone la lógica empresarial a las aplicaciones cliente a través de <strong>varios protocolos</strong>, posiblemente incluyendo HTTP.</p>
+<p>Aunque un servidor Web se ocupa principalmente del envío de HTML para su visualización en un navegador Web, un servidor de aplicaciones proporciona acceso a la lógica empresarial para su uso por los programas de aplicación del cliente.</p>
+<p>Como consecuencia del éxito del lenguaje de programación Java, el término servidor de aplicaciones usualmente hace referencia a un servidor de aplicaciones Java EE, aunque también hay servidores aplicaciones para PHP como <a href="http://www.zend.com/en/products/zend_server">Zend Server</a>.</p>
+<figure>
+<img src="assets/img/image-20201019163053269.png" alt="" /><figcaption>Servidor de aplicaciones</figcaption>
+</figure>
+<p>Fuente: https://www.jrebel.com/blog/2020-java-technology-report#application-server</p>
+<h2 id="despliegue-de-aplicaciones-web">6 Despliegue de Aplicaciones web</h2>
+<p>Cuando se crea una <strong>aplicación web</strong> en nuestro ordenador suele hacerse en un <strong>Entorno de Desarrollo</strong> (<em>Development Environment</em>) al que sólo somos capaces de acceder desde ese ordenador.</p>
+<p>Esto se conoce como entorno de <strong>desarrollo local o localhost</strong>. Trabajando en localhost, el código de la aplicación se mantiene en nuestro ordenador y será accesible únicamente desde el mismo. Pero para hacer la aplicación web accesible a todo el mundo, se necesita ponerla a disposición en un ordenador público, accesible a través de una URL. A estos ordenadores se les denomina <strong>Servidores Web</strong> y el entorno en el que se despliegan se denomina <strong>Entorno de Producción</strong> (<em>Production Environment</em>).</p>
+<p>Estos servidores web son los encargados de ejecutar la aplicación web y entregar las páginas a cualquiera que las pida.</p>
+<blockquote>
+<p>El proceso de mover una aplicación web desde localhost a un servidor web se denomina <strong>Despliegue (</strong>_<strong>Deployment</strong>_<strong>)</strong>.</p>
+</blockquote>
+<p>Desde el momento que desplegamos una aplicación en un servidor web tenemos una versión que está públicamente disponible por cualquiera a través de la URL y todavía mantenemos la versión que corre en nuestro anfitrión local que continuamos retocando y probando. Periódicamente, deberemos actualizar (desplegar) el código al servidor web después de que hayamos probado los nuevos cambios en localhost e implementado procesos <strong>CD/CI</strong> (Continuos Development/Continuos Integration)</p>
+<figure>
+<img src="assets/img/despliegue.svg.png" alt="" /><figcaption>Despliegue</figcaption>
+</figure>
+<p>Este proceso no es tan sencillo como parece, sobre todo cuando hablamos de aplicaciones empresariales en las que participan gran cantidad de profesionales tanto en desarrollo como en sistemas, así como multitud de sistemas operativos, servidores de aplicaciones, API’s end-points, servidores web, contenedores, orquestadores, etc.</p>
+<blockquote>
+<p><strong>De hacer todo este proceso de forma segura es de lo que trata este módulo profesional.</strong></p>
+</blockquote>
+<h2 id="un-caso-real-storyblocks">Un caso real: Storyblocks</h2>
+<blockquote>
+<p>Esta es una traducción del artículo <a href="https://engineering.videoblocks.com/web-architecture-101-a3224e126947">original</a></p>
+</blockquote>
+<figure>
+<img src="assets/img//uno.png" alt="" /><figcaption>Storybloks</figcaption>
+</figure>
+<p>El diagrama de arriba es una representación bastante buena de la arquitectura en <a href="https://es.storyblocks.com/">Storyblocks</a>. Si no eres un desarrollador web experimentado, es probable que lo encuentres complicado. El recorrido explicado debajo debería ser más accesible antes de profundizar en los detalles de cada componente.</p>
+<blockquote>
+<p>Un usuario busca en Google “Strong Beautiful Fog And Sunbeams In The Forest”. El primer resultado es <a href="https://www.storyblocks.com/stock-image/strong-beautiful-fog-and-sunbeams-in-the-forest-bxxg0dvxdzj6gt9ini">Storyblocks</a>, nuestro sitio principal de fotos y vectores. El usuario hace clic en el resultado que redirige su navegador a la página de detalles de la imagen. Entre bambalinas, el navegador del usuario envía una solicitud a un servidor DNS para buscar cómo contactar a Storyblocks y luego envía la solicitud.</p>
+<p>La solicitud llega a nuestro balanceador de carga (<strong>load balancer</strong>), que elige aleatoriamente uno de los 10 servidores web que tenemos para ejecutar el sitio en ese momento para procesar la solicitud. El servidor web busca información sobre la imagen de nuestro servicio de almacenamiento en caché (<strong>cahing service</strong>) y recupera los datos restantes de la base de datos. Observamos que el perfil de color de la imagen aún no se ha calculado, por lo que enviamos un trabajo de “perfil de color” a nuestra cola de trabajos (<strong>job queue</strong>), que nuestros servidores de trabajo procesarán de forma asincrónica, actualizando la base de datos de forma adecuada con los resultados. ​<br />
+A continuación, intentamos encontrar fotos similares enviando una solicitud a nuestro servicio de búsqueda de texto (<strong>full text service</strong>) completo utilizando el título de la foto como entrada. El usuario está registrado en Storyblocks como miembro, por lo que buscamos la información de su cuenta en nuestro servicio de cuenta (<strong>account service</strong>). Finalmente, lanzamos un evento de visualización de página a nuestra firehose de datos (<strong>data firehose</strong>) para registrarlo en nuestro sistema de almacenamiento en la nube (<strong>cloud storage</strong>) y finalmente cargarlo en nuestro almacén de datos (<strong>data warehouse</strong>), que los analistas usan para ayudar a responder preguntas sobre el negocio.</p>
+<p>​ El servidor ahora muestra la vista como HTML y la envía al navegador del usuario, pasando primero a través del equilibrador de carga. La página contiene activos de Javascript y CSS que cargamos en nuestro sistema de almacenamiento en la nube, que está conectado a nuestro <strong>CDN</strong>, por lo que el navegador del usuario contacta al CDN para recuperar el contenido. Por último, el navegador muestra visiblemente la página para que el usuario la vea.</p>
+</blockquote>
+<p>A continuación, te guiaré a través de cada componente, proporcionando una introducción de “101” a cada uno que te proporcionará un buen modelo mental para pensar a través de la arquitectura web en el futuro.</p>
+<h3 id="dns">1 DNS</h3>
+<p>DNS significa “Servidor de nombres de dominio” (<strong>Domain Name Server</strong>) y es una tecnología troncal que hace posible la red mundial. En el nivel más básico, DNS proporciona una búsqueda de clave / valor desde un nombre de dominio (por ejemplo, <a href="">google.com</a>) a una dirección IP (por ejemplo, 85.129.83.120), que es necesaria para que tu computadora enrute una solicitud al servidor. Analizando los números de teléfono, la diferencia entre un nombre de dominio y una dirección IP es la diferencia entre “llamar a John Doe” y “llamar al 201-867-5309”. Al igual que necesitabas una guía telefónica para buscar el número de John en los viejos tiempos, necesita DNS para buscar la dirección IP de un dominio. Entonces, puedes pensar en DNS como el directorio telefónico de Internet.</p>
+<h3 id="balanceador-de-carga-load-balancer">2 Balanceador de carga (load balancer)</h3>
+<p>Antes de profundizar en los detalles sobre el equilibrio de carga, debemos dar un paso atrás para analizar el escalado horizontal/vertical de la aplicación. ¿Qué son y cuál es la diferencia? De una manera muy sencilla, la escala <strong>horizontal</strong> significa que escala agregando <strong>más máquinas</strong> a su grupo de recursos mientras que la escala <strong>vertical</strong> significa que escala agregando <strong>más potencia</strong> (por ejemplo, CPU, RAM) a una máquina existente.</p>
+<p>En el desarrollo web, (casi) siempre quieres escalar horizontalmente porque, para simplificar, las cosas se rompen. Los servidores se bloquean aleatoriamente. Las redes se degradan. Centros de datos completos ocasionalmente se desconectan. Tener más de un servidor te permite planificar las interrupciones para que su aplicación continúe ejecutándose. En otras palabras, tu aplicación es “tolerante a fallos” (<strong>fault tolerant</strong>). En segundo lugar, la escala horizontal te permite acoplar al menos partes diferentes de tu aplicación backend (servidor web, base de datos, servicio X, etc.) ejecutando cada uno de ellos en servidores diferentes. Por últimos, puede alcanzar una escala en la que ya no sea posible escalar verticalmente. No hay una computadora en el mundo lo suficientemente grande como para hacer todos los cálculos de su aplicación. Piensa en la plataforma de búsqueda de Google como un ejemplo por excelencia, aunque esto se aplica a las empresas a escalas mucho más pequeñas. Storyblocks, por ejemplo, ejecuta de 150 a 400 instancias de <a href="https://aws.amazon.com/es/ec2/">AWS EC2</a> en cualquier momento dado. Sería un desafío proporcionar toda la potencia de cálculo a través de escalamiento vertical.</p>
+<p>Ok, de vuelta a los balanceadores de carga. Son la salsa mágica que hace que el escalado horizontal sea posible. Enrutan las solicitudes entrantes a uno de los muchos servidores de aplicaciones que suelen ser clones / imágenes espejo entre sí y envían la respuesta desde el servidor de la aplicación al cliente. Cualquiera de ellos debe procesar la solicitud de la misma manera, por lo que solo se trata de distribuir las solicitudes en el conjunto de servidores para que ninguno de ellos esté sobrecargado.</p>
+<p>Eso es. Conceptualmente, los equilibradores de carga son bastante sencillos. Seguramente hay más complejidad internamente pero no hay necesidad de sumergirse para nuestra versión 101.</p>
+<p>El siguiente artículo, profundiza en los <a href="https://www.digitalocean.com/community/tutorials/what-is-load-balancing">balanceadores de carga</a>.</p>
+<h3 id="servidores-de-aplicaciones-web">3 Servidores de aplicaciones web</h3>
+<p>En un nivel alto, los servidores de aplicaciones web son relativamente simples de describir. Ejecutan la lógica de negocio principal que maneja la solicitud de un usuario y envía de vuelta HTML al navegador del usuario. Para hacer su trabajo, normalmente se comunican con una variedad de infraestructura de back-end, como bases de datos, capas de almacenamiento en caché, colas de trabajos, servicios de búsqueda, otros microservicios, colas de datos / registro y más. Como se mencionó anteriormente, normalmente se tienen al menos dos y muchas veces más, conectados a un balanceador de carga para procesar las solicitudes de los usuarios.</p>
+<p>Debes saber que las implementaciones del servidor de aplicaciones requieren elegir un idioma específico (Node.js, Ruby, PHP, Scala, Java, C # .NET, etc.) y un marco web MVC para ese idioma (Express for Node.js, Ruby on Rails , Play para Scala, Laravel para PHP, Spring para Java, etc.). Sin embargo, profundizar en los detalles de estos lenguajes y frameworks está más allá del alcance de este artículo.</p>
+<h3 id="servidores-de-bases-de-datos">4 Servidores de bases de datos</h3>
+<p>Cada aplicación web moderna aprovecha una o más bases de datos para almacenar información. Las bases de datos proporcionan formas de definir sus estructuras de datos, insertar nuevos datos, encontrar datos existentes, actualizar o eliminar datos existentes, realizar cálculos entre los datos, y más. En la mayoría de los casos, los servidores de aplicaciones web hablan directamente con uno, al igual que los servidores de trabajo. Además, cada servicio backend puede tener su propia base de datos que está aislada del resto de la aplicación.</p>
+<p>Aunque estoy evitando una inmersión profunda en tecnologías particulares para cada componente de la arquitectura, les estaría haciendo un flaco favor sin mencionar el siguiente nivel de detalle para las bases de datos: SQL y NoSQL.</p>
+<p><strong>SQL</strong>, significa “Structured Query Language” y se inventó en la década de 1970 para proporcionar una forma estándar de consulta de conjuntos de datos relacionales que era accesible para una amplia audiencia. Las bases de datos SQL almacenan datos en tablas que están vinculadas entre sí a través de ID comunes, generalmente enteros. Veamos un ejemplo simple de almacenamiento de información histórica de direcciones para los usuarios. Es posible que tengas dos tablas, usuarios y direcciones de usuario, vinculados entre sí por la identificación del usuario. La siguiente imagen muestra para una versión simplista. Las tablas están vinculadas porque la columna <em>user_id</em> en <em>user_addresses</em> es una “clave externa” a la columna <em>id</em> en la tabla de <em>users</em>.</p>
+<figure>
+<img src="assets/img/sql.png" alt="" /><figcaption>SQL</figcaption>
+</figure>
+<p>Si no sabes mucho sobre SQL, te recomiendo que consultes un tutorial como el que puedes encontrar en Khan Academy <a href="https://www.khanacademy.org/computing/computer-programming/sql">aquí</a>. Es omnipresente en el desarrollo web, por lo que al menos querrás saber los conceptos básicos para poder diseñar una aplicación de forma adecuada.</p>
+<p><strong>NoSQL</strong>, que significa “No SQL”, es un conjunto de tecnologías de bases de datos más reciente que ha surgido para manejar cantidades masivas de datos que pueden ser producidos por aplicaciones web de gran escala (la mayoría de las variantes de SQL no se escalan horizontalmente muy bien y solo pueden escalar verticalmente hasta un cierto punto). Si no sabes nada acerca de NoSQL, te recomiendo comenzar con algunas presentaciones de alto nivel como estas:</p>
+<ul>
+<li><a href="https://www.w3resource.com/mongodb/nosql.php">https://www.w3resource.com/mongodb/nosql.php</a></li>
+<li><a href="%5Bhttp://www.kdnuggets.com/2016/07/seven-steps-understanding-nosql-databases.html">http://www.kdnuggets.com/2016/07/seven-steps-understanding-nosql-databases.html</a></li>
+<li><a href="https://www.mongodb.com/presentations/back-to-basics-webinar-1-introduction-to-nosql">https://www.mongodb.com/presentations/back-to-basics-webinar-1-introduction-to-nosql</a></li>
+</ul>
+<p>También debes tener en cuenta que, en general, la industria se está alineando con SQL como una interfaz incluso para las bases de datos NoSQL, por lo que realmente deberías aprender SQL si no lo sabes. Casi no hay forma de evitarlo estos días.</p>
+<h3 id="servicio-de-caché">5 Servicio de caché</h3>
+<p>Un servicio de almacenamiento en caché proporciona un almacén de datos de clave/valor simple que permite guardar y buscar información en un tiempo cerca de O(1) (esta notación describe el tiempo en ejecutar un proceso en función de los datos. En este caso, el 1 indica que es un tiempo constante, independientemente de la cantidad de claves que haya el el conjunto) . Las aplicaciones generalmente aprovechan los servicios de almacenamiento en caché para guardar los resultados de cálculos costosos, de modo que es posible recuperar los resultados de la memoria caché en lugar de volver a calcularlos la próxima vez que se necesiten. Una aplicación puede almacenar en caché los resultados de una consulta de base de datos, llamadas a servicios externos, HTML para una URL determinada y muchas más. Aquí hay algunos ejemplos de aplicaciones del mundo real:</p>
+<ul>
+<li>Google almacena en caché los resultados de búsqueda para consultas de búsqueda comunes como “perro” o “Taylor Swift” en lugar de volver a computarlos cada vez</li>
+<li>Facebook guarda en caché gran parte de la información que ves cuando inicias sesión, como datos de publicaciones, amigos, etc. Lee <a href="https://medium.com/@shagun/scaling-memcache-at-facebook-1ba77d71c082">aquí</a> un artículo detallado sobre la tecnología de caché de Facebook.</li>
+<li>Storyblocks almacena en caché el resultado HTML de la representación de React del lado del servidor, resultados de búsqueda, resultados de escritura anticipada y más.</li>
+</ul>
+<p>Las dos tecnologías de servidor de caché más extendidas son <strong>Redis</strong> y <strong>Memcache</strong>.</p>
+<h3 id="colas-de-trabajos-y-servidores">6 Colas de trabajos y servidores</h3>
+<p>La mayoría de las aplicaciones web necesitan realizar un trabajo asincrónico entre bastidores que no está directamente asociado con la respuesta a la solicitud de un usuario. Por ejemplo, Google necesita rastrear e indexar todo Internet para poder devolver resultados de búsqueda. No hace esto cada vez que buscas. En cambio, rastrea la web de forma asincrónica, actualizando los índices de búsqueda a lo largo del camino.</p>
+<p>Si bien hay diferentes arquitecturas que permiten que se realice un trabajo asíncrono, la más ubicua es lo que llamaré la arquitectura de “cola de trabajos”. Consta de dos componentes: una cola de “trabajos” que deben ejecutarse y uno o más servidores de trabajos (a menudo llamados “trabajadores”) que ejecutan los trabajos en la cola.</p>
+<p>Las colas de trabajos almacenan una lista de trabajos que deben ejecutarse de forma asincrónica. Las más simples son las colas de primero en entrar, primero en salir (<strong>FIFO: First In First Out</strong>), aunque la mayoría de las aplicaciones terminan necesitando algún tipo de sistema de colas de prioridad. Cuando la aplicación necesita que se ejecute un trabajo, ya sea en algún tipo de programa regular o según lo determinen las acciones del usuario, simplemente agrega el trabajo adecuado a la cola.</p>
+<p>Storyblocks, por ejemplo, aprovecha una cola de trabajos para potenciar una gran parte del trabajo detrás de escena requerido para respaldar nuestros mercados. Ejecutamos trabajos para codificar vídeos y fotos, procesar CSV para el etiquetado de metadatos, agregar estadísticas de usuario, enviar correos electrónicos de restablecimiento de contraseña y más. Comenzamos con una cola FIFO simple aunque nos actualizamos a una cola de prioridad para garantizar que las operaciones urgentes como el envío de correos electrónicos de restablecimiento de contraseña se completaran lo antes posible.</p>
+<p>Los servidores de trabajos procesan trabajos. Realizan una consulta en la cola de trabajos para determinar si hay trabajo por hacer y, si los hay, extraen un trabajo de la cola y lo ejecutan. Los idiomas subyacentes y las opciones de frameworks son tan numerosos como para los servidores web, por lo que no profundizaré en los detalles de este artículo.</p>
+<p>Por ejemplo, en PHP se puede utilizar <a href="https://bernard.readthedocs.io/">Bernard</a> y se pueden implementar colas por ejemplo con <a href="https://beanstalkd.github.io/">beanstalkd</a> o <a href="https://www.rabbitmq.com/">RabbitMQ</a></p>
+<h3 id="servicio-de-búsqueda-de-texto-completo">7 Servicio de búsqueda de texto completo</h3>
+<p>Muchas, si no la mayoría, de las aplicaciones web admiten algún tipo de función de búsqueda en la que un usuario proporciona una entrada de texto (a menudo llamada “consulta o query”) y la aplicación devuelve los resultados más “relevantes”. La tecnología que alimenta esta funcionalidad se conoce como “<a href="https://en.wikipedia.org/wiki/Full-text_search">búsqueda de texto completo</a>” (<strong>full-text search</strong>), que aprovecha un <a href="https://en.wikipedia.org/wiki/Inverted_index">índice invertido</a> para buscar rápidamente documentos que contienen las palabras clave de consulta.</p>
+<figure>
+<img src="assets/img/fulltext.png" alt="" /><figcaption>Texto completo</figcaption>
+</figure>
+<p>El ejemplo muestra cómo tres títulos de documentos se convierten en un índice invertido para facilitar la búsqueda rápida desde una palabra clave específica a los documentos con esa palabra clave en el título. Ten en cuenta que las palabras comunes como “en”, “el”, “con”, etc. (llamadas palabras de finalización - <strong>stop words</strong>-) generalmente no se incluyen en un índice invertido.</p>
+<p>Si bien es posible realizar búsquedas de texto completo directamente desde algunas bases de datos (por ejemplo, MySQL admite la búsqueda de texto completo), es típico ejecutar un “servicio de búsqueda” separado que computa y almacena el índice invertido y proporciona una interfaz de consulta. La plataforma de búsqueda de texto completo más popular en la actualidad es <a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>, aunque hay otras opciones como <a href="http://sphinxsearch.com/">Sphinx</a> o <a href="http://lucene.apache.org/solr/features.html">Apache Solr</a>.</p>
+<h3 id="servicios">8 Servicios</h3>
+<p>Una vez que una aplicación alcanza cierta escala, es probable que existan ciertos “servicios” que se diseñen para ejecutarse como aplicaciones separadas. No están expuestos al mundo externo, pero la aplicación y otros servicios interactúan con ellos. Storyblocks, por ejemplo, tiene varios servicios operacionales y planificados:</p>
+<ul>
+<li>El servicio de cuenta almacena datos de usuario en todos nuestros sitios, lo que nos permite ofrecer oportunidades de venta cruzada y crear una experiencia de usuario más unificada.</li>
+<li>El servicio de contenido almacena metadatos para todo nuestro contenido de vídeo, audio e imagen. También proporciona interfaces para descargar el contenido y ver el historial de descargas.</li>
+<li>El servicio de pago proporciona una interfaz para facturar tarjetas de crédito de clientes.</li>
+<li>El servicio HTML → PDF proporciona una interfaz simple que acepta HTML y devuelve un documento PDF correspondiente.</li>
+</ul>
+<h3 id="datos">9 Datos</h3>
+<p>Hoy, las compañías viven y mueren en base en que saben aprovechar los datos. Casi todas las aplicaciones actualmente, una vez que alcanzan cierta escala, aprovechan un flujo de datos o tubería (<strong>data pipeline</strong>) para garantizar que los datos se puedan recopilar, almacenar y analizar. Una tubería típica tiene tres etapas principales:</p>
+<ol type="1">
+<li>La aplicación envía datos, generalmente eventos sobre las interacciones del usuario, a los datos “firehose”, que proporciona una interfaz de transmisión para ingerir y procesar los datos. A menudo, los datos brutos se transforman o aumentan y pasan a otro firehose. <a href="https://aws.amazon.com/es/kinesis/">AWS Kinesis</a> y <a href="https://kafka.apache.org/">Kafka</a> son las dos tecnologías más comunes para este propósito.</li>
+<li>Los datos brutos (<strong>raw data</strong>), así como los datos finales transformados/aumentados se guardan en el almacenamiento en la nube. AWS Kinesis proporciona una configuración llamada “firehose” que hace que guardar los datos sin formato en su almacenamiento en la nube (S3) sea extremadamente fácil de configurar.</li>
+<li>Los datos transformados / aumentados a menudo se cargan en un almacén de datos para su análisis. Usamos AWS Redshift, al igual que una porción grande y en crecimiento del mundo de las startups, aunque las compañías más grandes a menudo usan Oracle u otras tecnologías de almacenamiento patentadas. Si los conjuntos de datos son lo suficientemente grandes, puede ser necesaria una tecnología NoSQL MapReduce similar a <a href="https://hadoop.apache.org/">Hadoop</a> para el análisis.</li>
+</ol>
+<h3 id="almacenamiento-en-la-nube">10 Almacenamiento en la nube</h3>
+<p>“El almacenamiento en la nube es una forma simple y escalable de almacenar, acceder y compartir datos a través de Internet” según AWS. Puedes usarlo para almacenar y acceder más o menos a cualquier cosa que almacenes en un sistema de archivos local con los beneficios de poder interactuar con él a través de una API RESTful a través de HTTP. La oferta S3 de Amazon es de lejos el almacenamiento en la nube más popular disponible en la actualidad y en el que confiamos extensamente aquí en Storyblocks para almacenar nuestros activos de vídeo, foto y audio, nuestro CSS y Javascript, nuestros datos de eventos de usuario y mucho más.</p>
+<h3 id="cdn">11 CDN</h3>
+<p>CDN significa “Content Delivery Network” y la tecnología proporciona una forma de servir activos (<strong>assets</strong>) como HTML estático, CSS, Javascript e imágenes en la web mucho más rápido que servirlos desde un solo servidor de origen. Funciona distribuyendo el contenido a través de muchos servidores de todo el mundo para que los usuarios terminen descargando activos desde su servidor más cercano en lugar del servidor de origen. Por ejemplo, en la imagen siguiente, un usuario en España solicita una página web desde un sitio con servidores de origen en Nueva York, pero los activos estáticos para la página se cargan desde un servidor “<strong>edge</strong>” de CDN en Inglaterra, evitando muchas peticiones HTTP transatlánticas lentas.</p>
+<figure>
+<img src="assets/img/cdn.png" alt="" /><figcaption>CDN</figcaption>
+</figure>
+<h3 id="desde-el-punto-de-vista-de-la-seguridad">12 Desde el punto de vista de la seguridad</h3>
+<p>Todos estos servicios son potencialmente atacables por un hacker. Sin duda alguna es seguro que van a tener algún fallo de seguridad en algún momento de su ciclo de vida. Y en este diagrama no se habla de la infraestructura necesaria para implementar el ciclo <strong>CD/CI</strong>.</p>
+<p>Seguro que ahora ya comprendemos la necesidad de securizar todo nuestro proceso de puesta en producción.</p>
+<p><strong>Adaptado de los siguientes materiales</strong></p>
+<p><strong>Antonio LaTorre (atorre@fi.upm.es)</strong></p>
+<ul>
+<li><a href="http://laurel.datsi.fi.upm.es/_media/docencia/asignaturas/daw/pub/2015_2016/daw-tema1.1.pdf">http://laurel.datsi.fi.upm.es/_media/docencia/asignaturas/daw/pub/2015_2016/daw-tema1.1.pdf</a></li>
+<li><a href="http://laurel.datsi.fi.upm.es/_media/docencia/asignaturas/daw/pub/2015_2016/daw-tema1.2.pdf">http://laurel.datsi.fi.upm.es/_media/docencia/asignaturas/daw/pub/2015_2016/daw-tema1.2.pdf</a></li>
+</ul>
+<p><strong>Adobe. Aspectos básicos de las aplicaciones web</strong></p>
+<p><a href="https://helpx.adobe.com/es/dreamweaver/using/web-applications.html">https://helpx.adobe.com/es/dreamweaver/using/web-applications.html</a></p>
+<p><strong>App server, Web server: What’s the difference? | JavaWorld</strong></p>
+<p><a href="https://www.javaworld.com/article/2077354/learn-java/app-server-web-server-what-s-the-difference.html">https://www.javaworld.com/article/2077354/learn-java/app-server-web-server-what-s-the-difference.html</a></p>
+<p><strong>Otros materiales</strong></p>
+<p><a href="https://www.hongkiat.com/blog/static-site-generators/">https://www.hongkiat.com/blog/static-site-generators/</a></p>
+<p><a href="https://www.yeeply.com/blog/6-tipos-desarrollo-de-aplicaciones-web/">https://www.yeeply.com/blog/6-tipos-desarrollo-de-aplicaciones-web/</a></p>
+<p><a href="https://www.sitepoint.com/front-end-tooling-trends-2017/">https://www.sitepoint.com/front-end-tooling-trends-2017/</a></p>
+<p><a href="http://www.antevenio.com/blog/2017/06/los-6-mejores-gestores-de-contenido-cms/">http://www.antevenio.com/blog/2017/06/los-6-mejores-gestores-de-contenido-cms</a></p>
+<p><a href="http://glasscanopy.com/website-development-pros-cons-using-cms/">http://glasscanopy.com/website-development-pros-cons-using-cms/</a></p>
+<p><a href="https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/">https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/</a></p>
+<p><a href="https://engineering.videoblocks.com/web-architecture-101-a3224e126947">https://engineering.videoblocks.com/web-architecture-101-a3224e126947</a></p>
+<p><strong>Imagen de cabecera obtenida en:</strong></p>
+<p><a href="https://www.freepik.es/vectores/dibujos-animados">Vector de Dibujos animados creado por</a> <a href='https://www.freepik.es/vectores/tecnologia'>Vector de Tecnología creado por upklyak - www.freepik.es</a></p>
+	      	      </div>
+	    </div>
+	  </div>
+	 </div>
+</div>
+ <a href="#top" id='back-to-top-link'><i class='fa fa-angle-up'></i></a>
+<script src="https://cdn.statically.io/gh/victorponz/pandoc-html-template/master/assets/main.js"></script>
+
+</body>
+</html>
