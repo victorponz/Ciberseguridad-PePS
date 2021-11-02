@@ -259,6 +259,8 @@ En **Java**, [Spring MVC](http://spring.io/), [JSF](https://es.wikipedia.org/wik
 
 Fuente: https://www.jetbrains.com/lp/devecosystem-2020/java/
 
+En javascript, tenemos [node.js](https://nodejs.org/es/)  y el framework más utilizado es [Express](https://expressjs.com/).
+
 * **Bases de datos**: La gran mayoría de las webs necesitan guardar información. Las bases de datos son una parte esencial del desarrollo web. Entre ellas destacan, Oracle, MySQL, Microsoft SQL Server, PostgreSQL. En el informe[ DB-Engines Ranking - popularity ranking of database management systems](https://db-engines.com/en/ranking) podemos ver la lista completa.
   ![Ranking de bases de datos](/Ciberseguridad-PePS/assets/img/AWCG/image-20201019161232828.png)
 
