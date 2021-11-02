@@ -241,6 +241,8 @@ Dentro de las tecnologías de desarrollo, podemos distinguir entre:
 
 Fuente. [https://ashleynolan.co.uk/blog/frontend-tooling-survey-2019-results](https://ashleynolan.co.uk/blog/frontend-tooling-survey-2019-results)
 
+También es muy interesante consultar la web [https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/](https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/)
+
 * **Tecnologías de servidor**: Tecnologías que permiten implementar el comportamiento de la aplicación web en el servidor: lógica de negocio, generación de informes, compartir información entre usuarios, envío de correos, etc.
 
 En **PHP**, tenemos [CodeIgniter](https://codeigniter.com/),  [Symfony](https://symfony.com/) y [Laravel](https://laravel.com/).
