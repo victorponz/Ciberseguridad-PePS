@@ -259,7 +259,7 @@ En **Java**, [Spring MVC](http://spring.io/), [JSF](https://es.wikipedia.org/wik
 
 Fuente: https://www.jetbrains.com/lp/devecosystem-2020/java/
 
-En javascript, tenemos [node.js](https://nodejs.org/es/)  y el framework más utilizado es [Express](https://expressjs.com/).
+En **javascript**, tenemos [node.js](https://nodejs.org/es/)  y el framework más utilizado es [Express](https://expressjs.com/).
 
 * **Bases de datos**: La gran mayoría de las webs necesitan guardar información. Las bases de datos son una parte esencial del desarrollo web. Entre ellas destacan, Oracle, MySQL, Microsoft SQL Server, PostgreSQL. En el informe[ DB-Engines Ranking - popularity ranking of database management systems](https://db-engines.com/en/ranking) podemos ver la lista completa.
   ![Ranking de bases de datos](/Ciberseguridad-PePS/assets/img/AWCG/image-20201019161232828.png)
@@ -362,7 +362,7 @@ Como consecuencia del éxito del lenguaje de programación Java, el término ser
 
 ![Servidor de aplicaciones](/Ciberseguridad-PePS/assets/img/AWCG/image-20201019163053269.png)
 
-Fuente: https://www.jrebel.com/blog/2020-java-technology-report#application-server
+Fuente: [https://www.jrebel.com/blog/2020-java-technology-report#application-server](https://www.jrebel.com/blog/2020-java-technology-report#application-server)
 
 
 ## 6 Despliegue de Aplicaciones web
@@ -395,7 +395,7 @@ El diagrama de arriba es una representación bastante buena de la arquitectura e
 
 >Un usuario busca en Google "Strong Beautiful Fog And Sunbeams In The Forest". El primer resultado es [Storyblocks](https://www.storyblocks.com/stock-image/strong-beautiful-fog-and-sunbeams-in-the-forest-bxxg0dvxdzj6gt9ini), nuestro sitio principal de fotos y vectores. El usuario hace clic en el resultado que redirige su navegador a la página de detalles de la imagen. Entre bambalinas, el navegador del usuario envía una solicitud a un  servidor DNS para buscar cómo contactar a Storyblocks y luego envía la  solicitud.
 >
->La  solicitud llega a nuestro balanceador de carga (**load balancer**), que elige aleatoriamente uno de los 10 servidores web que tenemos para ejecutar el  sitio en ese momento para procesar la solicitud. El  servidor web busca información sobre la imagen de nuestro servicio de  almacenamiento en caché (**cahing service**) y recupera los datos restantes de la base de  datos. Observamos que el perfil de color de la imagen aún no se ha  calculado, por lo que enviamos un trabajo de "perfil de color" a nuestra  cola de trabajos (**job queue**), que nuestros servidores de trabajo procesarán de  forma asincrónica, actualizando la base de datos de forma adecuada con  los resultados.
+>La  solicitud llega a nuestro balanceador de carga (**load balancer**), que elige aleatoriamente uno de los 10 servidores web que tenemos para ejecutar el  sitio en ese momento para procesar la solicitud. El  servidor web busca información sobre la imagen de nuestro servicio de  almacenamiento en caché (**caching service**) y recupera los datos restantes de la base de  datos. Observamos que el perfil de color de la imagen aún no se ha  calculado, por lo que enviamos un trabajo de "perfil de color" a nuestra  cola de trabajos (**job queue**), que nuestros servidores de trabajo procesarán de  forma asincrónica, actualizando la base de datos de forma adecuada con  los resultados.
 >​    
 >A  continuación, intentamos encontrar fotos similares enviando una  solicitud a nuestro servicio de búsqueda de texto (**full text service**) completo utilizando el  título de la foto como entrada. El  usuario está registrado en Storyblocks como miembro, por lo que  buscamos la información de su cuenta en nuestro servicio de cuenta (**account service**). Finalmente, lanzamos un evento de visualización de página a nuestra firehose de datos (**data firehose**) para registrarlo en nuestro sistema de  almacenamiento en la nube (**cloud storage**) y finalmente cargarlo en nuestro almacén de  datos (**data warehouse**), que los analistas usan para ayudar a responder preguntas sobre el  negocio.
 >
