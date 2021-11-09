@@ -29,7 +29,7 @@ Clientes y servidores se comunican intercambiando mensajes individuales \(en con
 
 ![Capas HTTP](/Ciberseguridad-PePS/assets/img/HTTP/HTTP & layers.png)
 
-Diseñado a principios de la década de 1990, HTTP es un protocolo ampliable, que ha ido evolucionando con el tiempo. Es lo que se conoce como un protocolo de la capa de aplicación, y se transmite sobre el protocolo [TCP](#tcp), o el protocolo encriptado [TLS](#tls), aunque teóricamente podría usarse cualquier otro protocolo fiable. Gracias a que es un protocolo capaz de ampliarse, se usa no solo para transmitir documentos de hipertexto \(HTML\), si no que además, se usa para transmitir imágenes o vídeos, o enviar datos o contenido a los servidores, como en el caso de los formularios de datos. HTTP puede incluso ser utilizado para transmitir partes de documentos, y actualizar páginas Web en el acto.
+Diseñado a principios de la década de 1990, HTTP es un protocolo ampliable, que ha ido evolucionando con el tiempo. Es lo que se conoce como un protocolo de la capa de aplicación, y se transmite sobre el protocolo TCP, o el protocolo encriptado TLS, aunque teóricamente podría usarse cualquier otro protocolo fiable. Gracias a que es un protocolo capaz de ampliarse, se usa no solo para transmitir documentos de hipertexto \(HTML\), si no que además, se usa para transmitir imágenes o vídeos, o enviar datos o contenido a los servidores, como en el caso de los formularios de datos. HTTP puede incluso ser utilizado para transmitir partes de documentos, y actualizar páginas Web en el acto.
 
 **TCP**
 
@@ -37,7 +37,7 @@ TCP \(_Transmission Control Protocol_\) es un importante protocolo de red que pe
 
 **TLS**
 
-TLS \(_Tansport Layer Security_\), anteriormente conocido como Secure Sockets Layer \(SSL\), es un protocolo utilizado por las aplicaciones para comunicarse de forma segura a través de una red, evitando la manipulación indebida de correo electrónico, navegación web, mensajería y otros protocolos.
+TLS \(_Transport Layer Security_\), anteriormente conocido como Secure Sockets Layer \(SSL\), es un protocolo utilizado por las aplicaciones para comunicarse de forma segura a través de una red, evitando la manipulación indebida de correo electrónico, navegación web, mensajería y otros protocolos.
 
 Todos los navegadores modernos soportan el protocolo TLS, requiriendo que el servidor proporcione un certificado digital válido que confirme su identidad para establecer una conexión segura. Es posible que tanto el cliente como el servidor se autentiquen mutuamente, si ambas partes proporcionan sus propios certificados digitales individuales.
 
@@ -59,7 +59,7 @@ Su propósito es traducir la información del protocolo utilizado en una red ini
 
 La pasarela es normalmente un equipo informático configurado para dotar a las máquinas de una red de área local \(Local Area Network, LAN\) conectadas a él de un acceso hacia una red exterior, generalmente realizando para ello operaciones de traducción de direcciones de red \(Network Address Translation, NAT\). Esta capacidad de traducción de direcciones permite aplicar una técnica llamada "enmascaramiento de IP" \(IP Masquerading\), usada muy a menudo para dar acceso a Internet a los equipos de una LAN compartiendo una única conexión a Internet, y por tanto, una única dirección IP externa.
 
-La dirección IP de una pasarela a menudo se parece a 192.168.1.1 o 192.168.0.1 y utiliza algunos rangos predefinidos, 127.x.x.x, 10.x.x.x, 172.x.x.x, 192.x.x.x. Puedes averiguar la puerta de enlace de tu router ejecutando el comando ipconfig desde el cmd de Windows, o ejecutando la orden ip route desde la terminal macOS o GNU/Linux \(ver más\).
+La dirección IP de una pasarela a menudo se parece a 192.168.1.1 o 192.168.0.1 y utiliza algunos rangos predefinidos, 127.x.x.x, 10.x.x.x, 172.x.x.x, 192.x.x.x. Puedes averiguar la puerta de enlace de tu router ejecutando el comando ipconfig desde el cmd de Windows, o ejecutando la orden ip route desde la terminal macOS o GNU/Linux.
 
 Un equipo que haga de puerta de enlace en una red debe tener necesariamente dos tarjetas de red \(Network Interface Card, NIC\).
 
@@ -81,7 +81,7 @@ Una página Web, es un documento de hipertexto \(HTTP\), luego habrá partes del
 
 Al otro lado del canal de comunicación, está el servidor, el cual "sirve" los datos que ha pedido el cliente. Un servidor conceptualmente es una única entidad, aunque puede estar formado por varios elementos, que se reparten la carga de peticiones \(_load balancing_\), u otros programas, que gestionan otros computadores \(como caché, bases de datos, servidores de correo electrónico, ...\), y que generan parte o todo el documento que ha sido pedido.
 
-Un servidor no tiene que ser necesariamente un único equipo físico, aunque si que varios servidores pueden estar funcionando en un único computador. En el estándar HTTP/1.1 y `Host` , pueden incluso compartir la misma dirección de IP.
+Un servidor no tiene que ser necesariamente un único equipo físico, aunque si que varios servidores pueden estar funcionando en un único computador. En el estándar HTTP/1.1 varios `Hosts` , pueden incluso compartir la misma dirección de IP.
 
 **Proxies**
 
@@ -109,11 +109,11 @@ Presentadas en la versión HTTP/1.0, las cabeceras de HTTP, han hecho que este p
 
 **HTTP es un protocolo con sesiones, pero sin estados**
 
-HTTP es un protocolo sin estado, es decir: no guarda ningún dato entre dos peticiones en la misma sesión. Esto plantea la problemática, en caso de que los usuarios requieran interactuar con determinadas páginas Web de forma ordenada y coherente, por ejemplo, para el uso de "cestas de la compra" en páginas que utilizan en comercio electrónico. Pero, mientras HTTP ciertamente es un protocolo sin estado, el uso de HTTP cookies, sí permite guardar datos con respecto a la sesión de comunicación. Usando la capacidad de ampliación del protocolo HTTP, las cookies permiten crear un contexto común para cada sesión de comunicación.
+HTTP es un protocolo sin estado, es decir: no guarda ningún dato entre dos peticiones en la misma sesión. Esto plantea la problemática, en caso de que los usuarios requieran interactuar con determinadas páginas Web de forma ordenada y coherente, por ejemplo, para el uso de "inicios de sesión" en páginas que se utilizan en comercio electrónico. Pero, mientras HTTP ciertamente es un protocolo sin estado, el uso de HTTP cookies, sí permite guardar datos con respecto a la sesión de comunicación. Usando la capacidad de ampliación del protocolo HTTP, las cookies permiten crear un contexto común para cada sesión de comunicación.
 
 **HTTP y conexiones**
 
-Una conexión se gestiona al nivel de la capa de trasporte, y por tanto queda fuera del alcance del protocolo HTTP. Aún con este factor, HTTP no necesita que el protocolo que lo sustenta mantenga una conexión continua entre los participantes en la comunicación, solamente necesita que sea un protocolo fiable o que no pierda mensajes \(como mínimo, en todo caso, un protocolo que sea capaz de detectar que se ha perdido un mensaje y reporte un error\). De los dos protocolos más comunes en Internet, TCP es fiable, mientras que UDP, no lo es. Por lo tanto HTTP, se apoya en el uso del protocolo TPC, que está orientado a conexión, aunque una conexión continua no es necesaria siempre.
+Una conexión se gestiona al nivel de la capa de trasporte, y por tanto queda fuera del alcance del protocolo HTTP. Aún con este factor, HTTP no necesita que el protocolo que lo sustenta mantenga una conexión continua entre los participantes en la comunicación, solamente necesita que sea un protocolo fiable o que no pierda mensajes \(como mínimo, en todo caso, un protocolo que sea capaz de detectar que se ha perdido un mensaje y reporte un error\). De los dos protocolos más comunes en Internet, TCP es fiable, mientras que UDP, no lo es. Por lo tanto HTTP, se apoya en el uso del protocolo TCP, que está orientado a conexión, aunque una conexión continua no es necesaria siempre.
 
 **¿Qué se puede controlar con HTTP?**
 
@@ -175,7 +175,7 @@ Cuando el cliente quiere comunicarse con el servidor, tanto si es directamente c
    Accept-Language: es
 ```
 
-3.- Leer la respuesta enviada por el servidor
+3. Leer la respuesta enviada por el servidor
 
 ```bash
 HTTP/1.1 200 OK
@@ -190,7 +190,7 @@ Content-Type: text/html
 <!DOCTYPE html... \(here comes the 29769 bytes of the requested web page\)
 ```
 
-4.- Cierre o reuso de la conexión para futuras peticiones.
+4.- Cierre o reutilización de la conexión para futuras peticiones.
 
 
 
@@ -271,11 +271,12 @@ Las respuestas están formadas por los siguentes campos:
 <blockquote class='task'>
 <ol>
 <li>Abre en el Firefox una dirección web.</li>
-<li>Activa Firebug \(tecla F12\)</li>
+<li>Activa Firebug (tecla F12)</li>
 <li>Selecciona la opción Red</li>
 <li>Recarga la página y revisa las cabeceras</li>
 </ol>
 </blockquote>
+
 ![Firebug](/Ciberseguridad-PePS/assets/img/HTTP/cabecerashttp.png)
 
 ## Método HTTP
@@ -294,7 +295,7 @@ HTTP define 8 métodos \(algunas veces referido como "verbos"\) que indica la ac
 
   `GET /images/logo.png HTTP/1.1` obtiene un recurso llamado logo.png
 
-  Ejemplo con parámetros:
+  Ejemplo con parámetros que se envían en forma `clave=valor`  a partir del carácter `?`, concatenados con el carácter `&` y en su conjunto llamados `querystring`:
 
   `GET /index.php?page=main&ln=es`
 
@@ -320,9 +321,8 @@ HTTP define 8 métodos \(algunas veces referido como "verbos"\) que indica la ac
 
 Las principales cabeceras son:
 
-* `Host` El encabezado de solicitud  Host especifica el nombre de dominio del servidor \(para alojamiento virtual\) y \(opcional mente\) el número de puerto TCP en el que el servidor está escuchando. Si no se da ningún puerto, el puerto predeterminado para el servicio solicitado \(por ejemplo, "80" para una URL HTTP\) está implícito. En PHP se puede obtener con
-  `$_SERVER['HTTP_HOST'] or $_SERVER['SERVER_NAME']`
-
+* `Host` El encabezado de solicitud  Host especifica el nombre de dominio del servidor \(para alojamiento virtual\) y \(opcionalmente\) el número de puerto TCP en el que el servidor está escuchando. Si no se da ningún puerto, el puerto predeterminado para el servicio solicitado \(por ejemplo, "80" para una URL HTTP\) está implícito. En PHP se puede obtener con `$_SERVER['HTTP_HOST'] or $_SERVER['SERVER_NAME']`
+  
 * `User-Agent` Contiene una cadena característica que permite a los pares del protocolo de red identificar el tipo de aplicación, el sistema operativo, el proveedor de software o la versión de software del agente de usuario de software solicitante. Por ejemplo,
 
   `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:55.0) Gecko/20100101 Firefox/55.0`
@@ -331,7 +331,7 @@ Las principales cabeceras son:
 
   Podéis acceder a un listado exhaustivo en [https://developers.whatismybrowser.com/useragents/explore/](https://developers.whatismybrowser.com/useragents/explore/)
 
-  Se puede utilizar para comprobar la versión del navegador y redirigir a una página de descarga si este está obsoleto. También se puede usar para condicionar el comportamiento de la página dependiendo del tipo de `user-agent`. Ahora mismo hay una especificación de Google para eliminar esta cabecera.
+  Se puede utilizar para comprobar la versión del navegador y redirigir a una página de descarga si este está obsoleto. También se puede usar para condicionar el comportamiento de la página dependiendo del tipo de `user-agent`. 
 
 
 * `Cookie` Contiene HTTP cookies previamente enviadas por el servidor mediante la cabecera `Set-cookie`. En este manual se explica [cómo crear cookies en PHP](http://php.net/manual/es/features.cookies.php).
@@ -366,10 +366,6 @@ Las principales cabeceras son:
 
 Para una lista exhaustiva de todas las cabeceras, consultad [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
 
-La siguiente [presentación](https://speakerdeck.com/triblondon/headers-for-hackers), en inglés, explica las headers desde el punto de vista de los hackers
-
-<script async class="speakerdeck-embed" data-id="3faf91d6f1574cb3bcaf058f1f75b54a" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-
 ### Principales códigos de estado \(`status codes`\)
 
 Los códigos de estado de respuesta HTTP indican si se ha completado satisfactoriamente una solicitud HTTP específica. Las respuestas se agrupan en cinco clases: respuestas informativas, respuestas satisfactorias, redirecciones, errores de los clientes y errores de los servidores.
@@ -392,7 +388,7 @@ Podéis acceder a una lista completa en este [artículo](https://developer.mozil
 
 Hasta ahora hemos hablado del protocolo `HTTP/1`.
 
-Sin embargo, hoy en día se está empezando a utilizar `HTTP/2` para resolver algunos de los inconvenientes del protocolo anterior. `HTTP/2` se basa en [SPDY](https://www.chromium.org/spdy/spdy-whitepaper), un protocolo de Google para mejora la velocidad,
+Sin embargo, hoy en día se utiliza `HTTP/2` para resolver algunos de los inconvenientes del protocolo anterior. `HTTP/2` se basa en [SPDY](https://www.chromium.org/spdy/spdy-whitepaper), un protocolo de Google para mejora la velocidad,
 
 `HTTP/2` hace que nuestras apps sean más veloces, más simples y más sólidas —una combinación extraña— al permitirnos deshacernos de los numerosos métodos alternativos de `HTTP/1.1` aplicados anteriormente dentro de nuestras apps y abordar estas inquietudes dentro de la capa de transporte. Mejor aún, también abre un abanico de oportunidades totalmente nuevas para optimizar nuestras apps y mejorar el rendimiento.
 
@@ -416,10 +412,7 @@ Además los servidores podrán ser proactivos: reconocerán qué tipo de cliente
 
 En la siguiente [página oficial de HTTP/2](https://http2.github.io/faq/#what-are-the-key-differences-to-http1x) podéis consultar las ventajas sobre `HTTP/1`.
 
-Podéis ver un ejemplo de esta mejora en las siguiente páginas
-
-* [https://http2.akamai.com/demo](https://http2.akamai.com/demo)
-* [https://www.cloudflare.com/website-optimization/http2/](https://www.cloudflare.com/website-optimization/http2/)
+Podéis ver un ejemplo de esta mejora en la siguiente página [https://http2.akamai.com/demo](https://http2.akamai.com/demo)
 
 ## Desde el punto de vista de la ciberseguridad
 
