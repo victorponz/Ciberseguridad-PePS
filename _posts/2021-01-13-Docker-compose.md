@@ -5,18 +5,31 @@ layout: post
 categories: tema2 Docker
 title: Docker Compose
 conToc: true
+subtitle: Primeros pasos
+author:
+- Víctor Ponz
+lang: es
+titlepage: true
+titlepage-background: assets/img/despliegue.png
+page-background: assets/img/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 2. Docker Compose
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 ## ¿Qué es?
 
@@ -130,7 +143,7 @@ Creating my_wordpress_wordpress_1
 
 En este punto, WordPress debería estar ejecutándose en el puerto `8000` de su Docker host [http:localhost:8000](http:localhost:8000), y puedes completar la "famosa instalación de cinco minutos" como administrador de WordPress.
 
-![img](https://docs.docker.com/compose/images/wordpress-lang.png)
+![img](https://es.wplang.org/wp-content/uploads/sites/3/2014/08/Install-WordPress-4-in-your-language.png)
 
 ## Práctica Django
 
