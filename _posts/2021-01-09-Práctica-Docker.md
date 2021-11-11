@@ -3,9 +3,8 @@ typora-copy-images-to: ../assets/img/docker/
 typora-root-url: ../../
 layout: post
 categories: tema2 Docker
-title: Docker
+title: Práctica Docker
 conToc: true
-subtitle: Práctica Docker
 author:
 - Víctor Ponz
 lang: es
