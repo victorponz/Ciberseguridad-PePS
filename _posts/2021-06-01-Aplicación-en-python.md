@@ -3,50 +3,53 @@ typora-copy-images-to: ../assets/img/AppPhyton/
 typora-root-url: ../../
 layout: post
 categories: tema2 Aplicación en Python
-title: Aplicación en python
+title: Aplicación en Python
 conToc: true
+subtitle: Usando docker-compose
+author:
+- Víctor Ponz
+lang: es
+titlepage: true
+titlepage-background: assets/img/despliegue.png
+page-background: assets/img/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 2. Aplicación en Python
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 ## Qué aprenderemos
 
-* a usar docker
+* a usar `docker`
 
-* a usar docker-compose para crear una aplicación basada en microservicios
+* a usar `docker-compose` para crear una aplicación basada en microservicios
 
-* a crear tags para cada nueva característica en git y a hacer un mezclado con la rama principal
+* a crear `tags` para cada nueva característica en *git* y a hacer un mezclado con la rama principal
 
-  práctica
 
 ## Hello World!
 
-**PARECE QUE LA CONSELLERIA CORTA LA COMUNICACIÓN PARA INSTALAR LOS PAQUETES DE PYTHON**
-
-<blockquote class='task'>
-
 Para empezar, crea un nuevo repositorio en GitHub y clónalo en local
-
-</blockquote>
 
 Para esta práctica hemos de crear la siguiente estructura:
 
 ![Estructura ficheros](/Ciberseguridad-PePS/assets/img/AppPhyton/image-20210616160236314.png)
 
-<blockquote class='task'>
-
 Crea esta estructura de directorio y súbela a git
 
-</blockquote>
 Creamos la primera versión de una pequeña aplicación que, de momento, va a mostrar el famoso **"Hello World!"**. Este es el contenido del `Dockerfile`:
 
 ```dockerfile
@@ -77,11 +80,10 @@ Este programa :
 * <span style='color:red'>(4) </span> Crea la ruta `/`  asociada a una URL y el método `hello_word` que responde a dicha ruta
 * <span style='color:red'>(9) </span>Ejecuta el servidor web de python
 
-<blockquote class='info'>
-Según la <a href='https://es.wikipedia.org/wiki/Flask'> Wikipedia</a><br>
-<strong>Flask</strong> es un <a href='https://es.wikipedia.org/wiki/Framework'>framework</a> miminalista escrito en <a href='https://es.wikipedia.org/wiki/Python'>Python</a> que permite crear aplicaciones web rápidamente y con un mínimo número de líneas de código.
+> Según la <a href='https://es.wikipedia.org/wiki/Flask'> Wikipedia</a><br>
+<strong>Flask</strong> es un <a href='https://es.wikipedia.org/wiki/Framework'>framework</a> minimalista escrito en <a href='https://es.wikipedia.org/wiki/Python'>Python</a> que permite crear aplicaciones web rápidamente y con un mínimo número de líneas de código.
 
-</blockquote>
+
 
 
 Vamos a generar la imagen y a correr el contenedor:
@@ -91,42 +93,39 @@ docker build -t identidock .
 docker run -d -p 5000:5000 identidock
 ```
 
-Una vez iniciado el contenedor, usaremos el comando curl para realizar una petición:
+Una vez iniciado el contenedor, usaremos el comando `curl` para realizar una petición:
 
-```
+```bash
 curl localhost:5000
 ```
 
 que nos devuelve:
 
-```
+```bash
 Hello World!
 ```
 
 El problema con este tipo de flujo de trabajo es que cada vez que se hace una modificación en el código se debe parar y reiniciar el contenedor. Se puede mejorar haciendo un *bind mount* del directorio local `app` de tal forma que quedaría de esta forma:
 
-```
+```bash
 docker run -d -p 5000:5000 -v "$(pwd)"/app:/app identidock
 ```
 
-Este argumento `-v $(pwd)/app:/app` hace que la carpeta `app` del host pase al contenedor ya montada en el directorio `/app` del mismo.Adrian Mouat
+Este argumento `-v $(pwd)/app:/app` hace que la carpeta `app` del host pase al contenedor ya montada en el directorio `/app` del mismo.
 
 Pero antes de continuar debemos haber parado el contenedor creado anteriormente. Una forma fácil es usar el contenedor que devuelve el comando `$(docker ps -lq)` que mediante el flag `l` lista sólo el último lanzado.
 
-```
+```bash
 docker stop $(docker ps -lq)
 docker rm $(docker ps -lq)
 ```
 
-<blockquote class='task'>
-
 Si todo ha ido bien, actualiza tu repositorio remoto
 
-</blockquote>
 
 ## Identicons
 
-Vamos a convertir la aplicación anterior e1n una aplicación web que, dado un nombre de usuario, genere un [identicon](http://identicon.net/)
+Vamos a convertir la aplicación anterior en una aplicación web que, dado un nombre de usuario, genere un [identicon](http://identicon.net/)
 
 El primer caso es modificar nuestra aplicación para que muestre un formulario en el que se pueda escribir. 
 
@@ -215,25 +214,25 @@ Ya podemos instalar la imagen para lanzar el contenedor de **dmonster** y enlaza
 
 Primero lo haremos mediante comandos y luego usaremos `docker-compose`.
 
-```
+```bash
 docker run -d --name dnmonster amouat/dnmonster:1.0
 ```
 
 Ahora iniciamos el contenedor de la aplicación casi de la misma manera que en anteriormente, excepto que agregamos el argumento `--link dnmonster: dnmonster` para conectar los contenedores. Esta es la magia que hace que la URL [http://dnmonster: 8080](http://dnmonster: 8080) sea direccionable en el código Python
 
-```
+```bash
 docker run -d -p 5000:5000 --link dnmonster:dnmonster identidock
 ```
 
 Si ahora abres http://localhost:5000 deberías ver una página como la siguiente:
 
-![image-20210617091803206](/Ciberseguridad-PePS/assets/img/AppPhyton/image-20210617091803206.png)
+![dnmonsters](/Ciberseguridad-PePS/assets/img/AppPhyton/image-20210617091803206.png)
 
 No parece mucho, pero acabamos de generar nuestro primer icono de identificación. 
 
 El botón de enviar todavía está roto, por lo que en realidad no estamos usando ninguna entrada del usuario, pero lo arreglaremos en un minuto. 
 
-Primero, hagamos un archivo **Compose** (para que no tengamos que recordar todos esos comandos de ejecución. 
+Primero, hagamos un archivo `Compose` (para que no tengamos que recordar todos esos comandos de ejecución).
 
 Creamos `docker-compose.yml`:
 
@@ -253,9 +252,9 @@ dnmonster:
 
 ```
 
-Mediante Compose definimos los distintos servicios que componen nuestra aplicación de tal forma que no hemos de estar parando los contenedores uno a uno.
+Mediante `Compose` definimos los distintos servicios que componen nuestra aplicación de tal forma que no hemos de estar parando los contenedores uno a uno.
 
-Además define que el contenedor `identidock` depende de `dnmonster` por lo que primero lanza este contenedor 
+Además define que el contenedor `identidock` depende de `dnmonster` por lo que primero lanza este contenedor.
 
 Paramos el contenedor y hacemos `docker-compose up -d`
 
@@ -303,9 +302,9 @@ if __name__ == '__main__':
 
 Hasta aquí todo bien. Pero hay una cosa horrible sobre esta aplicación en este momento (aparte de los monstruos): cada vez que se solicita un monstruo, hacemos una llamada computacionalmente costosa al servicio `dnmonster`. No hay necesidad de esto; el objetivo de un icono de identificación es que la imagen sigue siendo la misma para una entrada determinada, por lo que deberíamos almacenar en **caché** el resultado.
 
-Usaremos `Redis` para lograrlo. Redis es un almacén de datos de clave-valor en memoria. Es excelente para tareas como esta en las que no hay una gran cantidad de información y no nos preocupa la durabilidad (si una entrada se pierde o se elimina, podemos simplemente regenerar la imagen).
+Usaremos `Redis` para lograrlo. `Redis` es un almacén de datos de clave-valor en memoria. Es excelente para tareas como esta en las que no hay una gran cantidad de información y no nos preocupa la durabilidad (si una entrada se pierde o se elimina, podemos simplemente regenerar la imagen).
 
-Podríamos agregar el servidor Redis a nuestro contenedor identidock, pero es más fácil y más idiomático crear un contenedor nuevo. De esta manera, podemos aprovechar la imagen oficial de Redis que ya está disponible en Docker Hub y evitar la molestia adicional de ejecutar varios procesos en un contenedor.
+Podríamos agregar el servidor `Redis` a nuestro contenedor identidock, pero es más fácil y más idiomático crear un contenedor nuevo. De esta manera, podemos aprovechar la imagen oficial de Redis que ya está disponible en Docker Hub y evitar la molestia adicional de ejecutar varios procesos en un contenedor.
 
 ```yaml
 identidock:
@@ -370,9 +369,9 @@ if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0')
 ```
 
-Ahora sólo nos queda parar el contedor, construirlo y levantarlo
+Ahora sólo nos queda parar el contenedor, construirlo y levantarlo
 
-```
+```bash
 docker-compose stop
 docker-compose build
 docker-compose up -d
