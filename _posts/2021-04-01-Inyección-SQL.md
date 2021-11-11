@@ -5,18 +5,30 @@ layout: post
 categories: tema4 SQL Injection
 title: SQL Injection
 conToc: true
+author: Víctor Ponz
+conToc: true
+titlepage: true
+titlepage-background: assets/img/riesgos.png
+# No funciona el background :(
+apage-background:  assets/img/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 4. SQL Injection
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 
 ## ¿Qué es?
@@ -29,9 +41,7 @@ Según la [Wikipedia](https://es.wikipedia.org/wiki/Inyecci%C3%B3n_SQL)
 >
 > Se conoce como Inyección SQL, indistintamente, al tipo de vulnerabilidad, al método de infiltración, al hecho de incrustar código SQL intruso y a la porción de código incrustado.
 
-<img src="https://portswigger.net/web-security/images/sql-injection.svg" alt="SQL injection" style="zoom:33%;" />
-
-
+![SQL Inyection](/Ciberseguridad-PePS/assets/img/injection/image-20211111190700857.png)
 
 ### Obtener datos ocultos
 
@@ -96,15 +106,17 @@ Como 1=1 es siempre cierto, se obtienen TODOS los productos de la página
 >
 > Para cada uno de ellos debéis incluir una captura de pantalla como que lo habéis logrado. Por ejemplo, el siguiente muestra que lo he resuelto
 >
-> ![image-20210409203241519](/Ciberseguridad-PePS/assets/img/injection/image-20210409203241519.png)
+> ![Laboratorio 1](/Ciberseguridad-PePS/assets/img/injection/image-20210409203241519.png)
 >
-> **LAB 1** [Vulnerabilidad de inyección SQL en la cláusula WHERE que permite la recuperación de datos ocultos](https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data)
+> **LAB 1**
+>
+> [Vulnerabilidad de inyección SQL en la cláusula WHERE que permite la recuperación de datos ocultos](https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data)
 
 ### Subvertir la funcionalidad de la página
 
-Ahora consideramos una aplicación con un formulario de logeo típico
+Ahora consideramos una aplicación con un formulario de login típico
 
-![image-20210409181954772](/Ciberseguridad-PePS/assets/img/injection/image-20210409181954772.png)
+![Formulario de login](/Ciberseguridad-PePS/assets/img/injection/image-20210409181954772.png)
 
 Cuando un usuario introduce `Víctor` y password `hola`  se genera la siguiente consulta:
 
@@ -336,7 +348,7 @@ statement.setString(1, input);
 ResultSet resultSet = statement.executeQuery(); 
 ```
 
-Las consultas parametrizadas se pueden usar para cualquier situación en la que la entrada que no es de confianza aparece como datos dentro de la consulta, incluida la cláusula WHERE y los valores en una instrucción INSERT o UPDATE. No se pueden usar para manejar entradas que no sean de confianza en otras partes de la consulta, como nombres de tablas o columnas, o la cláusula ORDER BY. La funcionalidad de la aplicación que coloca datos que no son de confianza en esas partes de la consulta deberá adoptar un enfoque diferente, como la inclusión de valores de entrada permitidos en la lista blanca o el uso de una lógica diferente para ofrecer el comportamiento requerido.
+Las consultas parametrizadas se pueden usar para cualquier situación en la que la entrada que no es de confianza aparece como datos dentro de la consulta, incluida la cláusula `WHERE` y los valores en una instrucción `INSERT` o `UPDATE`. No se pueden usar para manejar entradas que no sean de confianza en otras partes de la consulta, como nombres de tablas o columnas, o la cláusula `ORDER BY`. La funcionalidad de la aplicación que coloca datos que no son de confianza en esas partes de la consulta deberá adoptar un enfoque diferente, como la inclusión de valores de entrada permitidos en la lista blanca o el uso de una lógica diferente para ofrecer el comportamiento requerido.
 
 Para que una consulta parametrizada sea eficaz en la prevención de la inyección de SQL, la cadena que se utiliza en la consulta siempre debe ser una constante codificada de forma rígida y nunca debe contener datos variables de ningún origen. No se sienta tentado a decidir caso por caso si un elemento de datos es confiable y continúe usando la concatenación de cadenas dentro de la consulta para los casos que se consideran seguros. Es muy fácil cometer errores sobre el posible origen de los datos o que los cambios en otro código infrinjan las suposiciones sobre qué datos están contaminados.
 
