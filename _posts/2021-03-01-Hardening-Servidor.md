@@ -4,7 +4,7 @@ typora-root-url: ../../
 layout: post
 categories: tema3 Seguridad Web
 title: Hardening del servidor
-subtitle: Programación con Python
+author: Víctor Ponz
 conToc: true
 titlepage: true
 titlepage-background: assets/img/seguridad.png
@@ -14,7 +14,7 @@ urlcolor: CornflowerBlue
 linkcolor: black
 toc-own-page: true
 toc-title: Contenidos
-header-left: UD 3. Hardening del servido
+header-left: UD 3. Hardening del servidor
 header-right: Ciberseguridad
 footer-left: IES El Caminàs
 footer-right: \thepage/\pageref{LastPage}
