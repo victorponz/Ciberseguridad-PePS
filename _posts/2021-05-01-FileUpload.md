@@ -5,18 +5,30 @@ layout: post
 categories: tema4 File Upload
 title: File Upload
 conToc: false
+author: Víctor Ponz
+conToc: true
+titlepage: true
+titlepage-background: assets/img/riesgos.png
+# No funciona el background :(
+apage-background:  assets/img/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 4. File Upload
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 
 ## Práctica - FileUpload
