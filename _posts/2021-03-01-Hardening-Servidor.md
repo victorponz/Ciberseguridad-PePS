@@ -55,7 +55,7 @@ Por ejemplo vamos a eliminar el módulo `mod_autoindex`. Si no sabes qué funci�
 
 Un ejemplo se ve al utilizar un Google Dork: `inurl: indexof` que devuelve páginas que están alojados en sitios donde se han dejado configuraciones por defecto en el servidor.
 
-![image-20210323194227850](/Ciberseguridad-PePS/assets/img/hardening/image-20210323194227850.png)
+![inurl: indexof](/Ciberseguridad-PePS/assets/img/hardening/image-20210323194227850.png)
 
 Otra opción que debemos suprimir es que **apache** no devuelva el tipo de servidor (o al menos la versión). De esta forma no damos pistas al atacante de la versión y/o tipo de servidor.
 
@@ -74,7 +74,7 @@ Content-Type: text/html; charset=UTF-8
 
 También se puede comprobar en las cabeceras de respuesta mediante el navegador
 
-![image-20210315090439867](/Ciberseguridad-PePS/assets/img/hardening/image-20210315090439867.png)
+![Cabeceras](/Ciberseguridad-PePS/assets/img/hardening/image-20210315090439867.png)
 
 Para evitar que muestre la signatura debemos modificar la configuración de apache en el archivo /`etc/apache2/apache2.conf` y añadir
 `ServerTokens` `ProductOnly`, de esta forma sólo pueden consultar la versión los módulos de apache y con `ServerSignature` `Off`, eliminamos completamente la signatura
@@ -187,9 +187,9 @@ Para comprobar que está en funcionamiento, copia el archivo `post.php` realizad
 
 Si introducimos una entrada en el formulario que está bloqueada nos saltará un `status code 403`
 
-![image-20210322185726779](/Ciberseguridad-PePS/assets/img/hardening/image-20210322185726779.png)
+![Intento de XSS](/Ciberseguridad-PePS/assets/img/hardening/image-20210322185726779.png)
 
-![image-20210322185933273](/Ciberseguridad-PePS/assets/img/hardening/image-20210322185933273.png)
+![WAF en acción](/Ciberseguridad-PePS/assets/img/hardening/image-20210322185933273.png)
 
 
 
@@ -391,8 +391,8 @@ De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener 
 
 ## nginx y modsecurity
 
- <blockquote class='reto'>
-<i class='fa fa-check'> </i><strong> RETO</strong> </blockquote>
+ **RETO**
+
 
 > Instala nginx y realiza las mismas configuraciones que hemos llevado a cabo en Apache
 >
