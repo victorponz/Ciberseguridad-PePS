@@ -45,14 +45,14 @@ Los pasos son los siguientes:
 
 3. Edítalo y cambia la IP por la de tu equipo
 
-![image-20210504175459944](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504175459944.png)
+![Reverse shell](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504175459944.png)
 
 
 
 4. Ahora sube el archivo mediante el menú `Upload`, fijándote en la url que genera.
    
 
-   ![image-20210504175752547](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504175752547.png)
+   ![File upload](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504175752547.png)
 
 5. Ya sólo nos queda ejecutar en el ordenador del atacante el comando `netcat`
 
@@ -62,5 +62,5 @@ Los pasos son los siguientes:
 
 6. Y quedarnos a la espera de una conexión entrante desde el ordenador de la víctima al visitar la url del punto 4.
 
-   ![image-20210504180028030](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504180028030.png) 
+   ![Conexión realizada](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504180028030.png) 
 
