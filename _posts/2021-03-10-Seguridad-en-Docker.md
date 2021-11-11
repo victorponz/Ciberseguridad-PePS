@@ -33,9 +33,8 @@ pandoc-latex-environment:
 
 ## Seguridad host
 
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 1</strong></blockquote>
-<blockquote>
+**Práctica 1**
+
 Realiza los comandos y configuraciones del documento.</blockquote>
 Como comparte el mismo kernel de la máquina host, todo el software del sistema debe estar actualizado a la máxima versión estable.
 
@@ -188,12 +187,9 @@ ENTRYPOINT ./whoami
 
 El concepto `pot` es de **Kubernetes** que son un grupo de contenedores que comparten en el mismo espacio de puertos
 
-<blockquote class='reto'>
-<i class='fa fa-check'> </i><strong> RETO</strong>
+**RETO**
 
-<blockquote>
-Haz un docker file en GitHub y conéctalo con Docker Hub para que genere el build cada vez que se modifica.</blockquote>
-
+>Haz un docker file en GitHub y conéctalo con Docker Hub para que genere el build cada vez que se modifica.
 
 
 ### Escaneo pasivo de vulnerabilidades
@@ -204,10 +200,8 @@ Una de ellas es  `trivy`. Por ejemplo
 
 `trivy image python:3.4-alpine`
 
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 2</strong>
+**Práctica 2**
 
-<blockquote>
-Realiza un testeo de una imagen de Wordpress (no uses tags recientes, pues no tendrán tantas vulnerabilidades)</blockquote>
+> Realiza un testeo de una imagen de Wordpress (no uses tags recientes, pues no tendrán tantas vulnerabilidades)
 
 Más información en [Docker Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html)
