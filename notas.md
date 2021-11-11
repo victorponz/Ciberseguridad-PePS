@@ -59,7 +59,9 @@ pandoc _posts/2021-01-31-Validación-de-entradas.md --pdf-engine=xelatex --resou
 pandoc _posts/2021-01-14-Google-cloud.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-01-14-Google-cloud.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
 pandoc _posts/2021-01-31-Validación-de-entradas.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-01-31-Validación-de-entradas.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
  pandoc _posts/2021-03-01-Hardening-Servidor.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-03-01-Hardening-Servidor.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
-pandoc _posts/2021-03-10-Seguridad-en-Docker.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-03-10-Seguridad-en-Docker.pdf
+
+pandoc _posts/2021-03-10-Seguridad-en-Docker.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-03-10-Seguridad-en-Docker.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
+
 pandoc _posts/2021-03-01-Hardening-Servidor.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-03-01-Hardening-Servidor.pdf
 pandoc _posts/2021-04-01-Inyección-SQL.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-04-01-Inyección-SQL.pdf
 pandoc _posts/2021-05-01-FileUpload.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-05-01-FileUpload.pdf
