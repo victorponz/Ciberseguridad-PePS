@@ -5,23 +5,36 @@ layout: post
 categories: tema3 Seguridad Web
 title: Autenticación
 conToc: true
+author:
+- Víctor Ponz
+lang: es
+titlepage: true
+titlepage-background: assets/img/seguridad.png
+page-background: assets/img/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 3. Autenticación
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 
-## Autenticación HTTP
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 1</strong> Realiza y documenta este punto</blockquote>
+# Autenticación HTTP
+> **Práctica 1**
+> Realiza y documenta este punto<
+
 
 También merece la pena conocer el tipo de autenticación HTTP que provee de un mecanismo sencillo para acceder a recursos protegidos por usuario y contraseña.
 
@@ -70,20 +83,20 @@ Es muy fácil, decodificar `base64`. Por ejemplo en [https://www.base64decode.or
 
 Este método se puede emplear para una intranet o para una parte de la aplicación en la que sea necesario iniciar sesión, añadiendo una capa más de seguridad, porque se deben realizar dos autorizaciones: la primera basada en `HTTP` y la segunda, como vimos anteriormente, mediante **sesiones**
 
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 2</strong><br> Configura apache para que al  directorio <code>/protegido</code> sólo se pueda acceder mediante un usuario y contraseña siguiendo las instrucciones detalladas en <a href='https://cwiki.apache.org/confluence/display/HTTPD/PasswordBasicAuth'>Password protect a directory using basic authentication</a>.<br>
+
+> **Práctica 2**
+Configura apache para que al  directorio <code>/protegido</code> sólo se pueda acceder mediante un usuario y contraseña siguiendo las instrucciones detalladas en <a href='https://cwiki.apache.org/confluence/display/HTTPD/PasswordBasicAuth'>Password protect a directory using basic authentication</a>.
 Documenta la configuración e instalación con una entrada en tu blog
-</blockquote>
+
 ## OAuth0
 
-OAuth es un estándar para permitir delegar la autenticación a terceras partes. Lo usamos en servicios del día a día cuando, por ejemplo hacemos login en un servicio con las credenciales de Google, como muestra la imagen siguiente.
+OAuth es un estándar para permitir delegar la autenticación a terceras partes. Lo usamos en servicios del día a día cuando, por ejemplo hacemos login en un servicio con las credenciales de Google, como muestra la imagen siguiente. 
 
-![OAuth0](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221173937946.png)
+![oauth](/Ciberseguridad-PePS/assets/img/autenticacion/image-20211111165156421.png)
 
 
-
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 3</strong>Realiza este punto. Como resultado debes realizar una entrada de blog y un repositorio en GitHub</blockquote>
+> **Práctica 3**
+Realiza este punto. Como resultado debes realizar una entrada de blog y un repositorio en GitHub
 
 El flujo de autorización es el siguiente: Nuestra aplicación  redirecciona a los usuarios para pedir permiso y acceder a parte de su  información. Si los usuarios aceptan, este servicio nos devuelve un  token de acceso que podemos utilizar para consumir la información  protegida de nuestros usuarios.
 
@@ -99,15 +112,15 @@ Al registrar una nueva aplicación, normalmente registra información básica co
 
 **Redirigir URI**
 
-![image-20210221180117411](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221180117411.png)
+![Crear una aplicación](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221180117411.png)
 
 Escribid http://localhost:8080/oauth2callback.php en el apartado URI. Esta es la página a la que rediccionará Google cuando haya finalizado el proceso de login.
 
-![image-20210221183222810](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221183222810.png)
+![ID de cliente](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221183222810.png)
 
 Cuando crees el Cliente, anota el ID de Cliente y el secreto
 
-![image-20210221181303485](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221181303485.png)
+![Client Secret](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221181303485.png)
 
 
 
@@ -119,25 +132,25 @@ Ahora ya puedes descargarte este proyecto de [GitHub](https://github.com/victorp
 >
 > Nunca subas un fichero a GitHub con las credenciales reales!
 
-Ya solo nos resta **habilitar el API de Drive** desde este enlace https://console.developers.google.com/apis/api/drive.googleapis.com
+Ya solo nos resta **habilitar el API de Drive** desde este enlace [https://console.developers.google.com/apis/api/drive.googleapis.com](https://console.developers.google.com/apis/api/drive.googleapis.com)
 
-![image-20210221200453864](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221200453864.png)
+![Google Drive API](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221200453864.png)
 
 
 
 En el directorio donde has descargado el repositorio ejecuta
 
-```
+```bash
 php -S localhost:8080
 ```
 
 Y te pedirá tus credenciales de Google para continuar.
 
-![image-20210221201035355](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221201035355.png)
+![Credenciales](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221201035355.png)
 
 Si todo ha ido bien, verás un listado con todos tus documentos de Drive
 
-![image-20210221201235342](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221201235342.png)
+![Documentos de Drive](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210221201235342.png)
 
 **Mas información en:**
 
@@ -165,7 +178,7 @@ Un ejemplo real es el uso de los distintos servicios de Google ya que una vez he
 | Reduce la carga de memorizar diversas contraseñas         | Al fallar SSO se pierde acceso a todos los sistemas relacionados |
 | Fácil de implementar y conectar a nuevas fuentes de datos | Suplantación de identidades en los accesos externos de los usuarios |
 
-*Fuente*: https://www.chakray.com/es/que-es-el-single-sign-on-sso-definicion-caracteristicas-y-ventajas/
+*Fuente*: [https://www.chakray.com/es/que-es-el-single-sign-on-sso-definicion-caracteristicas-y-ventajas/](https://www.chakray.com/es/que-es-el-single-sign-on-sso-definicion-caracteristicas-y-ventajas/)
 
 ## Contraseñas de un sólo uso (One-time password)
 
@@ -266,13 +279,13 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 que decodificado se convierte el siguiente json:
 
-![image-20210222115158023](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210222115158023.png)
+![JSON Web Token](/Ciberseguridad-PePS/assets/img/autenticacion/image-20210222115158023.png)
 
 
 
 **IMPLEMENTACIÓN EN PHP**
 
-https://coderwall.com/p/8wrxfw/goodbye-php-sessions-hello-json-web-tokens
+[https://coderwall.com/p/8wrxfw/goodbye-php-sessions-hello-json-web-tokens](https://coderwall.com/p/8wrxfw/goodbye-php-sessions-hello-json-web-tokens)
 
 ## Autenticación en dos factores
 
@@ -404,7 +417,7 @@ Muchas tablas de arcoiris están disponibles en línea.
 
 ### Benchmark para recuperar contraseñas Md5
 
-```
+```bash
 hashcat -m0 password.txt rockyou.txt 
 ```
 
@@ -425,7 +438,7 @@ Después de ver los malos ejemplos anteriores, es tentador utilizar funciones ir
 | tata  | 11a25e88658143a853d280bf77f81ff391347aaba2db54a3aab0149b265276de419880762a473fc496388bcf70566d7cfd0346c34add40652f8f7b669caf9ec0 |
 | titi  | f767036acd951f5ddaf4eed5291c677db060055806dbcae69ca35d95847559dc8abce5011fd2b50833e760eca2d84d6daf1f078200f42b4fc10b58bad3761c88 |
 
-```
+```bash
 hashcat -m1700 password-sha512.txt rockyou.txt
 ```
 
@@ -587,7 +600,7 @@ Dado que bcrypt almacena el número de iteraciones, esto la convierte en una fun
 
 En un algoritmo sha512, herramientas como hascat o John de ripper pueden hashear hasta 5.000.000 de entradas por segundo (Hahs/Seconds) mientras que con bcrypt (con 8 iteraciones) sólo puede procesar unas 300
 
-![https://www.vaadata.com/blog/wp-content/uploads/2020/05/bcrypt-1-768x514.png](https://www.vaadata.com/blog/wp-content/uploads/2020/05/bcrypt-1-768x514.png)
+![Hashcat](https://www.vaadata.com/blog/wp-content/uploads/2020/05/bcrypt-1-768x514.png)
 
 ### Conclusión
 
