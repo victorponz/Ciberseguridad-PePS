@@ -5,25 +5,40 @@ layout: post
 categories: tema3 Seguridad Web
 title: Validación de entradas
 conToc: true
+subtitle: Riesgos OWASP
+author:
+- Víctor Ponz
+lang: es
+titlepage: true
+titlepage-background: assets/img/seguridad.png
+# No funciona el background
+apage-background: assets/img/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 3. Validación de entradas
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 
-## ¿Qué es?
+# ¿Qué es?
 
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica </strong><br> Realiza y documenta todos los puntos de esta entrada de blog<br>Debes crear todas las páginas mencionadas en el mismo y como resultado, debes crear un Dockerfile con dos instalaciones de apache y php: una para el atacante y otra para el hacker<br>
-Además, debes crear un repositorio en GitHub con un commit por cada nuevo archivo crees o modifiques </blockquote>
+> **Práctica**
+> Realiza y documenta todos los puntos de esta entrada de blog 
+> Debes crear todas las páginas mencionadas en el mismo y como resultado, debes crear un Dockerfile con dos instalaciones de apache y php: una para el atacante y otra para el hacker
+> Además, debes crear un repositorio en GitHub con un commit por cada nuevo archivo crees o modifiques
 
 
 
@@ -69,7 +84,7 @@ Pero ahora vas a actuar como un hacker y a introducir el siguiente texto
 
 Ahora ya no parece tan inocuo, ¿no?
 
-![image-20210131193815141](/Ciberseguridad-PePS/assets/img/validacion/image-20210131193815141.png)
+![Formulario hackeado](/Ciberseguridad-PePS/assets/img/validacion/image-20210131193815141.png)
 
 ### Mitigar XSS
 
@@ -112,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 lo único que ocurre es que se muestra en pantalla lo siguiente:
 
-![image-20210131195056822](/Ciberseguridad-PePS/assets/img/validacion/image-20210131195056822.png)
+![Hackeo mitigado](/Ciberseguridad-PePS/assets/img/validacion/image-20210131195056822.png)
 
 **En el cliente**
 
@@ -294,15 +309,15 @@ Para que funcione, **primero debes iniciar sesión** en la página `dominiosegur
 
 Ahora abre el archivo `sessions.txt` y comprobarás que tiene una clave de sesión que puedes usar para suplantar al usuario original. Para ello, haz una petición en una página privada a `login.php`, abre la pestaña `Red` en **Firebug** , selecciona la página y pulsa el botón `Reenviar`
 
-![image-20210131184754004](/Ciberseguridad-PePS/assets/img/validacion/image-20210131184754004.png)
+![Firebug](/Ciberseguridad-PePS/assets/img/validacion/image-20210131184754004.png)
 
 Y ahí cambia el valor de `PHPSESSID` por el que se encuentra en el archivo `sessions.txt` y pulsa el botón `Enviar`
 
-![image-20210131185040301](/Ciberseguridad-PePS/assets/img/validacion/image-20210131185040301.png)
+![Robo de sesión](/Ciberseguridad-PePS/assets/img/validacion/image-20210131185040301.png)
 
 Comprobarás en la pestaña ***Respuesta*** que hemos suplantado al usuario `mario`. Imagina que es la página de un banco, o de Facebook, etc. 
 
-![image-20210131185223891](/Ciberseguridad-PePS/assets/img/validacion/image-20210131185223891.png)
+![Suplantación](/Ciberseguridad-PePS/assets/img/validacion/image-20210131185223891.png)
 
 ### Evitar el robo de sesión (Session-Hijacking)
 
