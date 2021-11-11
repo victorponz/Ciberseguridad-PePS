@@ -4,19 +4,29 @@ typora-root-url: ../../
 layout: post
 categories: tema0 Iniciación a la programación
 title: Iniciación a la programación
+subtitle: Programación con Python
 conToc: true
+titlepage: true
+titlepage-background: assets/inicprog/dibujo.png
+page-background: assets/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 0. Iniciación a la programación
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 # Iniciación a la programación
 
@@ -64,11 +74,9 @@ De hecho, un ordenador es incapaz de hacer absolutamente nada por si mismo, siem
 
 Para llevar a cabo la tarea encomendada, un ordenador puede aceptar diferentes tipos de órdenes. Estas se encuentran limitadas a las capacidades de los componentes que lo conforman, del mismo modo que el programa de una lavadora no puede incluir la orden de gratinar, puesto que no tiene gratinador. Por lo tanto, es importante tener presente este hecho para saber qué se puede pedir al ordenador cuando creáis un programa.
 
-La estructura interna del ordenador se divide en una serie de componentes, todos comunicados entre si, tal como muestra la **figura.1** de manera muy simplista, pero suficiente para empezar. Cada orden de un programa está vinculada de una manera u otra a alguno de estos componentes.
+La estructura interna del ordenador se divide en una serie de componentes, todos comunicados entre si, tal como muestra la siguiente figura de manera muy simplista, pero suficiente para empezar. Cada orden de un programa está vinculada de una manera u otra a alguno de estos componentes.
 
-![](/Ciberseguridad-PePS/assets/img/inicprog/ic10mu1_01.png)
-
-**Figura1 .1** Componentes básicos de un ordenador
+![Componentes básicos de un ordenador](/Ciberseguridad-PePS/assets/img/inicprog/ic10mu1_01.png)
 
 > **Procesador**
 >
@@ -199,11 +207,13 @@ Una vez se han acabado de generar los ficheros con su código fuente, estos tamb
 
 Puesto que para cada fichero de código fuente se genera un fichero de código objeto, después del proceso de compilación hay un paso adicional llamado enlazamiento \(_link_\), en el cual estos dos códigos se combinan para generar un único fichero ejecutable. Coloquialmente, cuando os pedimos que compiláis un programa ya se suele dar por hecho que también se enlazará, si se tercia. Aún así, formalmente se consideran dos pasos diferenciados.
 
-La **figura.2 **muestra un esquema que sirve de resumen del proceso de generación del fichero ejecutable usando un lenguaje compilado.
+La siguiente figura muestra un esquema que sirve de resumen del proceso de generación del fichero ejecutable usando un lenguaje compilado.
 
-**Figura 2**. Proceso de compilación \(y enlazamiento\) del código fuente
+![Proceso de compilación \(y enlazamiento\) del código fuente](/Ciberseguridad-PePS/assets/img/inicprog/ic10mu1_03.png)
 
-![](/Ciberseguridad-PePS/assets/img/inicprog/ic10mu1_03.png)Algunos ejemplos de lenguajes de nivel alto compilados muy populares son C o Pascal. Cómo se ha visto, el ensamblador también es un lenguaje compilado, pero de nivel bajo.
+
+
+Algunos ejemplos de lenguajes de nivel alto compilados muy populares son C o Pascal. Cómo se ha visto, el ensamblador también es un lenguaje compilado, pero de nivel bajo.
 
 #### Errores de compilación
 
@@ -241,11 +251,11 @@ Algunos lenguajes interpretados usan una aproximación híbrida. El código fuen
 
 Por sus características, los lenguajes interpretados no requieren un proceso posterior de enlazamiento.
 
-La **figura 3 **muestra un esquema del proceso de ejecución de un programa en lenguaje interpretado. Notad que en el caso de un lenguaje con bytecode, lo que se proporciona al intérprete son ficheros con la versión del código fuente previamente compilado en bytecode, y no el código fuente directamente.
+La siguiente figura muestra un esquema del proceso de ejecución de un programa en lenguaje interpretado. Notad que en el caso de un lenguaje con bytecode, lo que se proporciona al intérprete son ficheros con la versión del código fuente previamente compilado en bytecode, y no el código fuente directamente.
 
-**Figura 3** Proceso de interpretación del código fuente
+![Proceso de interpretación del código fuente](/Ciberseguridad-PePS/assets/img/inicprog/ic10mu1_04.png)
 
-![](/Ciberseguridad-PePS/assets/img/inicprog/ic10mu1_04.png)Entre los lenguajes interpretados más conocidos encontramos Javascript, PHP o Perl. Muchos son lenguajes de script, que permiten el control de aplicaciones dentro de un sistema operativo, llevar a cabo procesos por lotes \(batch\) o generar dinámicamente contenido web. Entre los lenguajes interpretados basados en bytecode, Python y Java son los más populares.
+Entre los lenguajes interpretados más conocidos encontramos Javascript, PHP o Perl. Muchos son lenguajes de script, que permiten el control de aplicaciones dentro de un sistema operativo, llevar a cabo procesos por lotes \(batch\) o generar dinámicamente contenido web. Entre los lenguajes interpretados basados en bytecode, Python y Java son los más populares.
 
 ## Entornos integrados de desarrollo
 
@@ -287,7 +297,8 @@ En la mayoría de los lenguajes actuales, además de los bloques anteriores se t
 - **Espacio de nombre o paquete.** Indica el ámbito o alcance del código de forma que se puedan encapsular para su posterior uso.
 - **Bloque de uso de elementos externos**. Indica las clases o funciones externas que se van a utilizar en el programa, denominados librerías o paquetes dependiendo del lenguaje, por ejemplo C o Java y que posteriormente serán enlazados, por ejemplo en C se utiliza la palabra reservada #include o Java la palabra import.
 - **Bloque de definición del fichero/clase** en el que se incluyen comentarios como el autor, el tipo de licencia, el uso o función del código o clase.
-  ![Elementos de un programa](/Ciberseguridad-PePS/assets/img/inicprog/elementos_programa.png)
+
+![Elementos de un programa](/Ciberseguridad-PePS/assets/img/inicprog/elementos_programa.png)
 
 ## Vuestro primer programa
 
@@ -297,7 +308,7 @@ Un lenguaje muy popular parecido a Java es el C. La sintaxis del Java está clar
 
 La siguiente gráfica muestra la relevancia de los lenguajes de programación existentes.
 
-![](/Ciberseguridad-PePS/assets/img/inicprog/tiobe.png)
+![Índide TIOBE](/Ciberseguridad-PePS/assets/img/inicprog/tiobe.png)
 
 Fuente: [https://www.tiobe.com/tiobe-index/](https://www.tiobe.com/tiobe-index/)
 
