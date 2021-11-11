@@ -5,21 +5,32 @@ layout: post
 categories: tema4 Command Injection
 title: Command Injection
 conToc: false
+author: Víctor Ponz
+conToc: true
+titlepage: true
+titlepage-background: assets/img/riesgos.png
+page-background:  assets/img/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 4. Command Injection
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 
-## Práctica - Command injection
+## Práctica 1 - Command injection
 
 > La inyección de comandos es un ataque en el que el objetivo es la ejecución de comandos arbitrarios en el sistema operativo host a través de una aplicación vulnerable. Los ataques de inyección de comandos son posibles cuando una aplicación pasa datos no seguros proporcionados por el usuario (formularios, cookies, encabezados HTTP, etc.) a un shell del sistema. En este ataque, los comandos del sistema operativo proporcionados por el atacante generalmente se ejecutan con los privilegios de la aplicación vulnerable. Los ataques de inyección de comandos son posibles en gran parte debido a una validación de entrada insuficiente.
 
@@ -29,7 +40,7 @@ Este es una variante del ataque **FileUpload** ya que persigue almacenar un fich
 
 La máquina DVWA tiene un fallo de seguridad en la página [Command Injection](http://localhost:8080/vulnerabilities/exec/).
 
-![image-20210504191910879](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504191910879.png)
+![Command Injection](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504191910879.png)
 
 En este formulario se supone que el usuario puede poner una IP a la que hacerle ping. Para descubrir si es vulnerable a Command injection podemos introducir el siguiente comando:
 
@@ -51,11 +62,11 @@ y no comprueba si `$target` es una IP Válida.
 
 2. Edítalo y cambia la IP por la de tu equipo
 
-![image-20210504175459944](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504175459944.png)
+![Reverse shell](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504175459944.png)
 
 
 
-3. Ahora vamos a codificarlo en https://www.base64encode.org/.  
+3. Ahora vamos a codificarlo en [base 64](https://www.base64encode.org/.)  
 
    > **Nota**. Para que ocupe menos espacio es recomendable eliminar los comentarios 
 
@@ -75,11 +86,11 @@ y no comprueba si `$target` es una IP Válida.
 
 6. Ya sólo nos queda ejecutar en el ordenador del atacante el comando `netcat`
 
-```bash
-nc -v -n -l -p 1234
-```
+    ```bash
+    nc -v -n -l -p 1234
+    ```
 
 5. Y quedarnos a la espera de una conexión entrante desde el ordenador de la víctima al visitar la url [localhost:8080/vulnerabilities/exec/shell.php](localhost:8080/vulnerabilities/exec/shell.php) del punto 5.
 
- ![image-20210504193946369](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504193946369.png)
+ ![Remote shell](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504193946369.png)
 

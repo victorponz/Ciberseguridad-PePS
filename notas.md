@@ -66,8 +66,9 @@ pandoc _posts/2021-03-10-Seguridad-en-Docker.md --pdf-engine=xelatex --resource-
 Hay que hacerlo en la carpeta de imágenes.
  pandoc _posts/2021-04-01-Inyección-SQL.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-04-01-Inyección-SQL.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
  
-pandoc _posts/2021-05-01-FileUpload.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-05-01-FileUpload.pdf
 pandoc _posts/2021-05-01-FileUpload.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-05-01-FileUpload.pdf --template=eisvogel.tex --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
+
+pandoc _posts/2021-05-02-Command-Injection.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-05-02-Command-Injection.pdf --template=eisvogel.tex --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
 
  pandoc _posts/2021-06-01-Aplicación-en-python.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-06-01-Aplicación-en-python.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
 pandoc _posts/2021-06-01-Iniciación-a-la-programación.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-06-01-Iniciación-a-la-programación.pdf
