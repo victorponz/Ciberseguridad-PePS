@@ -4,26 +4,37 @@ typora-root-url: ../../
 layout: post
 categories: tema3 Seguridad Web
 title: Hardening del servidor
+subtitle: Programación con Python
 conToc: true
+titlepage: true
+titlepage-background: assets/img/seguridad.png
+# No funciona el background :(
+apage-background:  assets/img/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 3. Hardening del servido
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 
-## ¿Qué es?
+# ¿Qué es?
 
 En este apartado vamos a securizar todavía más el servidor. Esto lo hacemos junto a la securización o endurecimiento conseguido  a través del firewall (iptables) y la configuración lógica, es decir, la creación de usuarios y grupos necesarios  para cumplir con el requisito de **mínimo privilegio y mínima exposición**.
 
-## 1 Configurar apache
+## Configurar apache
 
 Para conocer qué módulos están activos (aquellos que están en la carpeta `mods_enabled`). Podemos hacer un listado mediante el siguiente comando
 
@@ -68,7 +79,7 @@ También se puede comprobar en las cabeceras de respuesta mediante el navegador
 Para evitar que muestre la signatura debemos modificar la configuración de apache en el archivo /`etc/apache2/apache2.conf` y añadir
 `ServerTokens` `ProductOnly`, de esta forma sólo pueden consultar la versión los módulos de apache y con `ServerSignature` `Off`, eliminamos completamente la signatura
 
-### 1.1 HSTS
+### HSTS
 
 Según la [Wikipedia](https://es.wikipedia.org/wiki/HTTP_Strict_Transport_Security)
 
@@ -92,7 +103,7 @@ Que le indica al navegador que debe recordar durante más o menos 2 años (2 añ
 
 Más información en [Developer Mozilla](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Strict-Transport-Security)
 
-### 1.2 CSP
+### CSP
 
 Según [Developer Mozilla](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
@@ -160,7 +171,7 @@ Header set Content-Security-Policy \
 
 
 
-## 2 Web Application Firewall (WAF)
+## Web Application Firewall (WAF)
 
 >  Según la [Wikipedia](https://es.wikipedia.org/wiki/Web_application_firewall)
 >
@@ -188,7 +199,7 @@ Si introducimos una entrada en el formulario que está bloqueada nos saltará un
 > * Configura tu instalación de apache para que se atenga a las reglas de mod_security.
 > * Una vez configurado,  crea un imagen de docker que configure una instalación de apache con mod_security.
 
-## 3 Instalar reglas OWASP
+## Instalar reglas OWASP
 
 
 Pero la [OWASP](https://owasp.org/www-project-modsecurity-core-rule-set/) provee una configuración por defecto que incluye una protección para las reglas más comunes. Así que lo mejor es empezar por este conjunto de reglas y luego ir añadiendo las propias.
@@ -304,7 +315,7 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
 > * Realiza una instalación de apache en la que se incluyan las reglas OWASP para mod_security.
 > * Una vez comprobada la instalación de estas reglas, crea un imagen de docker que realice la instalación y configuración de estas reglas
 
-## 4 apache extra
+## apache extra
 
 Si queremos que sólo sirva tráfico a una IP, en `000-default.conf`
 
@@ -318,7 +329,7 @@ De esta forma sólo le damos acceso a nuestro reverse proxy
 
 Otra configuración por defecto que es recomendable es prohibir el uso del archivo `.htaccess` en la instalación de apache ya que este uso obliga a que en cada petición de página se deba *parsear* este archivo.
 
-## 5 Evitar ataques DOS
+## Evitar ataques DOS
 
 Apache nos provee con un módulo llamado mod_evasive que permite evitar ataques de denegación de servicio (DoS) mediante el escaneo constante de los conexiones entrantes que serán baneadas en el momento que se alcance el umbral establecido en la configuración del módulo.
 Se puede configurar siguiendo el siguiente [manual](https://juantrucupei.wordpress.com/2016/09/07/instalacion-y-configuracion-de-modulo-mod_evasive-servidor-web-apache/).
@@ -330,7 +341,7 @@ Se puede configurar siguiendo el siguiente [manual](https://juantrucupei.wordpre
 > * Ahora usa apache bench para probar que, efectivamente, el módulo empieza a rechazar peticiones. Adjunta el informe generado por Apache Bench
 
 
-## 6 MySql
+## MySql
 
 Restringir sólo el puerto local y nunca a la máquina remota
 
@@ -363,7 +374,7 @@ update mysql.user set user="ciberseguridad" where user="root"
 flush privileges
 ```
 
-## 7 Database Firewall (DBFW)
+## Database Firewall (DBFW)
 
 Al igual que los WAF, los DBFW se sitúan entre el agente de usuario y el servidor de base de datos para intentar *parar* las inyecciones de SQL (que veremos más adelante)
 
@@ -374,11 +385,11 @@ Se pueden configurar mediante:
 
 Hay una implementación Open Source es [GreenSQL](https://github.com/larskanis/greensql-fw) que puede funcionar con los SGDB más comunes aunque la versión comunidad sólo protege contra ataques de inyección de SQL. La versión PRO protege además contra desbordamientos de buffer, escalada de privilegios, denegaciones de servicio...
 
-## 8 Privilegios de los usuarios
+## Privilegios de los usuarios
 
 De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener una correcta gestión de los usuarios, ya sean para personas o cuentas de servicio para dar acceso a las aplicaciones, otorgando solo los permisos necesarios de los datos necesarios para cumplir con el requisito de mínimo privilegio y mínima exposición.
 
-## 9 nginx y modsecurity
+## nginx y modsecurity
 
  <blockquote class='reto'>
 <i class='fa fa-check'> </i><strong> RETO</strong> </blockquote>
