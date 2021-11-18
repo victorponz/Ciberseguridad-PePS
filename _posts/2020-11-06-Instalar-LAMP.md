@@ -31,7 +31,7 @@ pandoc-latex-environment:
     cautionblock: [caution]
     importantblock: [important]
 ---
-## LAMP
+# LAMP
 
 Se denomina "LAMP" a un grupo de software de código libre que se instala normalmente en conjunto para habilitar un servidor para alojar sitios y aplicaciones web dinámicas. Este término en realidad es un acrónimo que representa un sistema operativo **L**inux con un servior **A**pache, los datos se almacenan en base de datos **M**ySQL y el contenido dinámico es procesado con **P**HP.
 
@@ -196,7 +196,7 @@ La página que verás debe ser algo como esto:
 
 ![PHP](/Ciberseguridad-PePS/assets/img/LAMP/image-20201213190749557.png)
 
-## Paso adicional. Instalación de phpMyAdmin
+## Paso Cinco. Instalación de phpMyAdmin (opcional)
 
 phpMyAdmin es un software web gratuito para trabajar con MySQL en la web, proporciona un interfaz visual conveniente a las capacidades de MySQL.
 
