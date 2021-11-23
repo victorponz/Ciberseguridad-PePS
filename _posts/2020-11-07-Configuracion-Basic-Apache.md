@@ -3,23 +3,37 @@ typora-copy-images-to: ../../assets/img/apache/
 typora-root-url: ../../
 layout: post
 categories: tema1 apache
-title: Configuración básica de Apache
+title: Apache
 conToc: true
+title: Apache
+subtitle: Configuración básica
+author:
+- Víctor Ponz
+lang: es
+titlepage: true
+titlepage-background: assets/img/git-basico/dibujo.png
+page-background: assets/img/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 1. Apache
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 
-## Instalación de Apache
+# Instalación de Apache
 
 El primer paso será instalar el servidor web Apache
 
@@ -195,9 +209,24 @@ Dentro de este directorio crear una página básica **index.html**
 
 Finalmente creamos el alias dentro del archivo de configuración del sitio,  añadiremos una sentencia `Alias` para crear un directorio virtual denominado `/wiki` que referencie a `/usr/share/wiki`
 
+```xml
+<VirtualHost website1.local:80>
+#resto de configuraciones
+	Alias /wiki /usr/share/wiki
+	<Directory /usr/share/wiki/>
+		DirectoryIndex index.php
+	</Directory>
+</VirtualHost>
+```
+
+Ahora crea una archivo `index.php` en `/usr/share/wiki` con el siguiente contenido:
+
+```php
+<?php
+echo "Bienvenido a mi wiki";
+```
 
 
-![1537282410116](/Ciberseguridad-PePS/assets/img/apache/1537282410116.png)
 
 ### Tarea 2
 
