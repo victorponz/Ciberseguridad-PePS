@@ -48,7 +48,7 @@ Los scripts `sh` son los siguientes:
 
 *  `./build.sh`: Crea el container a partir de la definición descrita en Dockerfile. Se debe lanzar cada vez que este fichero cambie.
 * `./debug.sh`: Corre el container en primer plano de tal forma que se puede parar con `^C`
-* `./run.sh`: Corre el contenedor como un demonio (daemon). Se usa para probar el contenedor en loca pero como si fuera producción.
+* `./run.sh`: Corre el contenedor como un demonio (daemon). Se usa para probar el contenedor en local pero como si fuera producción.
 * `./stop.sh`: Cuando el contenedor corre en background, este es el script para pararlo.
 * `./shell.sh`: A veces las cosas no funcionan según lo esperado y mediante este script se abre un shell en el contenedor una vez arrancado, de tal forma que podamos hacer diagnósticos.  
 
