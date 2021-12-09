@@ -167,7 +167,7 @@ El comando `docker run` toma muchos argumentos opcionales que son demasiado nume
 
 ## Ejecutar el contenedor
 
-Hemos lanzado `build.sh` y todo fue bien. Ahora usaremos `debug.sh`para lanzar el contenedor en modo `debug/foreground`
+Hemos lanzado `build.sh` y todo fue bien. Ahora usaremos `debug.sh` para lanzar el contenedor en modo `debug/foreground`
 
 Una vez visitemos la página varias veces veremos que el contador de visitas aumenta:
 
@@ -182,9 +182,9 @@ Para reiniciar el contenedor podemos lanzar `docker restart chapter2` y veremos 
 
 Sin embargo, si lo paramos con `docker stop chapter2` o `stop.sh` y  luego lo volvemos a lanzar con `run.sh`, por ejemplo, veremos que el contador empieza en `1`. Esto es así porque estamos escribiendo en el sistema de archivos del contenedor, así que desaparece cuando el contenedor se para.
 
-Para que persista entre reinicios en `data/container.txt`debemos:
+Para que persista entre reinicios en `data/counter.txt`debemos:
 
-* Crear un fichero llamado `container.txt`en el anfitrión y que sea `/data/container.txt` en el huésped
+* Crear un fichero llamado `counter.txt`en el anfitrión y que sea `/data/counter.txt` en el huésped
 * Montar un directorio en el anfitrión como `data` en el huésped
 * Hacer que Docker cree y mantenga un volumen por nosotros.
 
@@ -210,7 +210,9 @@ docker run \
 
 Cuando lo ejecutamos y apuntamos nuestro navegador a [http://localhost:8086/public_html/](http://localhost:8086/public_html/), vemos que el contador funciona, incluso si paramos y reiniciamos el contenedor.
 
-El script `run.sh` ejecuta el contenedor en modo demonio; no podrás ver la salida de la aplicación sin usar el comando de registro de docker. Tampoco monta el directorio de host como un volumen en el contenedor. Esto simula el entorno de producción:
+El fichero se guarda en el anfitrión en `/var/lib/docker/volumes/name/_data` 
+
+El script ` run.sh` ejecuta el contenedor en modo demonio; no podrás ver la salida de la aplicación sin usar el comando de registro de docker (`docker logs chapter2`). Tampoco monta el directorio de host como un volumen en el contenedor. Esto simula el entorno de producción:
 
 ```bash
 #!/usr/bin/env bash
