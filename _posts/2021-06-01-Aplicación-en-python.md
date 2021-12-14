@@ -34,13 +34,12 @@ pandoc-latex-environment:
 ## Qué aprenderemos
 
 * a usar `docker`
-
 * a usar `docker-compose` para crear una aplicación basada en microservicios
+* a crear `branches` para cada nueva característica en *git*
+* a crear `tags` para guardarnos el estado del repo en un momento dado
 
-* a crear `tags` para cada nueva característica en *git* y a hacer un mezclado con la rama principal
 
-
-## Hello World!
+## 1. Hello World!
 
 Para empezar, crea un nuevo repositorio en GitHub y clónalo en local
 
@@ -120,10 +119,52 @@ docker stop $(docker ps -lq)
 docker rm $(docker ps -lq)
 ```
 
-Si todo ha ido bien, actualiza tu repositorio remoto
+Ahora si modificamos el archivo `identidock.py` e introducimos el siguiente contenido, 
 
+```python
+from flask import Flask
+app = Flask(__name__)
 
-## Identicons
+@app.route('/')
+def hello_world():
+    return 'Hello World from Ciberseguridad!\n'
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
+
+```
+
+veremos que la salida del navegador ha cambiado
+
+```bash
+curl localhost:5000
+```
+
+ 
+
+```
+Hello World from Ciberseguridad!
+```
+
+> **GIT**
+>
+> Si todo ha ido bien, **actualiza tu repositorio remoto** creando un *tag* y subiendo este *tag* también
+>
+> 1. Crea un `commit` con el mensaje v1
+> 2. Haz un `push` de dicho `commit`
+> 3. Ahora crea un *tag* con el comando `git tag v1` y sube este *tag* a tu repo mediante `git push origin v1`
+
+## 2. Identicons
+
+> **GIT**
+>
+> Crea una nueva [rama](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) para programar la nueva característica mediante el comando 
+>
+> * `git branch identicons` para crear una nueva rama
+> * `git checkout identicons` para cambiar a la mueva
+>
+> También se puede conseguir el mismo resultado con el comando
+> `git branch -d identicons`
 
 Vamos a convertir la aplicación anterior en una aplicación web que, dado un nombre de usuario, genere un [identicon](http://identicon.net/)
 
@@ -160,7 +201,7 @@ if __name__ == '__main__':
 
 De momento el enlace a la imagen aparece roto, pero es normal. En el siguiente apartado lo enlazaremos con el generador de identicon.
 
-### Sacando partido a un generador de imágenes
+### 2.1 Sacando partido a un generador de imágenes
 
 Vamos a iniciar un contenedor con una imagen de [dnmonster](https://github.com/amouat/dnmonster) que proporciona avatares únicos para una cadena dada. Para ello usaremos una imagen de este servicio más adelante que expone una API REST para generar las imágenes.
 
@@ -228,9 +269,32 @@ Si ahora abres http://localhost:5000 deberías ver una página como la siguiente
 
 ![dnmonsters](/Ciberseguridad-PePS/assets/img/AppPhyton/image-20210617091803206.png)
 
-No parece mucho, pero acabamos de generar nuestro primer icono de identificación. 
+No parece mucho, pero acabamos de generar nuestro primer icono de identificación.
 
-El botón de enviar todavía está roto, por lo que en realidad no estamos usando ninguna entrada del usuario, pero lo arreglaremos en un minuto. 
+> GIT
+>
+> Crea un nuevo `tag` que identifique esta versión mediante los comandos
+>
+> ```
+> git add *
+> git commit -m v2.1
+> git tag v2.1
+> git push origin v2.1
+> ```
+>
+> Lo que hemos creado es como un `snapshot` de cómo está el repositorio en este momento
+>
+> Si quieres comprobar en qué rama estás, usa el comando
+>
+> ```
+> git branch
+> ```
+
+### 2.2 Generar identicons
+
+**NO ME FUNCIONA!!!**
+
+El botón de enviar todavía está roto, porque en realidad no estamos usando ninguna entrada del usuario, pero lo arreglaremos en un minuto. 
 
 Primero, hagamos un archivo `Compose` (para que no tengamos que recordar todos esos comandos de ejecución).
 
@@ -296,15 +360,59 @@ if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0')
 ```
 
+Ahora, cada vez que introduzcamos un nombre, nos devolverá un *monstruo*
 
+![image-20211214193155151](/Ciberseguridad-PePS/assets/img/AppPhyton/image-20211214193155151.png)
 
-## Añadir cacheo
+> **GIT**
+>
+> Ahora es el momento de fusionar (`merge`) la rama `identicons` con la rama `master`
+>
+> Para ello
+>
+> ```
+> git add *
+> git commit -m "Finalizar identicons"
+> git checkout master 
+> ```
+>
+> Si revisáis ahora el código fuente veréis que está como estaba antes de empezar la nueva rama. Ahora vamos a fusionar las dos ramas
+>
+> ```
+> git merge identicons
+> ```
+>
+> Y por arte de magia ya tenemos aplicados los cambios
+>
+> Es hora de eliminar la rama creada mediante el comando
+>
+> ```
+> git branch -d identicons
+> ```
+>
+>  Y de subir los cambios al repo
+>
+> ```
+> git push
+> ```
+>
+> También crearemos un nuevo `tag` 
+>
+> ```
+> git tag v2.2
+> git push origin v2.2
+> ```
+
+## 3. Añadir cacheo
+
+> **GIT**
+> Crea una nueva rama llamada `cacheo` y muévete a dicha rama
 
 Hasta aquí todo bien. Pero hay una cosa horrible sobre esta aplicación en este momento (aparte de los monstruos): cada vez que se solicita un monstruo, hacemos una llamada computacionalmente costosa al servicio `dnmonster`. No hay necesidad de esto; el objetivo de un icono de identificación es que la imagen sigue siendo la misma para una entrada determinada, por lo que deberíamos almacenar en **caché** el resultado.
 
-Usaremos `Redis` para lograrlo. `Redis` es un almacén de datos de clave-valor en memoria. Es excelente para tareas como esta en las que no hay una gran cantidad de información y no nos preocupa la durabilidad (si una entrada se pierde o se elimina, podemos simplemente regenerar la imagen).
+Usaremos `Redis` para lograrlo. `Redis` es un almacén de datos de **clave-valor** en memoria. Es excelente para tareas como esta en las que no hay una gran cantidad de información y no nos preocupa la durabilidad (si una entrada se pierde o se elimina, podemos simplemente regenerar la imagen).
 
-Podríamos agregar el servidor `Redis` a nuestro contenedor identidock, pero es más fácil y más idiomático crear un contenedor nuevo. De esta manera, podemos aprovechar la imagen oficial de Redis que ya está disponible en Docker Hub y evitar la molestia adicional de ejecutar varios procesos en un contenedor.
+Podríamos agregar el servidor `Redis` a nuestro contenedor `identidock`, pero es más fácil y más idiomático crear un contenedor nuevo. De esta manera, podemos aprovechar la imagen oficial de Redis que ya está disponible en Docker Hub y evitar la molestia adicional de ejecutar varios procesos en un contenedor.
 
 ```yaml
 identidock:
