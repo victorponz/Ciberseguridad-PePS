@@ -212,7 +212,7 @@ Cuando lo ejecutamos y apuntamos nuestro navegador a [http://localhost:8086/publ
 
 El fichero se guarda en el anfitrión en `/var/lib/docker/volumes/name/_data` 
 
-El script ` run.sh` ejecuta el contenedor en modo demonio; no podrás ver la salida de la aplicación sin usar el comando de registro de docker (`docker logs chapter2`). Tampoco monta el directorio de host como un volumen en el contenedor. Esto simula el entorno de producción:
+El script `run.sh` ejecuta el contenedor en modo demonio; no podrás ver la salida de la aplicación sin usar el comando de registro de docker (`docker logs chapter2`). Tampoco monta el directorio de host como un volumen en el contenedor. Esto simula el entorno de producción:
 
 ```bash
 #!/usr/bin/env bash
