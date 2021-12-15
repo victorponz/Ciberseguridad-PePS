@@ -485,8 +485,6 @@ docker-compose build
 docker-compose up -d
 ```
 
-hola
-
 **Referencias**
 
 * Using - Docker: O'Reilly, Adrian Mouat
