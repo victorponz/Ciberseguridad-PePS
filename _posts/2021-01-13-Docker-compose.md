@@ -143,7 +143,7 @@ Creating my_wordpress_wordpress_1
 
 En este punto, WordPress debería estar ejecutándose en el puerto `8000` de su Docker host [http:localhost:8000](http:localhost:8000), y puedes completar la "famosa instalación de cinco minutos" como administrador de WordPress.
 
-![img](https://es.wplang.org/wp-content/uploads/sites/3/2014/08/Install-WordPress-4-in-your-language.png)
+![Instalación Wordpress](https://es.wplang.org/wp-content/uploads/sites/3/2014/08/Install-WordPress-4-in-your-language.png)
 
 ## Práctica Django
 
