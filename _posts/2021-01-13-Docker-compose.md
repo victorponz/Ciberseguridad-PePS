@@ -149,6 +149,39 @@ En este punto, WordPress debería estar ejecutándose en el puerto `8000` de su 
 
 Siguiendo las [instrucciones](https://docs.docker.com/compose/django/), instala [Django](https://www.djangoproject.com/)
 
+**NOTA** Hay un error en el archivo `docker-compose.yml` que debe ser el siguiente:
+
+```yaml
+version: "3.3"
+   
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    depends_on:
+      - db
+
+```
+
+
+
 ## Práctica Rails
 
 Siguiendo las [instrucciones](https://docs.docker.com/compose/rails/), instala [Rails](https://rubyonrails.org/)
