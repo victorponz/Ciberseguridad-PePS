@@ -292,8 +292,6 @@ No parece mucho, pero acabamos de generar nuestro primer icono de identificació
 
 ### 2.2 Generar identicons
 
-**NO ME FUNCIONA!!!**
-
 El botón de enviar todavía está roto, porque en realidad no estamos usando ninguna entrada del usuario, pero lo arreglaremos en un minuto. 
 
 Primero, hagamos un archivo `Compose` (para que no tengamos que recordar todos esos comandos de ejecución).
@@ -432,6 +430,16 @@ redis:
   image: redis:3.0
 ```
 
+Ahora instalamos `redis` dentro de la imagen del proyecto en el archivo `Dockerfile`
+
+```dockerfile
+FROM python:3.4
+RUN pip install Flask==0.10.1 requests==2.5.1 redis==2.10.3
+WORKDIR /app
+COPY app /app
+CMD ["python", "identidock.py"]
+```
+
 Y modificamos el código para usar la imagen `redis`
 
 ```python
@@ -439,7 +447,9 @@ from flask import Flask, Response, request
 import requests
 import hashlib
 import redis
+
 app = Flask(__name__)
+cache = redis.StrictRedis(host = 'redis', port = 6379, db = 0)
 salt = "UNIQUE_SALT"
 default_name = 'Víctor Ponz'
 
@@ -463,16 +473,14 @@ def mainpage():
 	return header + body + footer
 @app.route('/monster/<name>')
 def get_identicon(name):
-	r = requests.get('http://dnmonster:8080/monster/' + name + '?size=80')
-	image = r.contentimage = cache.get(name)
-    if image is None:
-        print ("Cache miss", flush=True)
-        r = requests.get('http://dnmonster:8080/monster/' + name + '?size=80')
-        image = r.content
-        cache.set(name, image)
-	
-    return Response(image, mimetype='image/png')
-	
+	image = cache.get(name)
+	if image is None:
+		print ("Cache miss", flush=True)
+		r = requests.get('http://dnmonster:8080/monster/' + name + '?size=80')
+		image = r.content
+		cache.set(name, image)
+	return Response(image, mimetype='image/png')
+		
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0')
 ```
@@ -484,6 +492,12 @@ docker-compose stop
 docker-compose build
 docker-compose up -d
 ```
+
+> **GIT**
+>
+> Muévete a la rama `master` y fusiona los cambios. Crea y sube la rama y el `tag` v3
+
+
 
 **Referencias**
 
