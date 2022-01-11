@@ -60,7 +60,10 @@ pandoc _posts/2021-01-14-Google-cloud.md --pdf-engine=xelatex --resource-path=.:
 pandoc _posts/2021-01-31-Validación-de-entradas.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-01-31-Validación-de-entradas.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
  pandoc _posts/2021-03-01-Hardening-Servidor.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-03-01-Hardening-Servidor.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
 
+
 pandoc _posts/2021-03-10-Seguridad-en-Docker.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-03-10-Seguridad-en-Docker.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
+
+pandoc "_posts/Proyecto conjunto.m"1d --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/Proyecto conjunto --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
 
 
 Hay que hacerlo en la carpeta de imágenes.
@@ -74,3 +77,6 @@ pandoc _posts/2021-05-02-Command-Injection.md --pdf-engine=xelatex --resource-pa
 pandoc _posts/2021-06-01-Iniciación-a-la-programación.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2021-06-01-Iniciación-a-la-programación.pdf
 **Hay que hacerlos desde la carpeta de imágenes**
  pandoc 2021-06-01-Iniciación-a-la-programación.md --pdf-engine=xelatex -o 2021-06-01-Iniciación-a-la-programación.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan -N
+ 
+ 
+ pandoc _posts/2022-11-01-Sistemas-de-automatización-de-construcción.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2022-11-01-Sistemas-de-automatización-de-construcción.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
