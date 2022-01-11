@@ -70,3 +70,14 @@ title: Apuntes Puesta en producción segura.
 {% endif %}
 {% endfor %}
 </ol>
+<h2>Tema 5 - CD/CI</h2>
+<blockquote>
+La CI/CD es un método para distribuir las aplicaciones a los clientes con frecuencia mediante el uso de la automatización en las etapas del desarrollo de aplicaciones. Los principales conceptos que se le atribuyen son la integración, la distribución y la implementación continuas. Se trata de una solución para los problemas que puede generar la integración del código nuevo para los equipos de desarrollo y de operaciones (también conocida como "el infierno de la integración").
+</blockquote>
+
+<ol class='portada'> 
+{% for post in site.posts reversed %}
+{% if post.categories contains "tema5" %}
+  <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
+{% endif %}
+{% endfor %}
