@@ -3,9 +3,9 @@ typora-copy-images-to: ../assets/img/sac/
 typora-root-url: ../../
 layout: post
 categories: tema5 CD/CI
-title: Sistemas de automatización de la construcción
+title:  Aplicación java en maven
 conToc: true
-subtitle: Aplicación java en maven
+subtitle: 
 author:
 - Víctor Ponz
 lang: es
