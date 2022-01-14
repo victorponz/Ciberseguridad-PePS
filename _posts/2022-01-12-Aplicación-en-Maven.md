@@ -420,5 +420,5 @@ Que indica que ha corrido un test y no se ha producido ningún error (`Failures:
 
 ## Referencias
 
-Traducido del [original](https://maven.apache.org/plugins/maven-shade-plugin/)
+Traducido del [original](https://spring.io/guides/gs/maven/)
 
