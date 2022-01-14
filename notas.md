@@ -80,3 +80,6 @@ pandoc _posts/2021-06-01-Iniciación-a-la-programación.md --pdf-engine=xelatex 
  
  
  pandoc _posts/2022-01-11-Sistemas-de-automatización-de-construcción.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2022-01-11-Sistemas-de-automatización-de-construcción.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
+
+ pandoc _posts/2022-01-12-Aplicación-en-Maven.md --pdf-engine=xelatex --resource-path=.:/home/victorponz/Documentos/2020-21/Ciberseguridad/..  -o assets/pdf/2022-01-12-Aplicación-en-Maven.pdf --template=eisvogel.tex --toc --highlight-style tango --filter pandoc-latex-environment --variable urlcolor=cyan
+ 
