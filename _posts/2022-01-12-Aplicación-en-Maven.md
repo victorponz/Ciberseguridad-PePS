@@ -33,7 +33,7 @@ pandoc-latex-environment:
 ---
 # Introducción
 
-Esta guía te guía a través del uso de Maven para construir un proyecto Java simple.
+Este apartado te guía a través del uso de Maven para construir un proyecto Java simple.
 
 ## Lo que vas a construir
 
