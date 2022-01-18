@@ -62,7 +62,7 @@ Algunas de las **herramientas de automatización** de construcción:
   NPM (Naicely Pointed Mandibles). Sistema de gestión de paquetes para Node.js, aunque también se utiliza en el desarrollo de aplicaciones web en cliente, se basa en el análisis y ejecución del fichero package.json en el que se define información del proyecto.Algunas de las **secciones** del fichero **package.json**:
 
   - **license:** Tipo de licencia del proyecto.
-  - **files:** Similar a ***.gitinore***, pero en este caso se indican los ficheros o directorios a incluir.
+  - **files:** Similar a ***.gitignore***, pero en este caso se indican los ficheros o directorios a incluir.
   - **bin:** Ficheros ejecutables necesarios para el proyecto que se incluyen en el **PATH**.
   - **scripts:** Permite definir pequeños guiones para la automatización de ciertas  tareas, como limpiar datos temporales o general la aplicación para  producción en el caso de **Angular.**
   - **Dependencies:** Esta sección define las dependencias de librerías externas necesarias  para construir el proyecto, por ejemplo, al clonar un proyecto en **GitHub** es necesario instalar las dependencias indicadas en esta sección del fichero, en concreto el comando ***npm install***.
