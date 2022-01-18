@@ -10,7 +10,7 @@ author:
 - Víctor Ponz
 lang: es
 titlepage: true
-titlepage-background: assets/img/despliegue.png
+titlepage-background: assets/img/ci-cd.png
 apage-background: assets/img/fondo-pagina.png
 urlcolor: CornflowerBlue
 linkcolor: black
