@@ -262,7 +262,7 @@ docker run -d --name dnmonster amouat/dnmonster:1.0
 Ahora iniciamos el contenedor de la aplicación casi de la misma manera que en anteriormente, excepto que agregamos el argumento `--link dnmonster: dnmonster` para conectar los contenedores. Esta es la magia que hace que la URL [http://dnmonster: 8080](http://dnmonster: 8080) sea direccionable en el código Python
 
 ```bash
-docker run -d -p 5000:5000 --link dnmonster:dnmonster identidock
+docker run -d -p 5000:5000 -v "$(pwd)"/app:/app --link dnmonster:dnmonster identidock
 ```
 
 Si ahora abres http://localhost:5000 deberías ver una página como la siguiente:
