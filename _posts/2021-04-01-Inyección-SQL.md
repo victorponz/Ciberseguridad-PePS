@@ -154,7 +154,7 @@ Se puede obtener mediante una consulta `UNION` que añada una nueva sentencia sq
 
 Si por ejemplo la aplicación tiene una consulta del tipo
 
-```sqlite
+```sql
 SELECT name, description
 FROM products WHERE
 category = 'Gifts' 
@@ -208,7 +208,8 @@ etc.
 Esta serie de cargas útiles modifica la consulta original para ordenar los resultados por diferentes columnas en el conjunto de resultados. La columna en una cláusula `ORDER BY` se puede especificar por su índice, por lo que no necesita saber los nombres de ninguna columna. **Cuando el índice de columna** especificado excede el número de columnas reales en el conjunto de resultados, la base de datos **devuelve un error**, parecido a:
 
 ```
-La posición ORDER BY número 3 está fuera del rango del número de elementos en la lista de selección.
+La posición ORDER BY número 3 está fuera del rango del número 
+de elementos en la lista de selección.
 ```
 
 La aplicación puede devolver el error de la base de datos en su respuesta HTTP, o puede devolver un error genérico o simplemente no devolver ningún resultado. Siempre que pueda detectar alguna diferencia en la respuesta de la aplicación, puede inferir cuántas columnas se devuelven desde la consulta.
@@ -225,7 +226,8 @@ etc.
 Si el **número de nulos no coincide** con el número de columnas, la base de datos devuelve un error, como por ejemplo:
 
 ```
-Todas las consultas combinadas con un operador UNION, INTERSECT o EXCEPT deben tener el mismo número de expresiones en sus listas de destino.
+Todas las consultas combinadas con un operador UNION, INTERSECT o EXCEPT 
+deben tener el mismo número de expresiones en sus listas de destino.
 ```
 
 Una vez más, la aplicación podría devolver este mensaje de error, o podría devolver un error genérico o ningún resultado. Cuando el número de nulos coincide con el número de columnas, la base de datos devuelve una fila adicional en el conjunto de resultados, que contiene valores nulos en cada columna. El efecto sobre la respuesta HTTP resultante depende del código de la aplicación. Si tiene suerte, verá contenido adicional dentro de la respuesta, como una fila adicional en una tabla HTML. De lo contrario, los valores nulos pueden desencadenar un error diferente, como un `NullPointerException`. En el peor de los casos, la respuesta puede ser indistinguible de la causada por un número incorrecto de nulos, lo que hace que este método para determinar el recuento de columnas sea ineficaz.
@@ -300,24 +302,27 @@ Por ejemplo, suponga que hay una tabla llamada `Users` con las columnas `Usernam
 
 Para hacer esto, comenzamos con la siguiente entrada:
 
-```
-xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm 
+```sql
+xyz' AND SUBSTRING((SELECT Password FROM Users 
+WHERE Username = 'Administrator'), 1, 1) > 'm 
 ```
 
 Esto devuelve el mensaje "Bienvenido de nuevo", que indica que la condición inyectada es verdadera, por lo que el primer carácter de la contraseña es mayor que `m`.
 
 A continuación, enviamos la siguiente entrada:
 
-```
-xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 't 
+```sql
+xyz' AND SUBSTRING((SELECT Password FROM Users 
+WHERE Username = 'Administrator'), 1, 1) > 't 
 ```
 
 Esto **no** devuelve el mensaje "Bienvenido de nuevo", lo que indica que la condición inyectada es falsa, por lo que el primer carácter de la contraseña no es mayor que `t`.
 
 Finalmente, enviamos la siguiente entrada, que devuelve el mensaje "Bienvenido de nuevo", confirmando así que el primer carácter de la contraseña es `s`:
 
-```
-xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 't 
+```sql
+xyz' AND SUBSTRING((SELECT Password FROM Users 
+WHERE Username = 'Administrator'), 1, 1) > 't 
 ```
 
 Podemos continuar este proceso para determinar sistemáticamente la contraseña completa para el usuario Administrador.
@@ -331,7 +336,7 @@ La mayoría de las instancias de inyección de SQL se pueden prevenir mediante e
 El siguiente código es vulnerable a la inyección de SQL porque la entrada del usuario se concatena directamente en la consulta:
 
 ```java
- String query = "SELECT * FROM products WHERE category = '"+ input + "'";
+String query = "SELECT * FROM products WHERE category = '"+ input + "'";
 
 Statement statement = connection.createStatement();
 
@@ -341,7 +346,8 @@ ResultSet resultSet = statement.executeQuery(query);
 Este código se puede reescribir fácilmente de manera que evite que la entrada del usuario interfiera con la estructura de la consulta:
 
 ```java
-PreparedStatement statement = connection.prepareStatement("SELECT * FROM products WHERE category = ?");
+PreparedStatement statement = 
+    connection.prepareStatement("SELECT * FROM products WHERE category = ?");
 
 statement.setString(1, input);
 
