@@ -1,3 +1,34 @@
+---
+typora-copy-images-to: ../assets/img/inicprog/
+typora-root-url: ../../
+layout: post
+categories: tema0 Prueba de aplicaciones web
+title: Botnets, DDOS, Captcha
+subtitle: 
+conToc: true
+titlepage: true
+titlepage-background: assets/inicprog/dibujo.png
+page-background: assets/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 0. Iniciación a la programación
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
+header-includes: |
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
+
+---
 ## Ataques de denegación de servicio
 
 Fuente [Incibe](https://www.incibe-cert.es/blog/medidas-proteccion-frente-ataques-denegacion-servicio-dos)
@@ -42,7 +73,7 @@ En el caso de servidores Windows es recomendable configurar ciertos registros co
 
 A la hora de configurar un servidor para que aloje nuestra página web, es necesario dotarlo de diferentes medidas de seguridad tales como un cortafuego. En el caso de servidores web, además de cortafuegos, es aconsejable instalar un WAF, o “Web Application Firewall”, especializado en controlar las conexiones a nuestro sitio, filtrarlas, monitorearlas y bloquearlas en el caso de que considere maliciosas. Los WAFs nos los podemos encontrar en tipo “hardware” o tipo “software”.
 
-### Características de los “Web Application Firewalls”:
+### Características de los “Web Application Firewalls”
 
 - Este tipo de firewalls pueden ser instalados en nuestro servidor como tal, o en otro que esté integrado en nuestra red. Esto hay que tenerlo muy en cuenta, debido a que también consume capacidad de procesamiento de nuestras máquinas ya que tiene que procesar las peticiones con las reglas que le definamos antes de entregarlas al servidor web, por lo que en el caso de estar recibiendo un ataque y que el servicio WAF falle o se degrade, también puede hacerlo nuestra página web.
 - Existe otra forma hacerlos participes en la seguridad de nuestra red ya que podemos encontrar proveedores que ofrecen el servicio en remoto, es decir, en “cloud”. La manera en cómo funciona esta arquitectura es que la compañía a la que le contratas los servicios despliega el cortafuegos en sus servidores, dirigiendo y procesando allí el tráfico del servicio web antes de ser enviado a tu servidor ya sin ninguna amenaza. Algunos de los proveedores de estos servicios son [Akamai](https://www.akamai.com/es/es/), [CloudFlare](https://www.cloudflare.com/es/) y [Sucuri](https://sucuri.net/es/), entre otros.
@@ -63,3 +94,12 @@ Además es muy recomendable disponer del sistema CAPTCHA en los formularios de n
 Las aplicaciones web que requieren privacidad, es decir, que recogen directa o indirectamente datos de carácter personal es obligatorio el uso del protocolo TLS para asegurar la confidencialidad en la trasmisión de los mismos a través de Internet. En el caso de que no se utilicen datos privados, es recomendable plantearse el uso de TLS, pero teniendo en cuenta que es necesario un procesamiento computacional adicional para lidiar con este protocolo, por lo que una sobrecarga de peticiones podría desembocar en una denegación de servicio de nuestro sistema. En el caso de que sea necesario en muchos servicios, es aconsejable establecer un límite de conexiones simultáneas que requieran de dicho protocolo.
 
 En el caso de ya ser víctima de un ataque de denegación de servicio (DoS) que está siendo dirigido a nuestro sitios web aprovechando alguna vulnerabilidad que tenga la aplicación, podemos contar con una copia estática de nuestra web que muestre información básica como el número de teléfono de nuestra empresa, la dirección de correo electrónico o la física para que podamos ser contactados, además de contenido que no necesite de mucho procesamiento para ser mostrado y de esta manera no dejar en ningún momento de dar servicio.
+
+## Sistemas anti-bots          
+
+http://www.juntadeandalucia.es/servicios/madeja/contenido/recurso/650
+
+## Recaptcha
+
+https://www.google.com/recaptcha/about/
+
