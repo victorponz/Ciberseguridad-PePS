@@ -5,18 +5,31 @@ layout: post
 categories: tema1 HTTP
 title: Protocolo HTTP
 conToc: true
+subtitle: Conceptos generales
+author:
+- Víctor Ponz
+lang: es
+titlepage: true
+titlepage-background: assets/img/git-basico/dibujo.png
+page-background: assets/img/fondo-pagina.png
+urlcolor: CornflowerBlue
+linkcolor: black
+toc-own-page: true
+toc-title: Contenidos
+header-left: UD 1. Protocolo HTTP
+header-right: Ciberseguridad
+footer-left: IES El Caminàs
+footer-right: \thepage/\pageref{LastPage}
+titlepage-rule-color: 1e2c37
 header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \newcommand{\changefont}{%
-    \fontsize{8}{11}\selectfont}
-    \fancyhead[CO,CE]{}
-    \fancyhead[LO,CE]{}
-    \fancyfoot[LO,CE]{\changefont https://victorponz.github.io/Ciberseguridad-PePS/}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{2pt}
-    \renewcommand{\footrulewidth}{1pt}
+    \usepackage{lastpage} 
+    \usepackage{awesomebox}
+pandoc-latex-environment:
+    noteblock: [note]
+    tipblock: [tip]
+    warningblock: [warning]
+    cautionblock: [caution]
+    importantblock: [important]
 ---
 
 # Generalidades del protocolo HTTP y HTTPS
@@ -428,7 +441,7 @@ Es por ello que hoy en día se recomienda el uso del protocolo `HTTPS` no sólo 
 
 **HTTPS** \(HyperText Transfer Protocol Secure, Protocolo de transferencia de hipertexto seguro\) es un protocolo de comunicación de Internet que protege la integridad y la confidencialidad de los datos de los usuarios entre sus ordenadores y el sitio web.
 
-El envío de datos mediante el protocolo HTTPS está protegido mediante el protocolo de seguridad de la capa de transporte\([TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security)\), que proporciona las tres capas clave de seguridad siguientes:
+El envío de datos mediante el protocolo HTTPS está protegido mediante el protocolo de seguridad de la capa de transporte \([TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security)\), que proporciona las tres capas clave de seguridad siguientes:
 
 1. **Cifrado:** se cifran los datos intercambiados para mantenerlos a salvo de miradas indiscretas. Ello significa que cuando un usuario está navegando por un sitio web, nadie puede "escuchar" sus conversaciones, hacer un seguimiento de sus actividades por las diferentes páginas ni robarle información.
 
@@ -497,8 +510,6 @@ Y también cuidado con los [PunyCodes](https://es.wikipedia.org/wiki/Punycode). 
 ### En Chrome
 &nbsp;
 ![PunyCodes en Chrome](/Ciberseguridad-PePS/assets/img/HTTP/image-20201021164334542.png)
-
-
 
 ## Antes y después de la renderización: todo lo demás que hace el navegador
 
