@@ -396,6 +396,9 @@ blockquote.reto strong, blockquote.reto i{
 .PageNavigation a, .pdf,  .presentation, #menu a, .portada a{
   text-decoration: none; color:rgb(51, 51, 51); font-size:0.8em
 }
+ .portada a{
+  color:rgb(51, 51, 51);
+}
 .portada a{
   font-size:inherit;
 }
