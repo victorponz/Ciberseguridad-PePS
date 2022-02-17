@@ -35,7 +35,7 @@ pandoc-latex-environment:
 
 ## Introducción 
 
-Hoy en día, cualquier aplicación depende de muchos sino de cientos de paquetes. Estos paquetes de software pueden tener vulnerabilidades que hemos de conocer y mitigar, pues hay que tener siempre el software actualizado.
+Hoy en día, cualquier aplicación depende de muchos sino de cientos de paquetes como hemos podido comprobar en todos los proyectos de software que hemos realizado. Estos paquetes de software pueden tener vulnerabilidades que hemos de conocer y mitigar, pues hay que intentar siempre el software actualizado.
 
 Si tenemos alojado un repositorio en GitHub y este es público se nos ofrece automáticamente un visor de dependencias en `Insights-> Dependency Graph`. En esta lista se muestran todas las dependencias de tu proyecto así como sus versiones.
 
@@ -57,7 +57,7 @@ curl -LO https://dependencytrack.org/docker-compose.yml
 docker-compose up -d
 ```
 
-Una vez instalado y accedido, hemos de crear un proyecto https://www.npmjs.com/package/@cyclonedx/bomhttps://www.npmjs.com/package/@cyclonedx/bomhttps://www.npmjs.com/package/@cyclonedx/bomectoy cargar un archivo `bom.xml` que es un formato estándar para especificar **Bill Of Materials**
+Una vez instalado y accedido, hemos de crear un proyecto y cargar un archivo `bom.xml` que es un formato estándar para especificar **Bill Of Materials**
 
 Tenemos ejemplos de este tipo de archivos en  [https://github.com/CycloneDX/bom-examples/tree/master/SBOM](https://github.com/CycloneDX/bom-examples/tree/master/SBOM)
 
