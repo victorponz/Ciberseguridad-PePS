@@ -37,7 +37,7 @@ pandoc-latex-environment:
 
 El software moderno se ensambla utilizando componentes de terceros y de código abierto, pegados de forma compleja y única, e integrados con el código original para proporcionar la funcionalidad deseada. Los componentes de terceros (incluido el software con licencia comercial, el propietario y el "disponible en origen"), junto con los de código abierto, proporcionan los elementos necesarios que permiten a las organizaciones ofrecer valor, mejorar la calidad, reducir el riesgo y el tiempo de comercialización. Las ventajas del código abierto son muchas. Sin embargo, al utilizar componentes de código abierto, las organizaciones acaban asumiendo la responsabilidad del código que no han escrito. Las alianzas estratégicas entre las organizaciones y los proyectos de código abierto pueden conducir a un uso saludable del código abierto y a la reducción del riesgo en general.
 
-El análisis de componentes es el proceso de identificación de posibles áreas de riesgo derivadas del uso de componentes de software y hardware de terceros y de código abierto. El análisis de componentes es una función dentro de un marco general de [gestión de riesgos de la cadena de suministro cibernética](https://csrc.nist.gov/projects/supply-chain-risk-management) (C-SCRM). Un subconjunto del Análisis de Componentes que sólo se refiere al software y que tiene un alcance limitado se denomina comúnmente Análisis de la Composición del Software (SCA).
+El análisis de componentes es el proceso de identificación de posibles áreas de riesgo derivadas del uso de componentes de software y hardware de terceros y de código abierto. El análisis de componentes es una función dentro de un marco general de [gestión de riesgos de la cadena de suministro cibernética](https://csrc.nist.gov/projects/supply-chain-risk-management) (C-SCRM). Un subconjunto del Análisis de Componentes quhttps://docs.dependencytrack.org/e sólo se refiere al software y que tiene un alcance limitado se denomina comúnmente Análisis de la Composición del Software (SCA).
 
 Cualquier componente que tenga el potencial de impactar negativamente en el riesgo de la cadena de suministro cibernética es un candidato para el Análisis de Componentes.
 
@@ -96,7 +96,7 @@ Si tenemos alojado un repositorio en GitHub y este es público se nos ofrece aut
 
 
 
-Pero existe una herramienta llamada https://docs.dependencytrack.org/ que, además de mostrar las dependencias también permite conocer sus vulnerabilidades.
+Pero existe una herramienta llamada [https://docs.dependencytrack.org/](https://docs.dependencytrack.org/) que, además de mostrar las dependencias también permite conocer sus vulnerabilidades.
 
 ### Lista de materiales de software (SBOM)
 
