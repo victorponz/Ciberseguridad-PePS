@@ -245,7 +245,7 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
    Comprueba que están las siguientes dos líneas:
 
    ```
-   IncludeOptional /etc/modsecurity/*.conf
+   OWASPIncludeOptional /etc/modsecurity/*.conf
    Include /etc/modsecurity/rules/*.conf
    ```
 
@@ -381,7 +381,7 @@ Al igual que los WAF, los DBFW se sitúan entre el agente de usuario y el servid
 
 Se pueden configurar mediante:
 
-* **listas blancas:** La Lista Blanca crontiene secuencias de instrucciones SQL que se utilizan habitualmente en un entorno de base de datos determinado (por lo que se considera seguro). El firewall de la base de datos compara todas las consultas entrantes con las declaraciones de la Lista Blanca para definir si debe ignorarlas.
+* **listas blancas:** La Lista Blanca contiene secuencias de instrucciones SQL que se utilizan habitualmente en un entorno de base de datos determinado (por lo que se considera seguro). El firewall de la base de datos compara todas las consultas entrantes con las declaraciones de la Lista Blanca para definir si debe ignorarlas.
 * **listas negras:** Esta lista contiene la descripción de amenazas potenciales. Si alguna declaración SQL detectada por un firewall está presente en la Lista Negra, esa consulta se bloqueará de inmediato.
 
 ## Privilegios de los usuarios
