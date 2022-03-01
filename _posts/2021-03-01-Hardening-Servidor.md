@@ -99,7 +99,7 @@ Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains
 </VirtualHost>
 ```
 
-Que le indica al navegador que debe recordar durante más o menos 2 años (2 años\*365 días\*24 horas \*60 minutos \*60 segundos) que sólo debe acceder a la versión segura del sitio.
+Que le indica al navegador que debe recordar durante más o menos 2 años (2 años \* 365 días \* 24 horas \* 60 minutos \* 60 segundos) que sólo debe acceder a la versión segura del sitio.
 
 Más información en [Developer Mozilla](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Strict-Transport-Security)
 
@@ -119,10 +119,11 @@ Content-Security-Policy: default-src 'self'
 
 que indica todo el contenido provenga del mismo origen que el del sitio (esto excluye subdominios).
 
-El  administrador de un sitio web desea permitir que los usuarios de una  aplicación web incluyan imágenes de cualquier origen en su propio  contenido, pero restringen los medios de audio o video a proveedores de  confianza, y todas las secuencias de comandos solo a un servidor  específico que aloja un código de confianza.
+El siguiente ejemplo muestra cómo el  administrador de un sitio web desea permitir que los usuarios de una aplicación web incluyan imágenes de cualquier origen en su propio  contenido, pero restringen los medios de audio o vídeo a proveedores de  confianza, y todas las secuencias de comandos solo a un servidor  específico que aloja un código de confianza.
 
 ```
-Content-Security-Policy: default-src 'self'; img-src *; media-src media1.com media2.com; script-src userscripts.example.com
+Content-Security-Policy: default-src 'self'; img-src *; media-src media1.com media2.com; \
+script-src userscripts.example.com
 ```
 
 Aquí, de forma predeterminada, el contenido solo se permite desde el origen del documento, con las siguientes excepciones:
@@ -331,7 +332,7 @@ Otra configuración por defecto que es recomendable es prohibir el uso del archi
 
 ## Evitar ataques DOS
 
-Apache nos provee con un módulo llamado mod_evasive que permite evitar ataques de denegación de servicio (DoS) mediante el escaneo constante de los conexiones entrantes que serán baneadas en el momento que se alcance el umbral establecido en la configuración del módulo.
+Apache nos provee con un módulo llamado `mod_evasive` que permite evitar ataques de denegación de servicio (DoS) mediante el escaneo constante de los conexiones entrantes que serán baneadas en el momento que se alcance el umbral establecido en la configuración del módulo.
 Se puede configurar siguiendo el siguiente [manual](https://juantrucupei.wordpress.com/2016/09/07/instalacion-y-configuracion-de-modulo-mod_evasive-servidor-web-apache/).
 
 <blockquote class='task'>
@@ -380,16 +381,17 @@ Al igual que los WAF, los DBFW se sitúan entre el agente de usuario y el servid
 
 Se pueden configurar mediante:
 
-* **listas blancas:** La Lista Blanca contiene secuencias de instrucciones SQL que se utilizan habitualmente en un entorno de base de datos determinado (por lo que se considera seguro). El firewall de la base de datos compara todas las consultas entrantes con las declaraciones de la Lista Blanca para definir si debe ignorarlas.
+* **listas blancas:** La Lista Blanca crontiene secuencias de instrucciones SQL que se utilizan habitualmente en un entorno de base de datos determinado (por lo que se considera seguro). El firewall de la base de datos compara todas las consultas entrantes con las declaraciones de la Lista Blanca para definir si debe ignorarlas.
 * **listas negras:** Esta lista contiene la descripción de amenazas potenciales. Si alguna declaración SQL detectada por un firewall está presente en la Lista Negra, esa consulta se bloqueará de inmediato.
 
 ## Privilegios de los usuarios
 
 De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener una correcta gestión de los usuarios, ya sean para personas o cuentas de servicio para dar acceso a las aplicaciones, otorgando solo los permisos necesarios de los datos necesarios para cumplir con el requisito de mínimo privilegio y mínima exposición.
 
-## nginx y modsecurity
+## rnginx y modsecurity
 
- **RETO**
+<blockquote class='task'>
+<i class='fa fa-check'> </i><strong> Práctica 5</strong></blockquote>
 
 
 > Instala nginx y realiza las mismas configuraciones que hemos llevado a cabo en Apache
@@ -413,9 +415,7 @@ De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener 
 
 
 
-
-
-**Mas info en**
+**Más info en**
 
 [https://phoenixnap.com/kb/setup-configure-modsecurity-on-apache](https://phoenixnap.com/kb/setup-configure-modsecurity-on-apache)
 
