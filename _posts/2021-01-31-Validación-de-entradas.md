@@ -35,13 +35,6 @@ pandoc-latex-environment:
 
 # ¿Qué es?
 
-> **Práctica**
-> Realiza y documenta todos los puntos de esta entrada de blog 
-> Debes crear todas las páginas mencionadas en el mismo y como resultado, debes crear un Dockerfile con dos instalaciones de apache y php: una para el atacante y otra para el hacker
-> Además, debes crear un repositorio en GitHub con un commit por cada nuevo archivo crees o modifiques
-
-
-
 Nunca hay que confiar en aquello que introducen los usuarios en un formulario web. Estamos acostumbrados a trabajar con ellos en cualquier aplicación web de hoy en día: Facebook, Twitter, Instagram, ... y realmente no nos damos cuenta de lo fácil que es atacar una web a través de ellos si no se toman las debidas precauciones al validar los datos de entrada.
 
 ## XSS (Cross-site-scripting)
@@ -389,7 +382,7 @@ Más información en la web de [OWASP](https://owasp.org/www-community/attacks/S
 
 Se debe cerrar la sesión en un plazo determinado de tal forma que si no se interactúa con la página esta expire y el usuario deba volver a iniciar sesión. Al menos se deben fijar las cookies para que se eliminen al cerrar el navegador. 
 
-Además, se debe volver a solicitar las credenciales de acceso cuando el usuario acceda a acciones relacionadas con su perfil. Por ejemplo, pidiendo la contraseña cuando el usuario desee cambiar la misma. Esto protege al usuario si se deja desatendido el navegador y otro usuario intenta cambiarle la contraseña.
+Además, se debe volver a solicitar las credenciales de acceso cuando el usuario acceda a acciones relacionadas con su perfil o con el uso de datos privados. Por ejemplo, pidiendo la contraseña cuando el usuario desee cambiar la misma o realice alguna compra. Esto protege al usuario si se deja desatendido el navegador y otro usuario intenta cambiarle la contraseña.
 
 ## Control de acceso (Autorización)
 ![Autenticación vs Autorización](https://www.redeszone.net/app/uploads-redeszone.net/2020/06/diferencias-autenticacion-autorizacion-3-930x487.jpg)
