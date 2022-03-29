@@ -33,6 +33,9 @@ pandoc-latex-environment:
     importantblock: [important]
 ---
 
+> **NOTA.**
+> Todo el código de esta práctica está disponible en [https://github.com/victorponz/seguridad-web](https://github.com/victorponz/seguridad-web)
+
 # ¿Qué es?
 
 Nunca hay que confiar en aquello que introducen los usuarios en un formulario web. Estamos acostumbrados a trabajar con ellos en cualquier aplicación web de hoy en día: Facebook, Twitter, Instagram, ... y realmente no nos damos cuenta de lo fácil que es atacar una web a través de ellos si no se toman las debidas precauciones al validar los datos de entrada.
