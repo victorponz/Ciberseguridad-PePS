@@ -216,7 +216,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && !$ya_registrado){
 	$password = $_POST['password'] ?? "";
     
 	$ya_registrado = (in_array($usuario, $valid_users)) && ($password == $all_users[$usuario]);
-	if ($ya_registrado){login.php
+	if ($ya_registrado){
 		$_SESSION['ya_registrado'] = true;
 		$_SESSION['usuario'] = $usuario;
 	}
@@ -355,7 +355,7 @@ Más información en [stackoverflow](https://stackoverflow.com/questions/36877/h
 
 Otro ataque relacionado con las cookies de sesión es Session Fixation. El engaño parte de un hacker que hace llegar a otro usuario un enlace (por correo electrónico, o insertado en una web hackeada con XSS) con un identificador de sesión incluido en la url.
 
-Por ejemplo, http://localhost:8080/login.php?PHPSESSID=HOLA
+Por ejemplo, [http://localhost:8080/login.php?PHPSESSID=HOLA](http://localhost:8080/login.php?PHPSESSID=HOLA)
 
 En el momento que el usuario legítimo inicia sesión en el sistema  da acceso al hacker, pues éste tiene acceso a la cookie de sesión `HOLA`. Ahora prueba a acceder con una sesión privada u otro navegador y comprobarás que **estás logeado!**
 
@@ -499,12 +499,12 @@ Un tipo especial de ataque XSS es [CSRF](https://en.wikipedia.org/wiki/Cross-sit
 Vamos a poner un ejemplo:
 
 * El usuario `mario` está logeado en el sistema 
-* Hay una página en el sistema que permite transferir dinero a otro usuario del mismo. Por ejemplo, `dominioseguro.local/tranfer.php`
+* Hay una página en el sistema que permite transferir dinero a otro usuario del mismo. Por ejemplo, `victima.local/tranfer.php`
 
 * Un atacante (`juan`) ha conseguido mediante XSS introducir este código en una página que visita `mario`
 
   ```javascript
-  <img src='http://dominiodeguro.local/transfer.php?quantity=1000&user=juan'>
+  <img src='http://victima.local/transfer.php?quantity=1000&user=juan'>
   ```
 
   Ahora cada vez que `mario` visite esta página se producirá una transferencia a `juan` por un importe de 1000€!!!
@@ -534,7 +534,7 @@ Y este es el contenido de la página hackeada (`hackeada-csrf.html`)
 ```html
 Esta es una página que ha sido hackeada mediante XSS.
 Al acceder, realiza una transferencia de 1000 € al atacante.
-<img src='http://dominiodeguro.local/transfer.php?quantity=1000&to=juan'>
+<img src='http://victima.local/transfer.php?quantity=1000&to=juan'>
 ```
 
 Para reproducir el ataque, haz login como `mario` y luego visita la página `hackeada-csrf.html`
