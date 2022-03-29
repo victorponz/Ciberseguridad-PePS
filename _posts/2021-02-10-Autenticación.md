@@ -33,7 +33,7 @@ pandoc-latex-environment:
 
 # Autenticación HTTP
 > **Práctica 1**
-> Realiza y documenta este punto<
+> Realiza y documenta este punto
 
 
 También merece la pena conocer el tipo de autenticación HTTP que provee de un mecanismo sencillo para acceder a recursos protegidos por usuario y contraseña.
