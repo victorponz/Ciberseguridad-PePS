@@ -241,14 +241,18 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
    sudo nano /etc/apache2/mods-enabled/security2.conf
    ```
 
-   Comprueba que están las siguientes dos líneas:
-
    ```
-   IncludeOptional /etc/modsecurity/*.conf
-   Include /etc/modsecurity/rules/*.conf
+   <IfModule security2_module>
+   	# Default Debian dir for modsecurity's persistent data
+   	SecDataDir /var/cache/modsecurity
+   	SecRuleEngine On
+   	# Keeping your local configuration in that directory
+   	# will allow for an easy upgrade of THIS file and
+   	# make your life easier
+       IncludeOptional /etc/modsecurity/*.conf
+   	Include /etc/modsecurity/rules/*.conf	
+   </IfModule>
    ```
-
-   Si no están, añádelas
 
 6. Vamos a comprobar que funciona. Para ello edita el archivo de configuración del Host Virtual
 
