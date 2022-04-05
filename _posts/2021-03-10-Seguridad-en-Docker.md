@@ -33,9 +33,11 @@ pandoc-latex-environment:
 
 ## Seguridad host
 
-**Práctica 1**
+<i class='fa fa-check'> </i><strong> Práctica 1</strong>
 
+<blockquote>
 Realiza los comandos y configuraciones del documento.</blockquote>
+
 Como comparte el mismo kernel de la máquina host, todo el software del sistema debe estar actualizado a la máxima versión estable.
 
 Antes de aplicar seguridad en el host, se debería usar alguna tipo de seguridad en el host mediante `ip_tables`, `SELinux`, `apparmor`, defensa en profundidad, perímetro etc.
