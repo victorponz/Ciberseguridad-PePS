@@ -215,9 +215,8 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
    git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
    ```
 
-3. Entramos en la carpeta `owasp-modsecurity-crs`
-   `cd owasp-modsecurity-crs` y movemos el archivo `crs-setup.conf.example` 
-
+3. Entramos en la carpeta `owasp-modsecurity-crs` y movemos el archivo `crs-setup.conf.example` 
+   
    ```
    sudo mv crs-setup.conf.example /etc/modsecurity/crs-setup.conf
    ```
