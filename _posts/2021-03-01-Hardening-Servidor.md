@@ -152,7 +152,7 @@ Header set Content-Security-Policy \
 >
 > * Deshabilitar el módulo autoindex
 >
-> * Configurar la cabecera `HSTS`. Hay que habilitar el módulo `headers`. Recuerda que hay que instalar el certificado digital para el sitio seguro tal y como hicimos en la [práctica de apache](https://victorponz.github.io/Ciberseguridad-PePS/tema1/practicas/2020/11/08/P1-Apache.html)
+> * Configurar la cabecera `HSTS`. Hay que habilitar el módulo `headers`. Recuerda que hay que instalar el certificado digital para el sitio seguro tal y como hicimos en la **[práctica de apache](https://victorponz.github.io/Ciberseguridad-PePS/tema1/practicas/2020/11/08/P1-SSL.html)**
 >
 > * Configurar la cabecera `CSP` con alguno de los ejemplos
 >
@@ -245,7 +245,7 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
    Comprueba que están las siguientes dos líneas:
 
    ```
-   OWASPIncludeOptional /etc/modsecurity/*.conf
+   IncludeOptional /etc/modsecurity/*.conf
    Include /etc/modsecurity/rules/*.conf
    ```
 
