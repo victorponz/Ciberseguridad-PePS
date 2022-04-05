@@ -387,7 +387,7 @@ Se pueden configurar mediante:
 
 De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener una correcta gestión de los usuarios, ya sean para personas o cuentas de servicio para dar acceso a las aplicaciones, otorgando solo los permisos necesarios de los datos necesarios para cumplir con el requisito de mínimo privilegio y mínima exposición.
 
-## rnginx y modsecurity
+## nginx y modsecurity
 
 <blockquote class='task'>
 <i class='fa fa-check'> </i><strong> Práctica 5</strong></blockquote>
