@@ -148,28 +148,6 @@ Por ejemplo, si buscamos un imagen de Wodpress encontraremos unas 8000 imágenes
 
 Se puede hacer una imagen a partir de un repositorio en GitHub como por ejemplo, esta [imagen](https://hub.docker.com/r/irespaldiza/whoami) alojada en https://github.com/irespaldiza/whoami por lo que se puede clonar o crearlo tú a partir del Dockerfile.
 
-El servicio que lo soporta es Notary que es una de las aplicaciones a las que da soporte Docker.
-
-Esta variable de entorno es muy aconsejable tenerla a true. Por ejemplo se puede incluir en el `bash.rc`.
-
-A partir de una imagen es parecido a compilar a partir de la definición para generar las capas y guardarla en un registry como `docker.hub`
-
-La imagen de alpine sólo pesa  5.61 MB porque comparte el kernel con el host.
-
-Los comandos se ejecutan en tiempo de compilación en la preparación del entorno y ENTRYPOINT y CMD en tiempo de ejecución.
-
-Lo normal es poner en ENTRYPOINT un comando y en CMD los parámetros (que se pueden sobrescribir)
-
-También existe el comando ADD que es muy parecido a COPY. La diferencia es que COPY sólo permite copiar desde el equipo y ADD desde una url.
-
-Y otra diferencia es que ADD puede copiar y descomprimir archivos, pero la capa no se podrá cachear.
-
-Es una mala praxis no usar la versión al utilizar un paquete. Por ejemplo, `alpine`
-
-para buscar imágenes se usa `docker search alpine`, pero no nos muestra tag
-
-De esta forma, se puede comprobar si tiene vulnerabilidades o si dentro de un tiempo la vuelvo a generar puede dar problemas de compatibilidad.
-
 Es  bastante normal que el código deba estar compilado lo que añade más superficie a ser atacada porque no interesa tener un compilador en la imagen ya que si nuestro contenedor es atacado el atacante podría compilar programas en nuestro sistema, cosa que está totalmente prohibida.
 
 por ejemplo
@@ -187,23 +165,26 @@ COPY --from=builder /app/whoami /app/
 ENTRYPOINT ./whoami
 ```
 
-El concepto `pot` es de **Kubernetes** que son un grupo de contenedores que comparten en el mismo espacio de puertos
-
-**RETO**
-
->Haz un docker file en GitHub y conéctalo con Docker Hub para que genere el build cada vez que se modifica.
-
 
 ### Escaneo pasivo de vulnerabilidades
 
-Se puede hacer con alternativas gratuitas pues en DockerHub es Pro.
-
-Una de ellas es  `trivy`. Por ejemplo 
-
-`trivy image python:3.4-alpine`
+Un escáner de seguridad de contenedores ayudará a encontrar todas las vulnerabilidades dentro de los contenedores y a monitorearlas regularmente contra cualquier ataque, problema o error nuevo.
 
 **Práctica 2**
 
+> Una de ellas es [trivy](https://aquasecurity.github.io/trivy/v0.25.3/). Por ejemplo, descarga [https://github.com/christophetd/log4shell-vulnerable-app](https://github.com/christophetd/log4shell-vulnerable-app) que contiene, entre otras, la vulnerabilidad [log4shell](https://www.cvedetails.com/cve/CVE-2022-23307/). Genera la imagen y luego escanéala con trivy
+
+**Práctica 3**
+
 > Realiza un testeo de una imagen de Wordpress (no uses tags recientes, pues no tendrán tantas vulnerabilidades)
 
-Más información en [Docker Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html)
+**Práctica 4**
+
+> Realiza un testeo con DependencyTrack a partir del BOM generado con [Syft](https://github.com/anchore/syft/), ten en cuenta que el formato de salida debe ser `cyclonedx`. También realiza el testeo con [Grype](https://github.com/anchore/grype/)
+
+Más información en
+
+* [Docker Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html)
+
+* [Anchore](https://anchore.com/opensource/)
+* [https://geekflare.com/container-security-scanners/](https://geekflare.com/container-security-scanners/)
