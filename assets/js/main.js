@@ -184,3 +184,33 @@ modalTriggers.forEach(trigger => {
     })
   })
 })
+
+document.querySelectorAll('blockquote p.task').forEach(el => {
+   	addClass(el.parentElement, "task");
+	addClass(el.parentElement, "hide");
+});
+
+document.querySelectorAll('blockquote p.reto').forEach(el => {
+   	addClass(el.parentElement, "reto");
+	addClass(el.parentElement, "hide");
+});
+
+document.querySelectorAll('blockquote p.hint').forEach(el => {
+   	addClass(el.parentElement, "hint");
+	addClass(el.parentElement, "hide");
+});
+
+document.querySelectorAll('blockquote p.info').forEach(el => {
+   	addClass(el.parentElement, "info");
+	addClass(el.parentElement, "hide");
+});
+
+document.querySelectorAll('blockquote p.warning').forEach(el => {
+   	addClass(el.parentElement, "warning");
+	addClass(el.parentElement, "hide");
+});
+
+document.querySelectorAll('blockquote p.alert').forEach(el => {
+   	addClass(el.parentElement, "alert");
+	addClass(el.parentElement, "hide");
+});

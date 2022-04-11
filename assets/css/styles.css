@@ -587,3 +587,98 @@ a {
 ul.doc-info {
     list-style: none;
 }
+.hide{
+  display:none;
+}
+#content blockquote.task + blockquote p::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0ae";
+  font-weight: 900;
+  padding-right: 4px;
+  color:#383d41;
+}
+#content blockquote.task + blockquote{
+color: #383d41;
+background-color: #e2e3e5;
+border-color: #d6d8db;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#content blockquote.reto + blockquote p:first-child::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f19c";
+  font-weight: 900;
+  padding-right: 4px;
+  color:#1b1e21;
+}
+#content blockquote.reto + blockquote{
+color: #1b1e21;
+background-color: #d6d8d9;
+border-color: #c6c8ca;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#content blockquote.hint + blockquote p::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0eb";
+  font-weight: 900;
+  padding-right: 4px;
+  color:#155724;
+}
+
+#content blockquote.hint + blockquote{
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+#content blockquote.info + blockquote p::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f129";
+  font-weight: 900;
+  padding-right: 4px;
+  color:#004085;
+}
+#content blockquote.info + blockquote{
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#content blockquote.warning + blockquote p::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f12a";
+  font-weight: 900;
+  padding-right: 4px;
+  color:#856404
+}
+
+#content blockquote.warning + blockquote{
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#content blockquote.alert + blockquote p::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f1e2";
+  font-weight: 900;
+  padding-right: 4px;
+  color:#721c24;
+  background-color:#f8d7da;
+  border-color:#f5c6cb;
+}
+#content blockquote.alert + blockquote{
+  background-color:#f8d7da;
+  border-color:#f5c6cb;
+  color:#721c24;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
