@@ -144,10 +144,9 @@ Header set Content-Security-Policy \
 	script-src userscripts.example.com
 ```
 
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 1</strong>
-</blockquote>
 
+> -task-**Práctica 1**
+>
 > Configura tu instalación de apache para:
 >
 > * Deshabilitar el módulo autoindex
@@ -194,9 +193,9 @@ Si introducimos una entrada en el formulario que está bloqueada nos saltará un
 
 
 
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 2</strong></blockquote>
 
+> -task-**Práctica 2**
+>
 > * Configura tu instalación de apache para que se atenga a las reglas de mod_security.
 > * Una vez configurado,  crea un imagen de docker que configure una instalación de apache con mod_security.
 
@@ -313,9 +312,9 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
    ```
    
 
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 3</strong></blockquote>
 
+> -task-**Práctica 3**
+>
 > * Realiza una instalación de apache en la que se incluyan las reglas OWASP para mod_security.
 > * Una vez comprobada la instalación de estas reglas, crea un imagen de docker que realice la instalación y configuración de estas reglas
 
@@ -338,9 +337,9 @@ Otra configuración por defecto que es recomendable es prohibir el uso del archi
 Apache nos provee con un módulo llamado `mod_evasive` que permite evitar ataques de denegación de servicio (DoS) mediante el escaneo constante de los conexiones entrantes que serán baneadas en el momento que se alcance el umbral establecido en la configuración del módulo.
 Se puede configurar siguiendo el siguiente [manual](https://juantrucupei.wordpress.com/2016/09/07/instalacion-y-configuracion-de-modulo-mod_evasive-servidor-web-apache/).
 
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 4</strong></blockquote>
 
+> -task-**Práctica 4**
+>
 > * Realiza una instalación de apache en la que se incluya el módulo mod_evasive y crea una imagen Docker que realice el trabajo
 > * Ahora usa apache bench para probar que, efectivamente, el módulo empieza a rechazar peticiones. Adjunta el informe generado por Apache Bench
 
@@ -393,10 +392,8 @@ De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener 
 
 ## nginx y modsecurity
 
-<blockquote class='task'>
-<i class='fa fa-check'> </i><strong> Práctica 5</strong></blockquote>
-
-
+>-task-**Práctica 5**
+>
 > Instala nginx y realiza las mismas configuraciones que hemos llevado a cabo en Apache
 >
 > * Instalación de PHP con un archivo index.php con el siguiente contenido
