@@ -373,26 +373,6 @@ video {
   }
 }
 
-blockquote.task{
-  border-left:0;
-}
-blockquote.task strong, blockquote.task i{
-  color:rgb(51, 51, 51);
-}
-blockquote.task + blockquote, blockquote.task {
-  border-left:4px solid red;
-}
-blockquote.reto{
-  background-color: rgb(204, 72, 72);
-  color:white;
-}
-
-
-blockquote.reto strong, blockquote.reto i{
-  color:rgb(228, 209, 209);
-}
-
-
 .PageNavigation a, .pdf,  .presentation, #menu a, .portada a{
   text-decoration: none; color:rgb(51, 51, 51); font-size:0.8em
 }
@@ -451,25 +431,7 @@ span.hit{
   margin-left: 4px;
   margin-right: 4px;
 }
-blockquote.info{
-  color: #bf7900;
-  background: #fffbdc;
-  padding: 12px;
-  padding-left: 28px;
-  border: 1px solid #bf7900;
-}
-blockquote.info i {
-  margin-left: -18px;
-  font-size: 32px;
-  margin-right: 2px;
-}
-blockquote.info{
-  color: #bf7900;
-  background: #fffbdc;
-  padding: 12px;
-  padding-left: 28px;
-  border: 1px solid #bf7900;
-}
+
 
 .language-plaintext .rouge-gutter.gl{
   display: none;
@@ -590,95 +552,66 @@ ul.doc-info {
 .hide{
   display:none;
 }
-#content blockquote.task + blockquote p::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f0ae";
-  font-weight: 900;
-  padding-right: 4px;
-  color:#383d41;
+
+.icon-blockquote{
+   position:absolute;
+   left:-46px;
+   top:0px;
+   font-size: 32px;
 }
-#content blockquote.task + blockquote{
-color: #383d41;
-background-color: #e2e3e5;
-border-color: #d6d8db;
+#content blockquote.task, #content blockquote.reto, #content blockquote.hint, #content blockquote.info, #content blockquote.warning, #content blockquote.alert{
+    position:relative;
     padding-top: 4px;
     padding-bottom: 4px;
+    margin-left:0px;
+    margin-right:0px;
 }
-
-#content blockquote.reto + blockquote p:first-child::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f19c";
-  font-weight: 900;
-  padding-right: 4px;
+.icon-blockquote.fa-tasks{
+  color:red;
+}
+#content blockquote.task{
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: red;
+}
+.icon-blockquote.fa-university{
   color:#1b1e21;
 }
-#content blockquote.reto + blockquote{
-color: #1b1e21;
-background-color: #d6d8d9;
-border-color: #c6c8ca;
-    padding-top: 4px;
-    padding-bottom: 4px;
+#content blockquote.reto {
+  color: #1b1e21;
+  background-color: #d6d8d9;
+  border-color: #c6c8ca;
 }
-
-#content blockquote.hint + blockquote p::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f0eb";
-  font-weight: 900;
-  padding-right: 4px;
+.icon-blockquote.fa-lightbulb{
   color:#155724;
 }
-
-#content blockquote.hint + blockquote{
+#content blockquote.hint{
   color: #155724;
   background-color: #d4edda;
   border-color: #c3e6cb;
-    padding-top: 4px;
-    padding-bottom: 4px;
 }
-#content blockquote.info + blockquote p::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f129";
-  font-weight: 900;
-  padding-right: 4px;
+.icon-blockquote.fa-info{
   color:#004085;
 }
-#content blockquote.info + blockquote{
+#content blockquote.info{
     color: #004085;
     background-color: #cce5ff;
     border-color: #b8daff;
-    padding-top: 4px;
-    padding-bottom: 4px;
 }
-
-#content blockquote.warning + blockquote p::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f12a";
-  font-weight: 900;
-  padding-right: 4px;
-  color:#856404
+.icon-blockquote.fa-exclamation{
+  color:#856404;
 }
-
-#content blockquote.warning + blockquote{
+#content blockquote.warning{
   color: #856404;
   background-color: #fff3cd;
   border-color: #ffeeba;
-  padding-top: 4px;
-  padding-bottom: 4px;
 }
-#content blockquote.alert + blockquote p::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f1e2";
-  font-weight: 900;
-  padding-right: 4px;
+.icon-blockquote.fa-bomb{
   color:#721c24;
-  background-color:#f8d7da;
-  border-color:#f5c6cb;
 }
-#content blockquote.alert + blockquote{
+#content blockquote.alert{
   background-color:#f8d7da;
   border-color:#f5c6cb;
   color:#721c24;
-  padding-top: 4px;
-  padding-bottom: 4px;
 }
 

@@ -11,12 +11,12 @@ layout: default
 {% if page.conToc %}
 <h1>{{ page.title }}</h1>
 {% endif %}
-        {% assign content = content | replace: '>-info-', ' class="info"><i class="fa fa-info"></i> ' %}
-        {% assign content = content | replace: '>-hint-', ' class="hint"><i class="fa fa-lightbulb"></i> ' %}
-        {% assign content = content | replace: '>-task-', ' class="task"><i class="fa fa-tasks"></i> ' %}
-        {% assign content = content | replace: '>-reto-', ' class="reto"><i class="fa fa-university"></i> ' %}
-        {% assign content = content | replace: '>-warning-', ' class="warning"><i class="fa fa-exclamation"></i> ' %}
-        {% assign content = content | replace: '>-alert-', ' class="alert"><i class="fa fa-bomb"></i> ' %}
+        {% assign content = content | replace: '>-info-', ' class="info"><i class="fa fa-info icon-blockquote"></i> ' %}
+        {% assign content = content | replace: '>-hint-', ' class="hint"><i class="fa fa-lightbulb icon-blockquote"></i> ' %}
+        {% assign content = content | replace: '>-task-', ' class="task"><i class="fa fa-tasks icon-blockquote"></i> ' %}
+        {% assign content = content | replace: '>-reto-', ' class="reto"><i class="fa fa-university icon-blockquote"></i> ' %}
+        {% assign content = content | replace: '>-warning-', ' class="warning"><i class="fa fa-exclamation icon-blockquote"></i> ' %}
+        {% assign content = content | replace: '>-alert-', ' class="alert"><i class="fa fa-bomb icon-blockquote"></i> ' %}
         <div>
             {% if page.conToc %}
                 {% include toc.html html=content class="atypora-menu" id="menu"%}
