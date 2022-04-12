@@ -273,7 +273,7 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
    sudo systemctl restart apache2
    ```
 
-7. Ahora prueba este comando `curl localhost/index.html?testparam=test` Será *cazado* por la regla que hemos definido en el archivo de configuración. 
+7. Ahora prueba este comando `curl localhost:8080/index.html?testparam=test` Será *cazado* por la regla que hemos definido en el archivo de configuración. 
 
    Y esta será la respuesta:
 
@@ -290,14 +290,14 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
 8. También puedes probar a introducir las siguientes URLs
 
    ```
-   localhost/index.html?exec=/bin/bash
+   localhost:8080/index.html?exec=/bin/bash
    ```
    que pararía un ataque de [command injection](https://owasp.org/www-community/attacks/Command_Injection).
    
    Y 
    
    ```
-   localhost/index.html?exec=/../../ 
+   localhost:8080/index.html?exec=/../../ 
    ```
    que pararía un ataque de [path traversal](https://owasp.org/www-community/attacks/Path_Traversal)
    
