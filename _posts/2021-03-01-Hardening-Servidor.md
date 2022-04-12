@@ -401,7 +401,7 @@ De forma homóloga a los que ocurre en el sistema linux, en MySQL debemos tener 
 >
 > * Instalación de PHP con un archivo index.php con el siguiente contenido
 >
->   ```
+>   ```php
 >   <?php
 >   phpinfo();
 >   ```
