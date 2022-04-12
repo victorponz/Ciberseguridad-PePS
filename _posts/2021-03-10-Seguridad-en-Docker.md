@@ -137,8 +137,6 @@ Cuando se lanza tengo un docker dentro de docker es la misma ejecución de docke
 
 Es más fiable confiar en una imagen de la que tengo acceso al `Dockerfile` que una que ya viene construida. Puede tener malware si la imagen no es confiable.
 
-Con docker commit se crea una imagen, aunque su uso es desaconsejable. ya que no se puede auditar. Sólo confiar en las imágenes de Docker, o de fuente confiable como Google Cloud o Microsoft Azure.
-
 Por ejemplo, si buscamos un imagen de Wodpress encontraremos unas 8000 imágenes. La más popular es la imagen oficial que es la generada por Docker. En el caso de que la haya generado otro desarrollador estará indicado en la imagen. Por ejemplo `Multicontainer WordPress` de **Microsoft**
 
 Se puede hacer una imagen a partir de un repositorio en GitHub como por ejemplo, esta [imagen](https://hub.docker.com/r/irespaldiza/whoami) alojada en https://github.com/irespaldiza/whoami por lo que se puede clonar o crearlo tú a partir del Dockerfile.
