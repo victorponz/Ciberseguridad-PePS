@@ -373,7 +373,7 @@ secure-file-priv = /dev/null
 
 Otra medida es renombrar el usuario root. Para ello, 
 
-```mysql
+```sql
 update mysql.user set user="ciberseguridad" where user="root"
 flush privileges
 ```
