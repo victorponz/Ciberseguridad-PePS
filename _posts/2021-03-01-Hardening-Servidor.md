@@ -209,7 +209,7 @@ Una solución de compromiso para no dar todas las reglas, se muestra una configu
 
 1. Instalar `libapache2-mod-security2`
 
-2.  Hacemos un clon del [repositorio](https://github.com/coreruleset/coreruleset/)
+2. Hacemos un clon del [repositorio](https://github.com/coreruleset/coreruleset/)
 
    ```
    git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
