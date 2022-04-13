@@ -614,4 +614,15 @@ ul.doc-info {
   border-color:#f5c6cb;
   color:#721c24;
 }
+#content details.toogle summary{
+    font-weight: 900;
+    cursor:pointer;
+    color:rgb(51, 51, 51);
+    padding:8px;
+}
+#content details.toogle{
+  background: #eee;
+  margin-bottom: 2rem;
+  padding: .5rem 1rem;
+}
 

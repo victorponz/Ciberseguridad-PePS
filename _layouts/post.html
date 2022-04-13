@@ -17,6 +17,7 @@ layout: default
         {% assign content = content | replace: '>-reto-', ' class="reto"><i class="fa fa-graduation-cap icon-blockquote"></i> ' %}
         {% assign content = content | replace: '>-warning-', ' class="warning"><i class="fa fa-exclamation icon-blockquote"></i> ' %}
         {% assign content = content | replace: '>-alert-', ' class="alert"><i class="fa fa-bomb icon-blockquote"></i> ' %}
+        {% assign content = content | replace: '>-toogle-', ' class="toogle">' %}
         <div>
             {% if page.conToc %}
                 {% include toc.html html=content class="atypora-menu" id="menu"%}
