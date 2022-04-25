@@ -251,11 +251,11 @@ information_schema.tables
 
 #### Consultar el tipo y versión de del servidor de base de datos
 
-| Database type    |                   Query |
-| ---------------- | ----------------------: |
-| Microsoft, MySQL |        SELECT @@version |
+| Database type    | Query                   |
+| ---------------- | :---------------------- |
+| Microsoft, MySQL | SELECT @@version        |
 | Oracle           | SELECT * FROM v$version |
-| PostreSQL        |        SELECT version() |
+| PostreSQL        | SELECT version()        |
 
 Por ejemplo, se puede usar un ataque de tipo UNION
 
