@@ -656,7 +656,13 @@ table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: so
 table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
 table tr th:first-child, table tr td:first-child { margin-top: 0px; }
 table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
-
+table .rouge-gutter.gl{
+  padding:0;
+  width:0;
+}
+.highlight table td.rouge-code{
+  padding-left:18px;
+}
 .highlight table tr td, .highlight table tr{
   border:none;
 }
