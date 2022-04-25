@@ -68,11 +68,13 @@ function activeCurrentTocItem(){
             unactive();
             lastHeadingActive = decodeURIComponent(el.getAttribute('id'));
             lastActive = menuFixed.querySelector("[href='#" + lastHeadingActive + "']");
-            addClass(lastActive, 'active');
-            if (!isAnyPartOfElementInViewport(lastActive)){
-                lastActive.scrollIntoView();
+            if (lastActive){
+		    addClass(lastActive, 'active');
+		    if (!isAnyPartOfElementInViewport(lastActive)){
+		        lastActive.scrollIntoView();
+		    }
             }
-        }
+	}
     });
 }
 var menu = document.getElementById("menu");
@@ -122,10 +124,12 @@ window.addEventListener('scroll', function(e) {
         if (previousHeader){
             unactive();
             var tocItem = menuFixed.querySelector("[href='#" + previousHeader.getAttribute("id") + "']");
-            addClass(tocItem, 'active');
-            if (!isAnyPartOfElementInViewport(tocItem)){
-                tocItem.scrollIntoView();
-            }
+            if (tocItem){
+		    addClass(tocItem, 'active');
+		    if (!isAnyPartOfElementInViewport(tocItem)){
+		        tocItem.scrollIntoView();
+		    }
+	   }
         }
     }
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
