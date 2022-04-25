@@ -284,7 +284,8 @@ $actual = file_get_contents($fichero);
 file_put_contents($fichero, $session_robada, FILE_APPEND);
 ```
 
-> **Importante**
+> -warning-**Importante**
+>
 > Para escribir en el fichero `/data/sessions.txt` usa el mismo método que en la [Práctica Docker](https://victorponz.github.io/Ciberseguridad-PePS/tema2/docker/2021/01/09/Pr%C3%A1ctica-Docker.html) hacíamos con el archivo `counter.txt`
 
 Ahora crea otra imagen docker que escuche en  [127.0.0.1:8080](127.0.0.1:8080) y que simula la víctima. Crea el siguiente contenido en la página `hackeada.php`
@@ -377,7 +378,7 @@ session_start();
 
 Más información en la web de [OWASP](https://owasp.org/www-community/attacks/Session_fixation)
 
-> **Desde el punto de vista de la ciberseguridad**
+> -info-**Desde el punto de vista de la ciberseguridad**
 >
 > Para evitar este tipo de ataques, la cookie de sesión cuando el usuario ha hecho **login debe ser distinta de la cookie** cuando no se ha iniciado sesión.
 

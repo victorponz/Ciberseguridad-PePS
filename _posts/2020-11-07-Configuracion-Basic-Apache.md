@@ -159,7 +159,7 @@ Ahora sí que puede acceder porque los permisos para *otros* están definidos co
 
 Si además, nuestra web tiene la opción de subir archivos de cualquier tipo, también debemos darle permiso de escritura.
 
-> **Cuidado:**
+> -alert-**Cuidado:**
 >
 > Lo normal es que en un servidor real, los archivos de `DocumentRoot` *cuelguen* de `/var/www/html` y los permisos ahí están definidos como de acceso para cualquier usuario.
 >
@@ -185,6 +185,8 @@ Por ejemplo, si queremos dar permisos de lectura y escritura usaremos el valor *
 
 ### Tarea 1
 
+> -task-
+>
 > 1. Cread dos hosts virtuales usando el método descrito en este documento \(website1 y website2\).
 > 2. Una vez creados, cread un documento `markdown` con las capturas de pantalla de los directorios `sites-available` y `sites-enabled`, así como de los directorios creados dentro del `DocumentRoot` definido en cada uno de ellos.
 > 3. Así mismo debéis adjuntar la configuración de vuestros sitios en apache así como el archivo `/etc/hosts`
@@ -230,7 +232,7 @@ echo "Bienvenido a mi wiki";
 
 ### Tarea 2
 
->Configurad vuestro servidor apache de esta manera y adjuntad las capturas de pantalla tanto del archivo de configuración de apache como del navegador apuntado a dicho alias.
+>-task-Configurad vuestro servidor apache de esta manera y adjuntad las capturas de pantalla tanto del archivo de configuración de apache como del navegador apuntado a dicho alias.
 
 
 ## Redirect
@@ -241,7 +243,7 @@ Para ello modificaremos el archivo de configuración:
 ![1537282492432](/Ciberseguridad-PePS/assets/img/apache/1537282492432.png)
 
 ###  Tarea 3
->Realiza esta modificación en tu archivo de configuración de apache. Adjunta el contenido de tu archivo de configuración de apache y una captura de pantalla de Firebug donde se vea el `Status Code 302`
+>-task-Realiza esta modificación en tu archivo de configuración de apache. Adjunta el contenido de tu archivo de configuración de apache y una captura de pantalla de Firebug donde se vea el `Status Code 302`
 
 
 ## Error 404
@@ -250,6 +252,6 @@ Siguiendo la información que puedes encontrar en este [enlace](https://httpd.ap
 
 ###  Tarea 4
 
->Realiza esta modificación en tu archivo de configuración.  
+>-task-Realiza esta modificación en tu archivo de configuración.  
 Crea un documento `markdown` con esta información y adjunta una captura de pantalla de firebug mostrando esta página y en la que se vea el `status code 404`
 

@@ -163,16 +163,16 @@ ENTRYPOINT ./whoami
 
 Un escáner de seguridad de contenedores ayudará a encontrar todas las vulnerabilidades dentro de los contenedores y a monitorearlas regularmente contra cualquier ataque, problema o error nuevo.
 
-**Práctica 1**
-
+> -task-**Práctica 1**
+>
 > Una de ellas es [trivy](https://aquasecurity.github.io/trivy/v0.25.3/). Por ejemplo, descarga [https://github.com/christophetd/log4shell-vulnerable-app](https://github.com/christophetd/log4shell-vulnerable-app) que contiene, entre otras, la vulnerabilidad [log4shell](https://www.cvedetails.com/cve/CVE-2022-23307/). Genera la imagen y luego escanéala con trivy
 
-**Práctica 2**
-
+> -task-**Práctica 2**
+>
 > Realiza un testeo de una imagen de Wordpress (no uses tags recientes, pues no tendrán tantas vulnerabilidades)
 
-**Práctica 3**
-
+> -task-**Práctica 3**
+>
 > Realiza un testeo con DependencyTrack a partir del BOM generado con [Syft](https://github.com/anchore/syft/), ten en cuenta que el formato de salida debe ser `cyclonedx`. También realiza el testeo con [Grype](https://github.com/anchore/grype/)
 
 Más información en

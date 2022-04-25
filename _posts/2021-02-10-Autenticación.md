@@ -32,7 +32,7 @@ pandoc-latex-environment:
 ---
 
 # Autenticación HTTP
-> **Práctica 1**
+> -task-**Práctica 1**
 > Realiza y documenta este punto
 
 
@@ -84,7 +84,7 @@ Es muy fácil, decodificar `base64`. Por ejemplo en [https://www.base64decode.or
 Este método se puede emplear para una intranet o para una parte de la aplicación en la que sea necesario iniciar sesión, añadiendo una capa más de seguridad, porque se deben realizar dos autorizaciones: la primera basada en `HTTP` y la segunda, como vimos anteriormente, mediante **sesiones**
 
 
-> **Práctica 2**
+> -task-**Práctica 2**
 Configura apache para que al  directorio <code>/protegido</code> sólo se pueda acceder mediante un usuario y contraseña siguiendo las instrucciones detalladas en <a href='https://cwiki.apache.org/confluence/display/HTTPD/PasswordBasicAuth'>Password protect a directory using basic authentication</a>.
 Documenta la configuración e instalación con una entrada en tu blog
 
@@ -95,8 +95,20 @@ OAuth es un estándar para permitir delegar la autenticación a terceras partes.
 ![oauth](/Ciberseguridad-PePS/assets/img/autenticacion/image-20211111165156421.png)
 
 
-> **Práctica 3**
-Realiza este punto. Como resultado debes realizar una entrada de blog y un repositorio en GitHub
+> -task-**Práctica 3**
+> 1. Crea una nueva *[aplicación](https://console.developers.google.com/apis/credentials)* OAuth desde la consola de Google. Es muy importante que introduzcas correctamente la URI [http://localhost:8080/oauth2callback.php](http://localhost:8080/oauth2callback.php)
+> 2. Habilitar el API de [Drive](https://console.cloud.google.com/apis/api/drive.googleapis.com/)
+> 3. Instala PHP y [composer](https://getcomposer.org/).
+> 4. Clona el [repositorio](https://github.com/victorponz/oauth) 
+> 5. Ejecuta `composer install`
+> 6. Modifica las credenciales
+> 7. Lanza el servidor PHP mediante `php -S 127.0.0.1:8080` y visita esta página. 
+> 8. Se te pedirá las credenciales. 
+> 9. Una vez validadas, OAuth redirigirá [http://localhost:8080/oauth2callback.php](http://localhost:8080/oauth2callback.php) donde se mostrará un listado de los documentos y carpetas del directorio raíz de Google Drive
+>
+> Sube el repositorio a GitHub y documenta la práctica con una entrada de post
+
+
 
 El flujo de autorización es el siguiente: Nuestra aplicación  redirecciona a los usuarios para pedir permiso y acceder a parte de su  información. Si los usuarios aceptan, este servicio nos devuelve un  token de acceso que podemos utilizar para consumir la información  protegida de nuestros usuarios.
 
@@ -128,7 +140,7 @@ Cuando crees el Cliente, anota el ID de Cliente y el secreto
 
 Ahora ya puedes descargarte este proyecto de [GitHub](https://github.com/victorponz/oauth.git). Si todo ha ido bien, ejecuta `composer install`. De esta manera ya tienes instalado el paquete [Google API Client](https://github.com/googleapis/google-api-php-client). Además debes renombrar el archivo `client_secrets-sample.json` por `client_secrets.json` e introducir tus credenciales.
 
-> **ATENCIÓN**.
+> -alert-**ATENCIÓN**.
 >
 > Nunca subas un fichero a GitHub con las credenciales reales!
 
@@ -614,7 +626,7 @@ Finalmente, es interesante notar que en todos los casos las contraseñas `azerty
 
 [https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
 
-https://stackoverflow.com/questions/674904/salting-your-password-best-practices
+[https://stackoverflow.com/questions/674904/salting-your-password-best-practices](https://stackoverflow.com/questions/674904/salting-your-password-best-practices)
 
 [https://security.stackexchange.com/questions/3272/password-hashing-add-salt-pepper-or-is-salt-enough](https://security.stackexchange.com/questions/3272/password-hashing-add-salt-pepper-or-is-salt-enough)
 

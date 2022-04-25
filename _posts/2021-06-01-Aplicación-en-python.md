@@ -271,7 +271,7 @@ Si ahora abres http://localhost:5000 deberías ver una página como la siguiente
 
 No parece mucho, pero acabamos de generar nuestro primer icono de identificación.
 
-> GIT
+> **GIT**
 >
 > Crea un nuevo `tag` que identifique esta versión mediante los comandos
 >

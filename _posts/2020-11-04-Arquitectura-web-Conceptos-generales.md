@@ -381,7 +381,7 @@ Desde el momento que desplegamos una aplicación en un servidor web tenemos una 
 
 Este proceso no es tan sencillo como parece, sobre todo cuando hablamos de aplicaciones empresariales en las que participan gran cantidad de profesionales tanto en desarrollo como en sistemas, así como multitud de sistemas operativos, servidores de aplicaciones, API's end-points, servidores web, contenedores, orquestadores, etc. 
 
-> **De hacer todo este proceso de forma segura es de lo que trata este módulo profesional.** 
+> -info-**De hacer todo este proceso de forma segura es de lo que trata este módulo profesional.** 
 
 
 

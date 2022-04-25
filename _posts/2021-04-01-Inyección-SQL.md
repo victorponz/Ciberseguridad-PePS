@@ -102,13 +102,13 @@ OR 1=1--' AND released = 1
 
 Como 1=1 es siempre cierto, se obtienen TODOS los productos de la página
 
-> **Realizad todos los laboratorios de esta actividad en un único documento.**
+> -info-**Realizad todos los laboratorios de esta actividad en un único documento.**
 >
 > Para cada uno de ellos debéis incluir una captura de pantalla como que lo habéis logrado. Por ejemplo, el siguiente muestra que lo he resuelto
 >
 > ![Laboratorio 1](/Ciberseguridad-PePS/assets/img/injection/image-20210409203241519.png)
->
-> **LAB 1**
+
+> -task-**LAB 1**
 >
 > [Vulnerabilidad de inyección SQL en la cláusula WHERE que permite la recuperación de datos ocultos](https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data)
 
@@ -136,7 +136,7 @@ username = 'administrator' -- AND
 password = ''
 ```
 
->  **LAB 2** [Vulnerabilidad de inyección SQL que permite eludir el inicio de sesión](https://portswigger.net/web-security/sql-injection/lab-login-bypass)
+>  -task-**LAB 2** [Vulnerabilidad de inyección SQL que permite eludir el inicio de sesión](https://portswigger.net/web-security/sql-injection/lab-login-bypass)
 
 ### Inyección SQL de segundo orden
 
@@ -232,7 +232,7 @@ deben tener el mismo número de expresiones en sus listas de destino.
 
 Una vez más, la aplicación podría devolver este mensaje de error, o podría devolver un error genérico o ningún resultado. Cuando el número de nulos coincide con el número de columnas, la base de datos devuelve una fila adicional en el conjunto de resultados, que contiene valores nulos en cada columna. El efecto sobre la respuesta HTTP resultante depende del código de la aplicación. Si tiene suerte, verá contenido adicional dentro de la respuesta, como una fila adicional en una tabla HTML. De lo contrario, los valores nulos pueden desencadenar un error diferente, como un `NullPointerException`. En el peor de los casos, la respuesta puede ser indistinguible de la causada por un número incorrecto de nulos, lo que hace que este método para determinar el recuento de columnas sea ineficaz.
 
-> **LAB 3** [Ataque UNION de inyección SQL, determinando el número de columnas devueltas por la consulta](https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns)
+> -task-**LAB 3** [Ataque UNION de inyección SQL, determinando el número de columnas devueltas por la consulta](https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns)
 
 ### Examinar la base de datos
 
@@ -262,7 +262,7 @@ Por ejemplo, se puede usar un ataque de tipo UNION
 ' UNION SELECT @@version..
 ```
 
-> **LAB 4**. [Averigua la versión de la base de datos mediante un ataque de UNION](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle)
+> -task-**LAB 4**. [Averigua la versión de la base de datos mediante un ataque de UNION](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle)
 
 ### Blind SQL Injections
 
@@ -327,7 +327,7 @@ WHERE Username = 'Administrator'), 1, 1) > 't
 
 Podemos continuar este proceso para determinar sistemáticamente la contraseña completa para el usuario Administrador.
 
-> **LAB 5** [Inyección SQL ciega con respuestas condicionales](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-responses) La haremos con Burp Suite más adelante
+> -task-**LAB 5** [Inyección SQL ciega con respuestas condicionales](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-responses) La haremos con Burp Suite más adelante
 
 ### Como prevenir la inyección SQL
 

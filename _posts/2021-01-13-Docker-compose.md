@@ -149,7 +149,7 @@ En este punto, WordPress debería estar ejecutándose en el puerto `8000` de su 
 
 Siguiendo las [instrucciones](https://docs.docker.com/compose/django/), instala [Django](https://www.djangoproject.com/)
 
-**NOTA** Hay un error en el archivo `docker-compose.yml` que debe ser el siguiente:
+> -alert-Hay un error en el archivo `docker-compose.yml` que debe ser el siguiente:
 
 ```yaml
 version: "3.3"

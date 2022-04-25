@@ -144,36 +144,35 @@ Se presenta a continuación una lista con algunos de los elementos que se pueden
 
 ### Tarea 1
 
-<blockquote class='task'>Crea una página html con el código a continuación. Guárdala y ábrela con el navegador</blockquote>
-
+>-task-Crea una página html con el código a continuación. Guárdala y ábrela con el navegador
 >
-> ```html
+>```html
 ><!DOCTYPE html>
-> <html>
->  <head>
->      <title>Wikipedia Insertada</title>
->     </head>
->     <body>
->         <iframe src='https://es.wikipedia.org/wiki/Wikipedia:Portada' width='100%' height='800px'></iframe>
->     </body>
->    </html>
->    ```
-> 
-> Ahora, crea otra con el siguiente código:
+><html>
+><head>
+> <title>Wikipedia Insertada</title>
+></head>
+><body>
+>    <iframe src='https://es.wikipedia.org/wiki/Wikipedia:Portada' width='100%' height='800px'></iframe>
+></body>
+></html>
+>```
 >
-> ```html
+>Ahora, crea otra con el siguiente código:
+>
+>```html
 ><!DOCTYPE html>
-> <html>
->  <head>
->      <title>Wikipedia Insertada</title>
->     </head>
->     <body>
->         <iframe src='https://www.google.es/' width='100%' height='800px'></iframe>
->     </body>
->    </html>
->    ```
-> 
-> Ahora responde, ¿por qué no se ve la página con el iframe a [https://www.google.es/?](https://www.google.es/?)
+><html>
+><head>
+> <title>Wikipedia Insertada</title>
+></head>
+><body>
+>    <iframe src='https://www.google.es/' width='100%' height='800px'></iframe>
+></body>
+></html>
+>```
+>
+>Ahora responde, ¿por qué no se ve la página con el iframe a [https://www.google.es/?](https://www.google.es/?)
 
 ## Flujo de HTTP
 
@@ -209,9 +208,9 @@ Content-Type: text/html
 
 ## Mensajes HTTP
 
-> Los mensajes HTTP son la forma en que se intercambian los datos entre un servidor y un cliente.
+> -hint-Los mensajes HTTP son la forma en que se intercambian los datos entre un servidor y un cliente.
 >
-> Hay dos tipos de mensajes: las solicitudes enviadas por el cliente para activar una acción en el servidor y las respuestas, la respuesta del servidor.
+> Hay dos tipos de mensajes: las **solicitudes** enviadas por el cliente para activar una acción en el servidor y las respuestas, la **respuesta** del servidor.
 
 Los mensajes HTTP se componen de información textual codificada en ASCII, y se extienden sobre varias líneas. En HTTP / 1.1 y versiones anteriores del protocolo, estos mensajes se enviaron abiertamente a través de la conexión. En HTTP / 2, el mensaje antes legible por humanos ahora se divide en marcos HTTP, proporcionando mejoras de optimización y rendimiento. Los desarrolladores web, o webmasters, raramente elaboran estos mensajes HTTP textuales ellos mismos: un software, un navegador Web, proxy o servidor Web, realiza esta acción. Proporcionan mensajes HTTP a través de archivos de configuración \(para proxies o servidores\), API \(para navegadores\) u otras interfaces.
 
@@ -258,7 +257,7 @@ Un ejemplo de petición HTTP:
 
 ![Ejemplo de petición HTTP](/Ciberseguridad-PePS/assets/img/HTTP/HTTP_Request.png)
 
-Una petición de HTTP, está formado  por los siguientes campos:
+Una petición de HTTP, está formada por los siguientes campos:
 
 * **Un método HTTP,**  normalmente pueden ser un verbo, como: `GET`, `POST` o un nombre como: `OPTIONS` o `HEAD`, que defina la operación que el cliente quiera realizar. El objetivo de un cliente, suele ser una petición de recursos, usando `GET`, o presentar un valor de un formulario HTML, usando `POST`, aunque en otras ocasiones puede hacer otros tipos de peticiones. 
 * **La dirección del recurso pedido**; la URL del recurso, sin los elementos obvios por el contexto, como pueden ser: sin el  protocolo \(http://\),  el dominio , o el puerto TCP \(por defecto, el 80\). 
@@ -281,14 +280,11 @@ Las respuestas están formadas por los siguentes campos:
 * Opcionalmente, **el recurso que se ha pedido**.
 
 ### Tarea 2
-<blockquote class='task'>
-<ol>
-<li>Abre en el Firefox una dirección web.</li>
-<li>Activa Firebug (tecla F12)</li>
-<li>Selecciona la opción Red</li>
-<li>Recarga la página y revisa las cabeceras</li>
-</ol>
-</blockquote>
+>-task-
+>* Abre en Firefox una dirección web.
+>* Activa Firebug (tecla F12)
+>* Selecciona la opción Red
+>* Recarga la página y revisa las cabeceras
 
 ![Firebug](/Ciberseguridad-PePS/assets/img/HTTP/cabecerashttp.png)
 
@@ -304,14 +300,14 @@ HTTP define 8 métodos \(algunas veces referido como "verbos"\) que indica la ac
 
   Por seguridad no se tendría que utilizar por aplicaciones que causen efectos puesto que transmite información a través de la URI agregando parámetros a la URL.
 
-  **Ejemplo**:
-
-  `GET /images/logo.png HTTP/1.1` obtiene un recurso llamado logo.png
-
-  Ejemplo con parámetros que se envían en forma `clave=valor`  a partir del carácter `?`, concatenados con el carácter `&` y en su conjunto llamados `querystring`:
-
-  `GET /index.php?page=main&ln=es`
-
+  >-info-**Ejemplo**:
+  >
+  >`GET /images/logo.png` obtiene un recurso llamado `logo.png`
+  >
+>Ejemplo con parámetros que se envían en forma `clave=valor`  a partir del carácter `?`, concatenados con el carácter `&` y en su conjunto llamados `querystring`:
+  >
+  >`GET /index.php?page=main&ln=es`
+  
 * **HEAD**
 
   Pide una respuesta idéntica a la que correspondería a una petición GET, pero en la petición no se devuelve el cuerpo. Esto es útil para poder recuperar los metadatos de los encabezados de respuesta, sin tener que transportar todo el contenido.

@@ -69,6 +69,7 @@ git push -u origin master
 
 ## Crea tu página personal
 
-> **Tarea**
+> -task-**Tarea**
 >
 > Crea tu página en GitHub Pages. Todas las prácticas que hagas, las has de crear como un nuevo post y en la tarea de Moodle hacer referencia al mismo
+
