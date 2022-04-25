@@ -238,7 +238,7 @@ Una vez más, la aplicación podría devolver este mensaje de error, o podría d
 
 Siguiendo el patrón anterior, es posible acceder a la versión de SQL que está ejecutando el servidor mediante la consulta (en Oracle) 
 
-```mysql
+```sql
 SELECT * FROM v$version
 ```
 
@@ -250,11 +250,12 @@ information_schema.tables
 ```
 
 #### Consultar el tipo y versión de del servidor de base de datos
-| Database type    | Query                   |
-| ---------------- | ----------------------- |
-| Microsoft, MySQL | SELECT @@version        |
+
+| Database type    |                   Query |
+| ---------------- | ----------------------: |
+| Microsoft, MySQL |        SELECT @@version |
 | Oracle           | SELECT * FROM v$version |
-| PostreSQL        | SELECT version()        |
+| PostreSQL        |        SELECT version() |
 
 Por ejemplo, se puede usar un ataque de tipo UNION
 
