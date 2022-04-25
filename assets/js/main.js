@@ -81,13 +81,16 @@ var topFixed = document.getElementById("topFixed");
 var indexFixed = document.getElementById("indexFixed");
 var menuContainer =  document.getElementById("menuContainer");
 var allHeaders =  document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-var allMenuTopics = menuFixed.querySelectorAll('a');
+if (menuFixed)
+	var allMenuTopics = menuFixed.querySelectorAll('a');
 let lastScrollTop = 0;
 let lastActive;
 let lastHeadingActive;
 var backToTop = document.getElementById("back-to-top-link");
 
 window.addEventListener('scroll', function(e) {
+    if (!menuFixed)
+    	return;
     //Mostrar/ocultar el menú
     if (!isAnyPartOfElementInViewport(menu)){
         addClass(menuFixed, "show");
@@ -128,16 +131,16 @@ window.addEventListener('scroll', function(e) {
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
    
 });
-
-menuFixed.querySelectorAll('li a').forEach(el => {
-    el.addEventListener("click", e => {
-        e.preventDefault();
-        let hash = decodeURIComponent(e.currentTarget.href.split("#")[1]);
-        let destination = document.getElementById(hash);
-        destination.scrollIntoView({ behavior: 'smooth' })
-        window.setTimeout(() =>location.hash = hash, 500);
-    });
-});
+if (menuFixed)
+	menuFixed.querySelectorAll('li a').forEach(el => {
+	    el.addEventListener("click", e => {
+		e.preventDefault();
+		let hash = decodeURIComponent(e.currentTarget.href.split("#")[1]);
+		let destination = document.getElementById(hash);
+		destination.scrollIntoView({ behavior: 'smooth' })
+		window.setTimeout(() =>location.hash = hash, 500);
+	    });
+	});
 
 topFixed.querySelector('.toogle').addEventListener("click", e => {
     e.preventDefault();
@@ -184,6 +187,33 @@ modalTriggers.forEach(trigger => {
     })
   })
 })
+
+document.querySelectorAll('div.highlighter-rouge').forEach(el => {
+    const newNode = document.createElement("div");
+    newNode.className= 'copy-code hidden';
+    newNode.innerHTML = 'Copy'; 
+    newNode.addEventListener("click", e => {
+        e.preventDefault();
+        const code = el.querySelector('td.rouge-code');
+        navigator.clipboard.writeText(code.innerText).then(function() {
+            newNode.innerText = 'Copied';
+            setTimeout(function(){newNode.innerText = 'Copy'}, 1000);
+          }, function(err) {
+            console.error('Async: Could not copy text: ', err);
+          });
+    });
+    el.insertBefore(newNode, el.firstChild);
+    el.addEventListener("mouseover", e => {
+        e.preventDefault();
+        if (hasClass(newNode, 'hidden'))
+            toggleClass(newNode, 'hidden');
+    });
+    el.addEventListener("mouseout", e => {
+        e.preventDefault();
+        addClass(newNode, 'hidden');
+    });
+});
+
 
 document.querySelectorAll('blockquote p.task').forEach(el => {
    	addClass(el.parentElement, "task");

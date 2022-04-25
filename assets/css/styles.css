@@ -626,3 +626,23 @@ ul.doc-info {
   padding: .5rem 1rem;
 }
 
+.highlighter-rouge{
+  position: relative;
+}
+.copy-code{
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background-color: rgb(224, 224, 224);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.language-plaintext.highlighter-rouge{
+  overflow:unset;
+}
+
+.highlighter-rouge{
+  overflow-x:scroll;
+  background-color:#3f3f3f;
+}
