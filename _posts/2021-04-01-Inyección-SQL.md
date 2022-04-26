@@ -271,13 +271,6 @@ La inyección SQL ciega surge cuando una aplicación es vulnerable a la inyecci�
 
 Con las vulnerabilidades de inyección ciega de SQL, muchas técnicas, como los ataques UNION, no son efectivas porque se basan en poder ver los resultados de la consulta inyectada dentro de las respuestas de la aplicación. Todavía es posible explotar la inyección SQL ciega para acceder a datos no autorizados, pero se deben utilizar diferentes técnicas.
 
-#### ¿Qué es la inyección SQL ciega?
-
-La inyección SQL ciega surge cuando una aplicación es vulnerable a la inyección SQL, pero sus respuestas HTTP no contienen los resultados de la consulta SQL relevante o los detalles de los errores de la base de datos.
-
-Con las vulnerabilidades de inyección ciega de SQL, muchas técnicas, como los ataques `UNION`, no son efectivas porque se basan en poder ver los resultados de la consulta inyectada dentro de las respuestas de la aplicación. Todavía es posible explotar la inyección SQL ciega para acceder a datos no autorizados, pero se deben utilizar diferentes técnicas.
-Explotación de la inyección SQL ciega mediante la activación de respuestas condicionales
-
 #### Explotación de la inyección SQL ciega mediante la activación de respuestas condicionales
 
 Considere una aplicación que utiliza cookies de seguimiento para recopilar análisis sobre el uso. Las solicitudes a la aplicación incluyen un encabezado de cookie como este:
@@ -323,7 +316,7 @@ Finalmente, enviamos la siguiente entrada, que devuelve el mensaje "Bienvenido d
 
 ```sql
 xyz' AND SUBSTRING((SELECT Password FROM Users 
-WHERE Username = 'Administrator'), 1, 1) > 't 
+WHERE Username = 'Administrator'), 1, 1) = 's 
 ```
 
 Podemos continuar este proceso para determinar sistemáticamente la contraseña completa para el usuario Administrador.
