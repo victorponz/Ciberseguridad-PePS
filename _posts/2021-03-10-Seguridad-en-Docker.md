@@ -143,7 +143,7 @@ Se puede hacer una imagen a partir de un repositorio en GitHub como por ejemplo,
 
 Es  bastante normal que el código deba estar compilado lo que añade más superficie a ser atacada porque no interesa tener un compilador en la imagen ya que si nuestro contenedor es atacado el atacante podría compilar programas en nuestro sistema, cosa que está totalmente prohibida.
 
-por ejemplo
+Por ejemplo:
 
 ```dockerfile
 FROM golang:alpine AS builder
