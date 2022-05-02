@@ -47,10 +47,7 @@ Los pasos son los siguientes:
 
 ![Reverse shell](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504175459944.png)
 
-
-
 4. Ahora sube el archivo mediante el menú `Upload`, fijándote en la url que genera.
-   
 
    ![File upload](/Ciberseguridad-PePS/assets/img/fileupload/image-20210504175752547.png)
 
