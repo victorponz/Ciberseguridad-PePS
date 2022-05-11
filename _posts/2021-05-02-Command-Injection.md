@@ -80,7 +80,7 @@ Nos aprovecharnos de la vulnerabilidad para crear un archivo en el servidor medi
    ```
 
    Con este comando estamos creando el archivo `shell.txt` con el código en base64.
-   
+
 ## Paso 5
 Decodificamos el código mediante la siguiente entrada
 
@@ -91,9 +91,7 @@ Decodificamos el código mediante la siguiente entrada
 ## Paso 6
 Ya sólo nos queda ejecutar en el ordenador del atacante el comando `netcat`
 
-    ```bash
     nc -v -n -l -p 1234
-    ```
 
 ## Paso 7
 Y quedarnos a la espera de una conexión entrante desde el ordenador de la víctima al visitar la url [localhost:8080/vulnerabilities/exec/shell.php](localhost:8080/vulnerabilities/exec/shell.php) del punto 5.
