@@ -56,3 +56,12 @@ layout: popup
 {% endif %}
 {% endfor %}
 </ol>
+<h3>Tema 6 - Seguridad  móvil</h3>
+<ol class='portada'> 
+{% for post in site.posts reversed %}
+{% if post.categories contains "tema6" %}
+  <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
+{% endif %}
+{% endfor %}
+</ol>
+

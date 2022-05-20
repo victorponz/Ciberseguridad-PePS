@@ -81,3 +81,17 @@ La CI/CD es un método para distribuir las aplicaciones a los clientes con frecu
   <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
 {% endif %}
 {% endfor %}
+</ol>
+<h2>Tema 6 - Seguridad  móvil</h2>
+<blockquote>
+En esta parte del módulo aprenderemos las características de seguridad de las aplicaciones móviles y aprederemos a analizar el código fuente en busca de vulnerabilidades
+</blockquote>
+
+<ol class='portada'> 
+{% for post in site.posts reversed %}
+{% if post.categories contains "tema6" %}
+  <li><h4><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4></li>
+{% endif %}
+{% endfor %}
+</ol>
+
