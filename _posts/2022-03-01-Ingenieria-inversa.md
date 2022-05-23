@@ -22,10 +22,6 @@ adb install DivaApplication.apk
 
 ![image-20220519192142676](/Ciberseguridad-PePS/assets/img/inversa/image-20220519192142676.png)
 
-
-
-![image-20220519192219568](/Ciberseguridad-PePS/assets/img/inversa/image-20220519192219568.png)
-
 ## Empezamos la ingeniería inversa.
 
 Mediante ingeniería inversa obtenemos el código *más o menos* original de la aplicación. Mediante la utilidad [dex2jar](https://sourceforge.net/projects/dex2jar/) vamos a obtener una representación de estas clases.
