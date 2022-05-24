@@ -52,7 +52,7 @@ A continuación, se presentan algunas de  las herramientas más populares utiliz
 
 * **Simian Army** 
   Es un conjunto de herramientas o *“monos”* desarrollado por el equipo técnico de ***Netflix*** para comprobar la salud y las medidas contra fallos de sus sistemas informáticos. Siempre hay un primer recluta, y ese fue [**Chaos Monkey**](https://netflix.github.io/chaosmonkey/), una herramienta que sabotea los servidores de producción de forma  aleatoria, con la finalidad de que los equipos de mantenimiento no sean  capaces de predecir cuándo y cómo tendrá lugar el sabotaje. Para  utilizar **Chaos Monkey** es necesario instalar[ Spinnaker](https://spinnaker.io/), la plataforma de entrega continua utilizada por Netflix.
-  Hoy en día, el ejército de monos está  compuesto por varios soldados, cada uno de ellos con una función muy  específica. Investiga y describe cada una de las herramientas que  componen el ejército de simios: Latency Monkey, Conformity Monkey,  Security Monkey, Doctor Monkey, …
+  Hoy en día, el ejército de monos está  compuesto por varios soldados, cada uno de ellos con una función muy  específica:
   * **Latency Monkey:** Introduce retrasos artificiales en la capa de comunicación cliente-servidor para simular la degradación del servicio y mide si los servicios responden adecuadamente.
   * **Conformity Monkey:** Busca servidores que no se adhieren a las mejores prácticas y los cierra.
   * **Security Monkey:** Es una extensión de Conformity Monkey. Encuentra violaciones de seguridad o  vulnerabilidades y finaliza las instancias infractoras. También revisa los certificados SSL y DRM.
